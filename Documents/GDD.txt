@@ -1,0 +1,17 @@
+Main Concept:
+The game is a vertical top down shooter, where the player is a ship, that when pressing, or holding, one button it fires bullets, that are used to destroy enermys that spawn in front of the player.
+
+Controls:
+Z - Fire bullets. Press and Hold for continuous bullet barrage.
+X - Bomb Activation. Press to activate a bomb, that clears the screen of bullets and makes the player in vulnerable for a few seconds.
+SHIFT - Focus mode. Press and Hold to slow down the player's movement, and to show the player's hit box.
+ARROW KEYS - Move the player top, down, left, right.
+
+Story:
+
+Levels:
+At least 3 levels.
+
+Structure of the levels:
+A level starts with a normal attack of enermies. A mid boss then shows up, and gives you a small challenge. Then some new other enermies show up. At the end a big boss shows up and is stronger than the mid boss, and has more lives.
+There is dialogue between the level boss and the player.
