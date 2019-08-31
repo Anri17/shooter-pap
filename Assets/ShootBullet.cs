@@ -14,6 +14,6 @@ public class ShootBullet : MonoBehaviour
 
     void FireBullet()
     {
-        Instantiate(bullet, transform.position, bullet.transform.rotation);
+        Instantiate(bullet, transform.position, transform.rotation);
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot : MonoBehaviour
+public class PlayerShoot : MonoBehaviour
 {
     public GameObject bullet;
 

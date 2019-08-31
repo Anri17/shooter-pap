@@ -8,8 +8,6 @@ public class DestroyOnInvisible : MonoBehaviour
 
     void OnBecameInvisible()
     {
-        Debug.Log("Hello?!");
         Destroy(destroyTarget);
-        Debug.Log(transform.position);
     }
 }
