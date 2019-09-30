@@ -1,5 +1,10 @@
+Title: 
+
 Main Concept:
 The game is a vertical top down shooter, where the player is a ship, that when pressing, or holding, one button it fires bullets, that are used to destroy enermys that spawn in front of the player.
+
+Gameplay:
+
 
 Controls:
 Z - Fire bullets. Press and Hold for continuous bullet barrage.
@@ -8,10 +13,16 @@ SHIFT - Focus mode. Press and Hold to slow down the player's movement, and to sh
 ARROW KEYS - Move the player top, down, left, right.
 
 Story:
+World Setting: Islands. Various Unique settings.
+This world is facing some strange anomalies. The ocean level is depleating. The hero leave HQ and faces the incident.
+stage 1 starts close to HQ. Initial sttacks
+stage 2 starts in his place. It's a humble vilage that he lives since little. The 
 
 Levels:
-At least 3 levels.
+At least 3 levels. At most 6.
 
 Structure of the levels:
-A level starts with a normal attack of enermies. A mid boss then shows up, and gives you a small challenge. Then some new other enermies show up. At the end a big boss shows up and is stronger than the mid boss, and has more lives.
+A level starts with a normal attack of enemies. A mid boss then shows up, and gives you a small challenge. Then some new other enemies show up. At the end a big boss shows up and is stronger than the mid boss, and has more lives.
 There is dialogue between the level boss and the player.
+
+Each level ends with a dialogue and some manga style presentation.
