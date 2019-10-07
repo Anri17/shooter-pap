@@ -1,5 +1,4 @@
-m_EditorVersion: 2019.2.3f1
-m_EditorVersionWithRevision: 2019.2.3f1 (8e55c27a4621)
+Unity Version: 2018.3.6f1
 
 LINKS:
 Gantt Graph and Plans: https://docs.google.com/spreadsheets/d/1LqLTDJyS4n82GuZlXp20zqnuT679wJv3iODO2bfYHiw/edit#gid=0
