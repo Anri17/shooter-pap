@@ -1,4 +1,7 @@
-Title: 
+LINKS:
+Gantt Graph and Plans: https://docs.google.com/spreadsheets/d/1LqLTDJyS4n82GuZlXp20zqnuT679wJv3iODO2bfYHiw/edit#gid=0
+
+Title: TO_BE_DEFINED
 
 Main Concept:
 The game is a vertical top down shooter, where the player is a ship, that when pressing, or holding, one button it fires bullets, that are used to destroy enermys that spawn in front of the player.
