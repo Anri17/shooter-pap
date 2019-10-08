@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootBullet : MonoBehaviour
+public class HomingShootBullet : MonoBehaviour
 {
     public GameObject bullet;
+    public GameObject target;
     public float fireInterval = 1.0f;
+    private Quaternion direction;
 
     void Start()
     {
@@ -14,6 +16,7 @@ public class ShootBullet : MonoBehaviour
 
     void FireBullet()
     {
-        Instantiate(bullet, transform.position, Quaternion.LookRotation(new Vector3(0, -1, 0)));
+        direction = Quaternion.LookRotation(target.transform.position - transform.position);
+        Instantiate(bullet, transform.position, direction);
     }
 }
