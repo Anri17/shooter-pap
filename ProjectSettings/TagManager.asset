@@ -6,6 +6,9 @@ TagManager:
   tags:
   - PowerCollectable
   - ScoreCollectable
+  - PlayerBullet
+  - EnemyBullet
+  - Enemy
   layers:
   - Default
   - TransparentFX

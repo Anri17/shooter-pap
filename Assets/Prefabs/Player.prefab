@@ -170,7 +170,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8a729a1322e2404590d4453502b1d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 6567759983919088158, guid: 740038cc3579e4a42b981bd99ac0e918, type: 3}
+  barrageLv1: {fileID: 6567759983919088158, guid: 740038cc3579e4a42b981bd99ac0e918,
+    type: 3}
+  barrageLv2: {fileID: 6567759983919088158, guid: 740038cc3579e4a42b981bd99ac0e918,
+    type: 3}
+  barrageLv3: {fileID: 6567759983919088158, guid: 740038cc3579e4a42b981bd99ac0e918,
+    type: 3}
+  barrageLv4: {fileID: 6567759983919088158, guid: 740038cc3579e4a42b981bd99ac0e918,
+    type: 3}
 --- !u!114 &4037159831597851512
 MonoBehaviour:
   m_ObjectHideFlags: 0
