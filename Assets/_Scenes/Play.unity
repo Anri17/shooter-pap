@@ -917,7 +917,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -10, y: -10}
-  m_SizeDelta: {x: 90, y: 89}
+  m_SizeDelta: {x: 0, y: 89}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1169672302
 MonoBehaviour:
@@ -1244,7 +1244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2007738941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1344,7 +1344,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.040000003
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -1535,5 +1535,10 @@ PrefabInstance:
       propertyPath: focusSpeed
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4037159831597851512, guid: bfe6cc0d5ce856c40ab352a71f92f48d,
+        type: 3}
+      propertyPath: rb2D
+      value: 
+      objectReference: {fileID: 2011406762}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfe6cc0d5ce856c40ab352a71f92f48d, type: 3}
