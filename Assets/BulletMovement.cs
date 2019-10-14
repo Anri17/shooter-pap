@@ -7,7 +7,7 @@ public class BulletMovement : MonoBehaviour
 
     public float speed = 1.0f;
 
-    void Update()
+    void FixedUpdate()
     {
         transform.position += transform.forward * speed * Time.deltaTime;
     }

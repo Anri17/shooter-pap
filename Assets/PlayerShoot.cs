@@ -6,7 +6,7 @@ public class PlayerShoot : MonoBehaviour
 {
     public GameObject bullet;
 
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetButton("Fire1"))
         {
