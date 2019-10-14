@@ -16,8 +16,13 @@ public class UIUpdate : MonoBehaviour
 
     void Update()
     {
+        // Update Score
         scoreNumber.GetComponent<Text>().text = Data.score.ToString("n3");
+
+        // Update Power Level
         powerLevelNumber.GetComponent<Text>().text = Data.powerLevel.ToString("0.##");
+
+
         Debug.Log("Collected");
     }
 }
