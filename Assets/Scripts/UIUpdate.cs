@@ -10,6 +10,7 @@ public class UIUpdate : MonoBehaviour
 
     void Start()
     {
+        // assign variables
         powerLevelNumber = GameObject.Find("PowerLevelNumber");
         scoreNumber = GameObject.Find("ScoreNumber");
     }
@@ -21,8 +22,5 @@ public class UIUpdate : MonoBehaviour
 
         // Update Power Level
         powerLevelNumber.GetComponent<Text>().text = Data.powerLevel.ToString("0.##");
-
-
-        Debug.Log("Collected");
     }
 }

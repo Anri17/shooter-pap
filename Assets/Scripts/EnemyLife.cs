@@ -8,17 +8,24 @@ public class EnemyLife : MonoBehaviour
 
     void Update()
     {
+        // identify the health value
         if (health <= 0)
         {
+            // destroy the enemy
             Destroy(gameObject);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Hit!");
+        // identify player bullets
         if (collision.gameObject.tag == "PlayerBullet")
         {
+            // reduce health
             health -= 0.5f;
+            // destroy the player bullet bullet
+            Destroy(collision.gameObject);
         }
     }
 }
