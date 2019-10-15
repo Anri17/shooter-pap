@@ -18,7 +18,7 @@ public class ItemCollector : MonoBehaviour
         {
             Data.score += 500;
             Destroy(collision.gameObject);
-            Debug.Log("Score Level: " + Data.score);
+            Debug.Log("Score: " + Data.score);
         }
     }
 }

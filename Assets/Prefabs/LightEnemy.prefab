@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 3466661871891728268}
   - component: {fileID: 3466661871891728271}
   - component: {fileID: 3466661871891728270}
+  - component: {fileID: 4291622613268527126}
+  - component: {fileID: 8235150732017388875}
   m_Layer: 0
   m_Name: LightEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,3 +124,37 @@ MonoBehaviour:
   bullet: {fileID: 4019418150373853230, guid: faef8db8410853a4ab908244ab67b543, type: 3}
   target: {fileID: 4037159831597851511, guid: bfe6cc0d5ce856c40ab352a71f92f48d, type: 3}
   fireInterval: 0.4
+--- !u!114 &4291622613268527126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3466661871891728265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c09b4e3e500f244b83c9589cdb574cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+--- !u!50 &8235150732017388875
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3466661871891728265}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

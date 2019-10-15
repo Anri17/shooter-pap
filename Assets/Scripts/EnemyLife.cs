@@ -13,19 +13,28 @@ public class EnemyLife : MonoBehaviour
         {
             // destroy the enemy
             Destroy(gameObject);
+            // add score
+            Data.score += 200;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit!");
+        Debug.Log($"{collision} Hit!");
         // identify player bullets
         if (collision.gameObject.tag == "PlayerBullet")
         {
             // reduce health
             health -= 0.5f;
+            // add score
+            Data.score += 40;
             // destroy the player bullet bullet
             Destroy(collision.gameObject);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        
     }
 }
