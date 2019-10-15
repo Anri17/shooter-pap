@@ -16,11 +16,12 @@ public class HomingShootBullet : MonoBehaviour
 
     void FireBullet()
     {
-        direction = Quaternion.LookRotation(target.transform.position - transform.position);
-        direction.z = 0;
-        
-
-
-        Instantiate(bullet, transform.position, direction);
+        if (target != null)
+        {
+            direction = Quaternion.LookRotation(target.transform.position - transform.position);
+            Debug.Log(direction);
+            // Debug.Log(direction);
+            Instantiate(bullet, transform.position, direction);
+        }
     }
 }
