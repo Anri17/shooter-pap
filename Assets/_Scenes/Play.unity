@@ -603,7 +603,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -143.52013, y: 13.77}
+  m_Offset: {x: -143.52014, y: -27.125202}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -614,7 +614,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 656.75574, y: 9.900162}
+  m_Size: {x: 656.75574, y: 91.690575}
   m_EdgeRadius: 0
 --- !u!114 &194917141
 MonoBehaviour:
@@ -945,7 +945,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 30.63, y: 3.6301117}
+  m_Offset: {x: -27.070995, y: 3.630127}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -956,7 +956,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 28.8, y: 543.19104}
+  m_Size: {x: 144.202, y: 543.19104}
   m_EdgeRadius: 0
 --- !u!114 &284069577
 MonoBehaviour:
@@ -1755,7 +1755,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -152.18347, y: -11.59}
+  m_Offset: {x: -152.18347, y: 26.766838}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1766,7 +1766,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 625.2181, y: 5.5}
+  m_Size: {x: 625.2181, y: 82.213684}
   m_EdgeRadius: 0
 --- !u!114 &652959821
 MonoBehaviour:
@@ -1926,7 +1926,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -323.1, y: -1.914032}
+  m_Offset: {x: -251.95045, y: -1.914032}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1937,7 +1937,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 41.77997, y: 537.138}
+  m_Size: {x: 184.07907, y: 537.138}
   m_EdgeRadius: 0
 --- !u!114 &689209237
 MonoBehaviour:
@@ -4171,6 +4171,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 347055068}
+    - target: {fileID: 8235150732017388875, guid: a3e3447d3790bff40bd78d5285c11bf1,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3e3447d3790bff40bd78d5285c11bf1, type: 3}
 --- !u!1001 &4037159832335743232

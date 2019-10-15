@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4019418150373853230, guid: faef8db8410853a4ab908244ab67b543, type: 3}
-  target: {fileID: 4037159831597851511, guid: bfe6cc0d5ce856c40ab352a71f92f48d, type: 3}
+  target: {fileID: 0}
   fireInterval: 0.4
 --- !u!114 &4291622613268527126
 MonoBehaviour:
@@ -136,7 +136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c09b4e3e500f244b83c9589cdb574cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 60
+  hitParticles: {fileID: 5689112598973065279, guid: 85ac1fb56f654a94d9565662366586da,
+    type: 3}
 --- !u!50 &8235150732017388875
 Rigidbody2D:
   serializedVersion: 4

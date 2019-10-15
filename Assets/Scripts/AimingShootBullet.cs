@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HomingShootBullet : MonoBehaviour
+public class AimingShootBullet : MonoBehaviour
 {
     public GameObject bullet;
     public GameObject target;
@@ -20,8 +20,10 @@ public class HomingShootBullet : MonoBehaviour
         {
             direction = Quaternion.LookRotation(target.transform.position - transform.position);
             Debug.Log(direction);
-            // Debug.Log(direction);
+
+
             Instantiate(bullet, transform.position, direction);
+
         }
     }
 }
