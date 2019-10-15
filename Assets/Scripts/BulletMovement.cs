@@ -8,6 +8,6 @@ public class BulletMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position += transform.forward * speed * Time.deltaTime;
+        transform.position += transform.up * speed * Time.deltaTime;
     }
 }

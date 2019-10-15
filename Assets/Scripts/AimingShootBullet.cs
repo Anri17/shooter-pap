@@ -7,6 +7,8 @@ public class AimingShootBullet : MonoBehaviour
     public GameObject bullet;
     public GameObject target;
     public float fireInterval = 1.0f;
+    public float offset = -90;
+
     private Quaternion direction;
 
     void Start()
@@ -18,12 +20,14 @@ public class AimingShootBullet : MonoBehaviour
     {
         if (target != null)
         {
-            direction = Quaternion.LookRotation(target.transform.position - transform.position);
-            Debug.Log(direction);
+            // direction = Quaternion.LookRotation(target.transform.position - transform.position);
+            // Debug.Log(direction);
 
+            Vector3 difference = target.transform.position - transform.position;
+            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            direction = Quaternion.Euler(0f, 0f, rotZ + offset);
 
             Instantiate(bullet, transform.position, direction);
-
         }
     }
 }
