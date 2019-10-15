@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyLife : MonoBehaviour
 {
     public float health = 10.0f;
+    public GameObject hitParticles;
 
     void Update()
     {
@@ -30,6 +31,8 @@ public class EnemyLife : MonoBehaviour
             Data.score += 40;
             // destroy the player bullet bullet
             Destroy(collision.gameObject);
+            // particles on hit
+            Instantiate(hitParticles, transform);
         }
     }
 
