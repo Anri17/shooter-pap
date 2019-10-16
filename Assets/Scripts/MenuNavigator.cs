@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuNavigator : MonoBehaviour
 {
@@ -27,10 +28,13 @@ public class MenuNavigator : MonoBehaviour
 
     public void DisplayPlayScreen()
     {
+        SceneManager.LoadScene("Play");
+        /*
         MainMenuScreen.SetActive(false);
         PlayScreen.SetActive(true);
         TutorialScreen.SetActive(false);
         OptionsScreen.SetActive(false);
+        */
     }
 
     public void DisplayTutorialScreen()
