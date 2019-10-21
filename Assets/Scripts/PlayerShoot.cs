@@ -33,7 +33,7 @@ public class PlayerShoot : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             Instantiate(mainBarrage, transform.position + new Vector3(0, 1.5f, 0), mainBarrage.transform.rotation);
         }
