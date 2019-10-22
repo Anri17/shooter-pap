@@ -6,14 +6,14 @@ public class DirectedBullet : MonoBehaviour
 {
     public GameObject bullet;
     public GameObject target;
-    public float fireInterval = 1.0f;
+    public float fireRate = 1.0f;
     public float offset = -90;
 
     private Quaternion direction;
 
     void Start()
     {
-        InvokeRepeating("FireBullet", 0.0f, fireInterval);
+        InvokeRepeating("FireBullet", 0.0f, fireRate / 100);
     }
 
     void FireBullet()

@@ -14,22 +14,72 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {
-        if (Data.powerLevel >= 0.0f & Data.powerLevel < 1.0f)
+        if (Data.powerLevel >= 0.0f && Data.powerLevel < 1.0f)      // Level 1 Barrage
         {
-            mainBarrage = barrageLv1;
+            // update barrage if firing
+            if (mainBarrage != barrageLv1 && Input.GetButton("Fire1"))
+            {
+                mainBarrage = barrageLv1;
+                Destroy(currentBarrage);
+                currentBarrage = Instantiate(mainBarrage, transform.position, mainBarrage.transform.rotation, transform);
+            }
+
+            // update barrage if not firing
+            if (mainBarrage != barrageLv1)
+            {
+                mainBarrage = barrageLv1;
+            }
         }
-        else if (Data.powerLevel >= 1.0f && Data.powerLevel < 2.0f)
+        else if (Data.powerLevel >= 1.0f && Data.powerLevel < 2.0f) // Level 2 Barrage
         {
-            mainBarrage = barrageLv2;
+            // update barrage if firing
+            if (mainBarrage != barrageLv2 && Input.GetButton("Fire1"))
+            {
+                mainBarrage = barrageLv2;
+                Destroy(currentBarrage);
+                currentBarrage = Instantiate(mainBarrage, transform.position, mainBarrage.transform.rotation, transform);
+            }
+
+            // update barrage if not firing
+            if (mainBarrage != barrageLv2)
+            {
+                mainBarrage = barrageLv2;
+            }
         }
-        else if (Data.powerLevel >= 2.0f && Data.powerLevel < 3.0f)
+        else if (Data.powerLevel >= 2.0f && Data.powerLevel < 3.0f) // Level 3 Barrage
         {
-            mainBarrage = barrageLv3;
+            // update barrage if firing
+            if (mainBarrage != barrageLv3 && Input.GetButton("Fire1"))
+            {
+                mainBarrage = barrageLv3;
+                Destroy(currentBarrage);
+                currentBarrage = Instantiate(mainBarrage, transform.position, mainBarrage.transform.rotation, transform);
+            }
+
+            // update barrage if not firing
+            if (mainBarrage != barrageLv3)
+            {
+                mainBarrage = barrageLv3;
+            }
         }
-        else
+        else                                                        // Level 4 Barrage
         {
-            mainBarrage = barrageLv4;
+            // update barrage if firing
+            if (mainBarrage != barrageLv4 && Input.GetButton("Fire1"))
+            {
+                mainBarrage = barrageLv4;
+                Destroy(currentBarrage);
+                currentBarrage = Instantiate(mainBarrage, transform.position, mainBarrage.transform.rotation, transform);
+            }
+
+            // update barrage if not firing
+            if (mainBarrage != barrageLv4)
+            {
+                mainBarrage = barrageLv4;
+            }
         }
+
+
         if (Input.GetButtonDown("Fire1"))
         {
             currentBarrage = Instantiate(mainBarrage, transform.position, mainBarrage.transform.rotation, transform);

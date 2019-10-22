@@ -5,7 +5,7 @@ using UnityEngine;
 public class StaticBullet : MonoBehaviour
 {
     public GameObject bullet;
-    public float fireInterval = 1.0f;
+    public float fireRate = 1.0f;
     public float offset = -90;
 
     private Quaternion direction;
@@ -13,7 +13,7 @@ public class StaticBullet : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("FireBullet", 0.0f, fireInterval / 100);
+        InvokeRepeating("FireBullet", 0.0f, fireRate / 100);
     }
 
     void FireBullet()

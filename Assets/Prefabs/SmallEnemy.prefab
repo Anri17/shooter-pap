@@ -122,7 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4019418150373853230, guid: faef8db8410853a4ab908244ab67b543, type: 3}
-  fireInterval: 0.4
+  fireInterval: 50
+  offset: 90
 --- !u!114 &8655174311982016142
 MonoBehaviour:
   m_ObjectHideFlags: 0
