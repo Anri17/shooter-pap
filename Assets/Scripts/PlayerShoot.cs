@@ -9,6 +9,7 @@ public class PlayerShoot : MonoBehaviour
     public GameObject barrageLv3;
     public GameObject barrageLv4;
 
+    GameObject currentBarrage;
     GameObject mainBarrage;
 
     void Update()
@@ -29,13 +30,13 @@ public class PlayerShoot : MonoBehaviour
         {
             mainBarrage = barrageLv4;
         }
-    }
-
-    void FixedUpdate()
-    {
         if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(mainBarrage, transform.position + new Vector3(0, 1.5f, 0), mainBarrage.transform.rotation);
+            currentBarrage = Instantiate(mainBarrage, transform.position, mainBarrage.transform.rotation, transform);
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            Destroy(currentBarrage);
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AimingShootBullet : MonoBehaviour
+public class DirectedBullet : MonoBehaviour
 {
     public GameObject bullet;
     public GameObject target;
