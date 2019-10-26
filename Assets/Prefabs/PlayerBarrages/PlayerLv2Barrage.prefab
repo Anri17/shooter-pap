@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5166995342548382537}
-  - component: {fileID: 499822915}
+  - component: {fileID: 5099880788939806377}
   m_Layer: 0
   m_Name: PlayerLaserRightBarrel
   m_TagString: PlayerBullet
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 7330251143779989805}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
---- !u!114 &499822915
+--- !u!114 &5099880788939806377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,11 +40,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 390878254801124187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 819800a5effc6834dbe6ad4badceeb6e, type: 3}
+  m_Script: {fileID: 11500000, guid: b2a25a5cc256cc64d94b840e5c5a8e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8746203252393343279, guid: 740038cc3579e4a42b981bd99ac0e918, type: 3}
-  fireRate: 1
+  targetObject: {fileID: 0}
+  targetCoords: {x: 0, y: 1, z: 0}
+  fireRepeat: 1
+  fireBulletCount: 0
+  fireRate: 2
   offset: -90
 --- !u!1 &4195043684133278969
 GameObject:
@@ -55,7 +59,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2842302496268246851}
-  - component: {fileID: 380284110}
+  - component: {fileID: 4141540898110259230}
   m_Layer: 0
   m_Name: PlayerLaserLeftBarrel
   m_TagString: PlayerBullet
@@ -77,7 +81,7 @@ Transform:
   m_Father: {fileID: 7330251143779989805}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
---- !u!114 &380284110
+--- !u!114 &4141540898110259230
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,11 +90,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4195043684133278969}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 819800a5effc6834dbe6ad4badceeb6e, type: 3}
+  m_Script: {fileID: 11500000, guid: b2a25a5cc256cc64d94b840e5c5a8e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8746203252393343279, guid: 740038cc3579e4a42b981bd99ac0e918, type: 3}
-  fireRate: 1
+  targetObject: {fileID: 0}
+  targetCoords: {x: 0, y: 1, z: 0}
+  fireRepeat: 1
+  fireBulletCount: 0
+  fireRate: 2
   offset: -90
 --- !u!1 &4269775475862698753
 GameObject:
@@ -101,7 +109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3701824035440232358}
-  - component: {fileID: 4269775475862698754}
+  - component: {fileID: 4786133234076869017}
   m_Layer: 0
   m_Name: PlayerLaserFrontBarrel
   m_TagString: PlayerBullet
@@ -123,7 +131,7 @@ Transform:
   m_Father: {fileID: 7330251143779989805}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4269775475862698754
+--- !u!114 &4786133234076869017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,11 +140,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4269775475862698753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 819800a5effc6834dbe6ad4badceeb6e, type: 3}
+  m_Script: {fileID: 11500000, guid: b2a25a5cc256cc64d94b840e5c5a8e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8746203252393343279, guid: 740038cc3579e4a42b981bd99ac0e918, type: 3}
-  fireRate: 1
+  targetObject: {fileID: 0}
+  targetCoords: {x: 0, y: 1, z: 0}
+  fireRepeat: 1
+  fireBulletCount: 0
+  fireRate: 2
   offset: -90
 --- !u!1 &7330251143779989804
 GameObject:

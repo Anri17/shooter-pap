@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6127792346868334050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1250204652875237328}
+  - component: {fileID: 32425369943146994}
+  m_Layer: 0
+  m_Name: BulletFireBarrelStraightForward
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1250204652875237328
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6127792346868334050}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8832697969084792931}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &32425369943146994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6127792346868334050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a25a5cc256cc64d94b840e5c5a8e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4019418150373853230, guid: faef8db8410853a4ab908244ab67b543, type: 3}
+  targetObject: {fileID: 0}
+  targetCoords: {x: 0, y: -1, z: 0}
+  fireRepeat: 1
+  fireBulletCount: 0
+  fireRate: 40
+  offset: -90
 --- !u!1 &7833164115978671972
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +61,6 @@ GameObject:
   - component: {fileID: 8832697969084792931}
   - component: {fileID: 2020068115567859757}
   - component: {fileID: 198908127}
-  - component: {fileID: 198908124}
   - component: {fileID: 8655174311982016142}
   - component: {fileID: 1011778523}
   m_Layer: 0
@@ -31,7 +80,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1250204652875237328}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -109,21 +159,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.86, y: 1.68}
   m_EdgeRadius: 0
---- !u!114 &198908124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7833164115978671972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 819800a5effc6834dbe6ad4badceeb6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 4019418150373853230, guid: faef8db8410853a4ab908244ab67b543, type: 3}
-  fireRate: 50
-  offset: 90
 --- !u!114 &8655174311982016142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c09b4e3e500f244b83c9589cdb574cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 80
+  health: 60
   hitParticles: {fileID: 5689112598973065279, guid: 85ac1fb56f654a94d9565662366586da,
     type: 3}
 --- !u!50 &1011778523
