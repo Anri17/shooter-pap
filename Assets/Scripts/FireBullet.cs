@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class FireBullet : MonoBehaviour
 {
-    public GameObject bullet;
-    public GameObject targetObject;
-    public Vector3 targetCoords = new Vector3(0, -1, 0);
-    public bool fireRepeat = false;
-    public int fireBulletCount = 0;
-    public float fireRate;
-    public float offset = -90;
+    public GameObject bullet; // what object to fire
+    public GameObject targetObject; // the fireing target
+    public Vector3 targetCoords = new Vector3(0, -1, 0); // the fireing direction
+    public bool fireRepeat = false; // fire repeat or not
+    public int fireBulletCount = 0; // how many bullets to fire
+    public float fireRate; // how long to wait before the next bullet is fired
+    public float offset = -90; // the rotation offset of the direction
 
     int bulletCounter = 0;
     Quaternion direction;
