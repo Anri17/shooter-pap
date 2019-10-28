@@ -48,7 +48,7 @@ MonoBehaviour:
   targetCoords: {x: 0, y: -1, z: 0}
   fireRepeat: 1
   fireBulletCount: 0
-  fireRate: 20
+  fireRate: 30
   offset: -90
 --- !u!1 &3466661871891728265
 GameObject:
