@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class FireBullet : MonoBehaviour
 {
+    // TODO: use unity editor to organise the variables and the inspector
+    //       create a function for each type of fireing
+    //       use coroutines instead of invoke
+
     public GameObject bullet; // what object to fire
     public GameObject targetObject; // the fireing target
     public Vector3 targetCoords = new Vector3(0, -1, 0); // the fireing direction

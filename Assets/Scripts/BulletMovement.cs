@@ -22,16 +22,15 @@ public class BulletMovement : MonoBehaviour
         }
         if (isAcelerating)
         {
-
-
+            // TODO: acelerate bullet movement
         }
         if (isDesacelerating)
         {
-
+            // TODO: desacelerate bullet movement
         }
         if (isHoming)
         {
-
+            // TODO: homing bullet movement
         }
     }
 }
