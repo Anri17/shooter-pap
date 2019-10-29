@@ -285,4 +285,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7b10500c073e36408a101e0f543cfc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 75
+  isStatic: 1
+  isHoming: 0
+  isAcelerating: 0
+  isDesacelerating: 0
+  speed: 750
+  speedDelay: 10
+  minSpeed: 1
+  maxSpeed: 10
+  targetTag: 
+  homingDelay: 0

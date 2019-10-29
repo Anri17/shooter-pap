@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿/*
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -9,7 +10,7 @@ public class BulletMovementEditor : Editor
     override public void OnInspectorGUI()
     {
         var bulletMovementScript = target as BulletMovement;
-
+        
         bulletMovementScript.isStatic = GUILayout.Toggle(bulletMovementScript.isStatic, "Is Static");
         bulletMovementScript.isHoming = GUILayout.Toggle(bulletMovementScript.isHoming, "Is Homing");
         bulletMovementScript.isAcelerating = GUILayout.Toggle(bulletMovementScript.isAcelerating, "Is Acelerating");
@@ -18,11 +19,14 @@ public class BulletMovementEditor : Editor
         if (bulletMovementScript.isStatic)
         {
             bulletMovementScript.speed = EditorGUILayout.FloatField("Speed:", bulletMovementScript.speed);
+            bulletMovementScript.targetDirection = EditorGUILayout.Vector3Field("Target Direction", bulletMovementScript.targetDirection);
         }
 
         if (bulletMovementScript.isHoming)
         {
-            // TODO: add variables related to isHoming
+            bulletMovementScript.targetTag = EditorGUILayout.TagField("Target Tag:", bulletMovementScript.targetTag);
+            bulletMovementScript.speed = EditorGUILayout.FloatField("Speed:", bulletMovementScript.speed);
+            bulletMovementScript.homingDelay = EditorGUILayout.FloatField("Delay:", bulletMovementScript.homingDelay);
         }
 
         if (bulletMovementScript.isAcelerating)
@@ -33,7 +37,9 @@ public class BulletMovementEditor : Editor
 
         if (bulletMovementScript.isDesacelerating)
         {
-            // TODO: add variables related to isDesacelerating
+            bulletMovementScript.minSpeed = EditorGUILayout.FloatField("Min speed:", bulletMovementScript.minSpeed);
+            bulletMovementScript.maxSpeed = EditorGUILayout.FloatField("Max speed:", bulletMovementScript.maxSpeed);
         }
     }
 }
+*/

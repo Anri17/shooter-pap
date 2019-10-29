@@ -235,8 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81cc8efa3b140149a1de98cf70f1bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 24
-  focusSpeed: 12
+  normalSpeed: 16
+  focusSpeed: 8
   rb2D: {fileID: 2011406762}
 --- !u!114 &750829524374406621
 MonoBehaviour:
