@@ -46,15 +46,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStatic: 0
   isHoming: 0
-  isAccelerating: 1
-  isDecelerating: 0
+  isAccelerating: 0
+  isDecelerating: 1
   speed: 120
   speedDelay: 40
   minSpeed: 25
   maxSpeed: 120
   transitionVelocity: 8
-  targetTag: 
   homingDelay: 0
+  homingRadius: 10
 --- !u!1 &4019418151978542274
 GameObject:
   m_ObjectHideFlags: 0

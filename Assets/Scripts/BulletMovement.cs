@@ -15,10 +15,13 @@ public class BulletMovement : MonoBehaviour
     public float minSpeed = 1.0f;
     public float maxSpeed = 10.0f;
     public float transitionVelocity = 4.0f;
-    public string targetTag = "";
     public float homingDelay = 0.0f;
+    public float homingRadius = 10.0f;
+
+
 
     private float acceleration;
+    private GameObject targetObject;
 
     void Start()
     {
@@ -82,9 +85,19 @@ public class BulletMovement : MonoBehaviour
                 }
             }
         }
-        if (isHoming)
+        if (isHoming) // TODO: homing bullet movement
         {
-            // TODO: homing bullet movement
+            // Detect the targetObject to aim at
+            //targetObject =
+
+            // move bullet forward at a static speed
+            transform.Translate(Vector3.up * (speed / 10) * Time.deltaTime);
+
+            var objectsInRadius = Physics.OverlapSphere(transform.position, homingRadius);
+
+            // rotate towards the target
+
+            // delay before bullet start homing
         }
     }
 }
