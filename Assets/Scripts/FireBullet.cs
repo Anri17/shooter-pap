@@ -14,7 +14,7 @@ public class FireBullet : MonoBehaviour
     public bool fireRepeat = false; // fire repeat or not
     public int fireBulletCount = 0; // how many bullets to fire
     public float fireRate; // how long to wait before the next bullet is fired
-    public float offset = -90; // the rotation offset of the direction
+    public float offset = 90; // the rotation offset of the direction
 
     int bulletCounter = 0;
     Quaternion direction;
@@ -26,7 +26,11 @@ public class FireBullet : MonoBehaviour
         // get and store target object tag
         if (targetObject != null)
         {
-            targetObjectTag = targetObject.tag;
+            if(targetObject.tag != "Untagged") // set a tag if the object is not Unragged
+            {
+                targetObjectTag = targetObject.tag;
+                Debug.Log(targetObjectTag);
+            }
         }
 
         // fire the bullet
@@ -35,7 +39,7 @@ public class FireBullet : MonoBehaviour
 
     Quaternion GetDirection() // define the direction of the bullet
     {
-        if (!targetObjectTag.Equals("")) // define object with tag extracted
+        if (!targetObjectTag.Equals("")) // define object with tag extracted, if the game object is destroyed and reapeared in the game loop
         {
             targetObject = GameObject.FindGameObjectWithTag(targetObjectTag);
         }
@@ -44,14 +48,14 @@ public class FireBullet : MonoBehaviour
         {
             Vector3 difference = targetObject.transform.position - transform.position;
             float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            return Quaternion.Euler(0f, 0f, rotZ + offset);
+            return Quaternion.Euler(0f, 0f, rotZ - 90 + offset);
         }
         else // otherwise set the direction based on coordinates given
         {
             Vector3 target = transform.position + targetCoords;
             Vector3 difference = target - transform.position;
             float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            return Quaternion.Euler(0f, 0f, rotZ + offset);
+            return Quaternion.Euler(0f, 0f, rotZ - 90 + offset);
         }
     }
 

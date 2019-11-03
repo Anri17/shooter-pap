@@ -49,7 +49,7 @@ MonoBehaviour:
   fireRepeat: 1
   fireBulletCount: 0
   fireRate: 3
-  offset: -90
+  offset: 0
 --- !u!1 &7330251143779989804
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2043415564473952440}
   - component: {fileID: 9194169426790280862}
-  - component: {fileID: 4706503016386643892}
   - component: {fileID: 1702644185715797545}
+  - component: {fileID: 4706503016386643892}
   - component: {fileID: 248564488427200239}
   m_Layer: 0
   m_Name: LargeEnemy
@@ -85,27 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &4706503016386643892
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4480011068608489805}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &1702644185715797545
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -132,6 +111,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.06, y: 1.68}
   m_EdgeRadius: 0
+--- !u!50 &4706503016386643892
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4480011068608489805}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &248564488427200239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,12 +191,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4019418150373853230, guid: faef8db8410853a4ab908244ab67b543, type: 3}
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 4037159831597851511, guid: bfe6cc0d5ce856c40ab352a71f92f48d,
+    type: 3}
   targetCoords: {x: 0, y: -1, z: 0}
   fireRepeat: 1
   fireBulletCount: 10
   fireRate: 30
-  offset: -45
+  offset: 45
 --- !u!1 &6942812771880935361
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,12 +242,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4019418150373853230, guid: faef8db8410853a4ab908244ab67b543, type: 3}
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 4037159831597851511, guid: bfe6cc0d5ce856c40ab352a71f92f48d,
+    type: 3}
   targetCoords: {x: 0, y: -1, z: 0}
   fireRepeat: 1
   fireBulletCount: 10
   fireRate: 30
-  offset: -90
+  offset: 0
 --- !u!1 &6942812771915087555
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,9 +293,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4019418150373853230, guid: faef8db8410853a4ab908244ab67b543, type: 3}
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 4037159831597851511, guid: bfe6cc0d5ce856c40ab352a71f92f48d,
+    type: 3}
   targetCoords: {x: 0, y: -1, z: 0}
   fireRepeat: 1
   fireBulletCount: 10
   fireRate: 30
-  offset: -135
+  offset: -45
