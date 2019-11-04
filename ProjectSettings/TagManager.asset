@@ -12,6 +12,7 @@ TagManager:
   - PlayerHitBox
   - ItemCollectionArea
   - BigPowerCollectable
+  - PlayArea
   layers:
   - Default
   - TransparentFX
