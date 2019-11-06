@@ -13,7 +13,7 @@ GameObject:
   m_Layer: 0
   m_Name: EnemySpawnPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7cbfde2e010a3b44a3b7d7a00f8e4e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 3933855771611259253, guid: 2250d251104c6fe40b2b6a89235f0c2d, type: 3}
+  enemy: {fileID: 7833164115978671972, guid: 2cfbd683302400e408936bf2595d0ab2, type: 3}
   spawnRate: 50
   spawnDefinedCount: 1
-  spawnCount: 2
+  spawnCount: 5

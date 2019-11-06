@@ -14,7 +14,7 @@ public class MoveObject : MonoBehaviour
     public GameObject target3;
     public GameObject target4;
 
-    void Start()
+    void Start()path
     {
         transform.position = target4.transform.position;
     }
