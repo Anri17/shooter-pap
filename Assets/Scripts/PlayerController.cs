@@ -47,6 +47,6 @@ public class PlayerController : MonoBehaviour
         transform.position += direction * speed * Time.deltaTime;
         
         // debug
-        Debug.Log($"Player Moved: x{horizontal}, y{vertical}\nAt direction: {direction}");
+        // Debug.Log($"Player Moved: x{horizontal}, y{vertical}\nAt direction: {direction}");
     }
 }

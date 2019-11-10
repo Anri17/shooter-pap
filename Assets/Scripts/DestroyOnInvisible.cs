@@ -9,5 +9,7 @@ public class DestroyOnInvisible : MonoBehaviour
     void OnBecameInvisible()
     {
         Destroy(destroyTarget);
+        if (destroyTarget == null)
+            Destroy(gameObject);
     }
 }

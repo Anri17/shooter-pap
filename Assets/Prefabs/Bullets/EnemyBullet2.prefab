@@ -48,7 +48,7 @@ MonoBehaviour:
   isHoming: 0
   isAccelerating: 0
   isDecelerating: 0
-  speed: 120
+  speed: 80
   speedDelay: 10
   minSpeed: 1
   maxSpeed: 10
