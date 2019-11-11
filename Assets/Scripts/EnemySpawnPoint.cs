@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class EnemySpawnPoint : MonoBehaviour
 {
-    public GameObject enemy;
+    public GameObject enemyObject;
     public float spawnRate = 100.0f;
     public bool spawnDefinedCount = false;
     public int spawnCount;
 
     private int spawnCounter = 0;
+    private Transform[] routes;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (enemy != null)
+        // TODO: Gather the routes from the child object and give it to the enemyObject Routes in it's script
+        /*
+        // give prefab the routes
+        //        movementRoutes
+        routes = transform.GetComponentsInChildren<Transform>();
+
+        enemyObject.GetComponent<MoveObjectBezierFollow>().routes = routes;
+        */
+
+        if (enemyObject != null)
             InvokeRepeating("SpawnEnemy", 0.0f, spawnRate / 100);
     }
 
@@ -22,11 +32,11 @@ public class EnemySpawnPoint : MonoBehaviour
     {
         if (!spawnDefinedCount)
         {
-            Instantiate(enemy, gameObject.transform.position, Quaternion.identity);
+            Instantiate(enemyObject, gameObject.transform.position, Quaternion.identity);
         }
         else
         {
-            Instantiate(enemy, gameObject.transform.position, Quaternion.identity);
+            Instantiate(enemyObject, gameObject.transform.position, Quaternion.identity);
             if (++spawnCounter >= spawnCount)
             {
                 CancelInvoke("SpawnEnemy");

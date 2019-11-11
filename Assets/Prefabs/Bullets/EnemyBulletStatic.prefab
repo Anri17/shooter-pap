@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5011265821085266590}
   - component: {fileID: 5011265821085266589}
+  - component: {fileID: 1443530482533592369}
+  - component: {fileID: 2819880486245155047}
   m_Layer: 0
-  m_Name: EnemyBullet2
+  m_Name: EnemyBulletStatic
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,6 +57,53 @@ MonoBehaviour:
   transitionVelocity: 4
   homingDelay: 0
   homingRadius: 10
+--- !u!50 &1443530482533592369
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5011265821085266591}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &2819880486245155047
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5011265821085266591}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1}
+  m_EdgeRadius: 0
 --- !u!1 &5011265822202444259
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,11 +114,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5011265822202444258}
   - component: {fileID: 5011265822202444286}
-  - component: {fileID: 5011265822202444287}
   - component: {fileID: 5011265822202444256}
   - component: {fileID: 5011265822202444257}
   m_Layer: 0
-  m_Name: laserRed08
+  m_Name: LaserRedSprite
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,19 +185,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5011265822202444287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5011265822202444259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5985dbaecf4d29945a6ebe8d4a5067c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyTarget: {fileID: 5011265821085266591}
 --- !u!114 &5011265822202444256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,5 +223,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3344949, y: 0.32055762}
+  m_Size: {x: 0.33, y: 0.33}
   m_EdgeRadius: 0

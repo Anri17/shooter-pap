@@ -20,21 +20,32 @@ public class FireBullet : MonoBehaviour
     Quaternion direction;
     string targetObjectTag = "";
 
-    // Start is called before the first frame update
-    void Start()
+    // Starts when the object is in the play area
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        // get and store target object tag
-        if (targetObject != null)
+        if (collision.gameObject.tag == "PlayArea")
         {
-            if(targetObject.tag != "Untagged") // set a tag if the object is not Unragged
+            // get and store target object tag
+            if (targetObject != null)
             {
-                targetObjectTag = targetObject.tag;
-                Debug.Log(targetObjectTag);
+                if(targetObject.tag != "Untagged") // set a tag if the object is not Unragged
+                {
+                    targetObjectTag = targetObject.tag;
+                    Debug.Log(targetObjectTag);
+                }
             }
-        }
 
-        // fire the bullet
-        InvokeRepeating("Fire", 0.0f, fireRate / 100);
+            // fire the bullet
+            InvokeRepeating("Fire", 0.0f, fireRate / 100);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "PlayArea")
+        {
+            CancelInvoke();
+        }
     }
 
     Quaternion GetDirection() // define the direction of the bullet

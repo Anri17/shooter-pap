@@ -6,7 +6,7 @@ public class MoveObjectBezierFollow : MonoBehaviour
     public bool continueCoroutine = false;
 
     [SerializeField]
-    private Transform[] routes;
+    public Transform[] routes = new Transform[2];
 
     private int routeToGo;
 
