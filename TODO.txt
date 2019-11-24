@@ -1,0 +1,1 @@
+checkpoint: figure out why the bullet fire rate is not working, in the "FireBullet". The Bullets keep fireing at the same speed, no matter what value is set. Fire Limited Count also doesn't work.

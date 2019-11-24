@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyLife : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     public float health = 10.0f;
     public GameObject hitParticles;
@@ -21,7 +21,7 @@ public class EnemyLife : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log($"{collision} Hit!");
+        // Debug.Log($"{collision} Hit!");
         // identify player bullets
         if (collision.gameObject.tag == "PlayerBullet")
         {
@@ -32,12 +32,7 @@ public class EnemyLife : MonoBehaviour
             // destroy the player bullet bullet
             Destroy(collision.gameObject);
             // particles on hit
-            Instantiate(hitParticles, transform);
+            // Instantiate(hitParticles, transform);
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        
     }
 }

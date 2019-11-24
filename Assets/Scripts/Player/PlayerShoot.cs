@@ -83,10 +83,12 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             currentBarrage = Instantiate(mainBarrage, transform.position, mainBarrage.transform.rotation, transform);
+            Debug.Log("Pressing Fire Button");
         }
         if (Input.GetButtonUp("Fire1"))
         {
             Destroy(currentBarrage);
+            Debug.Log("Unpressing Fire Button");
         }
     }
 }

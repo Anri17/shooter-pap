@@ -6,7 +6,7 @@ public class DeleteOnEnter : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject + "exited the screen");
+        // Debug.Log(collision.gameObject + "exited the screen");
         Destroy(collision.gameObject);
 
     }
