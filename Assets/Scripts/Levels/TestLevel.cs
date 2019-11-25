@@ -22,8 +22,6 @@ public class TestLevel : MonoBehaviour
     {
         // TODO: LEVEL
         yield return new WaitForSeconds(5f);
-        GameObject.Find("Wave1").SetActive(true);
-        yield return new WaitForSeconds(5f);
         Debug.Log("Level 3");
     }
 

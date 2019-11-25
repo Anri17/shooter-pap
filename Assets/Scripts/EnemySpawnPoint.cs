@@ -4,40 +4,34 @@ using UnityEngine;
 
 public class EnemySpawnPoint : MonoBehaviour
 {
-    public GameObject enemyObject;
-    public float spawnRate = 100.0f;
-    public bool spawnDefinedCount = false;
-    public int spawnCount;
+    public GameObject enemy;
+    public float spawnRate = 1f;
+    public bool spawnLimitedCount = true;
+    public int spawnEnemyCount = 5;
 
-    private int spawnCounter = 0;
-    private Transform[] routes;
+    int spawnCounter = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        // TODO: Gather the routes from the child object and give it to the enemyObject Routes in it's script
-        /*
-        // give prefab the routes
-        //        movementRoutes
-        routes = transform.GetComponentsInChildren<Transform>();
-
-        enemyObject.GetComponent<MoveObjectBezierFollow>().routes = routes;
-        */
-
-        if (enemyObject != null)
-            InvokeRepeating("SpawnEnemy", 0.0f, spawnRate / 100);
+        // spawn the enemy
+        if (enemy != null)
+        {
+            InvokeRepeating("SpawnEnemy", 0.0f, spawnRate);
+        }
     }
 
     void SpawnEnemy()
     {
-        if (!spawnDefinedCount)
+        if (!spawnLimitedCount)
         {
-            Instantiate(enemyObject, gameObject.transform.position, Quaternion.identity);
+            Instantiate(enemy, gameObject.transform.position, Quaternion.identity);
         }
         else
         {
-            Instantiate(enemyObject, gameObject.transform.position, Quaternion.identity);
-            if (++spawnCounter >= spawnCount)
+            Instantiate(enemy, gameObject.transform.position, Quaternion.identity);
+            spawnCounter++;
+            if (spawnCounter >= spawnEnemyCount)
             {
                 CancelInvoke("SpawnEnemy");
             }

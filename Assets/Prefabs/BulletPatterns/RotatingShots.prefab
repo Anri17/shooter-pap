@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764035180921182807}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.57, y: 7.17, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5374813982844372770}
@@ -159,10 +159,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5011265821085266591, guid: 0720cb7424d90ce4bb717c4ef201f690, type: 3}
   target: {fileID: 6236302933530780683}
-  fireLimitedCount: 0
-  fireBulletCount: 0
-  fireRate: 10
-  aimOffset: 180
+  fireLimitedCount: 1
+  fireBulletCount: 10
+  fireRate: 0.5
+  aimOffset: 0
 --- !u!1 &5111446589467179591
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,10 +209,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5011265821085266591, guid: 0720cb7424d90ce4bb717c4ef201f690, type: 3}
   target: {fileID: 7709971507266867776}
-  fireLimitedCount: 0
-  fireBulletCount: 0
-  fireRate: 10
-  aimOffset: 135
+  fireLimitedCount: 1
+  fireBulletCount: 10
+  fireRate: 0.5
+  aimOffset: 0
 --- !u!1 &5754181124331794449
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,10 +259,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5011265821085266591, guid: 0720cb7424d90ce4bb717c4ef201f690, type: 3}
   target: {fileID: 7211004205173194459}
-  fireLimitedCount: 0
-  fireBulletCount: 0
-  fireRate: 10
-  aimOffset: 225
+  fireLimitedCount: 1
+  fireBulletCount: 10
+  fireRate: 0.5
+  aimOffset: 0
 --- !u!1 &6189236459613670541
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,10 +309,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5011265821085266591, guid: 0720cb7424d90ce4bb717c4ef201f690, type: 3}
   target: {fileID: 3960606671098515752}
-  fireLimitedCount: 0
-  fireBulletCount: 0
-  fireRate: 10
-  aimOffset: 90
+  fireLimitedCount: 1
+  fireBulletCount: 10
+  fireRate: 0.5
+  aimOffset: 0
 --- !u!1 &6236302933530780683
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,10 +419,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5011265821085266591, guid: 0720cb7424d90ce4bb717c4ef201f690, type: 3}
   target: {fileID: 6487184727359214275}
-  fireLimitedCount: 0
-  fireBulletCount: 0
-  fireRate: 10
-  aimOffset: 360
+  fireLimitedCount: 1
+  fireBulletCount: 10
+  fireRate: 0.5
+  aimOffset: 0
 --- !u!1 &7133756267687226777
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,10 +469,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5011265821085266591, guid: 0720cb7424d90ce4bb717c4ef201f690, type: 3}
   target: {fileID: 2961206304315762495}
-  fireLimitedCount: 0
-  fireBulletCount: 0
-  fireRate: 10
-  aimOffset: 315
+  fireLimitedCount: 1
+  fireBulletCount: 10
+  fireRate: 0.5
+  aimOffset: 0
 --- !u!1 &7211004205173194459
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,10 +549,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5011265821085266591, guid: 0720cb7424d90ce4bb717c4ef201f690, type: 3}
   target: {fileID: 7660806288254605772}
-  fireLimitedCount: 0
-  fireBulletCount: 0
-  fireRate: 10
-  aimOffset: 270
+  fireLimitedCount: 1
+  fireBulletCount: 10
+  fireRate: 0.5
+  aimOffset: 0
 --- !u!1 &7660806288254605772
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,7 +689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5011265821085266591, guid: 0720cb7424d90ce4bb717c4ef201f690, type: 3}
   target: {fileID: 8346919340502965291}
-  fireLimitedCount: 0
-  fireBulletCount: 0
-  fireRate: 10
-  aimOffset: 45
+  fireLimitedCount: 1
+  fireBulletCount: 10
+  fireRate: 0.5
+  aimOffset: 0

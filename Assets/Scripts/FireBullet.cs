@@ -14,16 +14,19 @@ public class FireBullet : MonoBehaviour
     int bulletsFired = 0; // how many bullets fired so far
     Quaternion direction; // the direction to aim at
 
-    void Update()
+    void Start()
     {
         // fire the bullet
-        InvokeRepeating("Fire", 0.0f, fireRate);
+        if (bullet != null)
+        {
+            InvokeRepeating("Fire", 0.0f, fireRate);
+        }
     }
 
-    // stop firing when this gameobjects exits the play area
+    // Stop firing when this gameobjects exits the play area
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("PlayArea"))
+        if (collision.tag.Equals("PlayArea"))
         {
             CancelInvoke();
         }
@@ -41,14 +44,15 @@ public class FireBullet : MonoBehaviour
     {
         direction = GetDirection();
 
-        if (!fireLimitedCount) // fire bullets forever
+        if (fireLimitedCount == false) // fire bullets forever
         {
             Instantiate(bullet, transform.position, direction);
         }
-        else // fire a determined count of bullet
+        else // fire a determined count of bullets
         {
             Instantiate(bullet, transform.position, direction);
-            if (++bulletsFired >= fireBulletCount)
+            bulletsFired++;
+            if (bulletsFired >= fireBulletCount)
             {
                 CancelInvoke("Fire");
             }

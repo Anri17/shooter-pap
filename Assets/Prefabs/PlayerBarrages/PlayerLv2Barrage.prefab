@@ -48,7 +48,7 @@ MonoBehaviour:
   target: {fileID: 947157699170235162}
   fireLimitedCount: 0
   fireBulletCount: 0
-  fireRate: 100
+  fireRate: 0.05
   aimOffset: 0
 --- !u!1 &947157699170235162
 GameObject:
@@ -158,7 +158,7 @@ MonoBehaviour:
   target: {fileID: 6207681207585887758}
   fireLimitedCount: 0
   fireBulletCount: 0
-  fireRate: 100
+  fireRate: 0.05
   aimOffset: 0
 --- !u!1 &4269775475862698753
 GameObject:
@@ -208,7 +208,7 @@ MonoBehaviour:
   target: {fileID: 1388697530572658926}
   fireLimitedCount: 0
   fireBulletCount: 0
-  fireRate: 100
+  fireRate: 0.05
   aimOffset: 0
 --- !u!1 &6207681207585887758
 GameObject:

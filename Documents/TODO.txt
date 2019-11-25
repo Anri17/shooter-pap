@@ -1,0 +1,2 @@
+- move the enemy
+- fix the play boundries
