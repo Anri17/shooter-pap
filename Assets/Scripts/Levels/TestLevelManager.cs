@@ -12,8 +12,12 @@ public class TestLevel : MonoBehaviour
         StartCoroutine(Level());
     }
         
-
     void Update()
+    {
+        MoveBackgroud();
+    }
+
+    void MoveBackgroud()
     {
         transform.position += new Vector3(0, -1f, 0) * backgroundScrollSpeed * Time.deltaTime;
     }
