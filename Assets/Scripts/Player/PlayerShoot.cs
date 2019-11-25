@@ -79,16 +79,28 @@ public class PlayerShoot : MonoBehaviour
             }
         }
 
-
+        // Fire the barrage when the button is pressed
         if (Input.GetButtonDown("Fire1"))
         {
             currentBarrage = Instantiate(mainBarrage, transform.position, mainBarrage.transform.rotation, transform);
             Debug.Log("Pressing Fire Button");
         }
+        // Destroy the barrage when the button is unpressed
         if (Input.GetButtonUp("Fire1"))
         {
             Destroy(currentBarrage);
             Debug.Log("Unpressing Fire Button");
+
+            // Destroy any left over barrages in child object if the game is alt tabed while the player is fireing and object is still there
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                if (transform.GetChild(i).tag.Equals("PlayerBullet"))
+                {
+                    Debug.Log("Found a left over fireing thing");
+                    Destroy(transform.GetChild(i).gameObject);
+                    break;
+                }
+            }
         }
     }
 }
