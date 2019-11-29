@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public float health = 10.0f;
-    public GameObject hitParticles;
 
     void Update()
     {

@@ -13,6 +13,16 @@ public class FireBullet : MonoBehaviour
 
     int bulletsFired = 0; // how many bullets fired so far
     Quaternion direction; // the direction to aim at
+    string targetTag = "";
+
+    void Awake()
+    {
+        if (target.tag.Equals("Player"))
+        {
+            targetTag = "Player";
+            target = GameObject.FindGameObjectWithTag(targetTag);
+        }
+    }
 
     void Start()
     {
@@ -35,9 +45,25 @@ public class FireBullet : MonoBehaviour
     // Get the direction of the bullet
     Quaternion GetDirection()
     {
-        Vector3 difference = target.transform.position - transform.position;
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        return Quaternion.Euler(0f, 0f, rotZ - 90 + aimOffset);
+        if (target != null) // run only if target exists
+        {
+            Vector3 difference = target.transform.position - transform.position;
+            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            return Quaternion.Euler(0f, 0f, rotZ - 90 + aimOffset);
+        }
+        else if (targetTag.Equals("Player")) // fix target if player is the target (ie when player dies, player turns null, so reasign target)
+        {
+            target = GameObject.FindGameObjectWithTag(targetTag);
+
+            if (target != null)
+            {
+                Vector3 difference = target.transform.position - transform.position;
+                float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+                return Quaternion.Euler(0f, 0f, rotZ - 90 + aimOffset);
+            }
+            return Quaternion.Euler(0f, 0f, 180 + aimOffset); // if player is not yet set, fire to player spawn point
+        }
+        return Quaternion.Euler(0f, 0f, 180 + aimOffset); // if there's no target, fire straight down
     }
 
     void Fire()
