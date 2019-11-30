@@ -22,9 +22,20 @@ public class BulletMovement : MonoBehaviour
 
     private float acceleration;
     private GameObject targetObject;
+    public float damage = 0f;
 
     void Start()
     {
+        if (gameObject.tag.Equals("PlayerBullet"))
+        {
+            damage = 1f;
+        }
+
+        if (gameObject.tag.Equals("PlayerLazer"))
+        {
+            damage = 0.8f;
+        }
+
         if (isAccelerating)
         {
             acceleration = minSpeed;

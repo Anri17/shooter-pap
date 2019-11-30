@@ -19,7 +19,7 @@ public class ItemCollector : MonoBehaviour
             Data.powerLevel += 1.00f;
             Data.score += 200;
             Destroy(collision.gameObject);
-            Debug.Log("Power Level: " + Data.powerLevel);
+            // Debug.Log("Power Level: " + Data.powerLevel);
         }
 
         if (collision.gameObject.tag == "ScoreCollectable")

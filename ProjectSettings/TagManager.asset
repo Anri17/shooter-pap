@@ -14,6 +14,7 @@ TagManager:
   - BigPowerCollectable
   - PlayArea
   - BackgroundLandscape
+  - Boss
   layers:
   - Default
   - TransparentFX

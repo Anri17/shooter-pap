@@ -22,12 +22,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Focus"))
         {
             speed = focusSpeed;
-            Debug.Log("Focus Key Down");
+            // Debug.Log("Focus Key Down");
         }
         if (Input.GetButtonUp("Focus"))
         {
             speed = normalSpeed;
-            Debug.Log("Focus Key Up");
+            // Debug.Log("Focus Key Up");
         }
 
         // get input values
