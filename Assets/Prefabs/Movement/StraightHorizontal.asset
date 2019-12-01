@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0474876b57e247a409830388ca31acce, type: 3}
-  m_Name: testStage2
+  m_Script: {fileID: 11500000, guid: 300b58db7d2c25d4b875ca7168fd70cd, type: 3}
+  m_Name: StraightHorizontal
   m_EditorClassIdentifier: 
-  health: 150
-  barrage: {fileID: 6571451126526940859, guid: da86d4719aa4f214fa56084cd76dd5e3, type: 3}
-  time: 35
+  positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}

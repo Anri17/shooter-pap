@@ -7,4 +7,5 @@ public class BossStage : ScriptableObject
 {
     public float health;
     public GameObject barrage;
+    public float time = 10f;
 }

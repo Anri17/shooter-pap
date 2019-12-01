@@ -8,20 +8,16 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        // identify the health value
         if (health <= 0)
         {
-            // destroy the enemy
-            Destroy(gameObject);
-            // add score
-            Data.score += 200;
+            Die(); // When health is equal or bellow 0, this enemy object dies (gets destroyed)
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Debug.Log($"{collision} Hit!");
-        // identify player bullets
+        // If this enemy objects gets hit by a player bullet or lazer, reduces health by that amount of damage
         if (collision.tag.Equals("PlayerBullet") || collision.tag.Equals("PlayerLazer"))
         {
             // reduce health
@@ -33,5 +29,13 @@ public class Enemy : MonoBehaviour
             // particles on hit
             // Instantiate(hitParticles, transform);
         }
+    }
+
+    void Die()
+    {
+        // destroy the enemy
+        Destroy(gameObject);
+        // add score
+        Data.score += 200;
     }
 }

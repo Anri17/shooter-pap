@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5011265821085266590}
   - component: {fileID: 5011265821085266589}
   - component: {fileID: 1443530482533592369}
-  - component: {fileID: 2819880486245155047}
+  - component: {fileID: 5035431360527022687}
   m_Layer: 0
-  m_Name: EnemyBulletStatic
+  m_Name: EnemyBulletCircle
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,6 +57,7 @@ MonoBehaviour:
   transitionVelocity: 4
   homingDelay: 0
   homingRadius: 10
+  damage: 0
 --- !u!50 &1443530482533592369
 Rigidbody2D:
   serializedVersion: 4
@@ -78,8 +79,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &2819880486245155047
-BoxCollider2D:
+--- !u!58 &5035431360527022687
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,18 +93,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1}
-  m_EdgeRadius: 0
+  m_Radius: 0.2
 --- !u!1 &5011265822202444259
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +106,6 @@ GameObject:
   - component: {fileID: 5011265822202444258}
   - component: {fileID: 5011265822202444286}
   - component: {fileID: 5011265822202444256}
-  - component: {fileID: 5011265822202444257}
   m_Layer: 0
   m_Name: LaserRedSprite
   m_TagString: EnemyBullet
@@ -198,30 +188,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 0
-  rotationSpeed: 16
---- !u!61 &5011265822202444257
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5011265822202444259}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 0.92}
-    newSize: {x: 0.96, y: 0.92}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.33, y: 0.33}
-  m_EdgeRadius: 0
+  rotationSpeed: 8
