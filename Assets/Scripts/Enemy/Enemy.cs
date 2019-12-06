@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
         if (collision.tag.Equals("PlayerBullet") || collision.tag.Equals("PlayerLazer"))
         {
             // reduce health
-            health -= collision.GetComponent<BulletMovement>().damage;
+            health -= collision.GetComponent<Bullet>().damage;
             // add score
             Data.score += 40;
             // destroy the player bullet bullet

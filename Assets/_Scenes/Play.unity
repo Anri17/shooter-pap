@@ -951,7 +951,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ad2c37df23fb80847be737fe3342fc2d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0bcf999e6c0d53d408b56c8c2f93be86, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.05
   m_Pitch: 1
@@ -2217,7 +2217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 0.94418865
+  m_AspectRatio: 1.0144279
 --- !u!1 &1848719447
 GameObject:
   m_ObjectHideFlags: 0

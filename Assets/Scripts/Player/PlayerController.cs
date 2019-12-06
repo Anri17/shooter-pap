@@ -31,22 +31,29 @@ public class PlayerController : MonoBehaviour
             speed = normalSpeed;
             // Debug.Log("Focus Key Up");
         }
+
         // get input values
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        // Evaluate direction velocity acording to diagonal movement
-        if (horizontal != 0 && vertical != 0 && enableThis)
+        // get direction 
+        if (Input.GetButton("Horizontal") && Input.GetButton("Vertical"))
         {
-            // TODO: fix negative values not enabeling movement to the left
-            direction = new Vector3(Mathf.Cos(horizontal), Mathf.Sin(vertical), 0.0f);
+            if (horizontal > 0)
+            {
+                direction = new Vector3(Mathf.Cos(horizontal), Mathf.Sin(vertical), 0.0f);
+            }
+            if (horizontal < 0)
+            {
+                direction = new Vector3(-Mathf.Cos(horizontal), Mathf.Sin(vertical), 0.0f);
+            }
         }
         else
         {
             direction = new Vector3(horizontal, vertical, 0.0f);
         }
 
-
+        // move the player to the direction defined
         transform.position += direction * speed * Time.deltaTime;
     }
 }

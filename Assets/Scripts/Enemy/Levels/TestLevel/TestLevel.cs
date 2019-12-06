@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TestLevel : MonoBehaviour
 {
@@ -17,12 +18,14 @@ public class TestLevel : MonoBehaviour
         
     void Update()
     {
-        MoveBackgroud();
-    }
-
-    void MoveBackgroud()
-    {
+        // Move Background
         transform.position += new Vector3(0, -1f, 0) * backgroundImageScrollSpeed * Time.deltaTime;
+
+        // God to main Menu
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     IEnumerator Level()
@@ -40,5 +43,4 @@ public class TestLevel : MonoBehaviour
         yield return new WaitForSeconds(5f);
         Debug.Log("Boss");
     }
-
 }
