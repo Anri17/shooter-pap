@@ -6,10 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     public float normalSpeed = 16.0f;
     public float focusSpeed = 8.0f;
-    float speed = 1.0f;
+    public bool enableThis = true;
 
+    float speed = 1.0f;
 	float horizontal;
 	float vertical;
+    Vector3 direction;
 
     void Awake()
     {
@@ -29,19 +31,22 @@ public class PlayerController : MonoBehaviour
             speed = normalSpeed;
             // Debug.Log("Focus Key Up");
         }
-
         // get input values
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        // get direction of movement
-        Vector3 direction = new Vector3(horizontal, vertical, 0.0f);
+        // Evaluate direction velocity acording to diagonal movement
+        if (horizontal != 0 && vertical != 0 && enableThis)
+        {
+            // TODO: fix negative values not enabeling movement to the left
+            direction = new Vector3(Mathf.Cos(horizontal), Mathf.Sin(vertical), 0.0f);
+        }
+        else
+        {
+            direction = new Vector3(horizontal, vertical, 0.0f);
+        }
 
-        // move the player position
+
         transform.position += direction * speed * Time.deltaTime;
-        
-        // debug logs
-        // Debug.Log($"Player is at position: x{horizontal}, y{vertical}\n" +
-        //           $"Looking at: {direction}");
     }
 }
