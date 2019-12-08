@@ -10,9 +10,17 @@ public class TestLevel : MonoBehaviour
     public GameObject[] waves;
     public Boss boss;
 
+    void Awake()
+    {
+        foreach (GameObject wave in waves)
+        {
+            wave.SetActive(false);
+        }
+    }
+
     void Start()
     {
-        Debug.Log("Level Start");
+        
         StartCoroutine(Level());
     }
         
@@ -30,17 +38,13 @@ public class TestLevel : MonoBehaviour
 
     IEnumerator Level()
     {
-        yield return new WaitForSeconds(5f);
+        Debug.Log("Level Start");
+        yield return new WaitForSeconds(5.5f);
         Debug.Log("Wave 1");
-        yield return new WaitForSeconds(5f);
+        waves[0].SetActive(true);
+        yield return new WaitForSeconds(10f);
         Debug.Log("Wave 2");
-        yield return new WaitForSeconds(5f);
-        Debug.Log("Wave 3");
-        yield return new WaitForSeconds(5f);
-        Debug.Log("Wave 4");
-        yield return new WaitForSeconds(5f);
-        Debug.Log("Wave 5");
-        yield return new WaitForSeconds(5f);
+        waves[1].SetActive(true);
         Debug.Log("Boss");
     }
 }

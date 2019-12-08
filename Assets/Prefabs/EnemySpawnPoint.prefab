@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  spawnRate: 20
+  spawnRate: 1
   spawnLimitedCount: 1
   spawnEnemyCount: 5
