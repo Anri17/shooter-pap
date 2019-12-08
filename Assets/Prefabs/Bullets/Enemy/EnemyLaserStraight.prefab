@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3419550423202919665}
   - component: {fileID: 4019418150373853216}
   m_Layer: 0
-  m_Name: EnemyLaserStatic
+  m_Name: EnemyLaserStraight
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,7 @@ SpriteRenderer:
   m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d908802d9a0aedb4ea51749842ed7ee5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.513772, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

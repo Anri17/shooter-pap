@@ -2217,7 +2217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 1.0132194
+  m_AspectRatio: 1.0144279
 --- !u!1 &1848719447
 GameObject:
   m_ObjectHideFlags: 0
@@ -2451,6 +2451,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemySpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844996853644984191, guid: bff39d5efca0edb41a7767848f05f995,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1469124613219888306, guid: bff39d5efca0edb41a7767848f05f995,
         type: 3}
