@@ -10,7 +10,7 @@ public class MenuNavigator : MonoBehaviour
     public GameObject TutorialScreen;
     public GameObject OptionsScreen;
 
-    private void Start()
+    private void Awake()
     {
         MainMenuScreen.SetActive(true);
         PlayScreen.SetActive(false);
@@ -29,6 +29,7 @@ public class MenuNavigator : MonoBehaviour
     public void DisplayPlayScreen()
     {
         SceneManager.LoadScene("Play");
+        Data.SetData(0, 0.0f, 3);
         /*
         MainMenuScreen.SetActive(false);
         PlayScreen.SetActive(true);

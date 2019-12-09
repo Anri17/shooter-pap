@@ -10,11 +10,14 @@ public class TestLevel : MonoBehaviour
     public GameObject[] waves;
     public Boss boss;
 
+    public GameObject pauseMenu;
+
     void Awake()
     {
         foreach (GameObject wave in waves)
         {
             wave.SetActive(false);
+            pauseMenu.SetActive(false);
         }
     }
 
@@ -29,10 +32,20 @@ public class TestLevel : MonoBehaviour
         // Move Background
         transform.position += new Vector3(0, -1f, 0) * backgroundImageScrollSpeed * Time.deltaTime;
 
-        // God to main Menu
-        if (Input.GetKey(KeyCode.Escape))
+        // Go to main Menu
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene(0);
+            // SceneManager.LoadScene(0);
+            if (pauseMenu.active)
+            {
+                Time.timeScale = 1;
+                pauseMenu.SetActive(false);
+            }
+            else
+            {
+                Time.timeScale = 0;
+                pauseMenu.SetActive(true);
+            }
         }
     }
 
