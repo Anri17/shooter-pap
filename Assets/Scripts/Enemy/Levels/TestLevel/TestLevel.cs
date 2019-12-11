@@ -55,7 +55,7 @@ public class TestLevel : MonoBehaviour
         yield return new WaitForSeconds(5.5f);
         Debug.Log("Wave 1");
         waves[0].SetActive(true);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(11f);
         Debug.Log("Wave 2");
         waves[1].SetActive(true);
         Debug.Log("Boss");

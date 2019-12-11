@@ -8,25 +8,25 @@ public class ItemCollector : MonoBehaviour
     {
         if (collision.gameObject.tag == "PowerCollectable")
         {
-            Data.powerLevel += 0.05f;
-            Data.score += 150;
+            GameManager.Instance.powerLevel += 0.05f;
+            GameManager.Instance.score += 150;
             Destroy(collision.gameObject);
-            Debug.Log("Power Level: " + Data.powerLevel);
+            Debug.Log("Power Level: " + GameManager.Instance.powerLevel);
         }
 
         if (collision.gameObject.tag == "BigPowerCollectable")
         {
-            Data.powerLevel += 1.00f;
-            Data.score += 200;
+            GameManager.Instance.powerLevel += 1.00f;
+            GameManager.Instance.score += 200;
             Destroy(collision.gameObject);
             // Debug.Log("Power Level: " + Data.powerLevel);
         }
 
         if (collision.gameObject.tag == "ScoreCollectable")
         {
-            Data.score += 500;
+            GameManager.Instance.score += 500;
             Destroy(collision.gameObject);
-            Debug.Log("Score: " + Data.score);
+            Debug.Log("Score: " + GameManager.Instance.score);
         }
     }
 }

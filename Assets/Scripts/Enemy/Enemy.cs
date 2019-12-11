@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
             // reduce health
             health -= collision.GetComponent<Bullet>().damage;
             // add score
-            Data.score += 40;
+            GameManager.Instance.score += 40;
             // destroy the player bullet bullet
             Destroy(collision.gameObject);
             // particles on hit
@@ -36,6 +36,6 @@ public class Enemy : MonoBehaviour
         // destroy the enemy
         Destroy(gameObject);
         // add score
-        Data.score += 200;
+        GameManager.Instance.score += 200;
     }
 }

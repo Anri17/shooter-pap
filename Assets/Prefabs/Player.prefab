@@ -83,7 +83,6 @@ GameObject:
   - component: {fileID: 4037159831597851513}
   - component: {fileID: 2011406762}
   - component: {fileID: 1288192825947611432}
-  - component: {fileID: 4037159831597851515}
   - component: {fileID: 4037159831597851512}
   - component: {fileID: 750829524374406621}
   m_Layer: 0
@@ -203,26 +202,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1441602, y: 1.8298738}
   m_EdgeRadius: 0
---- !u!114 &4037159831597851515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4037159831597851511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8a729a1322e2404590d4453502b1d7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barrageLv1: {fileID: 7330251143779989804, guid: 27fd3a2edbc8b8847b0eb8ec0e554be8,
-    type: 3}
-  barrageLv2: {fileID: 7330251143779989804, guid: 27fd3a2edbc8b8847b0eb8ec0e554be8,
-    type: 3}
-  barrageLv3: {fileID: 7330251143779989804, guid: 27fd3a2edbc8b8847b0eb8ec0e554be8,
-    type: 3}
-  barrageLv4: {fileID: 7330251143779989804, guid: 27fd3a2edbc8b8847b0eb8ec0e554be8,
-    type: 3}
 --- !u!114 &4037159831597851512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +216,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalSpeed: 12
   focusSpeed: 4
-  enableThis: 1
+  enableThis: 0
+  barrages:
+  - {fileID: 7330251143779989804, guid: 27fd3a2edbc8b8847b0eb8ec0e554be8, type: 3}
+  - {fileID: 7330251143779989804, guid: 27fd3a2edbc8b8847b0eb8ec0e554be8, type: 3}
+  - {fileID: 7330251143779989804, guid: 27fd3a2edbc8b8847b0eb8ec0e554be8, type: 3}
+  - {fileID: 7330251143779989804, guid: 27fd3a2edbc8b8847b0eb8ec0e554be8, type: 3}
 --- !u!114 &750829524374406621
 MonoBehaviour:
   m_ObjectHideFlags: 0

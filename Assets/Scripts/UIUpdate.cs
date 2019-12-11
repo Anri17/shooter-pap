@@ -12,10 +12,10 @@ public class UIUpdate : MonoBehaviour
     void Update()
     {
         // Update Score
-        scoreNumber.GetComponent<Text>().text = Data.score.ToString("000,000,000");
+        scoreNumber.GetComponent<Text>().text = GameManager.Instance.score.ToString("000,000,000,000");
         // Update Power Level
-        powerLevelNumber.GetComponent<Text>().text = Data.powerLevel.ToString("0.##");
+        powerLevelNumber.GetComponent<Text>().text = GameManager.Instance.powerLevel.ToString("0.##");
         // Update Lives
-        livesNumber.GetComponent<Text>().text = Data.lives.ToString("#");
+        livesNumber.GetComponent<Text>().text = GameManager.Instance.lives.ToString("#");
     }
 }

@@ -15,7 +15,7 @@ public class PlayerLife : MonoBehaviour
             // destroy the player
             Destroy(collision.gameObject);
             Destroy(playerMain);
-            --Data.lives;
+            --GameManager.Instance.lives;
             // TODO: drop power items
 
             // TODO: display death particles
@@ -23,7 +23,7 @@ public class PlayerLife : MonoBehaviour
         if (collision.gameObject.tag.Equals("Enemy"))
         {
             Destroy(playerMain);
-            --Data.lives;
+            --GameManager.Instance.lives;
             // TODO: drop power items
 
             // TODO: display death particles
@@ -31,7 +31,7 @@ public class PlayerLife : MonoBehaviour
         if (collision.gameObject.tag.Equals("Boss"))
         {
             Destroy(playerMain);
-            --Data.lives;
+            --GameManager.Instance.lives;
             // TODO: drop power items
 
             // TODO: display death particles

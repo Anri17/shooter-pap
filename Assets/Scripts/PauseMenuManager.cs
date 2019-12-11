@@ -17,7 +17,7 @@ public class PauseMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
         Time.timeScale = 1;
-        Data.SetData(0, 0.0f, 3);
+        GameManager.Instance.ResetData();
     }
 
     public void ResumeGame()

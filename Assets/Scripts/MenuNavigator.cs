@@ -29,7 +29,7 @@ public class MenuNavigator : MonoBehaviour
     public void DisplayPlayScreen()
     {
         SceneManager.LoadScene("Play");
-        Data.SetData(0, 0.0f, 3);
+        GameManager.Instance.SetData(0, 0.0f, 3);
         /*
         MainMenuScreen.SetActive(false);
         PlayScreen.SetActive(true);
