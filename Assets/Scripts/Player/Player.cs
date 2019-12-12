@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float normalSpeed = 16.0f;
-    public float focusSpeed = 8.0f;
-    public bool enableThis = true;
+    public float normalSpeed = 8.0f;
+    public float focusSpeed = 4.0f;
 
     public GameObject[] barrages;
 
