@@ -5,19 +5,20 @@ using UnityEngine;
 public class PlayMenuHandler : MonoBehaviour
 {
     public GameObject player;
-    public GameObject testBoss;
+    public GameObject boss;
     public GameObject powerItem;
     public GameObject bigPowerItem;
     public GameObject scoreItem;
 
     GameObject spawnedBoss;
+    GameObject spawnedPlayer;
 
-    public void RespawnPlayer()
+    public void SpawnPlayer()
     {
         // detect if a player already exists in the play area
-        if (GameObject.FindGameObjectWithTag("Player") != null)
+        if (spawnedPlayer != null)
         {
-            Destroy(GameObject.FindGameObjectWithTag("Player"));
+            Destroy(spawnedPlayer);
         }
         // spawn player
         Instantiate(player, new Vector3(-2.21f, -6.56f, 0.0f), player.transform.rotation);
@@ -32,12 +33,12 @@ public class PlayMenuHandler : MonoBehaviour
     {
         if (spawnedBoss == null)
         {
-            spawnedBoss = Instantiate(testBoss, new Vector3(-2.56f, 5.51f, 0), testBoss.transform.rotation);
+            spawnedBoss = Instantiate(boss, new Vector3(-2.56f, 5.51f, 0), boss.transform.rotation);
         }
         else
         {
             Destroy(spawnedBoss);
-            spawnedBoss = Instantiate(testBoss, new Vector3(-2.56f, 5.51f, 0), testBoss.transform.rotation);
+            spawnedBoss = Instantiate(boss, new Vector3(-2.56f, 5.51f, 0), boss.transform.rotation);
         }
     }
 
