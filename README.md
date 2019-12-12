@@ -1,5 +1,5 @@
-# project-shooter-pap
-This project is a game for my school project.
+# Azur Project (codename: shooter-pap)
 
-# Unity Version (taken from ProjectSettings/ProjectVersion.txt)
-m_EditorVersion: 2018.3.6f1
+This is a game for my school project.
+
+# Unity Version 2019.2.15f1
