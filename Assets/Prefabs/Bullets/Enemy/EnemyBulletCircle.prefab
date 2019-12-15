@@ -150,6 +150,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -162,7 +163,7 @@ SpriteRenderer:
   m_SortingLayerID: -133031775
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a30f6f1ae1fab2b4f9b68b2336557464, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fded72702025454b82c6a699fade403, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

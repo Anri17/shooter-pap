@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float health = 10.0f;
+    public int scoreToAdd = 200;
 
     void Update()
     {
@@ -36,6 +37,6 @@ public class Enemy : MonoBehaviour
         // destroy the enemy
         Destroy(gameObject);
         // add score
-        GameManager.Instance.score += 200;
+        GameManager.Instance.score += scoreToAdd;
     }
 }

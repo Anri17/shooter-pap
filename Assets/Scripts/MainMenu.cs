@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuNavigator : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
     public GameObject MainMenuScreen;
     public GameObject PlayScreen;
     public GameObject TutorialScreen;
     public GameObject OptionsScreen;
+    public AudioClip menuMusicTheme;
 
     private void Awake()
     {
@@ -16,6 +17,12 @@ public class MenuNavigator : MonoBehaviour
         PlayScreen.SetActive(false);
         TutorialScreen.SetActive(false);
         OptionsScreen.SetActive(false);
+    }
+
+    private void Start()
+    {
+        GameManager.Instance.ResetData();
+        MusicPlayer.Instance.PlayMusic(menuMusicTheme);
     }
 
     public void DisplayMainMenuScreen()
@@ -28,14 +35,10 @@ public class MenuNavigator : MonoBehaviour
 
     public void DisplayPlayScreen()
     {
-        SceneManager.LoadScene("Play");
-        GameManager.Instance.SetData(0, 0.0f, 3);
-        /*
         MainMenuScreen.SetActive(false);
         PlayScreen.SetActive(true);
         TutorialScreen.SetActive(false);
         OptionsScreen.SetActive(false);
-        */
     }
 
     public void DisplayTutorialScreen()
@@ -56,5 +59,10 @@ public class MenuNavigator : MonoBehaviour
     public void ExitApplication()
     {
         Application.Quit();
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Play");
     }
 }

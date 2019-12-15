@@ -1,44 +1,45 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public float normalSpeed = 8.0f;
     public float focusSpeed = 4.0f;
-
     public GameObject[] barrages;
+    public float powerLevel;
+    public int lives;
 
-    GameObject currentBarrage;
-    GameObject mainBarrage;
-
-    float speed = 1.0f;
+    Vector3 spawnPoint;
 	float horizontal;
 	float vertical;
+    float speed;
+    GameObject currentBarrage;
+    GameObject mainBarrage;
     Vector3 direction;
 
     void Awake()
     {
         speed = normalSpeed;
+        powerLevel = 0.0f;
+        lives = 3;
+        spawnPoint = new Vector3(-3.44f, -6.76f, 0);
     }
 
     void Update()
     {
-        // get movement speed
+        // get input values
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
+        
+        // get speed value
         if (Input.GetButtonDown("Focus"))
         {
             speed = focusSpeed;
-            // Debug.Log("Focus Key Down");
         }
         if (Input.GetButtonUp("Focus"))
         {
             speed = normalSpeed;
-            // Debug.Log("Focus Key Up");
         }
-
-        // get input values
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
 
         // get direction 
         if (Input.GetButton("Horizontal") && Input.GetButton("Vertical"))
@@ -57,12 +58,11 @@ public class Player : MonoBehaviour
             direction = new Vector3(horizontal, vertical, 0.0f);
         }
 
-        // move the player to the direction defined
+        // move the player
         transform.position += direction * speed * Time.deltaTime;
 
-
         // shoot barrage
-        if (GameManager.Instance.powerLevel >= 0.0f && GameManager.Instance.powerLevel < 1.0f)      // Level 1 Barrage
+        if (powerLevel >= 0.0f && powerLevel < 1.0f)      // Level 1 Barrage
         {
             // update barrage if firing
             if (mainBarrage != barrages[0] && Input.GetButton("Fire1"))
@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
                 mainBarrage = barrages[0];
             }
         }
-        else if (GameManager.Instance.powerLevel >= 1.0f && GameManager.Instance.powerLevel < 2.0f) // Level 2 Barrage
+        else if (powerLevel >= 1.0f && powerLevel < 2.0f) // Level 2 Barrage
         {
             // update barrage if firing
             if (mainBarrage != barrages[1] && Input.GetButton("Fire1"))
@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
                 mainBarrage = barrages[1];
             }
         }
-        else if (GameManager.Instance.powerLevel >= 2.0f && GameManager.Instance.powerLevel < 3.0f) // Level 3 Barrage
+        else if (powerLevel >= 2.0f && powerLevel < 3.0f) // Level 3 Barrage
         {
             // update barrage if firing
             if (mainBarrage != barrages[2] && Input.GetButton("Fire1"))
@@ -127,7 +127,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        // Fire the barrage when the button is pressed
+        // Fire barrage when the button is pressed
         if (Input.GetButtonDown("Fire1"))
         {
             currentBarrage = Instantiate(mainBarrage, transform.position, mainBarrage.transform.rotation, transform);
@@ -144,11 +144,60 @@ public class Player : MonoBehaviour
             {
                 if (transform.GetChild(i).tag.Equals("PlayerBullet"))
                 {
-                    Debug.Log("Found a left over fireing thing");
+                    // Debug.Log("Found a left over fireing thing");
                     Destroy(transform.GetChild(i).gameObject);
                     break;
                 }
             }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "PowerCollectable")
+        {
+            powerLevel += 0.05f;
+            GameManager.Instance.score += 150;
+            Destroy(collision.gameObject);
+            Debug.Log("Power Level: " + powerLevel);
+        }
+
+        if (collision.gameObject.tag == "BigPowerCollectable")
+        {
+            powerLevel += 1.00f;
+            GameManager.Instance.score += 200;
+            Destroy(collision.gameObject);
+            // Debug.Log("Power Level: " + Data.powerLevel);
+        }
+
+        if (collision.gameObject.tag == "ScoreCollectable")
+        {
+            GameManager.Instance.score += 500;
+            Destroy(collision.gameObject);
+            Debug.Log("Score: " + GameManager.Instance.score);
+        }
+    }
+
+    public void Respawn()
+    {
+        transform.position = spawnPoint;
+    }
+
+    public void Reset()
+    {
+        powerLevel = 0.0f;
+        lives = 3;
+    }
+
+    public override string ToString()
+    {
+        return powerLevel + "";
+    }
+
+    public void Die()
+    {
+        Debug.Log("Player died");
+        lives--;
+        Respawn();
     }
 }

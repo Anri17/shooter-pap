@@ -5,25 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class TestLevel : MonoBehaviour
 {
-    public GameObject backgroundImage;
     public float backgroundImageScrollSpeed = 1.0f;
-    public GameObject[] waves;
-
+    public GameObject backgroundImage;
     public GameObject pauseMenu;
-
     public GameObject player;
     public GameObject playerSpawnPoint;
-    public GameObject boss;
     public GameObject powerItem;
     public GameObject bigPowerItem;
     public GameObject scoreItem;
+    public GameObject boss;
+    public AudioClip stageMusicTheme;
+    public AudioClip bossMusicTheme;
+    public GameObject[] waves;
 
+    Player playerScript;
     GameObject spawnedBoss;
     GameObject spawnedPlayer;
     bool isPlayerDead = true;
 
     void Awake()
     {
+        playerScript = player.GetComponent<Player>();
         foreach (GameObject wave in waves)
         {
             wave.SetActive(false);
@@ -33,6 +35,7 @@ public class TestLevel : MonoBehaviour
 
     void Start()
     {
+        MusicPlayer.Instance.PlayMusic(stageMusicTheme);
         SpawnPlayer(playerSpawnPoint.transform);
         StartCoroutine(Level());
     }
@@ -50,7 +53,7 @@ public class TestLevel : MonoBehaviour
 
         if (spawnedPlayer == null)
         {
-            if (GameManager.Instance.lives >= 0)
+            if (player.GetComponent<Player>().lives >= 0)
             {
                 SpawnPlayer(playerSpawnPoint.transform);
             }
@@ -138,5 +141,6 @@ public class TestLevel : MonoBehaviour
         yield return new WaitForSeconds(11f);
         Debug.Log("Boss");
         SpawnTestBoss();
+        MusicPlayer.Instance.PlayMusic(bossMusicTheme);
     }
 }
