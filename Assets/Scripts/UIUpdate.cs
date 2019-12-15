@@ -10,7 +10,7 @@ public class UIUpdate : MonoBehaviour
     public GameObject scoreNumber;
     public GameObject livesNumber;
 
-    TestLevel levelManagerScript;
+    Level levelManagerScript;
     Player playerScript;
 
     void Start()

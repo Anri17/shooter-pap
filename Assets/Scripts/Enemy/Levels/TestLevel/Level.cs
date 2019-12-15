@@ -1,9 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class TestLevel : MonoBehaviour
+public class Level : MonoBehaviour
 {
     public float backgroundImageScrollSpeed = 1.0f;
     public GameObject backgroundImage;
@@ -37,13 +35,13 @@ public class TestLevel : MonoBehaviour
     {
         MusicPlayer.Instance.PlayMusic(stageMusicTheme);
         SpawnPlayer(playerSpawnPoint.transform);
-        StartCoroutine(Level());
+        StartCoroutine(PlayLevel());
     }
         
     void Update()
     {
         // Move Background
-        transform.position += new Vector3(0, -1f, 0) * backgroundImageScrollSpeed * Time.deltaTime;
+        backgroundImage.transform.position += new Vector3(0, -1f, 0) * backgroundImageScrollSpeed * Time.deltaTime;
 
         // Go to main Menu
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -129,7 +127,7 @@ public class TestLevel : MonoBehaviour
         }
     }
 
-    IEnumerator Level()
+    IEnumerator PlayLevel()
     {
         Debug.Log("Level Start");
         yield return new WaitForSeconds(5.5f);

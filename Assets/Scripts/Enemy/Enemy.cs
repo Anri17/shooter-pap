@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float health = 10.0f;
-    public int scoreToAdd = 200;
+    [SerializeField] float health = 10.0f;
+    [SerializeField] int scoreToAdd = 200;
 
     void Update()
     {
         if (health <= 0)
         {
-            Die(); // When health is equal or bellow 0, this enemy object dies (gets destroyed)
+            Die();
         }
     }
 
@@ -34,9 +34,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        // destroy the enemy
         Destroy(gameObject);
-        // add score
         GameManager.Instance.score += scoreToAdd;
     }
 }
