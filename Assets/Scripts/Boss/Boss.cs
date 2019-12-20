@@ -20,9 +20,7 @@ public class Boss : MonoBehaviour
     {
         if (collision.tag.Equals("PlayerBullet") || collision.tag.Equals("PlayerLazer"))
         {
-            // add score
             GameManager.Instance.score += 80;
-            Debug.Log("BOSS HIT");
             currentHealth -= collision.GetComponent<Bullet>().damage;
             Destroy(collision.gameObject);
             if (currentHealth <= 0)

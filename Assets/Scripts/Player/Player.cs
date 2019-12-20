@@ -180,6 +180,7 @@ public class Player : MonoBehaviour
 
     public void Respawn()
     {
+        Level.ClearBullets();
         transform.position = spawnPoint;
         gameObject.SetActive(true);
         if (Input.GetButton("Fire1"))

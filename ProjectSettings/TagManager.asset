@@ -15,6 +15,7 @@ TagManager:
   - PlayArea
   - BackgroundLandscape
   - Boss
+  - GameplayBoundry
   layers:
   - Default
   - TransparentFX

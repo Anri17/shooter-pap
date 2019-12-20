@@ -23,7 +23,6 @@ public class Level : MonoBehaviour
 
     void Awake()
     {
-        playerScript = player.GetComponent<Player>();
         foreach (GameObject wave in waves)
         {
             wave.SetActive(false);
@@ -35,6 +34,7 @@ public class Level : MonoBehaviour
     {
         MusicPlayer.Instance.PlayMusic(stageMusicTheme);
         SpawnPlayer(playerSpawnPoint.transform);
+        playerScript = spawnedPlayer.GetComponent<Player>();
         StartCoroutine(PlayLevel());
     }
         
@@ -49,9 +49,10 @@ public class Level : MonoBehaviour
             TogglePauseGame();
         }
 
+        /*
         if (spawnedPlayer == null)
         {
-            if (player.GetComponent<Player>().lives >= 0)
+            if (playerScript.lives >= 0)
             {
                 SpawnPlayer(playerSpawnPoint.transform);
             }
@@ -60,20 +61,18 @@ public class Level : MonoBehaviour
                 Debug.Log("Game Over!");
             }
         }
+        */
     }
 
     public void SpawnPlayer(Transform position)
     {
-        ClearBullets();
-        // detect if a player already exists in the play area
         if (spawnedPlayer == null)
         {
             spawnedPlayer = Instantiate(player, position);
         }
         else
         {
-            Destroy(spawnedPlayer);
-            spawnedPlayer = Instantiate(player, position);
+            playerScript.Respawn();
         }
     }
 
@@ -81,12 +80,12 @@ public class Level : MonoBehaviour
     {
         if (spawnedBoss == null)
         {
-            spawnedBoss = Instantiate(boss, new Vector3(-2.56f, 5.51f, 0), boss.transform.rotation);
+            spawnedBoss = Instantiate(boss, new Vector3(-4.037f, 5.51f, 0), boss.transform.rotation);
         }
         else
         {
             Destroy(spawnedBoss);
-            spawnedBoss = Instantiate(boss, new Vector3(-2.56f, 5.51f, 0), boss.transform.rotation);
+            spawnedBoss = Instantiate(boss, new Vector3(-4.037f, 5.51f, 0), boss.transform.rotation);
         }
     }
 
@@ -105,9 +104,17 @@ public class Level : MonoBehaviour
         Instantiate(scoreItem, new Vector3(-2.56f, 5.51f, 0), scoreItem.transform.rotation);
     }
 
-    public void ClearBullets()
+    public static void ClearBullets()
     {
         foreach (GameObject item in GameObject.FindGameObjectsWithTag("EnemyBullet"))
+        {
+            Destroy(item);
+        }
+    }
+
+    public static void ClearEnemies()
+    {
+        foreach (GameObject item in GameObject.FindGameObjectsWithTag("Enemy"))
         {
             Destroy(item);
         }
@@ -130,17 +137,21 @@ public class Level : MonoBehaviour
     IEnumerator PlayLevel()
     {
         Debug.Log("Level Start");
-        yield return new WaitForSeconds(5.5f);
+        yield return new WaitForSeconds(5f);
         Debug.Log("Wave 1");
         waves[0].SetActive(true);
-        yield return new WaitForSeconds(11f);
+        yield return new WaitForSeconds(5f);
         Debug.Log("Wave 2");
         waves[1].SetActive(true);
-        yield return new WaitForSeconds(11f);
+        yield return new WaitForSeconds(5f);
         Debug.Log("Wave 3");
         waves[2].SetActive(true);
-        yield return new WaitForSeconds(11f);
-        Debug.Log("Boss");
+        yield return new WaitForSeconds(10f);
+        Debug.Log("Wait Time Before Boss");
+        ClearEnemies();
+        ClearBullets();
+        yield return new WaitForSeconds(1f);
+        Debug.Log("Mid Boss");
         SpawnTestBoss();
         MusicPlayer.Instance.PlayMusic(bossMusicTheme);
     }
