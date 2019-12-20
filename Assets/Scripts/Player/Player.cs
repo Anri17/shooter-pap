@@ -181,6 +181,11 @@ public class Player : MonoBehaviour
     public void Respawn()
     {
         transform.position = spawnPoint;
+        gameObject.SetActive(true);
+        if (Input.GetButton("Fire1"))
+        {
+            currentBarrage = Instantiate(mainBarrage, transform.position, mainBarrage.transform.rotation, transform);
+        }
     }
 
     public void Reset()
@@ -189,15 +194,15 @@ public class Player : MonoBehaviour
         lives = 3;
     }
 
-    public override string ToString()
-    {
-        return powerLevel + "";
-    }
-
     public void Die()
     {
         Debug.Log("Player died");
         lives--;
-        Respawn();
+        gameObject.SetActive(false);
+        Destroy(currentBarrage);
+        if (lives >= 0)
+        {
+            Respawn();
+        }
     }
 }

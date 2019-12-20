@@ -143,8 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c09b4e3e500f244b83c9589cdb574cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 2
   scoreToAdd: 200
+  shot: {fileID: 0}
 --- !u!114 &2991862405579948886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,5 +158,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 300b58db7d2c25d4b875ca7168fd70cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  direction: {x: 0, y: -1, z: 0}
+  path: {fileID: 0}
+  moveSpeed: 2

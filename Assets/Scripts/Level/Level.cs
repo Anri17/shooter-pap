@@ -137,6 +137,9 @@ public class Level : MonoBehaviour
         Debug.Log("Wave 2");
         waves[1].SetActive(true);
         yield return new WaitForSeconds(11f);
+        Debug.Log("Wave 3");
+        waves[2].SetActive(true);
+        yield return new WaitForSeconds(11f);
         Debug.Log("Boss");
         SpawnTestBoss();
         MusicPlayer.Instance.PlayMusic(bossMusicTheme);

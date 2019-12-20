@@ -22,7 +22,6 @@ public class UIUpdate : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(playerScript.ToString());
         // Update Score
         scoreNumber.GetComponent<Text>().text = GameManager.Instance.score.ToString("000,000,000,000");
         // Update Power Level

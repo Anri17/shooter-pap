@@ -6,6 +6,9 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] float health = 10.0f;
     [SerializeField] int scoreToAdd = 200;
+    [SerializeField] GameObject shot = null;
+    GameObject spawnedShot;
+    bool barrageIsSpawned = false;
 
     void Update()
     {
@@ -15,20 +18,26 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        // Debug.Log($"{collision} Hit!");
-        // If this enemy objects gets hit by a player bullet or lazer, reduces health by that amount of damage
         if (collision.tag.Equals("PlayerBullet") || collision.tag.Equals("PlayerLazer"))
         {
-            // reduce health
             health -= collision.GetComponent<Bullet>().damage;
-            // add score
             GameManager.Instance.score += 40;
-            // destroy the player bullet bullet
             Destroy(collision.gameObject);
-            // particles on hit
-            // Instantiate(hitParticles, transform);
+        }
+
+        if (!barrageIsSpawned && collision.tag.Equals("PlayArea") && shot != null)
+        {
+            spawnedShot = Instantiate(shot, gameObject.transform);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag.Equals("PlayArea") && spawnedShot != null)
+        {
+            Destroy(spawnedShot);
         }
     }
 

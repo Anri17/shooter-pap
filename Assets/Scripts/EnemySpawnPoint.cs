@@ -8,7 +8,10 @@ public class EnemySpawnPoint : MonoBehaviour
     public float spawnRate = 1f;
     public bool spawnLimitedCount = true;
     public int spawnEnemyCount = 5;
+    public GameObject path;
+    public float movementSpeed = 4f;
 
+    GameObject spawnedEnemy;
     int spawnCounter = 0;
 
     // Start is called before the first frame update
@@ -25,11 +28,15 @@ public class EnemySpawnPoint : MonoBehaviour
     {
         if (!spawnLimitedCount)
         {
-            Instantiate(enemy, gameObject.transform.position, Quaternion.identity);
+            spawnedEnemy = Instantiate(enemy, gameObject.transform.position, Quaternion.identity) as GameObject;
+            spawnedEnemy.GetComponent<EnemyMovement>().path = path;
+            spawnedEnemy.GetComponent<EnemyMovement>().moveSpeed = movementSpeed;
         }
         else
         {
-            Instantiate(enemy, gameObject.transform.position, Quaternion.identity);
+            spawnedEnemy = Instantiate(enemy, gameObject.transform.position, Quaternion.identity) as GameObject;
+            spawnedEnemy.GetComponent<EnemyMovement>().path = path;
+            spawnedEnemy.GetComponent<EnemyMovement>().moveSpeed = movementSpeed;
             spawnCounter++;
             if (spawnCounter >= spawnEnemyCount)
             {
