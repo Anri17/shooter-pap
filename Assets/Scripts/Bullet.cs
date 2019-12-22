@@ -1,25 +1,29 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
 public class Bullet : MonoBehaviour
 {
+    [Header("Type of bullet")]
     public bool isStatic = true;
-    public bool isHoming = false;
     public bool isAccelerating = false;
     public bool isDecelerating = false;
+    // public bool isHoming = false;
 
+    [Header("isStatic")]
     public float speed = 1.0f;
+    [Header("isAccelerating/isDecelerating")]
     public float speedDelay = 10.0f;
     public float minSpeed = 1.0f;
     public float maxSpeed = 10.0f;
     public float transitionVelocity = 4.0f;
-    public float homingDelay = 0.0f;
-    public float homingRadius = 10.0f;
+    // public float homingDelay = 0.0f;
+    // public float homingRadius = 10.0f;
 
-    private float acceleration;
-    // private GameObject targetObject;
+     float acceleration;
+    // GameObject targetObject;
     public float damage { get; private set; }
 
     void Start()
@@ -94,6 +98,7 @@ public class Bullet : MonoBehaviour
                 }
             }
         }
+        /*
         if (isHoming) // TODO: homing bullet movement
         {
             // Detect the targetObject to aim at
@@ -108,5 +113,6 @@ public class Bullet : MonoBehaviour
 
             // delay before bullet start homing
         }
+        */
     }
 }

@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float health = 10.0f;
     [SerializeField] int scoreToAdd = 200;
     [SerializeField] GameObject shot = null;
+    [SerializeField] float shootDelay = 0f;
     GameObject spawnedShot;
     bool barrageIsSpawned = false;
 
@@ -29,7 +30,7 @@ public class Enemy : MonoBehaviour
 
         if (!barrageIsSpawned && collision.tag.Equals("PlayArea") && shot != null)
         {
-            spawnedShot = Instantiate(shot, gameObject.transform);
+            StartCoroutine(Shoot());
         }
     }
 
@@ -45,5 +46,13 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
         GameManager.Instance.score += scoreToAdd;
+    }
+
+    IEnumerator Shoot()
+    {
+        yield return new WaitForSeconds(shootDelay);
+        spawnedShot = Instantiate(shot, gameObject.transform);
+        Debug.Log(barrageIsSpawned);
+        barrageIsSpawned = true;
     }
 }

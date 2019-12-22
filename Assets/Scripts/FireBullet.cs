@@ -8,7 +8,7 @@ public class FireBullet : MonoBehaviour
     public GameObject target; // the target direction
     public bool fireLimitedCount = false; // fire repeatedly or a defined count
     public int fireBulletCount = 0; // how many bullets to fire in total
-    public float fireRate = 1f; // how long to wait before the next bullet is fired
+    public float fireRate = 1; // how long to wait before the next bullet is fired
     public float aimOffset = 0; // the rotation offset of the aim direction
 
     int bulletsFired = 0; // how many bullets fired so far

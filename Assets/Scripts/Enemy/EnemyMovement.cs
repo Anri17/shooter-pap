@@ -18,11 +18,16 @@ public class EnemyMovement : MonoBehaviour
 
     private void Start()
     {
-        path = Instantiate(path, gameObject.transform);
-        for (int childIndex = 0; childIndex < path.transform.childCount; ++childIndex)
-            waypoints.Add(path.transform.GetChild(childIndex).gameObject);
-        // Set position of Enemy as position of the first waypoint
-        transform.position = waypoints.ToArray()[waypointIndex].transform.position;
+        if (path != null)
+        {
+            path = Instantiate(path, gameObject.transform);
+            for (int childIndex = 0; childIndex < path.transform.childCount; ++childIndex)
+            {
+                waypoints.Add(path.transform.GetChild(childIndex).gameObject);
+            }
+            // Set position of Enemy as position of the first waypoint
+            transform.position = waypoints.ToArray()[waypointIndex].transform.position;
+        }
     }
 
     private void Update()
