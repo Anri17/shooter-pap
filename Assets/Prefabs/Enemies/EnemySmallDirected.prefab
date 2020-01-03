@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1011778523}
   - component: {fileID: 8655174311982016142}
   - component: {fileID: 4511463479440327346}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemySmallDirected
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -146,6 +146,7 @@ MonoBehaviour:
   health: 4
   scoreToAdd: 200
   shot: {fileID: 8408950869471283768, guid: 298d5b1c189a2d1479a4ae49be7c7b40, type: 3}
+  shootDelay: 0
 --- !u!114 &4511463479440327346
 MonoBehaviour:
   m_ObjectHideFlags: 0

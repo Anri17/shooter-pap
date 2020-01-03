@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1702644185715797545}
   - component: {fileID: 4706503016386643892}
   - component: {fileID: 248564488427200239}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyLargeStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -100,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.06, y: 1.68}
+    oldSize: {x: 1.2875, y: 1.05}
     newSize: {x: 1.03, y: 0.84}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -143,6 +144,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 120
+  scoreToAdd: 200
+  shot: {fileID: 0}
+  shootDelay: 0
 --- !u!1001 &6134563198106157626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,10 +154,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2043415564473952440}
     m_Modifications:
-    - target: {fileID: 6571451126526940859, guid: 11eaf6d4b5c9f69418160e66b71a92e5,
+    - target: {fileID: 2130176808625864362, guid: 11eaf6d4b5c9f69418160e66b71a92e5,
         type: 3}
-      propertyPath: m_Name
-      value: StaticBarrage1
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642483125788506123, guid: 11eaf6d4b5c9f69418160e66b71a92e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142703487163521830, guid: 11eaf6d4b5c9f69418160e66b71a92e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196486257651296334, guid: 11eaf6d4b5c9f69418160e66b71a92e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6543978825518739191, guid: 11eaf6d4b5c9f69418160e66b71a92e5,
         type: 3}
@@ -209,6 +228,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571451126526940859, guid: 11eaf6d4b5c9f69418160e66b71a92e5,
+        type: 3}
+      propertyPath: m_Name
+      value: StaticBarrage1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571451126526940859, guid: 11eaf6d4b5c9f69418160e66b71a92e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890860911945654165, guid: 11eaf6d4b5c9f69418160e66b71a92e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273673910908251859, guid: 11eaf6d4b5c9f69418160e66b71a92e5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11eaf6d4b5c9f69418160e66b71a92e5, type: 3}

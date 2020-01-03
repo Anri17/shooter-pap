@@ -3,19 +3,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int lives;
     public float normalSpeed = 8.0f;
     public float focusSpeed = 4.0f;
-    public GameObject[] barrages;
     public float powerLevel;
-    public int lives;
+    public GameObject[] barrages;
 
-    Vector3 spawnPoint;
 	float horizontal;
 	float vertical;
     float speed;
+    Vector3 spawnPoint;
+    Vector3 direction;
     GameObject currentBarrage;
     GameObject mainBarrage;
-    Vector3 direction;
 
     void Awake()
     {
@@ -157,7 +157,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "PowerCollectable")
         {
             powerLevel += 0.05f;
-            GameManager.Instance.score += 150;
+            GameManager.Instance.Score += 150;
             Destroy(collision.gameObject);
             Debug.Log("Power Level: " + powerLevel);
         }
@@ -165,23 +165,23 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "BigPowerCollectable")
         {
             powerLevel += 1.00f;
-            GameManager.Instance.score += 200;
+            GameManager.Instance.Score += 200;
             Destroy(collision.gameObject);
             // Debug.Log("Power Level: " + Data.powerLevel);
         }
 
         if (collision.gameObject.tag == "ScoreCollectable")
         {
-            GameManager.Instance.score += 500;
+            GameManager.Instance.Score += 500;
             Destroy(collision.gameObject);
-            Debug.Log("Score: " + GameManager.Instance.score);
+            Debug.Log("Score: " + GameManager.Instance.Score);
         }
     }
 
-    public void Respawn()
+    public void Respawn(Vector3 position)
     {
-        Level.ClearBullets();
-        transform.position = spawnPoint;
+        LevelManager.ClearBullets();
+        transform.position = position;
         gameObject.SetActive(true);
         if (Input.GetButton("Fire1"))
         {
@@ -203,7 +203,7 @@ public class Player : MonoBehaviour
         Destroy(currentBarrage);
         if (lives >= 0)
         {
-            Respawn();
+            Respawn(spawnPoint);
         }
     }
 }

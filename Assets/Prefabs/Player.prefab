@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4870153867281324379}
   - component: {fileID: 3846732936262335830}
   - component: {fileID: 5831120269103506506}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PlayerHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 2011406762}
   - component: {fileID: 1288192825947611432}
   - component: {fileID: 4037159831597851512}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}

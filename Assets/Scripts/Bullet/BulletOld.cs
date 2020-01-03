@@ -1,10 +1,8 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
-public class Bullet : MonoBehaviour
+public class BulletOld : MonoBehaviour
 {
     [Header("Type of bullet")]
     public bool isStatic = true;
@@ -19,11 +17,8 @@ public class Bullet : MonoBehaviour
     public float minSpeed = 1.0f;
     public float maxSpeed = 10.0f;
     public float transitionVelocity = 4.0f;
-    // public float homingDelay = 0.0f;
-    // public float homingRadius = 10.0f;
 
-     float acceleration;
-    // GameObject targetObject;
+    float acceleration;
     public float damage { get; private set; }
 
     void Start()
@@ -98,21 +93,5 @@ public class Bullet : MonoBehaviour
                 }
             }
         }
-        /*
-        if (isHoming) // TODO: homing bullet movement
-        {
-            // Detect the targetObject to aim at
-            // targetObject =
-
-            // move bullet forward at a static speed
-            transform.Translate(Vector3.up * (speed / 10) * Time.deltaTime);
-
-            var objectsInRadius = Physics.OverlapSphere(transform.position, homingRadius);
-
-            // rotate towards the target
-
-            // delay before bullet start homing
-        }
-        */
     }
 }

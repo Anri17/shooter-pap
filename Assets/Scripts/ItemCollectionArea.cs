@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ItemCollectionArea : MonoBehaviour
 {
+    [SerializeField] private GameObject[] itemsToCollect;
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag.Equals("Player"))

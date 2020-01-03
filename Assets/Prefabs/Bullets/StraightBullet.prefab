@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1394032860313448631}
   - component: {fileID: 8033248443698227249}
   - component: {fileID: 3676739729475680076}
-  - component: {fileID: 4168941602631429222}
   - component: {fileID: 2002970000547687734}
-  m_Layer: 0
+  - component: {fileID: 5650811901897152337}
+  m_Layer: 9
   m_Name: StraightBullet
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
@@ -109,26 +109,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.08027707, y: 0.43701935}
   m_EdgeRadius: 0
---- !u!114 &4168941602631429222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8225583311878669710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b10500c073e36408a101e0f543cfc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStatic: 1
-  isAccelerating: 1
-  isDecelerating: 0
-  speed: 100
-  speedDelay: 60
-  minSpeed: 0.6
-  maxSpeed: 80
-  transitionVelocity: 4
 --- !u!50 &2002970000547687734
 Rigidbody2D:
   serializedVersion: 4
@@ -150,3 +130,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5650811901897152337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225583311878669710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12cc455f6185774fbbff0305e017592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minSpeed: 10
+  _maxSpeed: 80
+  _delayBeforeTransition: 320
+  _transitionSpeed: 10

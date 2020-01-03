@@ -5,24 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject MainMenuScreen;
-    public GameObject PlayScreen;
-    public GameObject TutorialScreen;
-    public GameObject OptionsScreen;
-    public AudioClip menuMusicTheme;
+    GameManager gameManager;
+    MusicPlayer musicPlayer;
 
-    private void Awake()
-    {
-        MainMenuScreen.SetActive(true);
-        PlayScreen.SetActive(false);
-        TutorialScreen.SetActive(false);
-        OptionsScreen.SetActive(false);
-    }
+    [SerializeField] GameObject MainMenuScreen;
+    [SerializeField] GameObject PlayScreen;
+    [SerializeField] GameObject TutorialScreen;
+    [SerializeField] GameObject OptionsScreen;
+    [SerializeField] AudioClip menuMusicTheme;
 
     private void Start()
     {
-        GameManager.Instance.ResetData();
-        MusicPlayer.Instance.PlayMusic(menuMusicTheme);
+        gameManager = GameManager.Instance;
+        musicPlayer = MusicPlayer.Instance;
+        gameManager.ResetData();
+        musicPlayer.PlayMusic(menuMusicTheme);
+        DisplayMainMenuScreen();
     }
 
     public void DisplayMainMenuScreen()

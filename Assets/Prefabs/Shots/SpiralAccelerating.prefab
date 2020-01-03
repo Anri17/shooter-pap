@@ -78,8 +78,8 @@ MonoBehaviour:
   bullet: {fileID: 8225583311878669710, guid: 221feb8eb92520b4ab5d921c6fa40ad3, type: 3}
   target: {fileID: 1048586204037230739}
   fireLimitedCount: 1
-  fireBulletCount: 256
-  fireRate: 0.001
+  fireBulletCount: 30
+  fireRate: 0.1
   aimOffset: 0
 --- !u!114 &5097859190142109965
 MonoBehaviour:

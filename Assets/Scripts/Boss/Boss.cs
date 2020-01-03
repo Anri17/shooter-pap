@@ -20,8 +20,9 @@ public class Boss : MonoBehaviour
     {
         if (collision.tag.Equals("PlayerBullet") || collision.tag.Equals("PlayerLazer"))
         {
-            GameManager.Instance.score += 80;
-            currentHealth -= collision.GetComponent<Bullet>().damage;
+            GameManager.Instance.Score += 80;
+            // currentHealth -= collision.GetComponent<BulletOld>().damage;
+            currentHealth -= collision.GetComponent<PlayerBullet>().Damage;
             Destroy(collision.gameObject);
             if (currentHealth <= 0)
             {

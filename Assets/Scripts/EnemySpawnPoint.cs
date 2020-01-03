@@ -5,11 +5,11 @@ using UnityEngine;
 public class EnemySpawnPoint : MonoBehaviour
 {
     public GameObject enemy;
-    public float spawnRate = 1f;
-    public bool spawnLimitedCount = true;
-    public int spawnEnemyCount = 5;
     public GameObject path;
+    public float spawnRate = 1f;
     public float movementSpeed = 4f;
+    public int spawnEnemyCount = 5;
+    public bool spawnLimitedCount = true;
 
     GameObject spawnedEnemy;
     int spawnCounter = 0;

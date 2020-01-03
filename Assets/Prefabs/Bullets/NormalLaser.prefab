@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 873798623482890297}
   - component: {fileID: 8457183783685307699}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlayerLaserSprite
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
@@ -56,6 +56,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -89,7 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2569586470668232507}
   - component: {fileID: 3244798869143436087}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlayerLaserSprite
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
@@ -135,6 +136,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -168,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 367876337537755439}
   - component: {fileID: 584871806229854986}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlayerLaserSprite
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
@@ -214,6 +216,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -247,7 +250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4078792259719883505}
   - component: {fileID: 5427583329261612522}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlayerLaserSprite
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
@@ -293,6 +296,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -325,10 +329,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2184977648171736399}
-  - component: {fileID: 6208907030648364908}
-  - component: {fileID: 4835565969281932260}
   - component: {fileID: 1660414580713081856}
-  m_Layer: 0
+  - component: {fileID: 4835565969281932260}
+  - component: {fileID: 3587786106182365946}
+  m_Layer: 11
   m_Name: NormalLaser
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
@@ -353,50 +357,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6208907030648364908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8746203252393343279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b10500c073e36408a101e0f543cfc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isStatic: 1
-  isHoming: 0
-  isAccelerating: 0
-  isDecelerating: 0
-  speed: 750
-  speedDelay: 10
-  minSpeed: 1
-  maxSpeed: 10
-  transitionVelocity: 4
-  homingDelay: 0
-  homingRadius: 10
---- !u!50 &4835565969281932260
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8746203252393343279}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!60 &1660414580713081856
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -428,3 +388,38 @@ PolygonCollider2D:
       - {x: 0.68877745, y: 0.26118764}
       - {x: 0.24246335, y: 0.43080938}
       - {x: -0.2342444, y: 0.4315887}
+--- !u!50 &4835565969281932260
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8746203252393343279}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &3587786106182365946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8746203252393343279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769386c2426235f42a04f153c9e31b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 750
+  _damage: 1

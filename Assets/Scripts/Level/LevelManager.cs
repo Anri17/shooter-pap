@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Level : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
     public float backgroundImageScrollSpeed = 1.0f;
     public GameObject backgroundImage;
@@ -72,7 +72,7 @@ public class Level : MonoBehaviour
         }
         else
         {
-            playerScript.Respawn();
+            playerScript.Respawn(playerSpawnPoint.transform.position);
         }
     }
 

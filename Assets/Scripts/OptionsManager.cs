@@ -5,20 +5,25 @@ using UnityEngine.UI;
 
 public class OptionsManager : MonoBehaviour
 {
-    public GameObject sliderGameObject;
-    public float volume;
-
     private Slider slider;
+    private MusicPlayer musicPlayer;
+
+    public GameObject sliderGameObject;
 
     void Awake()
     {
+        musicPlayer = MusicPlayer.Instance;
         slider = sliderGameObject.GetComponent<Slider>();
-        slider.value = MusicPlayer.Instance.GetVolume(); // set slider value to music volume at the start of the scene
+        slider.value = musicPlayer.VolumeLevel;
     }
 
     void Update()
     {
-        volume = slider.value;
-        MusicPlayer.Instance.SetVolume(volume);
+        SetVolume(slider.value);
+    }
+
+    void SetVolume(float volume)
+    {
+        musicPlayer.VolumeLevel = volume;
     }
 }

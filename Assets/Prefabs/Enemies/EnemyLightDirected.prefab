@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3466661871891728271}
   - component: {fileID: 8235150732017388875}
   - component: {fileID: 4291622613268527126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyLightDirected
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -60,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -100,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.08, y: 1.68}
+    oldSize: {x: 1.3, y: 1.05}
     newSize: {x: 1.04, y: 0.84}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -143,6 +144,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 60
+  scoreToAdd: 200
+  shot: {fileID: 0}
+  shootDelay: 0
 --- !u!1001 &5094498558489938026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,10 +154,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3466661871891728269}
     m_Modifications:
-    - target: {fileID: 6571451126526940859, guid: da86d4719aa4f214fa56084cd76dd5e3,
+    - target: {fileID: 1480776893446289784, guid: da86d4719aa4f214fa56084cd76dd5e3,
         type: 3}
-      propertyPath: m_Name
-      value: DirectedBarrage
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3883644661535844856, guid: da86d4719aa4f214fa56084cd76dd5e3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196486257651296334, guid: da86d4719aa4f214fa56084cd76dd5e3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6543978825518739191, guid: da86d4719aa4f214fa56084cd76dd5e3,
         type: 3}
@@ -209,6 +223,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571451126526940859, guid: da86d4719aa4f214fa56084cd76dd5e3,
+        type: 3}
+      propertyPath: m_Name
+      value: DirectedBarrage
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571451126526940859, guid: da86d4719aa4f214fa56084cd76dd5e3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da86d4719aa4f214fa56084cd76dd5e3, type: 3}

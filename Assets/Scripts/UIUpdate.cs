@@ -10,7 +10,7 @@ public class UIUpdate : MonoBehaviour
     public GameObject scoreNumber;
     public GameObject livesNumber;
 
-    Level levelManagerScript;
+    LevelManager levelManagerScript;
     Player playerScript;
 
     void Start()
@@ -23,7 +23,7 @@ public class UIUpdate : MonoBehaviour
     void Update()
     {
         // Update Score
-        scoreNumber.GetComponent<Text>().text = GameManager.Instance.score.ToString("000,000,000,000");
+        scoreNumber.GetComponent<Text>().text = GameManager.Instance.Score.ToString("000,000,000,000");
         // Update Power Level
         powerLevelNumber.GetComponent<Text>().text = playerScript.powerLevel.ToString("0.##");
         // Update Lives

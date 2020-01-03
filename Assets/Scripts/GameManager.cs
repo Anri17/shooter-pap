@@ -7,12 +7,18 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public long score = 0;
+    public long Score { get; set; }
+
     public AudioClip[] musicClips;
 
     void Awake()
     {
         MakeSingleton();
+    }
+
+    void Start()
+    {
+        ResetData();
     }
 
     private void MakeSingleton()
@@ -30,6 +36,6 @@ public class GameManager : MonoBehaviour
 
     public void ResetData()
     {
-        score = 0;
+        Score = 0;
     }
 }

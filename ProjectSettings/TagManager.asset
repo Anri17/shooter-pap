@@ -26,11 +26,11 @@ TagManager:
   - 
   - 
   - Enemy
-  - 
-  - 
-  - 
-  - 
-  - 
+  - EnemyBullet
+  - PlayerInteractible
+  - PlayerBullet
+  - Player
+  - DeleteArea
   - 
   - 
   - 

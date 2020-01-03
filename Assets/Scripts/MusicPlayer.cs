@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
-    public static MusicPlayer Instance { get; private set; }
+    AudioSource audioPlayer;
 
-    public AudioSource audioPlayer;
+    public static MusicPlayer Instance { get; private set; }
+    public float VolumeLevel
+    {
+        get { return audioPlayer.volume; }
+        set { audioPlayer.volume = value; }
+    }
 
     void Awake()
     {
-        audioPlayer.loop = true;
+        audioPlayer = GetComponent<AudioSource>();
         MakeSingleton();
+        audioPlayer.loop = true;
     }
 
     private void MakeSingleton()
