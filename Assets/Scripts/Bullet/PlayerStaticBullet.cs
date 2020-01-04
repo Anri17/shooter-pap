@@ -7,6 +7,13 @@ public class PlayerStaticBullet : PlayerBullet
     [SerializeField] float _speed = 750.0f;
     [SerializeField] float _damage = 1.0f;
 
+    public override float Damage { get; set; }
+
+    private void Start()
+    {
+        Damage = _damage;
+    }
+
     public override void MoveBullet()
     {
         transform.Translate(Vector3.up * (_speed / 10) * Time.deltaTime);

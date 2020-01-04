@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c09b4e3e500f244b83c9589cdb574cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 20
   scoreToAdd: 200
   shot: {fileID: 7819838638613296147, guid: 095f66ab46492ef42bc0d2955ad401a5, type: 3}
   shootDelay: 1

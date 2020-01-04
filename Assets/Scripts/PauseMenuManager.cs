@@ -7,15 +7,22 @@ public class PauseMenuManager : MonoBehaviour
 {
     public GameObject pauseMenu;
 
+    GameManager gameManager;
+
+    void Awake()
+    {
+        gameManager = GameManager.Instance;
+    }
+
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene(0);
+        gameManager.LoadScene(0);
         Time.timeScale = 1;
     }
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(1);
+        gameManager.LoadScene(1);
         Time.timeScale = 1;
         GameManager.Instance.ResetData();
     }
