@@ -79,7 +79,7 @@ MonoBehaviour:
   target: {fileID: 1048586204037230739}
   fireLimitedCount: 1
   fireBulletCount: 30
-  fireRate: 0.1
+  fireRate: 0.05
   aimOffset: 0
 --- !u!114 &5097859190142109965
 MonoBehaviour:

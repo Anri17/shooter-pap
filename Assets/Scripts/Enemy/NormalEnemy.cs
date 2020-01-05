@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class NormalEnemy : Enemy
 {
+    [HideInInspector] public GameObject[] tragectory;
+    
     [SerializeField] float _health;
     [SerializeField] GameObject _shot;
     [SerializeField] int _scoreWorth;
-    [SerializeField] GameObject[] _tragectory;
     [SerializeField] float shootDelay;
 
     public override float Health { get; set; }
@@ -28,15 +29,16 @@ public class NormalEnemy : Enemy
         Health = _health;
         Shot = _shot;
         ScoreWorth = _scoreWorth;
-        for (int i = 0; i < _tragectory.Length; i++)
+        for (int i = 0; i < tragectory.Length; i++)
         {
-            Tragectory.Add(_tragectory[i].transform);
+            Tragectory.Add(tragectory[i].transform);
         }
     }
 
     public void Update()
     {
         EvaluateHealth();
+        // Move(Tragectory.ToArray());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

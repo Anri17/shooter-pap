@@ -5,13 +5,13 @@ using UnityEngine;
 public class EnemySpawnPoint : MonoBehaviour
 {
     public GameObject enemy;
-    public GameObject path;
+    public Transform path;
     public float spawnRate = 1f;
     public float movementSpeed = 4f;
     public int spawnEnemyCount = 5;
     public bool spawnLimitedCount = true;
 
-    GameObject spawnedEnemy;
+    GameObject enemyInstance;
     int spawnCounter = 0;
 
     // Start is called before the first frame update
@@ -28,15 +28,19 @@ public class EnemySpawnPoint : MonoBehaviour
     {
         if (!spawnLimitedCount)
         {
-            spawnedEnemy = Instantiate(enemy, gameObject.transform.position, Quaternion.identity) as GameObject;
-            spawnedEnemy.GetComponent<EnemyMovement>().path = path;
-            spawnedEnemy.GetComponent<EnemyMovement>().moveSpeed = movementSpeed;
+            enemyInstance = Instantiate(enemy, gameObject.transform.position, Quaternion.identity) as GameObject;
+            // spawnedEnemy.GetComponent<BezierMove>().path = path.transform;
+            // spawnedEnemy.GetComponent<BezierMove>().speedModifier = movementSpeed;
+            enemyInstance.GetComponent<BezierMove>().path = path;
+            enemyInstance.GetComponent<BezierMove>().speedModifier = movementSpeed;
         }
         else
         {
-            spawnedEnemy = Instantiate(enemy, gameObject.transform.position, Quaternion.identity) as GameObject;
-            spawnedEnemy.GetComponent<EnemyMovement>().path = path;
-            spawnedEnemy.GetComponent<EnemyMovement>().moveSpeed = movementSpeed;
+            enemyInstance = Instantiate(enemy, gameObject.transform.position, Quaternion.identity) as GameObject;
+            // spawnedEnemy.GetComponent<BezierMove>().path = path.transform;
+            // spawnedEnemy.GetComponent<BezierMove>().speedModifier = movementSpeed;
+            enemyInstance.GetComponent<BezierMove>().path = path;
+            enemyInstance.GetComponent<BezierMove>().speedModifier = movementSpeed;
             spawnCounter++;
             if (spawnCounter >= spawnEnemyCount)
             {

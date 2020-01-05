@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2844590458407688270}
   - component: {fileID: 2844590458407688257}
   - component: {fileID: 2844590458407688256}
-  - component: {fileID: 1317770679500359686}
-  - component: {fileID: 5031192891165403034}
-  - component: {fileID: 1670592813756924639}
   - component: {fileID: 1207099956717840598}
+  - component: {fileID: 1670592813756924639}
+  - component: {fileID: 6020023149342821593}
+  - component: {fileID: 3730391855161913003}
   m_Layer: 8
   m_Name: Turret
   m_TagString: Enemy
@@ -105,57 +105,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1317770679500359686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2844590458407688259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c09b4e3e500f244b83c9589cdb574cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 20
-  scoreToAdd: 200
-  shot: {fileID: 7819838638613296147, guid: 095f66ab46492ef42bc0d2955ad401a5, type: 3}
-  shootDelay: 1
---- !u!114 &5031192891165403034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2844590458407688259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 300b58db7d2c25d4b875ca7168fd70cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  path: {fileID: 0}
-  moveSpeed: 2
---- !u!50 &1670592813756924639
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2844590458407688259}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &1207099956717840598
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -182,3 +131,56 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.72, y: 0.72}
   m_EdgeRadius: 0
+--- !u!50 &1670592813756924639
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2844590458407688259}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &6020023149342821593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2844590458407688259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8320d5f8a3e13b24c82c59b304957c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tragectory: []
+  _health: 24
+  _shot: {fileID: 7819838638613296147, guid: 095f66ab46492ef42bc0d2955ad401a5, type: 3}
+  _scoreWorth: 200
+  shootDelay: 1
+--- !u!114 &3730391855161913003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2844590458407688259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79d697828c779941b64a218d110bf5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopMovement: 0
+  speedModifier: 0.5
+  path: {fileID: 0}

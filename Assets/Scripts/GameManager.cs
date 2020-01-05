@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Loading Screen")]
     [SerializeField] private Slider loadingBarSlider;
     [SerializeField] private Text loadingPercentage;
     [SerializeField] private GameObject loadingScreen;

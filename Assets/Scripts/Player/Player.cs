@@ -3,25 +3,27 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int lives;
-    public float normalSpeed = 8.0f;
-    public float focusSpeed = 4.0f;
-    public float powerLevel;
+    [SerializeField] float normalSpeed = 8.0f;
+    [SerializeField] float focusSpeed = 4.0f;
+
     public GameObject[] barrages;
 
-	float horizontal;
-	float vertical;
-    float speed;
+    public int Lives { get; set; }
+    public float Speed { get; set;  }
+    public float PowerLevel { get; set; }
+
     Vector3 spawnPoint;
     Vector3 direction;
     GameObject currentBarrage;
     GameObject mainBarrage;
+	float horizontal;
+	float vertical;
 
     void Awake()
     {
-        speed = normalSpeed;
-        powerLevel = 0.0f;
-        lives = 3;
+        Speed = normalSpeed;
+        PowerLevel = 0.0f;
+        Lives = 3;
         spawnPoint = new Vector3(-3.44f, -6.76f, 0);
     }
 
@@ -34,11 +36,11 @@ public class Player : MonoBehaviour
         // get speed value
         if (Input.GetButtonDown("Focus"))
         {
-            speed = focusSpeed;
+            Speed = focusSpeed;
         }
         if (Input.GetButtonUp("Focus"))
         {
-            speed = normalSpeed;
+            Speed = normalSpeed;
         }
 
         // get direction 
@@ -59,10 +61,10 @@ public class Player : MonoBehaviour
         }
 
         // move the player
-        transform.position += direction * speed * Time.deltaTime;
+        transform.position += direction * Speed * Time.deltaTime;
 
         // shoot barrage
-        if (powerLevel >= 0.0f && powerLevel < 1.0f)      // Level 1 Barrage
+        if (PowerLevel >= 0.0f && PowerLevel < 1.0f)      // Level 1 Barrage
         {
             // update barrage if firing
             if (mainBarrage != barrages[0] && Input.GetButton("Fire1"))
@@ -78,7 +80,7 @@ public class Player : MonoBehaviour
                 mainBarrage = barrages[0];
             }
         }
-        else if (powerLevel >= 1.0f && powerLevel < 2.0f) // Level 2 Barrage
+        else if (PowerLevel >= 1.0f && PowerLevel < 2.0f) // Level 2 Barrage
         {
             // update barrage if firing
             if (mainBarrage != barrages[1] && Input.GetButton("Fire1"))
@@ -94,7 +96,7 @@ public class Player : MonoBehaviour
                 mainBarrage = barrages[1];
             }
         }
-        else if (powerLevel >= 2.0f && powerLevel < 3.0f) // Level 3 Barrage
+        else if (PowerLevel >= 2.0f && PowerLevel < 3.0f) // Level 3 Barrage
         {
             // update barrage if firing
             if (mainBarrage != barrages[2] && Input.GetButton("Fire1"))
@@ -156,15 +158,15 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "PowerCollectable")
         {
-            powerLevel += 0.05f;
+            PowerLevel += 0.05f;
             GameManager.Instance.Score += 150;
             Destroy(collision.gameObject);
-            Debug.Log("Power Level: " + powerLevel);
+            Debug.Log("Power Level: " + PowerLevel);
         }
 
         if (collision.gameObject.tag == "BigPowerCollectable")
         {
-            powerLevel += 1.00f;
+            PowerLevel += 1.00f;
             GameManager.Instance.Score += 200;
             Destroy(collision.gameObject);
             // Debug.Log("Power Level: " + Data.powerLevel);
@@ -191,17 +193,17 @@ public class Player : MonoBehaviour
 
     public void Reset()
     {
-        powerLevel = 0.0f;
-        lives = 3;
+        PowerLevel = 0.0f;
+        Lives = 3;
     }
 
     public void Die()
     {
         Debug.Log("Player died");
-        lives--;
+        Lives--;
         gameObject.SetActive(false);
         Destroy(currentBarrage);
-        if (lives >= 0)
+        if (Lives >= 0)
         {
             Respawn(spawnPoint);
         }

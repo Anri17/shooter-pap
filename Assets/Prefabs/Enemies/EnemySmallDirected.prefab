@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 198908127}
   - component: {fileID: 1011778523}
   - component: {fileID: 8655174311982016142}
-  - component: {fileID: 4511463479440327346}
+  - component: {fileID: 3326163019392916081}
   m_Layer: 8
   m_Name: EnemySmallDirected
   m_TagString: Enemy
@@ -147,7 +147,7 @@ MonoBehaviour:
   scoreToAdd: 200
   shot: {fileID: 8408950869471283768, guid: 298d5b1c189a2d1479a4ae49be7c7b40, type: 3}
   shootDelay: 0
---- !u!114 &4511463479440327346
+--- !u!114 &3326163019392916081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,8 +156,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7833164115978671972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 300b58db7d2c25d4b875ca7168fd70cd, type: 3}
+  m_Script: {fileID: 11500000, guid: c79d697828c779941b64a218d110bf5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loopMovement: 0
+  speedModifier: 0.5
   path: {fileID: 0}
-  moveSpeed: 2

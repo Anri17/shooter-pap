@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 198908127}
   - component: {fileID: 1011778523}
   - component: {fileID: 8655174311982016142}
-  - component: {fileID: 2991862405579948886}
+  - component: {fileID: 8694028411301425022}
   m_Layer: 8
   m_Name: FotherEnemy1
   m_TagString: Enemy
@@ -145,9 +145,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   scoreToAdd: 200
-  shot: {fileID: 7819838638613296147, guid: 095f66ab46492ef42bc0d2955ad401a5, type: 3}
+  shot: {fileID: 4100146615351248587, guid: 8789847b9268dc740ba701ac59d4f205, type: 3}
   shootDelay: 1
---- !u!114 &2991862405579948886
+--- !u!114 &8694028411301425022
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,8 +156,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7833164115978671972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 300b58db7d2c25d4b875ca7168fd70cd, type: 3}
+  m_Script: {fileID: 11500000, guid: c79d697828c779941b64a218d110bf5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loopMovement: 0
+  speedModifier: 0.5
   path: {fileID: 0}
-  moveSpeed: 2
