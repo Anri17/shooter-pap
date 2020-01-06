@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 7945089824047321946}
   - component: {fileID: 7945089824047321927}
   - component: {fileID: 7945089824047321926}
-  - component: {fileID: 7945089824047321925}
+  - component: {fileID: 2264121464022660906}
+  - component: {fileID: 350828380049276735}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Enemy
@@ -151,7 +152,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7945089824047321925
+--- !u!114 &2264121464022660906
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,11 +161,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 7945089824047321945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8320d5f8a3e13b24c82c59b304957c62, type: 3}
+  m_Script: {fileID: 11500000, guid: 72b1768858a457749916c403fc2c3eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 10
-  _shot: {fileID: 7819838638613296147, guid: 095f66ab46492ef42bc0d2955ad401a5, type: 3}
-  _scoreWorth: 1000
-  _tragectory: []
-  shootDelay: 1
+  startPosition: {x: -3.81, y: 5.97, z: 0}
+  stages:
+  - {fileID: 11400000, guid: e40fdab0e64e4ef46a7f5e55dca0f606, type: 2}
+--- !u!114 &350828380049276735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945089824047321945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79d697828c779941b64a218d110bf5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopMovement: 0
+  speedModifier: 0.5
+  path: {fileID: 0}
+  routes: []

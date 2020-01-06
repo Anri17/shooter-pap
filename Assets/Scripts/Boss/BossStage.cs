@@ -6,6 +6,8 @@ using UnityEngine;
 public class BossStage : ScriptableObject
 {
     public float health;
+    public float deathTimer;
     public GameObject barrage;
-    public float time = 10f;
+    public Transform path;
+    public float pathSpeed;
 }

@@ -35,10 +35,9 @@ public class NormalEnemy : Enemy
         }
     }
 
-    public void Update()
+    private void Update()
     {
         EvaluateHealth();
-        // Move(Tragectory.ToArray());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -76,11 +75,6 @@ public class NormalEnemy : Enemy
         {
             Die();
         }
-    }
-
-    public override void Move(Transform[] tragectory)
-    {
-        throw new System.NotImplementedException();
     }
 
     public override IEnumerator ShootCoroutine(float shootDelay)

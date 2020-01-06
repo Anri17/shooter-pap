@@ -9,7 +9,6 @@ public abstract class Enemy : MonoBehaviour
     public abstract List<Transform> Tragectory { get; set; }
     public abstract int ScoreWorth { get; set; }
     public abstract void EvaluateHealth();
-    public abstract void Move(Transform[] tragectory);
     public abstract void Die();
     public abstract IEnumerator ShootCoroutine(float shootDelay);
 }
