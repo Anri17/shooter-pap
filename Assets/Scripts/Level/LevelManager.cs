@@ -16,6 +16,8 @@ public class LevelManager : MonoBehaviour
     public AudioClip bossMusicTheme;
     public GameObject[] waves;
 
+    private Vector3 bossSpawnPoints = new Vector3(1, 13, 0);
+
     Player playerScript;
     GameObject spawnedBoss;
     GameObject spawnedPlayer;
@@ -80,12 +82,12 @@ public class LevelManager : MonoBehaviour
     {
         if (spawnedBoss == null)
         {
-            spawnedBoss = Instantiate(boss, new Vector3(-4.037f, 5.51f, 0), boss.transform.rotation);
+            spawnedBoss = Instantiate(boss, bossSpawnPoints, boss.transform.rotation);
         }
         else
         {
             Destroy(spawnedBoss);
-            spawnedBoss = Instantiate(boss, new Vector3(-4.037f, 5.51f, 0), boss.transform.rotation);
+            spawnedBoss = Instantiate(boss, bossSpawnPoints, boss.transform.rotation);
         }
     }
 

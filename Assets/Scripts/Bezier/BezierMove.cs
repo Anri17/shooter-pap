@@ -8,7 +8,6 @@ public class BezierMove : MonoBehaviour
     public float speedModifier = 0.5f;
     public Transform path;
     public Transform[] routes;
-    public Vector2 startPoint;
     public bool pause = false;
 
     private int routeToGo;
@@ -21,7 +20,6 @@ public class BezierMove : MonoBehaviour
 
     private void Start()
     {
-        startPoint = routes[0].GetChild(0).position;
         ResetValuesAndRun();
     }
 
@@ -40,6 +38,11 @@ public class BezierMove : MonoBehaviour
         routeToGo = 0;
         tParam = 0f;
         coroutineAllowed = true;
+    }
+
+    public Vector3 GetStartingPoint()
+    {
+        return routes[0].GetChild(0).position;
     }
 
     private Transform[] GetRoutesFromPath(Transform path)

@@ -51,14 +51,14 @@ public class Boss : MonoBehaviour
         Debug.Log(stages.Length);
         if (stageIndex < stages.Length)
         {
-            bezierRouteMoveInstance.pause = false;
+            bezierRouteMoveInstance.pause = true;
             currentStage = stages[stageIndex];
             currentHealth = currentStage.health;
             currentPath = currentStage.path;
             pathTransform = Instantiate(currentPath, defaultPosition, Quaternion.identity);
             bezierRouteMoveInstance.path = pathTransform;
             bezierRouteMoveInstance.ResetValuesAndRun();
-            Vector3 startPosition = new Vector3(bezierRouteMoveInstance.startPoint.x, bezierRouteMoveInstance.startPoint.y, 0) + defaultPosition;
+            Vector3 startPosition = defaultPosition;
             StartCoroutine(MoveToPosition(startPosition, 1f));
             Debug.Log("Stage Started");
         } else

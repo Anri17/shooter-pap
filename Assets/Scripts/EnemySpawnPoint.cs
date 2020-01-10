@@ -29,16 +29,12 @@ public class EnemySpawnPoint : MonoBehaviour
         if (!spawnLimitedCount)
         {
             enemyInstance = Instantiate(enemy, gameObject.transform.position, Quaternion.identity) as GameObject;
-            // spawnedEnemy.GetComponent<BezierMove>().path = path.transform;
-            // spawnedEnemy.GetComponent<BezierMove>().speedModifier = movementSpeed;
             enemyInstance.GetComponent<BezierMove>().path = path;
             enemyInstance.GetComponent<BezierMove>().speedModifier = movementSpeed;
         }
         else
         {
             enemyInstance = Instantiate(enemy, gameObject.transform.position, Quaternion.identity) as GameObject;
-            // spawnedEnemy.GetComponent<BezierMove>().path = path.transform;
-            // spawnedEnemy.GetComponent<BezierMove>().speedModifier = movementSpeed;
             enemyInstance.GetComponent<BezierMove>().path = path;
             enemyInstance.GetComponent<BezierMove>().speedModifier = movementSpeed;
             spawnCounter++;
