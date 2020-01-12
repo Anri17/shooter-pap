@@ -3334,6 +3334,7 @@ MonoBehaviour:
   - {fileID: 1485610931}
   - {fileID: 2061953729}
   - {fileID: 1598834375}
+  bossSpawnPoints: {x: 1, y: 13, z: 0}
 --- !u!1 &1281425555
 GameObject:
   m_ObjectHideFlags: 0

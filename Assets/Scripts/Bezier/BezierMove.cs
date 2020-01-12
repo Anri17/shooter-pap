@@ -5,10 +5,9 @@ using UnityEngine;
 public class BezierMove : MonoBehaviour
 {
     public bool loopMovement = false;
-    public float speedModifier = 0.5f;
+    public float speedModifier = 1f;
     public Transform path;
     public Transform[] routes;
-    public bool pause = false;
 
     private int routeToGo;
 
@@ -18,26 +17,37 @@ public class BezierMove : MonoBehaviour
 
     private bool coroutineAllowed = false;
 
-    private void Start()
-    {
-        ResetValuesAndRun();
-    }
-
     private void Update()
     {
-        if (coroutineAllowed && !pause)
+        if (coroutineAllowed)
         {
             StartCoroutine(GoByTheRoute(routeToGo));
         }
     }
 
-    public void ResetValuesAndRun()
+    public void SetPath(Transform path, float speed)
     {
+        this.path = path;
         routes = new Transform[path.childCount];
         routes = GetRoutesFromPath(path);
+        speedModifier = speed;
+    }
+
+    public void ResetValues()
+    {
         routeToGo = 0;
         tParam = 0f;
+    }
+
+    public void RunPath()
+    {
         coroutineAllowed = true;
+    }
+
+    public void StopMoving()
+    {
+        coroutineAllowed = false;
+        StopCoroutine("GoByTheRoute");
     }
 
     public Vector3 GetStartingPoint()
@@ -95,7 +105,5 @@ public class BezierMove : MonoBehaviour
                 coroutineAllowed = true;
             }
         }
-            
-        
     }
 }

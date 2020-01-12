@@ -15,13 +15,11 @@ public class LevelManager : MonoBehaviour
     public AudioClip stageMusicTheme;
     public AudioClip bossMusicTheme;
     public GameObject[] waves;
-
-    private Vector3 bossSpawnPoints = new Vector3(1, 13, 0);
+    public Vector3 bossSpawnPoints = new Vector3(1, 13, 0);
 
     Player playerScript;
     GameObject spawnedBoss;
     GameObject spawnedPlayer;
-    bool isPlayerDead = true;
 
     void Awake()
     {
@@ -78,7 +76,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void SpawnTestBoss()
+    public void SpawnBoss()
     {
         if (spawnedBoss == null)
         {
@@ -139,28 +137,28 @@ public class LevelManager : MonoBehaviour
     IEnumerator PlayLevel()
     {
         Debug.Log("Level Start");
-        yield return new WaitForSeconds(5f);
-        Debug.Log("Wave 1");
-        waves[0].SetActive(true);
-        yield return new WaitForSeconds(8f);
-        Debug.Log("Wave 2");
-        waves[1].SetActive(true);
-        yield return new WaitForSeconds(6f);
-        Debug.Log("Wave 3");
-        waves[2].SetActive(true);
-        yield return new WaitForSeconds(8f);
-        Debug.Log("Wave 4");
-        waves[3].SetActive(true);
-        yield return new WaitForSeconds(4f);
-        Debug.Log("Wave 5");
-        waves[4].SetActive(true);
-        yield return new WaitForSeconds(6f);
-        Debug.Log("Wait Time Before Boss");
+        //yield return new WaitForSeconds(5f);
+        //Debug.Log("Wave 1");
+        //waves[0].SetActive(true);
+        //yield return new WaitForSeconds(8f);
+        //Debug.Log("Wave 2");
+        //waves[1].SetActive(true);
+        //yield return new WaitForSeconds(6f);
+        //Debug.Log("Wave 3");
+        //waves[2].SetActive(true);
+        //yield return new WaitForSeconds(8f);
+        //Debug.Log("Wave 4");
+        //waves[3].SetActive(true);
+        //yield return new WaitForSeconds(4f);
+        //Debug.Log("Wave 5");
+        //waves[4].SetActive(true);
+        //yield return new WaitForSeconds(6f);
+        //Debug.Log("Wait Time Before Boss");
         ClearEnemies();
         ClearBullets();
         yield return new WaitForSeconds(2f);
         Debug.Log("Mid Boss");
-        SpawnTestBoss();
+        SpawnBoss();
         MusicPlayer.Instance.PlayMusic(bossMusicTheme);
     }
 }
