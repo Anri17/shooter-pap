@@ -15,38 +15,41 @@ public class BezierMove : MonoBehaviour
 
     private Vector2 catPosition;
 
-    private bool coroutineAllowed = false;
+    private bool movementAllowed = false;
 
     private void Update()
     {
-        if (coroutineAllowed)
+        if (movementAllowed)
         {
             StartCoroutine(GoByTheRoute(routeToGo));
         }
+
+        Debug.Log($"Movement Allowed: {movementAllowed}");
     }
 
-    public void SetPath(Transform path, float speed)
+    public void UnpackPath(Transform path)
     {
         this.path = path;
         routes = new Transform[path.childCount];
         routes = GetRoutesFromPath(path);
-        speedModifier = speed;
     }
 
-    public void ResetValues()
+    public void ResetValues(float speed)
     {
+        movementAllowed = false;
         routeToGo = 0;
         tParam = 0f;
+        speedModifier = speed;
     }
 
     public void RunPath()
     {
-        coroutineAllowed = true;
+        movementAllowed = true;
     }
 
-    public void StopMoving()
+    public void StopMovement()
     {
-        coroutineAllowed = false;
+        movementAllowed = false;
         StopCoroutine("GoByTheRoute");
     }
 
@@ -67,7 +70,7 @@ public class BezierMove : MonoBehaviour
 
     private IEnumerator GoByTheRoute(int routeNumber)
     {
-        coroutineAllowed = false;
+        movementAllowed = false;
 
         Vector2 p0 = routes[routeNumber].GetChild(0).position;
         Vector2 p1 = routes[routeNumber].GetChild(1).position;
@@ -93,16 +96,16 @@ public class BezierMove : MonoBehaviour
             if (routeToGo >= routes.Length)
             {
                 routeToGo = 0;
-                coroutineAllowed = true;
+                movementAllowed = true;
             }
 
-            coroutineAllowed = true;
+            movementAllowed = true;
         }
         else
         {
             if (routeToGo <= routes.Length - 1)
             {
-                coroutineAllowed = true;
+                movementAllowed = true;
             }
         }
     }

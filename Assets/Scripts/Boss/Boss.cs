@@ -46,9 +46,9 @@ public class Boss : MonoBehaviour
                 Debug.Log($"Stage index: {stageIndex}");
                 if (stageIndex < stages.Length)
                 {
-                    bezierRouteMoveInstance.StopMoving();
+                    bezierRouteMoveInstance.StopMovement();
                     DestroyCurrentStage();
-                    StartCoroutine(MoveToPosition(defaultPosition, 1f));
+                    // StartCoroutine(MoveToPosition(defaultPosition, 1f));
                 }
                 else
                 {
@@ -62,7 +62,11 @@ public class Boss : MonoBehaviour
     public void DestroyCurrentStage()
     {
         Destroy(currentBarrage);
-        currentPathSpeed = 0;
+        DestroyCurrentPath();
+    }
+
+    public void DestroyCurrentPath()
+    {
         Destroy(pathTransform.gameObject);
     }
 
@@ -70,6 +74,9 @@ public class Boss : MonoBehaviour
     {
         Debug.Log($"Stages length: {stages.Length}");
         UnpackStage(stageIndex);
+        UnpackPath(currentPath);
+        currentBarrage = Instantiate(currentStage.barrage, transform);
+        bezierRouteMoveInstance.RunPath();
         hittable = true;
     }
 
@@ -80,16 +87,13 @@ public class Boss : MonoBehaviour
         currentPath = currentStage.path;
         currentPathSpeed = currentStage.pathSpeed;
         currentDeathTimer = currentStage.deathTimer;
-        UnpackPath(currentPath);
-        currentBarrage = Instantiate(currentStage.barrage, transform);
-        bezierRouteMoveInstance.RunPath();
     }
 
     private void UnpackPath(Transform path)
     {
         pathTransform = Instantiate(path, defaultPosition, Quaternion.identity);
-        bezierRouteMoveInstance.SetPath(pathTransform, currentPathSpeed);
-        bezierRouteMoveInstance.ResetValues();
+        bezierRouteMoveInstance.ResetValues(currentPathSpeed);
+        bezierRouteMoveInstance.UnpackPath(pathTransform);
     }
 
     public IEnumerator MoveToPosition(Vector3 destination, float timeToMove)
