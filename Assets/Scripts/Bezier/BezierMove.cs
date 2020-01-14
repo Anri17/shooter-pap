@@ -21,8 +21,6 @@ public class BezierMove : MonoBehaviour
         {
             StartCoroutine(GoByTheRoute(routeToGo));
         }
-
-        Debug.Log($"Movement Allowed: {movementAllowed}");
     }
 
     public void UnpackPath(Transform path)
