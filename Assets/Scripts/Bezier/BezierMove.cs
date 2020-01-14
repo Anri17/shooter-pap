@@ -37,7 +37,7 @@ public class BezierMove : MonoBehaviour
         speedModifier = speed;
     }
 
-    public void RunPath()
+    public void StartMovement()
     {
         stopMovement = false;
         movementAllowed = true;

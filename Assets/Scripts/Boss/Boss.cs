@@ -18,12 +18,12 @@ public class Boss : MonoBehaviour
 
     bool hittable = false;
 
-    BezierMove bezierRouteMoveInstance;
+    BezierMove bezierMoveInstance;
     Transform pathTransform;
 
     void Awake()
     {
-        bezierRouteMoveInstance = GetComponent<BezierMove>();
+        bezierMoveInstance = GetComponent<BezierMove>();
     }
 
     void Start()
@@ -45,7 +45,7 @@ public class Boss : MonoBehaviour
                 Debug.Log($"Stage index: {stageIndex}");
                 if (stageIndex < stages.Length)
                 {
-                    bezierRouteMoveInstance.StopMovement();
+                    bezierMoveInstance.StopMovement();
                     DestroyCurrentStage();
                     StartCoroutine(MoveToPosition(defaultPosition, 1f));
                 }
@@ -75,7 +75,7 @@ public class Boss : MonoBehaviour
         UnpackStage(stageIndex);
         UnpackPath(currentPath);
         currentBarrage = Instantiate(currentStage.barrage, transform);
-        bezierRouteMoveInstance.RunPath();
+        bezierMoveInstance.StartMovement();
         hittable = true;
     }
 
@@ -91,8 +91,8 @@ public class Boss : MonoBehaviour
     private void UnpackPath(Transform path)
     {
         pathTransform = Instantiate(path, defaultPosition, Quaternion.identity);
-        bezierRouteMoveInstance.ResetValues(currentPathSpeed);
-        bezierRouteMoveInstance.UnpackPath(pathTransform);
+        bezierMoveInstance.ResetValues(currentPathSpeed);
+        bezierMoveInstance.UnpackPath(pathTransform);
     }
 
     public IEnumerator MoveToPosition(Vector3 destination, float timeToMove)

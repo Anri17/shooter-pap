@@ -8,8 +8,20 @@ public class OldEnemy : MonoBehaviour
     [SerializeField] int scoreToAdd = 200;
     [SerializeField] GameObject shot = null;
     [SerializeField] float shootDelay = 0f;
+
     GameObject spawnedShot;
     bool barrageIsSpawned = false;
+    BezierMove bezierMoveInstance;
+
+    private void Awake()
+    {
+        bezierMoveInstance = GetComponent<BezierMove>();
+    }
+
+    private void Start()
+    {
+        bezierMoveInstance.StartMovement();
+    }
 
     void Update()
     {

@@ -18,10 +18,12 @@ public class NormalEnemy : Enemy
 
     GameObject shotInstance;
     GameManager gameManager;
+    BezierMove bezierMoveInstance;
 
     public void Awake()
     {
         gameManager = GameManager.Instance;
+        bezierMoveInstance = GetComponent<BezierMove>();
     }
 
     public void Start()
@@ -33,6 +35,7 @@ public class NormalEnemy : Enemy
         {
             Tragectory.Add(tragectory[i].transform);
         }
+        bezierMoveInstance.StartMovement();
     }
 
     private void Update()
