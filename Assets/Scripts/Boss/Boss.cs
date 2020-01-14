@@ -29,7 +29,6 @@ public class Boss : MonoBehaviour
     void Start()
     {
         StartCoroutine(MoveToPosition(defaultPosition, 1f));
-        // SetStage(stageIndex);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,7 +47,7 @@ public class Boss : MonoBehaviour
                 {
                     bezierRouteMoveInstance.StopMovement();
                     DestroyCurrentStage();
-                    // StartCoroutine(MoveToPosition(defaultPosition, 1f));
+                    StartCoroutine(MoveToPosition(defaultPosition, 1f));
                 }
                 else
                 {
