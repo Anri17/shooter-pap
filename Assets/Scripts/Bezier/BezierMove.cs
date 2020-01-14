@@ -9,19 +9,17 @@ public class BezierMove : MonoBehaviour
     public Transform path;
     public Transform[] routes;
 
+    public bool stopMovement = false; // bool needed for stopping the movement halfway through
+
     private int routeToGo;
 
-    private bool movementAllowed = false;
+    private bool movementAllowed = false; // bool needed for starting the coroutine
 
     private void Update()
     {
-        if (movementAllowed)
+        if (movementAllowed && !stopMovement)
         {
             StartCoroutine(GoByTheRoute(routeToGo));
-        }
-        else
-        {
-            StopCoroutine(GoByTheRoute(routeToGo));
         }
 
         Debug.Log($"Movement Allowed: {movementAllowed}");
@@ -43,11 +41,13 @@ public class BezierMove : MonoBehaviour
 
     public void RunPath()
     {
+        stopMovement = false;
         movementAllowed = true;
     }
 
     public void StopMovement()
     {
+        stopMovement = true;
         movementAllowed = false;
         StopCoroutine(GoByTheRoute(routeToGo));
     }
@@ -77,7 +77,7 @@ public class BezierMove : MonoBehaviour
         Vector2 p2 = routes[routeNumber].GetChild(2).position;
         Vector2 p3 = routes[routeNumber].GetChild(3).position;
 
-        while (tParam < 1)
+        while (tParam < 1 && !stopMovement)
         {
             tParam += Time.deltaTime * speedModifier;
 
