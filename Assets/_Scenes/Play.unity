@@ -3327,7 +3327,7 @@ MonoBehaviour:
     type: 3}
   boss: {fileID: 7945089824047321945, guid: 13c3bbef8edaced4bac3d444e7c00c5e, type: 3}
   stageMusicTheme: {fileID: 8300000, guid: 0bcf999e6c0d53d408b56c8c2f93be86, type: 3}
-  bossMusicTheme: {fileID: 8300000, guid: c59601a9c249b0347b47a1fb1c143854, type: 3}
+  bossMusicTheme: {fileID: 8300000, guid: 9490f44bf1f7ba045af0915669090d49, type: 3}
   waves:
   - {fileID: 1166434042}
   - {fileID: 1586090544}
