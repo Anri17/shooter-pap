@@ -11,10 +11,6 @@ public class BezierMove : MonoBehaviour
 
     private int routeToGo;
 
-    private float tParam;
-
-    private Vector2 catPosition;
-
     private bool movementAllowed = false;
 
     private void Update()
@@ -22,6 +18,10 @@ public class BezierMove : MonoBehaviour
         if (movementAllowed)
         {
             StartCoroutine(GoByTheRoute(routeToGo));
+        }
+        else
+        {
+            StopCoroutine(GoByTheRoute(routeToGo));
         }
 
         Debug.Log($"Movement Allowed: {movementAllowed}");
@@ -38,7 +38,6 @@ public class BezierMove : MonoBehaviour
     {
         movementAllowed = false;
         routeToGo = 0;
-        tParam = 0f;
         speedModifier = speed;
     }
 
@@ -50,7 +49,7 @@ public class BezierMove : MonoBehaviour
     public void StopMovement()
     {
         movementAllowed = false;
-        StopCoroutine("GoByTheRoute");
+        StopCoroutine(GoByTheRoute(routeToGo));
     }
 
     public Vector3 GetStartingPoint()
@@ -72,6 +71,7 @@ public class BezierMove : MonoBehaviour
     {
         movementAllowed = false;
 
+        float tParam = 0f;
         Vector2 p0 = routes[routeNumber].GetChild(0).position;
         Vector2 p1 = routes[routeNumber].GetChild(1).position;
         Vector2 p2 = routes[routeNumber].GetChild(2).position;
@@ -81,13 +81,9 @@ public class BezierMove : MonoBehaviour
         {
             tParam += Time.deltaTime * speedModifier;
 
-            catPosition = Bezier.CalculateCubicPoint(tParam, p0, p1, p2, p3);
-
-            transform.position = catPosition;
+            transform.position = Bezier.CalculateCubicPoint(tParam, p0, p1, p2, p3);
             yield return new WaitForEndOfFrame();
         }
-
-        tParam = 0f;
 
         routeToGo++;
 
