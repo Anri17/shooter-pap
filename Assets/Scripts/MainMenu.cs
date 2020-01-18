@@ -8,10 +8,12 @@ public class MainMenu : MonoBehaviour
     GameManager gameManager;
     MusicPlayer musicPlayer;
 
-    [SerializeField] GameObject MainMenuScreen;
-    [SerializeField] GameObject PlayScreen;
-    [SerializeField] GameObject TutorialScreen;
-    [SerializeField] GameObject OptionsScreen;
+    [SerializeField] GameObject mainMenu;
+    [SerializeField] GameObject playMenu;
+    [SerializeField] GameObject tutorialMenu;
+    [SerializeField] GameObject optionsMenu;
+    [SerializeField] GameObject bottomRightPannel;
+    [SerializeField] GameObject middlePannel;
     [SerializeField] AudioClip menuMusicTheme;
 
     private void Start()
@@ -20,38 +22,54 @@ public class MainMenu : MonoBehaviour
         musicPlayer = MusicPlayer.Instance;
         gameManager.ResetData();
         musicPlayer.PlayMusic(menuMusicTheme);
-        DisplayMainMenuScreen();
+        DisplayMainMenu();
     }
 
-    public void DisplayMainMenuScreen()
+    public void DisplayMainMenu()
     {
-        MainMenuScreen.SetActive(true);
-        PlayScreen.SetActive(false);
-        TutorialScreen.SetActive(false);
-        OptionsScreen.SetActive(false);
+        mainMenu.SetActive(true);
+        playMenu.SetActive(false);
+        tutorialMenu.SetActive(false);
+        optionsMenu.SetActive(false);
+        DisplayBottomRightPannel();
     }
 
-    public void DisplayPlayScreen()
+    public void DisplayPlayMenu()
     {
-        MainMenuScreen.SetActive(false);
-        PlayScreen.SetActive(true);
-        TutorialScreen.SetActive(false);
-        OptionsScreen.SetActive(false);
+        mainMenu.SetActive(false);
+        playMenu.SetActive(true);
+        tutorialMenu.SetActive(false);
+        optionsMenu.SetActive(false);
+        DisplayMiddlePannel();
     }
 
-    public void DisplayTutorialScreen()
+    public void DisplayTutorialMenu()
     {
-        MainMenuScreen.SetActive(false);
-        PlayScreen.SetActive(false);
-        TutorialScreen.SetActive(true);
-        OptionsScreen.SetActive(false);
+        mainMenu.SetActive(false);
+        playMenu.SetActive(false);
+        tutorialMenu.SetActive(true);
+        optionsMenu.SetActive(false);
+        DisplayMiddlePannel();
     }
-    public void DisplayOptionsScreen()
+    public void DisplayOptionsMenu()
     {
-        MainMenuScreen.SetActive(false);
-        PlayScreen.SetActive(false);
-        TutorialScreen.SetActive(false);
-        OptionsScreen.SetActive(true);
+        mainMenu.SetActive(false);
+        playMenu.SetActive(false);
+        tutorialMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+        DisplayMiddlePannel();
+    }
+
+    void DisplayBottomRightPannel()
+    {
+        bottomRightPannel.SetActive(true);
+        middlePannel.SetActive(false);
+    }
+
+    void DisplayMiddlePannel()
+    {
+        bottomRightPannel.SetActive(false);
+        middlePannel.SetActive(true);
     }
 
     public void ExitApplication()
