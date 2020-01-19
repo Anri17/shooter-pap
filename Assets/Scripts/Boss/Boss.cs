@@ -5,13 +5,14 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     public Vector3 defaultPosition = new Vector3(-3.81f, 5.97f, 0);
-
     public BossStage[] stages;
     int stageIndex = 0;
 
+    public GameObject bossInfo;
     BossStage currentStage;
     GameObject currentBarrage;
-    float currentHealth;
+    public float currentMaxHealth;
+    public float currentHealth;
     Transform currentPath;
     float currentPathSpeed;
     float currentDeathTimer;
@@ -82,6 +83,7 @@ public class Boss : MonoBehaviour
     private void UnpackStage(int stageIndex)
     {
         currentStage = stages[stageIndex];
+        currentMaxHealth = currentStage.health;
         currentHealth = currentStage.health;
         currentPath = currentStage.path;
         currentPathSpeed = currentStage.pathSpeed;

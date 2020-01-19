@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class LevelManager : MonoBehaviour
     public AudioClip bossMusicTheme;
     public GameObject[] waves;
     public Vector3 bossSpawnPoints = new Vector3(1, 13, 0);
+    public GameObject bossScreen;
+    public GameObject bossHealthBar;
 
     Player playerScript;
     GameObject spawnedBoss;
@@ -32,6 +35,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        bossHealthBar.GetComponent<Slider>().value = 0;
         MusicPlayer.Instance.PlayMusic(stageMusicTheme);
         SpawnPlayer(playerSpawnPoint.transform);
         playerScript = spawnedPlayer.GetComponent<Player>();
@@ -40,6 +44,10 @@ public class LevelManager : MonoBehaviour
         
     void Update()
     {
+        if (spawnedBoss != null)
+        {
+            bossHealthBar.GetComponent<Slider>().value = spawnedBoss.GetComponent<Boss>().currentHealth / spawnedBoss.GetComponent<Boss>().currentMaxHealth;
+        }
         // Move Background
         backgroundImage.transform.position += new Vector3(0, -1f, 0) * backgroundImageScrollSpeed * Time.deltaTime;
 
@@ -48,20 +56,6 @@ public class LevelManager : MonoBehaviour
         {
             TogglePauseGame();
         }
-
-        /*
-        if (spawnedPlayer == null)
-        {
-            if (playerScript.lives >= 0)
-            {
-                SpawnPlayer(playerSpawnPoint.transform);
-            }
-            else
-            {
-                Debug.Log("Game Over!");
-            }
-        }
-        */
     }
 
     public void SpawnPlayer(Transform position)
@@ -74,6 +68,13 @@ public class LevelManager : MonoBehaviour
         {
             playerScript.Respawn(playerSpawnPoint.transform.position);
         }
+    }
+
+    public void SetBoss()
+    {
+        bossScreen.SetActive(true);
+        StartCoroutine(FillHealthBar());
+        SpawnBoss();
     }
 
     public void SpawnBoss()
@@ -158,7 +159,21 @@ public class LevelManager : MonoBehaviour
         ClearBullets();
         yield return new WaitForSeconds(2f);
         Debug.Log("Mid Boss");
-        SpawnBoss();
+        SetBoss();
         MusicPlayer.Instance.PlayMusic(bossMusicTheme);
+        yield return new WaitUntil(() => spawnedBoss == null);
+        bossScreen.SetActive(false);
+        Debug.Log("Continuing stage");
+    }
+
+    IEnumerator FillHealthBar()
+    {
+        while (bossHealthBar.GetComponent<Slider>().value < 1)
+        {
+            Debug.Log("Raising Health Bar");
+            bossHealthBar.GetComponent<Slider>().value += 0.1f;
+            yield return new WaitForFixedUpdate();
+        }
+        yield return null;
     }
 }
