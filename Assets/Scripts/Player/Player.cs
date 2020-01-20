@@ -24,6 +24,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (PowerLevel > 4)
+        {
+            PowerLevel = 4f;
+        }
+
         // shoot barrage
         if (PowerLevel >= 0.0f && PowerLevel < 1.0f)      // Level 1 Barrage
         {
@@ -128,6 +133,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player died");
         Lives--;
+        PowerLevel = 0;
         gameObject.SetActive(false);
         Destroy(currentBarrage);
         if (Lives >= 0)
