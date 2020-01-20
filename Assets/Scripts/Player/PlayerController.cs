@@ -23,12 +23,12 @@ public class PlayerController : MonoBehaviour
         Move();
     }
 
-    public void Move()
+    private void Move()
     {
         transform.position += direction * player.Speed * Time.deltaTime;
     }
 
-    public Vector3 GetDirection()
+    private Vector3 GetDirection()
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
