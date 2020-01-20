@@ -146,23 +146,27 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "PowerCollectable")
         {
-            PowerLevel += 0.05f;
-            GameManager.Instance.Score += 150;
+            AddValues(0.05f, 150);
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "BigPowerCollectable")
         {
-            PowerLevel += 1.00f;
-            GameManager.Instance.Score += 200;
+            AddValues(1.00f, 200);
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "ScoreCollectable")
         {
-            GameManager.Instance.Score += 500;
+            AddValues(0f, 500);
             Destroy(collision.gameObject);
         }
+    }
+
+    public void AddValues(float powerLevel, int score)
+    {
+        PowerLevel += powerLevel;
+        GameManager.Instance.Score += score;
     }
 
     public void GetInputs()
