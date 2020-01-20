@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float normalSpeed = 8.0f;
-    [SerializeField] float focusSpeed = 4.0f;
-
     public GameObject[] barrages;
 
     public int Lives { get; set; }
@@ -13,15 +10,11 @@ public class Player : MonoBehaviour
     public float PowerLevel { get; set; }
 
     Vector3 spawnPoint;
-    Vector3 direction;
     GameObject currentBarrage;
     GameObject mainBarrage;
-	float horizontal;
-	float vertical;
 
     void Awake()
     {
-        Speed = normalSpeed;
         PowerLevel = 0.0f;
         Lives = 3;
         spawnPoint = new Vector3(-3.44f, -6.76f, 0);
@@ -29,9 +22,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        SetDirection();
-        Move();
-
         // shoot barrage
         if (PowerLevel >= 0.0f && PowerLevel < 1.0f)      // Level 1 Barrage
         {
@@ -71,11 +61,6 @@ public class Player : MonoBehaviour
             AddValues(0f, 500);
             Destroy(collision.gameObject);
         }
-    }
-
-    public void Move()
-    {
-        transform.position += direction * Speed * Time.deltaTime;
     }
 
     public void SetBarrage(GameObject barrage)
@@ -124,38 +109,6 @@ public class Player : MonoBehaviour
     {
         PowerLevel += powerLevel;
         GameManager.Instance.Score += score;
-    }
-
-    public void SetDirection()
-    {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
-
-        // get speed value
-        if (Input.GetButtonDown("Focus"))
-        {
-            Speed = focusSpeed;
-        }
-        if (Input.GetButtonUp("Focus"))
-        {
-            Speed = normalSpeed;
-        }
-
-        if (Input.GetButton("Horizontal") && Input.GetButton("Vertical"))
-        {
-            if (horizontal > 0)
-            {
-                direction = new Vector3(Mathf.Cos(horizontal), Mathf.Sin(vertical), 0.0f);
-            }
-            if (horizontal < 0)
-            {
-                direction = new Vector3(-Mathf.Cos(horizontal), Mathf.Sin(vertical), 0.0f);
-            }
-        }
-        else
-        {
-            direction = new Vector3(horizontal, vertical, 0.0f);
-        }
     }
 
     public void Respawn(Vector3 position)
