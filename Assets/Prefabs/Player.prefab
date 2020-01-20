@@ -217,8 +217,6 @@ MonoBehaviour:
   focusSpeed: 4
   barrages:
   - {fileID: 7330251143779989804, guid: 27fd3a2edbc8b8847b0eb8ec0e554be8, type: 3}
-  - {fileID: 7330251143779989804, guid: 27fd3a2edbc8b8847b0eb8ec0e554be8, type: 3}
-  - {fileID: 7330251143779989804, guid: 27fd3a2edbc8b8847b0eb8ec0e554be8, type: 3}
-  - {fileID: 7330251143779989804, guid: 27fd3a2edbc8b8847b0eb8ec0e554be8, type: 3}
-  powerLevel: 0
-  lives: 0
+  - {fileID: 7330251143779989804, guid: 5fc82424f55b41e4a969d1d914ec50a0, type: 3}
+  - {fileID: 7330251143779989804, guid: 80d81689c76e85045b21f56ba848ed3a, type: 3}
+  - {fileID: 7330251143779989804, guid: 5b11914011c670f43ada91ae72e1e91e, type: 3}

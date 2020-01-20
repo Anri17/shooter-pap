@@ -54,18 +54,12 @@ public class Player : MonoBehaviour
         // shoot barrage
         if (PowerLevel >= 0.0f && PowerLevel < 1.0f)      // Level 1 Barrage
         {
+            SetBarrage(barrages[0]);
             // update barrage if firing
             if (mainBarrage != barrages[0] && Input.GetButton("Fire1"))
             {
-                mainBarrage = barrages[0];
                 Destroy(currentBarrage);
                 SpawnBarrage(mainBarrage);
-            }
-
-            // update barrage if not firing
-            if (mainBarrage != barrages[0])
-            {
-                mainBarrage = barrages[0];
             }
         }
         else if (PowerLevel >= 1.0f && PowerLevel < 2.0f) // Level 2 Barrage
@@ -73,7 +67,7 @@ public class Player : MonoBehaviour
             // update barrage if firing
             if (mainBarrage != barrages[1] && Input.GetButton("Fire1"))
             {
-                mainBarrage = barrages[1];
+                SetBarrage(barrages[1]);
                 Destroy(currentBarrage);
                 SpawnBarrage(mainBarrage);
             }
@@ -81,7 +75,7 @@ public class Player : MonoBehaviour
             // update barrage if not firing
             if (mainBarrage != barrages[1])
             {
-                mainBarrage = barrages[1];
+                SetBarrage(barrages[1]);
             }
         }
         else if (PowerLevel >= 2.0f && PowerLevel < 3.0f) // Level 3 Barrage
@@ -89,7 +83,7 @@ public class Player : MonoBehaviour
             // update barrage if firing
             if (mainBarrage != barrages[2] && Input.GetButton("Fire1"))
             {
-                mainBarrage = barrages[2];
+                SetBarrage(barrages[2]);
                 Destroy(currentBarrage);
                 SpawnBarrage(mainBarrage);
             }
@@ -97,7 +91,7 @@ public class Player : MonoBehaviour
             // update barrage if not firing
             if (mainBarrage != barrages[2])
             {
-                mainBarrage = barrages[2];
+                SetBarrage(barrages[2]);
             }
         }
         else                                                        // Level 4 Barrage
@@ -161,6 +155,11 @@ public class Player : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SetBarrage(GameObject barrage)
+    {
+        mainBarrage = barrage;
     }
 
     public void AddValues(float powerLevel, int score)
