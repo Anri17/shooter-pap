@@ -31,16 +31,6 @@ public class Player : MonoBehaviour
     {
         GetInputs();
 
-        // get speed value
-        if (Input.GetButtonDown("Focus"))
-        {
-            Speed = focusSpeed;
-        }
-        if (Input.GetButtonUp("Focus"))
-        {
-            Speed = normalSpeed;
-        }
-
         // get direction 
         if (Input.GetButton("Horizontal") && Input.GetButton("Vertical"))
         {
@@ -159,7 +149,6 @@ public class Player : MonoBehaviour
             PowerLevel += 0.05f;
             GameManager.Instance.Score += 150;
             Destroy(collision.gameObject);
-            Debug.Log("Power Level: " + PowerLevel);
         }
 
         if (collision.gameObject.tag == "BigPowerCollectable")
@@ -167,14 +156,12 @@ public class Player : MonoBehaviour
             PowerLevel += 1.00f;
             GameManager.Instance.Score += 200;
             Destroy(collision.gameObject);
-            // Debug.Log("Power Level: " + Data.powerLevel);
         }
 
         if (collision.gameObject.tag == "ScoreCollectable")
         {
             GameManager.Instance.Score += 500;
             Destroy(collision.gameObject);
-            Debug.Log("Score: " + GameManager.Instance.Score);
         }
     }
 
@@ -182,6 +169,16 @@ public class Player : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+
+        // get speed value
+        if (Input.GetButtonDown("Focus"))
+        {
+            Speed = focusSpeed;
+        }
+        if (Input.GetButtonUp("Focus"))
+        {
+            Speed = normalSpeed;
+        }
     }
 
     public void Respawn(Vector3 position)
