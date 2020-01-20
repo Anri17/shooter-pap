@@ -121,6 +121,25 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public static void SpawnItems(Vector3 position, GameObject powerItem, int powerItemCount, GameObject bigPowerItem, int bigPowerItemCount, GameObject scoreItem, int scoreItemCount)
+    {
+        for (int i = 0; i < powerItemCount; i++)
+        {
+            Vector3 pos = position + new Vector3(Random.Range(-2f, 2), Random.Range(-0.6f, 2), 0);
+            Instantiate(powerItem, pos, Quaternion.identity);
+        }
+        for (int i = 0; i < bigPowerItemCount; i++)
+        {
+            Vector3 pos = position + new Vector3(Random.Range(-2f, 2), Random.Range(-0.6f, 2), 0);
+            Instantiate(bigPowerItem, pos, Quaternion.identity);
+        }
+        for (int i = 0; i < scoreItemCount; i++)
+        {
+            Vector3 pos = position + new Vector3(Random.Range(-2f, 2), Random.Range(-0.6f, 2), 0);
+            Instantiate(scoreItem, pos, Quaternion.identity);
+        }
+    }
+
     public void TogglePauseGame()
     {
         if (pauseMenu.activeSelf)

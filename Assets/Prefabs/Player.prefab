@@ -214,13 +214,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81cc8efa3b140149a1de98cf70f1bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 10
-  focusSpeed: 4
   barrages:
   - {fileID: 7330251143779989804, guid: 27fd3a2edbc8b8847b0eb8ec0e554be8, type: 3}
   - {fileID: 7330251143779989804, guid: 5fc82424f55b41e4a969d1d914ec50a0, type: 3}
   - {fileID: 7330251143779989804, guid: 80d81689c76e85045b21f56ba848ed3a, type: 3}
   - {fileID: 7330251143779989804, guid: 5b11914011c670f43ada91ae72e1e91e, type: 3}
+  powerItem: {fileID: 6719004770698810563, guid: 53db7a3d635b9d541bd3d382cb526a47,
+    type: 3}
+  bigPowerItem: {fileID: 6719004770698810563, guid: 1b8a86d5d6ef98647bad692b90fe14f5,
+    type: 3}
+  scoreItem: {fileID: 9156461194448261568, guid: b10fce0f81509e340a8a17e6daa6a75c,
+    type: 3}
 --- !u!114 &636037215666740693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,3 +237,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818a35bb4f1ff4449ad56fafa3ea7b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalSpeed: 12
+  focusSpeed: 4

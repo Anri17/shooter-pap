@@ -15,26 +15,19 @@ public class PlayerHitbox : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("EnemyBullet"))
         {
-            // destroy the player
+            LevelManager.SpawnItems(transform.position, player.powerItem, 5, player.bigPowerItem, 1, player.bigPowerItem, 0);
             Destroy(collision.gameObject);
             player.Die();
-            // TODO: drop power items
-
-            // TODO: display death particles
         }
         if (collision.gameObject.tag.Equals("Enemy"))
         {
+            LevelManager.SpawnItems(transform.position, player.powerItem, 5, player.bigPowerItem, 1, player.bigPowerItem, 0);
             player.Die();
-            // TODO: drop power items
-
-            // TODO: display death particles
         }
         if (collision.gameObject.tag.Equals("Boss"))
         {
+            LevelManager.SpawnItems(transform.position, player.powerItem, 5, player.bigPowerItem, 1, player.bigPowerItem, 0);
             player.Die();
-            // TODO: drop power items
-
-            // TODO: display death particles
         }
     }
 }

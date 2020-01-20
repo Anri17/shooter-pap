@@ -4,6 +4,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject[] barrages;
+    public GameObject powerItem;
+    public GameObject bigPowerItem;
+    public GameObject scoreItem;
 
     public int Lives { get; set; }
     public float Speed { get; set;  }
@@ -12,9 +15,11 @@ public class Player : MonoBehaviour
     Vector3 spawnPoint;
     GameObject currentBarrage;
     GameObject mainBarrage;
+    GameManager gameManager;
 
     void Awake()
     {
+        gameManager = GameManager.Instance;
         PowerLevel = 0.0f;
         Lives = 3;
         spawnPoint = new Vector3(-3.44f, -6.76f, 0);
