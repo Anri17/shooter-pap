@@ -29,10 +29,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // get input values
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
-        
+        GetInputs();
+
         // get speed value
         if (Input.GetButtonDown("Focus"))
         {
@@ -178,6 +176,12 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             Debug.Log("Score: " + GameManager.Instance.Score);
         }
+    }
+
+    public void GetInputs()
+    {
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
     }
 
     public void Respawn(Vector3 position)
