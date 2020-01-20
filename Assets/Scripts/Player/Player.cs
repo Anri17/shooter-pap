@@ -54,56 +54,19 @@ public class Player : MonoBehaviour
         // shoot barrage
         if (PowerLevel >= 0.0f && PowerLevel < 1.0f)      // Level 1 Barrage
         {
-            if (mainBarrage != barrages[0])
-            {
-                SetBarrage(barrages[0]);
-                // update barrage if firing
-                if (Input.GetButton("Fire1"))
-                {
-                    Destroy(currentBarrage);
-                    SpawnBarrage(mainBarrage);
-                }
-            }
+            SetBarrage(barrages[0]);
         }
         else if (PowerLevel >= 1.0f && PowerLevel < 2.0f) // Level 2 Barrage
         {
-            if (mainBarrage != barrages[1])
-            {
-                SetBarrage(barrages[1]);
-                // update barrage if firing
-                if (Input.GetButton("Fire1"))
-                {
-                    Destroy(currentBarrage);
-                    SpawnBarrage(mainBarrage);
-                }
-            }
+            SetBarrage(barrages[1]);
         }
         else if (PowerLevel >= 2.0f && PowerLevel < 3.0f) // Level 3 Barrage
         {
-            if (mainBarrage != barrages[2])
-            {
-                SetBarrage(barrages[2]);
-                // update barrage if firing
-                if (Input.GetButton("Fire1"))
-                {
-                    Destroy(currentBarrage);
-                    SpawnBarrage(mainBarrage);
-                }
-            }
+            SetBarrage(barrages[2]);
         }
         else                                              // Level 4 Barrage
         {
-            // update barrage if firing
-            if (mainBarrage != barrages[3])
-            {
-                SetBarrage(barrages[3]);
-                // update barrage if firing
-                if (Input.GetButton("Fire1"))
-                {
-                    Destroy(currentBarrage);
-                    SpawnBarrage(mainBarrage);
-                }
-            }
+            SetBarrage(barrages[3]);
         }
         FireBarrage();
     }
@@ -129,6 +92,20 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void SetBarrage(GameObject barrage)
+    {
+        if (mainBarrage != barrage)
+        {
+            AssignBarrage(barrage);
+            // update barrage if firing
+            if (Input.GetButton("Fire1"))
+            {
+                Destroy(currentBarrage);
+                SpawnBarrage(mainBarrage);
+            }
+        }
+    } 
+
     public void FireBarrage()
     {
         // Fire barrage when the button is pressed
@@ -152,7 +129,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void SetBarrage(GameObject barrage)
+    public void AssignBarrage(GameObject barrage)
     {
         mainBarrage = barrage;
     }
