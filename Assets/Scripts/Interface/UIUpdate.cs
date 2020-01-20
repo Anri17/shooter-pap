@@ -5,12 +5,10 @@ using UnityEngine.UI;
 
 public class UIUpdate : MonoBehaviour
 {
-    public GameObject LevelManager;
     public GameObject powerLevelNumber;
     public GameObject scoreNumber;
     public GameObject livesNumber;
 
-    LevelManager levelManagerScript;
     Player player;
     GameManager gameManager;
 
@@ -22,8 +20,6 @@ public class UIUpdate : MonoBehaviour
 
     void Start()
     {
-        // levelManagerScript = LevelManager.GetComponent<TestLevel>();
-        // playerScript = GetComlevelManagerScript.playerScript;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 

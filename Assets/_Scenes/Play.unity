@@ -3455,7 +3455,7 @@ GameObject:
   - component: {fileID: 1281425556}
   - component: {fileID: 1281425557}
   m_Layer: 5
-  m_Name: UIDataDisplay
+  m_Name: DataDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3495,7 +3495,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333dfb8976b9a404fbac974d9891b817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelManager: {fileID: 1261219701}
   powerLevelNumber: {fileID: 1849291339}
   scoreNumber: {fileID: 727415605}
   livesNumber: {fileID: 1534112650}

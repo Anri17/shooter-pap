@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8655174311982016142}
   - component: {fileID: 8694028411301425022}
   m_Layer: 8
-  m_Name: FotherEnemy1
+  m_Name: EnemyDirected2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   scoreToAdd: 200
-  shot: {fileID: 4100146615351248587, guid: 8789847b9268dc740ba701ac59d4f205, type: 3}
+  shot: {fileID: 8408950869471283768, guid: 298d5b1c189a2d1479a4ae49be7c7b40, type: 3}
   shootDelay: 1
 --- !u!114 &8694028411301425022
 MonoBehaviour:
@@ -162,3 +162,5 @@ MonoBehaviour:
   loopMovement: 0
   speedModifier: 0.5
   path: {fileID: 0}
+  routes: []
+  stopMovement: 0

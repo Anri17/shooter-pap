@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a25a5cc256cc64d94b840e5c5a8e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5011265821085266591, guid: 0720cb7424d90ce4bb717c4ef201f690, type: 3}
+  bullet: {fileID: 5011265821085266591, guid: 54b06b74c30043a4196f20fcc3c24b4a, type: 3}
   target: {fileID: 4037159831597851511, guid: bfe6cc0d5ce856c40ab352a71f92f48d, type: 3}
   fireLimitedCount: 0
   fireBulletCount: 0
