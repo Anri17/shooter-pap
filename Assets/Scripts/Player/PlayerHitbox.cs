@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerHitbox : MonoBehaviour
 {
-    Player playerScript;
+    Player player;
 
     private void Awake()
     {
-        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        player = GetComponentInParent<Player>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,21 +17,21 @@ public class PlayerHitbox : MonoBehaviour
         {
             // destroy the player
             Destroy(collision.gameObject);
-            playerScript.Die();
+            player.Die();
             // TODO: drop power items
 
             // TODO: display death particles
         }
         if (collision.gameObject.tag.Equals("Enemy"))
         {
-            playerScript.Die();
+            player.Die();
             // TODO: drop power items
 
             // TODO: display death particles
         }
         if (collision.gameObject.tag.Equals("Boss"))
         {
-            playerScript.Die();
+            player.Die();
             // TODO: drop power items
 
             // TODO: display death particles
