@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerHitbox : MonoBehaviour
 {
+    LevelManager levelManager;
     Player player;
 
     private void Awake()
     {
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         player = GetComponentInParent<Player>();
     }
 
@@ -15,18 +17,18 @@ public class PlayerHitbox : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("EnemyBullet"))
         {
-            LevelManager.SpawnItems(transform.position, player.powerItem, 5, player.bigPowerItem, 1, player.bigPowerItem, 0);
+            levelManager.SpawnItems(transform.position, 5, 1, 0);
             Destroy(collision.gameObject);
             player.Die();
         }
         if (collision.gameObject.tag.Equals("Enemy"))
         {
-            LevelManager.SpawnItems(transform.position, player.powerItem, 5, player.bigPowerItem, 1, player.bigPowerItem, 0);
+            levelManager.SpawnItems(transform.position, 5, 1, 0);
             player.Die();
         }
         if (collision.gameObject.tag.Equals("Boss"))
         {
-            LevelManager.SpawnItems(transform.position, player.powerItem, 5, player.bigPowerItem, 1, player.bigPowerItem, 0);
+            levelManager.SpawnItems(transform.position, 5, 1, 0);
             player.Die();
         }
     }

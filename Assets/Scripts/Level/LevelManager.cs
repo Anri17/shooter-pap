@@ -121,7 +121,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public static void SpawnItems(Vector3 position, GameObject powerItem, int powerItemCount, GameObject bigPowerItem, int bigPowerItemCount, GameObject scoreItem, int scoreItemCount)
+    public void SpawnItems(Vector3 position, int powerItemCount, int bigPowerItemCount, int scoreItemCount)
     {
         for (int i = 0; i < powerItemCount; i++)
         {
