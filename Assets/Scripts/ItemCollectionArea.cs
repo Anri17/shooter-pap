@@ -10,7 +10,14 @@ public class ItemCollectionArea : MonoBehaviour
     {
         if (collision.tag.Equals("Player"))
         {
-            Debug.Log("Player is in the item collection area.\n TODO: suck all items in the screen to the player");
+            GameObject[] powerCollectables = GameObject.FindGameObjectsWithTag("PowerCollectable");
+            GameObject[] bigPowerCollectables = GameObject.FindGameObjectsWithTag("BigPowerCollectable");
+            GameObject[] scoreCollectables = GameObject.FindGameObjectsWithTag("ScoreCollectable");
+
+            for (int i = 0; i < powerCollectables.Length; i++)
+            {
+                // Lerp Collectable to Player
+            }
         }        
     }
 }
