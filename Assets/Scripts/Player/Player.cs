@@ -54,60 +54,55 @@ public class Player : MonoBehaviour
         // shoot barrage
         if (PowerLevel >= 0.0f && PowerLevel < 1.0f)      // Level 1 Barrage
         {
-            SetBarrage(barrages[0]);
-            // update barrage if firing
-            if (mainBarrage != barrages[0] && Input.GetButton("Fire1"))
+            if (mainBarrage != barrages[0])
             {
-                Destroy(currentBarrage);
-                SpawnBarrage(mainBarrage);
+                SetBarrage(barrages[0]);
+                // update barrage if firing
+                if (Input.GetButton("Fire1"))
+                {
+                    Destroy(currentBarrage);
+                    SpawnBarrage(mainBarrage);
+                }
             }
         }
         else if (PowerLevel >= 1.0f && PowerLevel < 2.0f) // Level 2 Barrage
         {
-            // update barrage if firing
-            if (mainBarrage != barrages[1] && Input.GetButton("Fire1"))
-            {
-                SetBarrage(barrages[1]);
-                Destroy(currentBarrage);
-                SpawnBarrage(mainBarrage);
-            }
-
-            // update barrage if not firing
             if (mainBarrage != barrages[1])
             {
                 SetBarrage(barrages[1]);
+                // update barrage if firing
+                if (Input.GetButton("Fire1"))
+                {
+                    Destroy(currentBarrage);
+                    SpawnBarrage(mainBarrage);
+                }
             }
         }
         else if (PowerLevel >= 2.0f && PowerLevel < 3.0f) // Level 3 Barrage
         {
-            // update barrage if firing
-            if (mainBarrage != barrages[2] && Input.GetButton("Fire1"))
-            {
-                SetBarrage(barrages[2]);
-                Destroy(currentBarrage);
-                SpawnBarrage(mainBarrage);
-            }
-
-            // update barrage if not firing
             if (mainBarrage != barrages[2])
             {
                 SetBarrage(barrages[2]);
+                // update barrage if firing
+                if (Input.GetButton("Fire1"))
+                {
+                    Destroy(currentBarrage);
+                    SpawnBarrage(mainBarrage);
+                }
             }
         }
-        else                                                        // Level 4 Barrage
+        else                                              // Level 4 Barrage
         {
             // update barrage if firing
-            if (mainBarrage != barrages[3] && Input.GetButton("Fire1"))
-            {
-                mainBarrage = barrages[3];
-                Destroy(currentBarrage);
-                SpawnBarrage(mainBarrage);
-            }
-
-            // update barrage if not firing
             if (mainBarrage != barrages[3])
             {
-                mainBarrage = barrages[3];
+                SetBarrage(barrages[3]);
+                // update barrage if firing
+                if (Input.GetButton("Fire1"))
+                {
+                    Destroy(currentBarrage);
+                    SpawnBarrage(mainBarrage);
+                }
             }
         }
         FireBarrage();
