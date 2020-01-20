@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float normalSpeed = 8.0f;
+    [SerializeField] float normalSpeed = 12.0f;
     [SerializeField] float focusSpeed = 4.0f;
 
     float horizontal;
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        SetDirection();
+        direction = GetDirection();
         Move();
     }
 
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
         transform.position += direction * player.Speed * Time.deltaTime;
     }
 
-    public void SetDirection()
+    public Vector3 GetDirection()
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
@@ -47,16 +47,13 @@ public class PlayerController : MonoBehaviour
         {
             if (horizontal > 0)
             {
-                direction = new Vector3(Mathf.Cos(horizontal), Mathf.Sin(vertical), 0.0f);
+                return new Vector3(Mathf.Cos(horizontal), Mathf.Sin(vertical), 0.0f);
             }
             if (horizontal < 0)
             {
-                direction = new Vector3(-Mathf.Cos(horizontal), Mathf.Sin(vertical), 0.0f);
+                return new Vector3(-Mathf.Cos(horizontal), Mathf.Sin(vertical), 0.0f);
             }
         }
-        else
-        {
-            direction = new Vector3(horizontal, vertical, 0.0f);
-        }
+        return new Vector3(horizontal, vertical, 0.0f);
     }
 }
