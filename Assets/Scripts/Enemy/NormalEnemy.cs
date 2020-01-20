@@ -19,9 +19,11 @@ public class NormalEnemy : Enemy
     GameObject shotInstance;
     GameManager gameManager;
     BezierMove bezierMoveInstance;
+    LevelManager levelManager;
 
     public void Awake()
     {
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         gameManager = GameManager.Instance;
         bezierMoveInstance = GetComponent<BezierMove>();
     }
@@ -76,6 +78,7 @@ public class NormalEnemy : Enemy
     {
         if (Health <= 0)
         {
+            levelManager.SpawnItems(transform.position, 6, 1, 8);
             Die();
         }
     }

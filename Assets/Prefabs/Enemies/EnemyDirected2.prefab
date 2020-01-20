@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2020068115567859757}
   - component: {fileID: 198908127}
   - component: {fileID: 1011778523}
-  - component: {fileID: 8655174311982016142}
+  - component: {fileID: -8094800742574350355}
   - component: {fileID: 8694028411301425022}
   m_Layer: 8
   m_Name: EnemyDirected2
@@ -131,7 +131,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8655174311982016142
+--- !u!114 &-8094800742574350355
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,13 +140,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7833164115978671972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c09b4e3e500f244b83c9589cdb574cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 8320d5f8a3e13b24c82c59b304957c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
-  scoreToAdd: 200
-  shot: {fileID: 8408950869471283768, guid: 298d5b1c189a2d1479a4ae49be7c7b40, type: 3}
-  shootDelay: 1
+  tragectory: []
+  _health: 2
+  _shot: {fileID: 8408950869471283768, guid: 298d5b1c189a2d1479a4ae49be7c7b40, type: 3}
+  _scoreWorth: 200
+  shootDelay: 0
 --- !u!114 &8694028411301425022
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,9 +4,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject[] barrages;
-    public GameObject powerItem;
-    public GameObject bigPowerItem;
-    public GameObject scoreItem;
 
     public int Lives { get; set; }
     public float Speed { get; set;  }
