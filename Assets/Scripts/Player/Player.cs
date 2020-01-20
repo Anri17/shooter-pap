@@ -195,12 +195,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Reset()
-    {
-        PowerLevel = 0.0f;
-        Lives = 3;
-    }
-
     public void Die()
     {
         Debug.Log("Player died");
