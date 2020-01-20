@@ -29,27 +29,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        GetInputs();
-
-        // get direction 
-        if (Input.GetButton("Horizontal") && Input.GetButton("Vertical"))
-        {
-            if (horizontal > 0)
-            {
-                direction = new Vector3(Mathf.Cos(horizontal), Mathf.Sin(vertical), 0.0f);
-            }
-            if (horizontal < 0)
-            {
-                direction = new Vector3(-Mathf.Cos(horizontal), Mathf.Sin(vertical), 0.0f);
-            }
-        }
-        else
-        {
-            direction = new Vector3(horizontal, vertical, 0.0f);
-        }
-
-        // move the player
-        transform.position += direction * Speed * Time.deltaTime;
+        SetDirection();
+        Move();
 
         // shoot barrage
         if (PowerLevel >= 0.0f && PowerLevel < 1.0f)      // Level 1 Barrage
@@ -90,6 +71,11 @@ public class Player : MonoBehaviour
             AddValues(0f, 500);
             Destroy(collision.gameObject);
         }
+    }
+
+    public void Move()
+    {
+        transform.position += direction * Speed * Time.deltaTime;
     }
 
     public void SetBarrage(GameObject barrage)
@@ -140,7 +126,7 @@ public class Player : MonoBehaviour
         GameManager.Instance.Score += score;
     }
 
-    public void GetInputs()
+    public void SetDirection()
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
@@ -153,6 +139,22 @@ public class Player : MonoBehaviour
         if (Input.GetButtonUp("Focus"))
         {
             Speed = normalSpeed;
+        }
+
+        if (Input.GetButton("Horizontal") && Input.GetButton("Vertical"))
+        {
+            if (horizontal > 0)
+            {
+                direction = new Vector3(Mathf.Cos(horizontal), Mathf.Sin(vertical), 0.0f);
+            }
+            if (horizontal < 0)
+            {
+                direction = new Vector3(-Mathf.Cos(horizontal), Mathf.Sin(vertical), 0.0f);
+            }
+        }
+        else
+        {
+            direction = new Vector3(horizontal, vertical, 0.0f);
         }
     }
 
