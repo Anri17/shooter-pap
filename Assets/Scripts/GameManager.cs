@@ -11,6 +11,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text loadingPercentage;
     [SerializeField] private GameObject loadingScreen;
 
+    public GameObject player;
+    public GameObject powerItem;
+    public GameObject bigPowerItem;
+    public GameObject scoreItem;
+
+
     public static GameManager Instance { get; private set; }
 
     public long Score { get; set; }

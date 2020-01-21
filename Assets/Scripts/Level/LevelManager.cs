@@ -7,11 +7,7 @@ public class LevelManager : MonoBehaviour
     public float backgroundImageScrollSpeed = 1.0f;
     public GameObject backgroundImage;
     public GameObject pauseMenu;
-    public GameObject player;
     public GameObject playerSpawnPoint;
-    public GameObject powerItem;
-    public GameObject bigPowerItem;
-    public GameObject scoreItem;
     public GameObject boss;
     public AudioClip stageMusicTheme;
     public AudioClip bossMusicTheme;
@@ -23,9 +19,11 @@ public class LevelManager : MonoBehaviour
     Player playerScript;
     GameObject spawnedBoss;
     GameObject spawnedPlayer;
+    GameManager gameManager;
 
     void Awake()
     {
+        gameManager = GameManager.Instance;
         foreach (GameObject wave in waves)
         {
             wave.SetActive(false);
@@ -62,7 +60,7 @@ public class LevelManager : MonoBehaviour
     {
         if (spawnedPlayer == null)
         {
-            spawnedPlayer = Instantiate(player, position);
+            spawnedPlayer = Instantiate(gameManager.player, position);
         }
         else
         {
@@ -73,7 +71,6 @@ public class LevelManager : MonoBehaviour
     public void SetBoss()
     {
         bossScreen.SetActive(true);
-        StartCoroutine(FillHealthBar());
         SpawnBoss();
     }
 
@@ -92,17 +89,17 @@ public class LevelManager : MonoBehaviour
 
     public void SpawnPowerItem()
     {
-        Instantiate(powerItem, new Vector3(-2.56f, 5.51f, 0), powerItem.transform.rotation);
+        Instantiate(gameManager.powerItem, new Vector3(-2.56f, 5.51f, 0), gameManager.powerItem.transform.rotation);
     }
 
     public void SpawnBigPowerItem()
     {
-        Instantiate(bigPowerItem, new Vector3(-2.56f, 5.51f, 0), bigPowerItem.transform.rotation);
+        Instantiate(gameManager.bigPowerItem, new Vector3(-2.56f, 5.51f, 0), gameManager.bigPowerItem.transform.rotation);
     }
 
     public void SpawnScoreItem()
     {
-        Instantiate(scoreItem, new Vector3(-2.56f, 5.51f, 0), scoreItem.transform.rotation);
+        Instantiate(gameManager.scoreItem, new Vector3(-2.56f, 5.51f, 0), gameManager.scoreItem.transform.rotation);
     }
 
     public static void ClearBullets()
@@ -126,17 +123,17 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < powerItemCount; i++)
         {
             Vector3 pos = position + new Vector3(Random.Range(-2f, 2), Random.Range(-0.6f, 2), 0);
-            Instantiate(powerItem, pos, Quaternion.identity);
+            Instantiate(gameManager.powerItem, pos, Quaternion.identity);
         }
         for (int i = 0; i < bigPowerItemCount; i++)
         {
             Vector3 pos = position + new Vector3(Random.Range(-2f, 2), Random.Range(-0.6f, 2), 0);
-            Instantiate(bigPowerItem, pos, Quaternion.identity);
+            Instantiate(gameManager.bigPowerItem, pos, Quaternion.identity);
         }
         for (int i = 0; i < scoreItemCount; i++)
         {
             Vector3 pos = position + new Vector3(Random.Range(-2f, 2), Random.Range(-0.6f, 2), 0);
-            Instantiate(scoreItem, pos, Quaternion.identity);
+            Instantiate(gameManager.scoreItem, pos, Quaternion.identity);
         }
     }
 
@@ -183,16 +180,5 @@ public class LevelManager : MonoBehaviour
         yield return new WaitUntil(() => spawnedBoss == null);
         bossScreen.SetActive(false);
         Debug.Log("Continuing stage");
-    }
-
-    IEnumerator FillHealthBar()
-    {
-        while (bossHealthBar.GetComponent<Slider>().value < 1)
-        {
-            Debug.Log("Raising Health Bar");
-            bossHealthBar.GetComponent<Slider>().value += 0.1f;
-            yield return new WaitForFixedUpdate();
-        }
-        yield return null;
     }
 }

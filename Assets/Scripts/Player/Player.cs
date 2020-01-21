@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     {
         gameManager = GameManager.Instance;
         PowerLevel = 0.0f;
-        Lives = 3;
+        Lives = 99;
         spawnPoint = new Vector3(-3.44f, -6.76f, 0);
     }
 

@@ -1792,6 +1792,13 @@ MonoBehaviour:
   loadingBarSlider: {fileID: 891390161}
   loadingPercentage: {fileID: 1544329689}
   loadingScreen: {fileID: 1083469305}
+  player: {fileID: 4037159831597851511, guid: bfe6cc0d5ce856c40ab352a71f92f48d, type: 3}
+  powerItem: {fileID: 6719004770698810563, guid: 53db7a3d635b9d541bd3d382cb526a47,
+    type: 3}
+  bigPowerItem: {fileID: 6719004770698810563, guid: 1b8a86d5d6ef98647bad692b90fe14f5,
+    type: 3}
+  scoreItem: {fileID: 9156461194448261568, guid: b10fce0f81509e340a8a17e6daa6a75c,
+    type: 3}
   musicClips:
   - {fileID: 8300000, guid: da2115c4fbf9adb44994422ae9861546, type: 3}
   - {fileID: 8300000, guid: 0bcf999e6c0d53d408b56c8c2f93be86, type: 3}

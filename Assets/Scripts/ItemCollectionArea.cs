@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ItemCollectionArea : MonoBehaviour
 {
-    [SerializeField] private GameObject[] itemsToCollect;
-
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag.Equals("Player"))
@@ -16,7 +14,18 @@ public class ItemCollectionArea : MonoBehaviour
 
             for (int i = 0; i < powerCollectables.Length; i++)
             {
-                // Lerp Collectable to Player
+                Collectable powerCollectable = powerCollectables[i].GetComponent<Collectable>();
+                powerCollectable.Move(collision.gameObject);
+            }
+            for (int i = 0; i < bigPowerCollectables.Length; i++)
+            {
+                Collectable bigPowerCollectable = bigPowerCollectables[i].GetComponent<Collectable>();
+                bigPowerCollectable.Move(collision.gameObject);
+            }
+            for (int i = 0; i < scoreCollectables.Length; i++)
+            {
+                Collectable scoreCollectable = scoreCollectables[i].GetComponent<Collectable>();
+                scoreCollectable.Move(collision.gameObject);
             }
         }        
     }
