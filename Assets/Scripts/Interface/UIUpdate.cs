@@ -17,7 +17,6 @@ public class UIUpdate : MonoBehaviour
         gameManager = GameManager.Instance;
     }
 
-
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -25,11 +24,8 @@ public class UIUpdate : MonoBehaviour
 
     void Update()
     {
-        // Update Score
         scoreNumber.GetComponent<Text>().text = gameManager.Score.ToString("000,000,000,000");
-        // Update Power Level
         powerLevelNumber.GetComponent<Text>().text = player.PowerLevel.ToString("0.##");
-        // Update Lives
         livesNumber.GetComponent<Text>().text = player.Lives.ToString("#");
     }
 }

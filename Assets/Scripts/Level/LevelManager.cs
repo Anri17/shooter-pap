@@ -16,9 +16,8 @@ public class LevelManager : MonoBehaviour
     public GameObject bossScreen;
     public GameObject bossHealthBar;
 
-    Player playerScript;
+    Player player;
     GameObject spawnedBoss;
-    GameObject spawnedPlayer;
     GameManager gameManager;
 
     void Awake()
@@ -36,7 +35,7 @@ public class LevelManager : MonoBehaviour
         bossHealthBar.GetComponent<Slider>().value = 0;
         MusicPlayer.Instance.PlayMusic(stageMusicTheme);
         SpawnPlayer(playerSpawnPoint.transform);
-        playerScript = spawnedPlayer.GetComponent<Player>();
+        player = gameManager.spawnedPlayer.GetComponent<Player>();
         StartCoroutine(PlayLevel());
     }
         
@@ -58,13 +57,13 @@ public class LevelManager : MonoBehaviour
 
     public void SpawnPlayer(Transform position)
     {
-        if (spawnedPlayer == null)
+        if (gameManager.spawnedPlayer == null)
         {
-            spawnedPlayer = Instantiate(gameManager.player, position);
+            gameManager.spawnedPlayer = Instantiate(gameManager.player, position);
         }
         else
         {
-            playerScript.Respawn(playerSpawnPoint.transform.position);
+            player.Respawn(playerSpawnPoint.transform.position);
         }
     }
 

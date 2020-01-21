@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public GameObject bigPowerItem;
     public GameObject scoreItem;
 
+    public GameObject spawnedPlayer;
+
 
     public static GameManager Instance { get; private set; }
 
