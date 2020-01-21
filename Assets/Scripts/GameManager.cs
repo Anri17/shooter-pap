@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject scoreItem;
 
     public GameObject spawnedPlayer;
-
+    public GameObject spawnedBoss;
 
     public static GameManager Instance { get; private set; }
 

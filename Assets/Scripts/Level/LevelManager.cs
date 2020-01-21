@@ -6,7 +6,6 @@ public class LevelManager : MonoBehaviour
 {
     public float backgroundImageScrollSpeed = 1.0f;
     public GameObject backgroundImage;
-    public GameObject pauseMenu;
     public GameObject playerSpawnPoint;
     public GameObject boss;
     public AudioClip stageMusicTheme;
@@ -15,9 +14,9 @@ public class LevelManager : MonoBehaviour
     public Vector3 bossSpawnPoints = new Vector3(1, 13, 0);
     public GameObject bossScreen;
     public GameObject bossHealthBar;
+    
 
     Player player;
-    GameObject spawnedBoss;
     GameManager gameManager;
 
     void Awake()
@@ -27,7 +26,6 @@ public class LevelManager : MonoBehaviour
         {
             wave.SetActive(false);
         }
-        pauseMenu.SetActive(false);
     }
 
     void Start()
@@ -41,18 +39,12 @@ public class LevelManager : MonoBehaviour
         
     void Update()
     {
-        if (spawnedBoss != null)
+        if (gameManager.spawnedBoss != null)
         {
-            bossHealthBar.GetComponent<Slider>().value = spawnedBoss.GetComponent<Boss>().currentHealth / spawnedBoss.GetComponent<Boss>().currentMaxHealth;
+            bossHealthBar.GetComponent<Slider>().value = gameManager.spawnedBoss.GetComponent<Boss>().currentHealth / gameManager.spawnedBoss.GetComponent<Boss>().currentMaxHealth;
         }
         // Move Background
         backgroundImage.transform.position += new Vector3(0, -1f, 0) * backgroundImageScrollSpeed * Time.deltaTime;
-
-        // Go to main Menu
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            TogglePauseGame();
-        }
     }
 
     public void SpawnPlayer(Transform position)
@@ -75,14 +67,14 @@ public class LevelManager : MonoBehaviour
 
     public void SpawnBoss()
     {
-        if (spawnedBoss == null)
+        if (gameManager.spawnedBoss == null)
         {
-            spawnedBoss = Instantiate(boss, bossSpawnPoints, boss.transform.rotation);
+            gameManager.spawnedBoss = Instantiate(boss, bossSpawnPoints, boss.transform.rotation);
         }
         else
         {
-            Destroy(spawnedBoss);
-            spawnedBoss = Instantiate(boss, bossSpawnPoints, boss.transform.rotation);
+            Destroy(gameManager.spawnedBoss);
+            gameManager.spawnedBoss = Instantiate(boss, bossSpawnPoints, boss.transform.rotation);
         }
     }
 
@@ -136,20 +128,6 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void TogglePauseGame()
-    {
-        if (pauseMenu.activeSelf)
-        {
-            Time.timeScale = 1;
-            pauseMenu.SetActive(false);
-        }
-        else
-        {
-            Time.timeScale = 0;
-            pauseMenu.SetActive(true);
-        }
-    }
-
     IEnumerator PlayLevel()
     {
         Debug.Log("Level Start");
@@ -176,7 +154,7 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Mid Boss");
         SetBoss();
         MusicPlayer.Instance.PlayMusic(bossMusicTheme);
-        yield return new WaitUntil(() => spawnedBoss == null);
+        yield return new WaitUntil(() => gameManager.spawnedBoss == null);
         bossScreen.SetActive(false);
         Debug.Log("Continuing stage");
     }
