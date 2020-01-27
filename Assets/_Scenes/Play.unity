@@ -1192,7 +1192,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 358.19965, y: -0.00048828125}
+  m_AnchoredPosition: {x: 358.19922, y: -0.00048828125}
   m_SizeDelta: {x: 358.2, y: 600}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &552639220
@@ -2348,7 +2348,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 215.21, y: -113.26001}
+  m_AnchoredPosition: {x: 215.20996, y: -113.260254}
   m_SizeDelta: {x: -442.92, y: -235.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &925367260
@@ -2554,7 +2554,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942631782}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.0648, y: 66.87, z: 0}
+  m_LocalPosition: {x: -4.0648, y: 85.7231, z: 0}
   m_LocalScale: {x: 1.0613729, y: 1.0613729, z: 1.0613729}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3465,11 +3465,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a9218babcb9344b81bee99357ea01b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundImageScrollSpeed: 1
+  backgroundImageScrollSpeed: 2
   backgroundImage: {fileID: 942631782}
   playerSpawnPoint: {fileID: 1755139699}
   boss: {fileID: 7945089824047321945, guid: 13c3bbef8edaced4bac3d444e7c00c5e, type: 3}
-  stageMusicTheme: {fileID: 8300000, guid: 0bcf999e6c0d53d408b56c8c2f93be86, type: 3}
+  stageMusicTheme: {fileID: 8300000, guid: 32660fd46e2b44544983dea2cbbbf218, type: 3}
   bossMusicTheme: {fileID: 8300000, guid: 9490f44bf1f7ba045af0915669090d49, type: 3}
   waves:
   - {fileID: 1166434042}
@@ -3516,7 +3516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 215.20996, y: -19.611572}
+  m_AnchoredPosition: {x: 215.20996, y: -19.611816}
   m_SizeDelta: {x: -442.92, y: 255.39}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1281425557
@@ -3723,6 +3723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d63dbe7ab506db4883f2b3cb6f6516e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 90
 --- !u!61 &1378642193
 BoxCollider2D:
   m_ObjectHideFlags: 0

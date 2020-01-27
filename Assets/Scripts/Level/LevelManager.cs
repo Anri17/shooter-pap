@@ -14,14 +14,17 @@ public class LevelManager : MonoBehaviour
     public Vector3 bossSpawnPoints = new Vector3(1, 13, 0);
     public GameObject bossScreen;
     public GameObject bossHealthBar;
-    
+
+    bool moveBackground = true;
 
     Player player;
     GameManager gameManager;
+    MusicPlayer musicPlayer;
 
     void Awake()
     {
         gameManager = GameManager.Instance;
+        musicPlayer = MusicPlayer.Instance;
         foreach (GameObject wave in waves)
         {
             wave.SetActive(false);
@@ -31,7 +34,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         bossHealthBar.GetComponent<Slider>().value = 0;
-        MusicPlayer.Instance.PlayMusic(stageMusicTheme);
+        musicPlayer.PlayMusic(stageMusicTheme);
         SpawnPlayer(playerSpawnPoint.transform);
         player = gameManager.spawnedPlayer.GetComponent<Player>();
         StartCoroutine(PlayLevel());
@@ -43,8 +46,15 @@ public class LevelManager : MonoBehaviour
         {
             bossHealthBar.GetComponent<Slider>().value = gameManager.spawnedBoss.GetComponent<Boss>().currentHealth / gameManager.spawnedBoss.GetComponent<Boss>().currentMaxHealth;
         }
-        // Move Background
-        backgroundImage.transform.position += new Vector3(0, -1f, 0) * backgroundImageScrollSpeed * Time.deltaTime;
+        if (moveBackground)
+        {
+            MoveBackground(backgroundImageScrollSpeed);
+        }
+    }
+
+    private void MoveBackground(float speed)
+    {
+        backgroundImage.transform.position += new Vector3(0, -1f, 0) * speed * Time.deltaTime;
     }
 
     public void SpawnPlayer(Transform position)
@@ -131,6 +141,7 @@ public class LevelManager : MonoBehaviour
     IEnumerator PlayLevel()
     {
         Debug.Log("Level Start");
+        moveBackground = true;
         yield return new WaitForSeconds(5f);
         Debug.Log("Wave 1");
         waves[0].SetActive(true);
@@ -146,16 +157,19 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(4f);
         Debug.Log("Wave 5");
         waves[4].SetActive(true);
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(8f);
         Debug.Log("Wait Time Before Boss");
         ClearEnemies();
         ClearBullets();
+        moveBackground = false;
         yield return new WaitForSeconds(2f);
         Debug.Log("Mid Boss");
         SetBoss();
-        MusicPlayer.Instance.PlayMusic(bossMusicTheme);
+        // musicPlayer.PlayMusic(bossMusicTheme);
         yield return new WaitUntil(() => gameManager.spawnedBoss == null);
         bossScreen.SetActive(false);
         Debug.Log("Continuing stage");
+        moveBackground = true;
+        yield return new WaitForSeconds(5f);
     }
 }
