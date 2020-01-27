@@ -21,9 +21,11 @@ public class Boss : MonoBehaviour
 
     BezierMove bezierMoveInstance;
     Transform pathTransform;
+    LevelManager levelManager;
 
     void Awake()
     {
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         bezierMoveInstance = GetComponent<BezierMove>();
     }
 
@@ -41,6 +43,7 @@ public class Boss : MonoBehaviour
             Destroy(collision.gameObject);
             if (currentHealth <= 0)
             {
+                DropItems();
                 hittable = false;
                 stageIndex++;
                 Debug.Log($"Stage index: {stageIndex}");
@@ -57,6 +60,11 @@ public class Boss : MonoBehaviour
                 }
             }
         }
+    }
+
+    void DropItems()
+    {
+        levelManager.SpawnItems(transform.position, 5, 1, 10);
     }
 
     public void DestroyCurrentStage()

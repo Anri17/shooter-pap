@@ -69,12 +69,6 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void SetBoss()
-    {
-        bossScreen.SetActive(true);
-        SpawnBoss();
-    }
-
     public void SpawnBoss()
     {
         if (gameManager.spawnedBoss == null)
@@ -164,7 +158,8 @@ public class LevelManager : MonoBehaviour
         moveBackground = false;
         yield return new WaitForSeconds(2f);
         Debug.Log("Mid Boss");
-        SetBoss();
+        bossScreen.SetActive(true);
+        SpawnBoss();
         // musicPlayer.PlayMusic(bossMusicTheme);
         yield return new WaitUntil(() => gameManager.spawnedBoss == null);
         bossScreen.SetActive(false);

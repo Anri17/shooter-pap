@@ -23,6 +23,9 @@ public class NormalEnemy : Enemy
 
     public void Awake()
     {
+        Health = _health;
+        Shot = _shot;
+        ScoreWorth = _scoreWorth;
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         gameManager = GameManager.Instance;
         bezierMoveInstance = GetComponent<BezierMove>();
@@ -30,9 +33,6 @@ public class NormalEnemy : Enemy
 
     public void Start()
     {
-        Health = _health;
-        Shot = _shot;
-        ScoreWorth = _scoreWorth;
         for (int i = 0; i < tragectory.Length; i++)
         {
             Tragectory.Add(tragectory[i].transform);
