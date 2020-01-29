@@ -169,6 +169,8 @@ MonoBehaviour:
   _shot: {fileID: 7819838638613296147, guid: 095f66ab46492ef42bc0d2955ad401a5, type: 3}
   _scoreWorth: 200
   shootDelay: 1
+  deathParticles: {fileID: 6180124026953083947, guid: 545f7a21eda9c484ab3b694f8ce1d41a,
+    type: 3}
 --- !u!114 &3730391855161913003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,3 +186,5 @@ MonoBehaviour:
   loopMovement: 0
   speedModifier: 0.5
   path: {fileID: 0}
+  routes: []
+  stopMovement: 0

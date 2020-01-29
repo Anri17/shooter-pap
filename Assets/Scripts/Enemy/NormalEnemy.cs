@@ -10,6 +10,7 @@ public class NormalEnemy : Enemy
     [SerializeField] GameObject _shot;
     [SerializeField] int _scoreWorth;
     [SerializeField] float shootDelay;
+    [SerializeField] ParticleSystem deathParticles;
 
     public override float Health { get; set; }
     public override GameObject Shot { get; set; }
@@ -70,8 +71,19 @@ public class NormalEnemy : Enemy
 
     public override void Die()
     {
+        PlayDeathParticles(deathParticles);
         Destroy(gameObject);
-        gameManager.Score += ScoreWorth;
+        GiveScoreWorth(ScoreWorth);
+    }
+
+    private void PlayDeathParticles(ParticleSystem deathParticles)
+    {
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
+    }
+    
+    private void GiveScoreWorth(long scoreWorth)
+    {
+        gameManager.Score += scoreWorth;
     }
 
     public override void EvaluateHealth()

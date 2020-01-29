@@ -148,6 +148,8 @@ MonoBehaviour:
   _shot: {fileID: 6571451126526940859, guid: da86d4719aa4f214fa56084cd76dd5e3, type: 3}
   _scoreWorth: 200
   shootDelay: 0
+  deathParticles: {fileID: 6180124026953083947, guid: 545f7a21eda9c484ab3b694f8ce1d41a,
+    type: 3}
 --- !u!114 &3326163019392916081
 MonoBehaviour:
   m_ObjectHideFlags: 0

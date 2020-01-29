@@ -53,6 +53,9 @@ TagManager:
   - name: Background
     uniqueID: 1688958411
     locked: 0
+  - name: Effects
+    uniqueID: 1760151673
+    locked: 0
   - name: Collectable
     uniqueID: 632200163
     locked: 0
