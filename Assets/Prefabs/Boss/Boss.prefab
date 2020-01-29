@@ -170,6 +170,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dbd23fdaec3c1654aa34542218f97897, type: 2}
   - {fileID: 11400000, guid: e75443d56c6909c4ca199f33ed76e8ad, type: 2}
   - {fileID: 11400000, guid: c475fe2be4ef20640b3b937b78929616, type: 2}
+  deathParticles: {fileID: 6180124026953083947, guid: 545f7a21eda9c484ab3b694f8ce1d41a,
+    type: 3}
+  bossInfo: {fileID: 0}
+  currentMaxHealth: 0
+  currentHealth: 0
 --- !u!114 &350828380049276735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,3 +191,4 @@ MonoBehaviour:
   speedModifier: 0.5
   path: {fileID: 0}
   routes: []
+  stopMovement: 0

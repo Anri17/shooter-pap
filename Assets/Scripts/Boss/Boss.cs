@@ -7,15 +7,14 @@ public class Boss : MonoBehaviour
     public Vector3 defaultPosition = new Vector3(-3.81f, 5.97f, 0);
     public BossStage[] stages;
     int stageIndex = 0;
+    [SerializeField] ParticleSystem deathParticles;
 
-    public GameObject bossInfo;
     BossStage currentStage;
     GameObject currentBarrage;
     public float currentMaxHealth;
     public float currentHealth;
     Transform currentPath;
     float currentPathSpeed;
-    float currentDeathTimer;
 
     bool hittable = false;
 
@@ -43,6 +42,7 @@ public class Boss : MonoBehaviour
             Destroy(collision.gameObject);
             if (currentHealth <= 0)
             {
+                PlayDeathParticles(deathParticles);
                 DropItems();
                 hittable = false;
                 stageIndex++;
@@ -95,7 +95,6 @@ public class Boss : MonoBehaviour
         currentHealth = currentStage.health;
         currentPath = currentStage.path;
         currentPathSpeed = currentStage.pathSpeed;
-        currentDeathTimer = currentStage.deathTimer;
     }
 
     private void UnpackPath(Transform path)
@@ -103,6 +102,11 @@ public class Boss : MonoBehaviour
         pathTransform = Instantiate(path, defaultPosition, Quaternion.identity);
         bezierMoveInstance.ResetValues(currentPathSpeed);
         bezierMoveInstance.UnpackPath(pathTransform);
+    }
+
+    private void PlayDeathParticles(ParticleSystem deathParticles)
+    {
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
     }
 
     public IEnumerator MoveToPosition(Vector3 destination, float timeToMove)
