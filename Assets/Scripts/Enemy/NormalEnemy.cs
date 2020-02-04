@@ -11,6 +11,7 @@ public class NormalEnemy : Enemy
     [SerializeField] int _scoreWorth;
     [SerializeField] float shootDelay;
     [SerializeField] ParticleSystem deathParticles;
+    [SerializeField] AudioSource hitSound;
 
     public override float Health { get; set; }
     public override GameObject Shot { get; set; }
@@ -53,6 +54,7 @@ public class NormalEnemy : Enemy
             Health -= collision.GetComponent<PlayerBullet>().Damage;
             gameManager.Score += 40;
             Destroy(collision.gameObject);
+            hitSound.Play();
         }
 
         if (collision.tag.Equals("PlayArea") && shotInstance == null)
