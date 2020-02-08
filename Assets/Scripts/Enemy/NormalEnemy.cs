@@ -92,9 +92,14 @@ public class NormalEnemy : Enemy
     {
         if (Health <= 0)
         {
-            levelManager.SpawnItems(transform.position, 6, 1, 8);
+            DropItems(6, 1, 8);
             Die();
         }
+    }
+
+    public void DropItems(int powerItemQuantity, int bigPowerItemQuantity, int scoreItemQuantity)
+    {
+        levelManager.SpawnItems(transform.position, powerItemQuantity, bigPowerItemQuantity, scoreItemQuantity);
     }
 
     public override IEnumerator ShootCoroutine(float shootDelay)
