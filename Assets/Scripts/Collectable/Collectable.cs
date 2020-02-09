@@ -28,6 +28,10 @@ public class Collectable : MonoBehaviour
             else
             {
                 Succ(target, moveSpeed);
+                if (transform.position == target)
+                {
+                    canMoveTowardsTarget = false;
+                }
             }
         }
     }
