@@ -17,19 +17,22 @@ public class PlayerHitbox : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("EnemyBullet"))
         {
-            levelManager.SpawnItems(transform.position, 5, 1, 0);
             Destroy(collision.gameObject);
-            player.Die();
+            Respawn();
         }
         if (collision.gameObject.tag.Equals("Enemy"))
         {
-            levelManager.SpawnItems(transform.position, 5, 1, 0);
-            player.Die();
+            Respawn();
         }
         if (collision.gameObject.tag.Equals("Boss"))
         {
-            levelManager.SpawnItems(transform.position, 5, 1, 0);
-            player.Die();
+            Respawn();
         }
+    }
+
+    void Respawn()
+    {
+        levelManager.SpawnItems(transform.position, 5, 1, 0);
+        player.RespawnPlayer(levelManager.playerSpawnPoint.transform.position, 3f);
     }
 }

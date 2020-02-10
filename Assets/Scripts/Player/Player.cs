@@ -1,15 +1,18 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public GameObject[] barrages;
+    public GameObject sprites;
 
     public int Lives { get; set; }
     public float Speed { get; set;  }
     public float PowerLevel { get; set; }
 
-    Vector3 spawnPoint;
+    [HideInInspector] public bool canCollectItems = true;
+    bool canFire = true;
     GameObject currentBarrage;
     GameObject mainBarrage;
     GameManager gameManager;
@@ -19,7 +22,7 @@ public class Player : MonoBehaviour
         gameManager = GameManager.Instance;
         PowerLevel = 0.0f;
         Lives = 99;
-        spawnPoint = new Vector3(-3.44f, -6.76f, 0);
+        canCollectItems = true;
     }
 
     void Update()
@@ -51,19 +54,19 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PowerCollectable")
+        if (collision.gameObject.tag == "PowerCollectable" && canCollectItems)
         {
             AddValues(0.05f, 150);
             Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.tag == "BigPowerCollectable")
+        if (collision.gameObject.tag == "BigPowerCollectable" && canCollectItems)
         {
             AddValues(1.00f, 200);
             Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.tag == "ScoreCollectable")
+        if (collision.gameObject.tag == "ScoreCollectable" && canCollectItems)
         {
             AddValues(0f, 500);
             Destroy(collision.gameObject);
@@ -87,12 +90,12 @@ public class Player : MonoBehaviour
     public void FireBarrage()
     {
         // Fire barrage when the button is pressed
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && canFire)
         {
             SpawnBarrage(mainBarrage);
         }
         // Destroy the barrage when the button is unpressed
-        if (Input.GetButtonUp("Fire1"))
+        if (Input.GetButtonUp("Fire1") && canFire)
         {
             Destroy(currentBarrage);
             for (int i = 0; i < transform.childCount; i++)
@@ -104,6 +107,11 @@ public class Player : MonoBehaviour
                     break;
                 }
             }
+        }
+
+        if (!canFire)
+        {
+            Destroy(currentBarrage);
         }
     }
 
@@ -118,11 +126,15 @@ public class Player : MonoBehaviour
         GameManager.Instance.Score += score;
     }
 
-    public void Respawn(Vector3 position)
+    public void SpawnPlayer(Vector3 position)
     {
         LevelManager.ClearBullets();
         transform.position = position;
-        gameObject.SetActive(true);
+        sprites.SetActive(true);
+        GetComponent<PlayerController>().canMove = true;
+        canFire = true;
+        canCollectItems = true;
+        GameObject.Find("ItemCollectionArea").GetComponent<ItemCollectionArea>().canSucc = true;
         if (Input.GetButton("Fire1"))
         {
             SpawnBarrage(mainBarrage);
@@ -134,16 +146,29 @@ public class Player : MonoBehaviour
         Debug.Log("Player died");
         Lives--;
         PowerLevel = 0;
-        gameObject.SetActive(false);
         Destroy(currentBarrage);
-        if (Lives >= 0)
-        {
-            Respawn(spawnPoint);
-        }
+        GetComponent<PlayerController>().canMove = false;
+        canFire = false;
+        canCollectItems = false;
+        GameObject.Find("ItemCollectionArea").GetComponent<ItemCollectionArea>().canSucc = false;
+        sprites.SetActive(false);
     }
 
     public void SpawnBarrage(GameObject barrage)
     {
         currentBarrage = Instantiate(barrage, transform.position, mainBarrage.transform.rotation, transform);
+    }
+
+    public void RespawnPlayer(Vector3 position, float time)
+    {
+        Die();
+        if (Lives >= 0)
+            StartCoroutine(Respawn(position, time));
+    }
+
+    public IEnumerator Respawn(Vector3 position, float time)
+    {
+        yield return new WaitForSeconds(time);
+        SpawnPlayer(position);
     }
 }

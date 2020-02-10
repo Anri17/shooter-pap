@@ -7,6 +7,9 @@ public class ItemCollectionArea : MonoBehaviour
     [SerializeField] float moveSpeed = 90f;
 
     GameManager gameManager;
+    Player player;
+
+    public bool canSucc = true;
 
     void Awake()
     {
@@ -15,9 +18,8 @@ public class ItemCollectionArea : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag.Equals("Player"))
+        if (collision.tag.Equals("Player") && canSucc)
         {
-            GameObject player = gameManager.spawnedPlayer;
             GameObject[] powerCollectables = GameObject.FindGameObjectsWithTag("PowerCollectable");
             GameObject[] bigPowerCollectables = GameObject.FindGameObjectsWithTag("BigPowerCollectable");
             GameObject[] scoreCollectables = GameObject.FindGameObjectsWithTag("ScoreCollectable");

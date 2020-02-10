@@ -10,6 +10,7 @@ public class FireBullet : MonoBehaviour
     public int fireBulletCount = 0; // how many bullets to fire in total
     public float fireRate = 1; // how long to wait before the next bullet is fired
     public float aimOffset = 0; // the rotation offset of the aim direction
+    public float shotLoopDelay = 0; // how long to wait between each loop
 
     int bulletsFired = 0; // how many bullets fired so far
     Quaternion direction; // the direction to aim at
@@ -29,7 +30,14 @@ public class FireBullet : MonoBehaviour
         // fire the bullet
         if (bullet != null)
         {
-            InvokeRepeating("Fire", 0.0f, fireRate);
+            if (shotLoopDelay <= 0)
+            {
+                InvokeRepeating("Fire", 0.0f, fireRate);
+            }
+            else
+            {
+                StartCoroutine(ShotLoopDelayCount(shotLoopDelay));
+            }
         }
     }
 
@@ -68,14 +76,14 @@ public class FireBullet : MonoBehaviour
 
     void Fire()
     {
-        direction = GetDirection();
-
         if (fireLimitedCount == false) // fire bullets forever
         {
+            direction = GetDirection();
             Instantiate(bullet, transform.position, direction);
         }
         else // fire a determined count of bullets
         {
+            direction = GetDirection();
             Instantiate(bullet, transform.position, direction);
             bulletsFired++;
             if (bulletsFired >= fireBulletCount)
@@ -83,5 +91,14 @@ public class FireBullet : MonoBehaviour
                 CancelInvoke("Fire");
             }
         }
+    }
+
+    IEnumerator ShotLoopDelayCount(float time)
+    {
+        bulletsFired = 0;
+        InvokeRepeating("Fire", 0.0f, fireRate);
+        yield return new WaitForSeconds(time);
+        CancelInvoke("Fire");
+        StartCoroutine(ShotLoopDelayCount(shotLoopDelay));
     }
 }

@@ -21,7 +21,7 @@ public class Collectable : MonoBehaviour
     {
         if (canMoveTowardsTarget)
         {
-            if (moveToPlayer)
+            if (moveToPlayer && GameObject.Find("ItemCollectionArea").GetComponent<ItemCollectionArea>().canSucc)
             {
                 Succ(gameManager.spawnedPlayer.transform.position, moveSpeed);
             }
@@ -54,8 +54,8 @@ public class Collectable : MonoBehaviour
 
     public void MoveToPlayer(float moveSpeed)
     {
-        this.target = gameManager.spawnedPlayer.transform.position;
-        this.moveToPlayer = true;
+        target = gameManager.spawnedPlayer.transform.position;
+        moveToPlayer = true;
         this.moveSpeed = moveSpeed;
         canMoveTowardsTarget = true;
     }

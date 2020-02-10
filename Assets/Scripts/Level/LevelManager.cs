@@ -65,7 +65,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            player.Respawn(playerSpawnPoint.transform.position);
+            player.SpawnPlayer(playerSpawnPoint.transform.position);
         }
     }
 
@@ -142,16 +142,16 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log("Level Start");
         moveBackground = true;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(8f);
         Debug.Log("Wave 1");
         waves[0].SetActive(true);
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(10f);
         Debug.Log("Wave 2");
         waves[1].SetActive(true);
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(8f);
         Debug.Log("Wave 3");
         waves[2].SetActive(true);
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(10f);
         Debug.Log("Wave 4");
         waves[3].SetActive(true);
         yield return new WaitForSeconds(4f);
@@ -166,11 +166,20 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Mid Boss");
         bossScreen.SetActive(true);
         SpawnBoss();
-        // musicPlayer.PlayMusic(bossMusicTheme);
         yield return new WaitUntil(() => gameManager.spawnedBoss == null);
         bossScreen.SetActive(false);
         Debug.Log("Continuing stage");
         moveBackground = true;
         yield return new WaitForSeconds(5f);
+        Debug.Log("Wave 6.1");
+        waves[5].SetActive(true);
+        yield return new WaitForSeconds(3f);
+        Debug.Log("Wave 6.2");
+        waves[6].SetActive(true);
+        yield return new WaitForSeconds(3f);
+        Debug.Log("Wave 6.3");
+        waves[7].SetActive(true);
+        yield return new WaitForSeconds(3f);
+        Debug.Log("Stage End");
     }
 }
