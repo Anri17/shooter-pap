@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
+
     [Header("Loading Screen")]
     [SerializeField] private Slider loadingBarSlider;
     [SerializeField] private Text loadingPercentage;
@@ -18,8 +20,6 @@ public class GameManager : MonoBehaviour
 
     public GameObject spawnedPlayer;
     public GameObject spawnedBoss;
-
-    public static GameManager Instance { get; private set; }
 
     public long Score { get; set; }
 

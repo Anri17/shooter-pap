@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     GameManager gameManager;
-    MusicPlayer musicPlayer;
+    AudioPlayer musicPlayer;
 
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject playMenu;
@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         gameManager = GameManager.Instance;
-        musicPlayer = MusicPlayer.Instance;
+        musicPlayer = AudioPlayer.Instance;
         gameManager.ResetData();
         musicPlayer.PlayMusic(menuMusicTheme);
         DisplayMainMenu();

@@ -5,25 +5,38 @@ using UnityEngine.UI;
 
 public class OptionsManager : MonoBehaviour
 {
-    private Slider slider;
-    private MusicPlayer musicPlayer;
+    private AudioPlayer AudioPlayer;
 
-    public GameObject sliderGameObject;
+    private Slider generalVolumeSlider;
+    private Slider musicVolumeSlider;
+
+    public GameObject generalVolumeSliderGameObject;
+    public GameObject musicVolumeSliderGameObject;
 
     void Awake()
     {
-        musicPlayer = MusicPlayer.Instance;
-        slider = sliderGameObject.GetComponent<Slider>();
-        slider.value = musicPlayer.VolumeLevel;
+        AudioPlayer = AudioPlayer.Instance;
+        InitMusicVolumeLevel();
+        InitGeneralVolumeLevel();
     }
 
-    void Update()
+    void InitMusicVolumeLevel()
     {
-        SetVolume(slider.value);
+        musicVolumeSlider = musicVolumeSliderGameObject.GetComponent<Slider>();
+        musicVolumeSlider.value = AudioPlayer.MusicVolumeLevel;
+        musicVolumeSlider.onValueChanged.AddListener(delegate { OnVolumeChange(); });
     }
 
-    void SetVolume(float volume)
+    void InitGeneralVolumeLevel()
     {
-        musicPlayer.VolumeLevel = volume;
+        generalVolumeSlider = generalVolumeSliderGameObject.GetComponent<Slider>();
+        generalVolumeSlider.value = AudioPlayer.GeneralVolumeLevel;
+        generalVolumeSlider.onValueChanged.AddListener(delegate { OnVolumeChange(); });
+    }
+
+    public void OnVolumeChange()
+    {
+        AudioPlayer.MusicVolumeLevel = musicVolumeSlider.value;
+        AudioPlayer.GeneralVolumeLevel = generalVolumeSlider.value;
     }
 }

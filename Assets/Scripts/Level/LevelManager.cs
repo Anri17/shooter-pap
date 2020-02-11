@@ -19,12 +19,12 @@ public class LevelManager : MonoBehaviour
 
     Player player;
     GameManager gameManager;
-    MusicPlayer musicPlayer;
+    AudioPlayer musicPlayer;
 
     void Awake()
     {
         gameManager = GameManager.Instance;
-        musicPlayer = MusicPlayer.Instance;
+        musicPlayer = AudioPlayer.Instance;
         foreach (GameObject wave in waves)
         {
             wave.SetActive(false);
