@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d11d9020742804db725cf6207f85af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerRespawnDelay: 1
 --- !u!1 &2805552704074853562
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +284,9 @@ MonoBehaviour:
   - {fileID: 7330251143779989804, guid: 80d81689c76e85045b21f56ba848ed3a, type: 3}
   - {fileID: 7330251143779989804, guid: 5b11914011c670f43ada91ae72e1e91e, type: 3}
   sprites: {fileID: 3428159488775502123}
+  _powerLevel: 0
+  _lives: 99
+  canCollectItems: 1
 --- !u!114 &636037215666740693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,6 +302,7 @@ MonoBehaviour:
   normalSpeed: 12
   focusSpeed: 4
   hitboxSprite: {fileID: 8763027035406281085}
+  canMove: 1
 --- !u!1 &8763027035406281085
 GameObject:
   m_ObjectHideFlags: 0

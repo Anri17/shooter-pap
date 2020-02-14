@@ -8,18 +8,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float focusSpeed = 4.0f;
     [SerializeField] GameObject hitboxSprite;
 
+    public float Speed { get; set; }
+
     public bool canMove = true;
 
     float horizontal;
     float vertical;
     Vector3 direction;
-    Player player;
 
     void Awake()
     {
         canMove = true;
-        player = GetComponent<Player>();
-        player.Speed = normalSpeed;
+        Speed = normalSpeed;
         hitboxSprite.SetActive(false);
     }
 
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         if (canMove)
-            transform.position += direction * player.Speed * Time.deltaTime;
+            transform.position += direction * Speed * Time.deltaTime;
     }
 
     private Vector3 GetDirection()
@@ -43,12 +43,12 @@ public class PlayerController : MonoBehaviour
         // get speed value
         if (Input.GetButtonDown("Focus"))
         {
-            player.Speed = focusSpeed;
+            Speed = focusSpeed;
             hitboxSprite.SetActive(true);
         }
         if (Input.GetButtonUp("Focus"))
         {
-            player.Speed = normalSpeed;
+            Speed = normalSpeed;
             hitboxSprite.SetActive(false);
         }
 

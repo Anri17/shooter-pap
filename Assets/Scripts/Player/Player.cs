@@ -8,26 +8,18 @@ public class Player : MonoBehaviour
     public GameObject sprites;
 
     [SerializeField] float _powerLevel = 0f;
+    [SerializeField] int _lives = 2;
 
-    public int Lives { get; set; }
-    public float Speed { get; set;  }
-    public float PowerLevel
-    {
-        get => _powerLevel;
-        set => _powerLevel = value > 4 ? 4f : value < 0 ? 0f : value;
-    }
+    public int Lives { get => _lives; set => _lives = value; }
+    public float PowerLevel { get => _powerLevel; set => _powerLevel = value > 4 ? 4f : value < 0 ? 0f : value; }
 
     [HideInInspector] public bool canCollectItems = true;
     bool canFire = true;
     GameObject currentBarrage;
     GameObject mainBarrage;
-    GameManager gameManager;
 
     void Awake()
     {
-        gameManager = GameManager.Instance;
-        PowerLevel = 0.0f;
-        Lives = 99;
         canCollectItems = true;
     }
 
@@ -87,7 +79,7 @@ public class Player : MonoBehaviour
                 SpawnBarrage(mainBarrage);
             }
         }
-    } 
+    }
 
     public void FireBarrage()
     {
