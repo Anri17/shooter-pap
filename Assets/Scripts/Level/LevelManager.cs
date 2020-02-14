@@ -140,18 +140,7 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator PlayLevel()
     {
-        Debug.Log("Level Start");
-        moveBackground = true;
-        yield return new WaitForSeconds(8f);
-        Debug.Log("Wave 1");
-        waves[0].SetActive(true);
-        yield return new WaitForSeconds(10f);
-        Debug.Log("Wave 2");
-        waves[1].SetActive(true);
-        yield return new WaitForSeconds(8f);
-        Debug.Log("Wave 3");
-        waves[2].SetActive(true);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(36f);
         Debug.Log("Wave 4");
         waves[3].SetActive(true);
         yield return new WaitForSeconds(4f);

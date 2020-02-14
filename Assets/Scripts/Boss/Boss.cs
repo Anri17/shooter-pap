@@ -19,19 +19,19 @@ public class Boss : MonoBehaviour
 
     bool hittable = false;
 
-    BezierMove bezierMoveInstance;
+    BezierMove bezierMove;
     Transform pathTransform;
     LevelManager levelManager;
 
     void Awake()
     {
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
-        bezierMoveInstance = GetComponent<BezierMove>();
+        bezierMove = GetComponent<BezierMove>();
     }
 
     void Start()
     {
-        StartCoroutine(MoveToPosition(defaultPosition, 1f));
+        StartCoroutine(MoveToPosition(defaultPosition, 1f, 2f));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,9 +51,9 @@ public class Boss : MonoBehaviour
                 Debug.Log($"Stage index: {stageIndex}");
                 if (stageIndex < stages.Length)
                 {
-                    bezierMoveInstance.StopMovement();
+                    bezierMove.StopMovement();
                     DestroyCurrentStage();
-                    StartCoroutine(MoveToPosition(defaultPosition, 1f));
+                    StartCoroutine(MoveToPosition(defaultPosition, 1f, 2f));
                 }
                 else
                 {
@@ -86,7 +86,7 @@ public class Boss : MonoBehaviour
         UnpackStage(stageIndex);
         UnpackPath(currentPath);
         currentBarrage = Instantiate(currentStage.barrage, transform);
-        bezierMoveInstance.StartMovement();
+        bezierMove.StartMovement();
         hittable = true;
     }
 
@@ -102,8 +102,8 @@ public class Boss : MonoBehaviour
     private void UnpackPath(Transform path)
     {
         pathTransform = Instantiate(path, defaultPosition, Quaternion.identity);
-        bezierMoveInstance.ResetValues(currentPathSpeed);
-        bezierMoveInstance.UnpackPath(pathTransform);
+        bezierMove.ResetValues(currentPathSpeed);
+        bezierMove.UnpackPath(pathTransform);
     }
 
     private void PlayDeathParticles(ParticleSystem deathParticles)
@@ -111,7 +111,7 @@ public class Boss : MonoBehaviour
         Instantiate(deathParticles, transform.position, Quaternion.identity);
     }
 
-    public IEnumerator MoveToPosition(Vector3 destination, float timeToMove)
+    public IEnumerator MoveToPosition(Vector3 destination, float timeToMove, float timeToWait)
     {
         Vector3 currentPos = transform.position;
         float t = 0f;
@@ -121,6 +121,7 @@ public class Boss : MonoBehaviour
             transform.position = Vector3.Lerp(currentPos, destination, t);
             yield return null;
         }
+        yield return new WaitForSeconds(timeToWait);
         SetStage(stageIndex);
         StopCoroutine("MoveToPosition");
     }

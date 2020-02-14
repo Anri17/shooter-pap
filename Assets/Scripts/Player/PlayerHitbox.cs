@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerHitbox : MonoBehaviour
 {
+    [SerializeField] float playerRespawnDelay = 1f;
+
     LevelManager levelManager;
     Player player;
 
@@ -33,6 +35,6 @@ public class PlayerHitbox : MonoBehaviour
     void Respawn()
     {
         levelManager.SpawnItems(transform.position, 5, 1, 0);
-        player.RespawnPlayer(levelManager.playerSpawnPoint.transform.position, 3f);
+        player.RespawnPlayer(levelManager.playerSpawnPoint.transform.position, playerRespawnDelay);
     }
 }
