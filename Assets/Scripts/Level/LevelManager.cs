@@ -140,13 +140,7 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator PlayLevel()
     {
-        yield return new WaitForSeconds(36f);
-        Debug.Log("Wave 4");
-        waves[3].SetActive(true);
-        yield return new WaitForSeconds(4f);
-        Debug.Log("Wave 5");
-        waves[4].SetActive(true);
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(48f);
         Debug.Log("Wait Time Before Boss");
         ClearEnemies();
         ClearBullets();
@@ -161,13 +155,13 @@ public class LevelManager : MonoBehaviour
         moveBackground = true;
         yield return new WaitForSeconds(5f);
         Debug.Log("Wave 6.1");
-        waves[5].SetActive(true);
+        waves[0].SetActive(true);
         yield return new WaitForSeconds(3f);
         Debug.Log("Wave 6.2");
-        waves[6].SetActive(true);
+        waves[1].SetActive(true);
         yield return new WaitForSeconds(3f);
         Debug.Log("Wave 6.3");
-        waves[7].SetActive(true);
+        waves[2].SetActive(true);
         yield return new WaitForSeconds(3f);
         Debug.Log("Stage End");
     }

@@ -7,9 +7,15 @@ public class Player : MonoBehaviour
     public GameObject[] barrages;
     public GameObject sprites;
 
+    [SerializeField] float _powerLevel = 0f;
+
     public int Lives { get; set; }
     public float Speed { get; set;  }
-    public float PowerLevel { get; set; }
+    public float PowerLevel
+    {
+        get => _powerLevel;
+        set => _powerLevel = value > 4 ? 4f : value < 0 ? 0f : value;
+    }
 
     [HideInInspector] public bool canCollectItems = true;
     bool canFire = true;
@@ -27,11 +33,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (PowerLevel > 4)
-        {
-            PowerLevel = 4f;
-        }
-
         // shoot barrage
         if (PowerLevel >= 0.0f && PowerLevel < 1.0f)      // Level 1 Barrage
         {
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
         {
             SetBarrage(barrages[3]);
         }
+
         FireBarrage();
     }
 
