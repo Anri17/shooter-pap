@@ -11,9 +11,6 @@ public class LevelManager : MonoBehaviour
     public AudioClip stageMusicTheme;
     public AudioClip bossMusicTheme;
     public GameObject[] waves;
-    public Vector3 bossSpawnPoints = new Vector3(1, 13, 0);
-    public GameObject bossScreen;
-    public GameObject bossHealthBar;
 
     bool moveBackground = true;
 
@@ -33,19 +30,13 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        bossHealthBar.GetComponent<Slider>().value = 0;
         musicPlayer.PlayMusic(stageMusicTheme);
         SpawnPlayer(playerSpawnPoint.transform);
         player = gameManager.spawnedPlayer.GetComponent<Player>();
-        StartCoroutine(PlayLevel());
     }
         
     void Update()
     {
-        if (gameManager.spawnedBoss != null)
-        {
-            bossHealthBar.GetComponent<Slider>().value = gameManager.spawnedBoss.GetComponent<Boss>().currentHealth / gameManager.spawnedBoss.GetComponent<Boss>().currentMaxHealth;
-        }
         if (moveBackground)
         {
             MoveBackground(backgroundImageScrollSpeed);
@@ -66,19 +57,6 @@ public class LevelManager : MonoBehaviour
         else
         {
             player.SpawnPlayer(playerSpawnPoint.transform.position);
-        }
-    }
-
-    public void SpawnBoss()
-    {
-        if (gameManager.spawnedBoss == null)
-        {
-            gameManager.spawnedBoss = Instantiate(boss, bossSpawnPoints, boss.transform.rotation);
-        }
-        else
-        {
-            Destroy(gameManager.spawnedBoss);
-            gameManager.spawnedBoss = Instantiate(boss, bossSpawnPoints, boss.transform.rotation);
         }
     }
 
@@ -136,33 +114,5 @@ public class LevelManager : MonoBehaviour
             Collectable collectableScript = collectable.GetComponent<Collectable>();
             collectableScript.Move(pos, 8, 0.6f);
         }
-    }
-
-    IEnumerator PlayLevel()
-    {
-        yield return new WaitForSeconds(48f);
-        Debug.Log("Wait Time Before Boss");
-        ClearEnemies();
-        ClearBullets();
-        moveBackground = false;
-        yield return new WaitForSeconds(2f);
-        Debug.Log("Mid Boss");
-        bossScreen.SetActive(true);
-        SpawnBoss();
-        yield return new WaitUntil(() => gameManager.spawnedBoss == null);
-        bossScreen.SetActive(false);
-        Debug.Log("Continuing stage");
-        moveBackground = true;
-        yield return new WaitForSeconds(5f);
-        Debug.Log("Wave 6.1");
-        waves[0].SetActive(true);
-        yield return new WaitForSeconds(3f);
-        Debug.Log("Wave 6.2");
-        waves[1].SetActive(true);
-        yield return new WaitForSeconds(3f);
-        Debug.Log("Wave 6.3");
-        waves[2].SetActive(true);
-        yield return new WaitForSeconds(3f);
-        Debug.Log("Stage End");
     }
 }

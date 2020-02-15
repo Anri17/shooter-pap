@@ -5,8 +5,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Boss Wave", menuName = "Boss/Wave")]
 public class BossWave : ScriptableObject
 {
-    [SerializeField] GameObject boss;
-    [SerializeField] BossStage[] bossStages;
+    [SerializeField] float _startDelay;
+    [SerializeField] float _endDelay;
+    [SerializeField] GameObject _boss;
+    [SerializeField] BossStage[] _bossStages;
+    [SerializeField] int _launchBossAfterWaveNumber;
 
-
+    public float StartDelay { get => _startDelay; }
+    public float EndDelay { get => _endDelay; }
+    public GameObject Boss { get => _boss; }
+    public BossStage[] BossStages { get => _bossStages; }
+    public int WaveNumber { get => _launchBossAfterWaveNumber; }
 }

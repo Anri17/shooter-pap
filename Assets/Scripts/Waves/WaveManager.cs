@@ -1,28 +1,61 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] float startDelay = 2f;
     [SerializeField] EnemyWave[] waves;
+    [SerializeField] BossWave boss;
+    [SerializeField] GameObject bossScreen;
+    [SerializeField] GameObject bossHealthBar;
+    [SerializeField] Vector3 bossSpawnPoint;
 
-    GameObject[] spawnedWaves;
-
+    [HideInInspector] public GameObject[] spawnedWaves;
+    [HideInInspector] public GameObject spawnedBoss;
+     
     void Start()
     {
         spawnedWaves = new GameObject[waves.Length];
-        StartCoroutine(PlayLevel(startDelay, waves));
+        StartCoroutine(PlayLevel(startDelay, waves, boss));
     }
 
-    IEnumerator PlayLevel(float waitBeforeStart, EnemyWave[] waves)
+    private void Update()
+    {
+        UpdateBossHUD();
+    }
+
+    private void UpdateBossHUD()
+    {
+        if (spawnedBoss != null)
+        {
+            bossHealthBar.GetComponent<Slider>().value = spawnedBoss.GetComponent<Boss>().currentHealth / spawnedBoss.GetComponent<Boss>().currentMaxHealth;
+        }
+    }
+
+    IEnumerator PlayLevel(float waitBeforeStart, EnemyWave[] waves, BossWave boss)
     {
         yield return new WaitForSeconds(waitBeforeStart);
-        for (int i = 0; i < waves.Length; i++)
+        for (int waveIndex = 0; waveIndex < waves.Length; waveIndex++)
         {
-            Debug.Log($"Launching Wave {i + 1}");
-            spawnedWaves[i] = Instantiate(waves[i].Wave, transform);
-            yield return new WaitForSeconds(waves[i].DelayStartTime);
+            Debug.Log($"Launching Wave {waveIndex + 1}");
+            spawnedWaves[waveIndex] = Instantiate(waves[waveIndex].Wave, transform);
+            yield return new WaitForSeconds(waves[waveIndex].DelayStartTime);
+            if (boss.WaveNumber == (waveIndex + 1))
+            {
+                Debug.Log("Preparing to launch Boss...");
+                LevelManager.ClearBullets();
+                LevelManager.ClearEnemies();
+                yield return new WaitForSeconds(boss.StartDelay);
+                Debug.Log("Launching Boss...");
+                spawnedBoss = Instantiate(boss.Boss, bossSpawnPoint, Quaternion.identity, transform);
+                bossScreen.SetActive(true);
+                yield return new WaitUntil(() => spawnedBoss == null);
+                yield return new WaitForSeconds(boss.EndDelay);
+                bossScreen.SetActive(false);
+            }
         }
         Debug.Log("Level Ended");
     }
