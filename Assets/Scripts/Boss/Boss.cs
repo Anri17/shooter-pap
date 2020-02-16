@@ -19,6 +19,12 @@ public class Boss : MonoBehaviour
 
     bool hittable = false;
 
+    public int StageCount
+    {
+        get;
+        set;
+    }
+
     BezierMove bezierMove;
     Transform pathTransform;
     LevelManager levelManager;
@@ -31,6 +37,7 @@ public class Boss : MonoBehaviour
 
     void Start()
     {
+        StageCount = stages.Length - 1;
         StartCoroutine(MoveToPosition(defaultPosition, 1f, 2f));
     }
 
@@ -47,6 +54,7 @@ public class Boss : MonoBehaviour
                 PlayDeathParticles(deathParticles);
                 DropItems();
                 hittable = false;
+                StageCount--;
                 stageIndex++;
                 Debug.Log($"Stage index: {stageIndex}");
                 if (stageIndex < stages.Length)

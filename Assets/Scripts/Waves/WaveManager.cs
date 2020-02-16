@@ -11,11 +11,12 @@ public class WaveManager : MonoBehaviour
     [SerializeField] BossWave boss;
     [SerializeField] GameObject bossScreen;
     [SerializeField] GameObject bossHealthBar;
+    [SerializeField] GameObject bossStageCount;
     [SerializeField] Vector3 bossSpawnPoint;
 
     [HideInInspector] public GameObject[] spawnedWaves;
     [HideInInspector] public GameObject spawnedBoss;
-     
+    
     void Start()
     {
         spawnedWaves = new GameObject[waves.Length];
@@ -31,7 +32,11 @@ public class WaveManager : MonoBehaviour
     {
         if (spawnedBoss != null)
         {
+            // Update HP Bar
             bossHealthBar.GetComponent<Slider>().value = spawnedBoss.GetComponent<Boss>().currentHealth / spawnedBoss.GetComponent<Boss>().currentMaxHealth;
+
+            // Update Current Stage Number
+            bossStageCount.GetComponent<Text>().text = spawnedBoss.GetComponent<Boss>().StageCount.ToString();
         }
     }
 
@@ -53,8 +58,8 @@ public class WaveManager : MonoBehaviour
                 spawnedBoss = Instantiate(boss.Boss, bossSpawnPoint, Quaternion.identity, transform);
                 bossScreen.SetActive(true);
                 yield return new WaitUntil(() => spawnedBoss == null);
-                yield return new WaitForSeconds(boss.EndDelay);
                 bossScreen.SetActive(false);
+                yield return new WaitForSeconds(boss.EndDelay);
             }
         }
         Debug.Log("Level Ended");
