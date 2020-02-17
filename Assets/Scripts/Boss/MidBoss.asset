@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MidBoss
   m_EditorClassIdentifier: 
   _startDelay: 2
-  _endDelay: 4
+  _endDelay: 8
   _boss: {fileID: 7945089824047321945, guid: 13c3bbef8edaced4bac3d444e7c00c5e, type: 3}
   _bossStages:
   - {fileID: 11400000, guid: e40fdab0e64e4ef46a7f5e55dca0f606, type: 2}

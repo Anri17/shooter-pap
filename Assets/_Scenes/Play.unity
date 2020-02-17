@@ -806,7 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e383d5cbe4d53d540891088bef4b6e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 2
+  startDelay: 11.25
   waves:
   - {fileID: 11400000, guid: bb03421ae02ff724c852f048aeb77c9a, type: 2}
   - {fileID: 11400000, guid: d3da44db84f2b2d459cacf98d0e19a8a, type: 2}
@@ -820,6 +820,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 61416bfcd04af4f4fa463d04244cec4e, type: 2}
   - {fileID: 11400000, guid: ed2d7fa20c2472f429d55d92a4064c45, type: 2}
   - {fileID: 11400000, guid: 2a77794fb7f3d2c4b86f0b783568d29c, type: 2}
+  - {fileID: 11400000, guid: 0913081db54f2e64fa523a0e3b3fdab5, type: 2}
   boss: {fileID: 11400000, guid: 63c808d63f6389241b3f9ef164babb51, type: 2}
   bossScreen: {fileID: 1915190981}
   bossHealthBar: {fileID: 2022069768}
@@ -5035,7 +5036,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755139699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.037, y: -6.76, z: 0}
+  m_LocalPosition: {x: -4.061896, y: -6.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
