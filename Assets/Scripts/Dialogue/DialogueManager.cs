@@ -13,9 +13,14 @@ public class DialogueManager : MonoBehaviour
 
     public Queue<string> sentences;
 
-    void Awake()
+    private void Awake()
     {
         sentences = new Queue<string>();
+    }
+
+    private void Start()
+    {
+        
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -61,6 +66,9 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("End of Conversation.");
+
+        nameText.text = "";
+        dialogueText.text = "";
         animator.SetBool("IsOpen", false);
     }
 
