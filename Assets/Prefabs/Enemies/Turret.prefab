@@ -166,13 +166,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tragectory: []
-  _health: 24
+  _health: 32
   _shot: {fileID: 7819838638613296147, guid: 095f66ab46492ef42bc0d2955ad401a5, type: 3}
   _scoreWorth: 200
   shootDelay: 1
   deathParticles: {fileID: 6180124026953083947, guid: 545f7a21eda9c484ab3b694f8ce1d41a,
     type: 3}
   hitSound: {fileID: 7770079271043208824}
+  randomizeShotDelay: 0
 --- !u!114 &3730391855161913003
 MonoBehaviour:
   m_ObjectHideFlags: 0
