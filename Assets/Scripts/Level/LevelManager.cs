@@ -30,6 +30,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        GameManager.LockCursor();
         musicPlayer.PlayMusic(stageMusicTheme);
         SpawnPlayer(playerSpawnPoint.transform);
         player = gameManager.spawnedPlayer.GetComponent<Player>();

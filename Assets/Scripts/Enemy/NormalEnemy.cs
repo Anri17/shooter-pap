@@ -12,6 +12,7 @@ public class NormalEnemy : Enemy
     [SerializeField] float shootDelay;
     [SerializeField] ParticleSystem deathParticles;
     [SerializeField] AudioSource hitSound;
+    [SerializeField] bool randomizeShotDelay = false;
 
     public override float Health { get; set; }
     public override GameObject Shot { get; set; }
@@ -35,6 +36,11 @@ public class NormalEnemy : Enemy
 
     public void Start()
     {
+        if (randomizeShotDelay)
+        {
+            shootDelay = Random.Range(0.2f, 1f);
+        }
+
         for (int i = 0; i < tragectory.Length; i++)
         {
             Tragectory.Add(tragectory[i].transform);

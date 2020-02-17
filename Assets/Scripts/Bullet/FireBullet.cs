@@ -11,6 +11,7 @@ public class FireBullet : MonoBehaviour
     public float fireRate = 1; // how long to wait before the next bullet is fired
     public float aimOffset = 0; // the rotation offset of the aim direction
     public float shotLoopDelay = 0; // how long to wait between each loop
+    public bool randomizeShotVelocity = false;
 
     int bulletsFired = 0; // how many bullets fired so far
     Quaternion direction; // the direction to aim at
@@ -27,6 +28,12 @@ public class FireBullet : MonoBehaviour
 
     void Start()
     {
+        if (randomizeShotVelocity)
+        {
+            fireRate = Random.Range(0.8f, 1.6f);
+            aimOffset = Random.Range(-0.4f, 0.4f);
+        }
+
         // fire the bullet
         if (bullet != null)
         {

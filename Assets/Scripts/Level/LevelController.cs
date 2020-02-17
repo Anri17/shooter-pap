@@ -25,11 +25,13 @@ public class LevelController : MonoBehaviour
         {
             Time.timeScale = 1;
             pauseMenu.SetActive(false);
+            GameManager.LockCursor();
         }
         else
         {
             Time.timeScale = 0;
             pauseMenu.SetActive(true);
+            GameManager.UnlockCursor();
         }
     }
 }
