@@ -10,14 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c87927f0b087c12488033156b3037d32, type: 3}
-  m_Name: MidBoss
+  m_Name: L1MidBoss
   m_EditorClassIdentifier: 
   _startDelay: 2
   _endDelay: 8
   _boss: {fileID: 7945089824047321945, guid: 13c3bbef8edaced4bac3d444e7c00c5e, type: 3}
-  _bossStages:
-  - {fileID: 11400000, guid: e40fdab0e64e4ef46a7f5e55dca0f606, type: 2}
-  - {fileID: 11400000, guid: dbd23fdaec3c1654aa34542218f97897, type: 2}
-  - {fileID: 11400000, guid: e75443d56c6909c4ca199f33ed76e8ad, type: 2}
-  - {fileID: 11400000, guid: c475fe2be4ef20640b3b937b78929616, type: 2}
-  _launchBossAfterWaveNumber: 6
