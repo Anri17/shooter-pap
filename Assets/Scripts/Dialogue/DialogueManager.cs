@@ -20,7 +20,8 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        
+        dialogueText.text = "";
+        nameText.text = "";
     }
 
     public void StartDialogue(Dialogue dialogue)
