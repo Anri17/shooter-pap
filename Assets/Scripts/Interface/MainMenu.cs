@@ -10,7 +10,6 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject playMenu;
-    [SerializeField] GameObject tutorialMenu;
     [SerializeField] GameObject optionsMenu;
     [SerializeField] GameObject bottomRightPannel;
     [SerializeField] GameObject middlePannel;
@@ -29,7 +28,6 @@ public class MainMenu : MonoBehaviour
     {
         mainMenu.SetActive(true);
         playMenu.SetActive(false);
-        tutorialMenu.SetActive(false);
         optionsMenu.SetActive(false);
         DisplayBottomRightPannel();
     }
@@ -38,24 +36,14 @@ public class MainMenu : MonoBehaviour
     {
         mainMenu.SetActive(false);
         playMenu.SetActive(true);
-        tutorialMenu.SetActive(false);
         optionsMenu.SetActive(false);
         DisplayMiddlePannel();
     }
 
-    public void DisplayTutorialMenu()
-    {
-        mainMenu.SetActive(false);
-        playMenu.SetActive(false);
-        tutorialMenu.SetActive(true);
-        optionsMenu.SetActive(false);
-        DisplayMiddlePannel();
-    }
     public void DisplayOptionsMenu()
     {
         mainMenu.SetActive(false);
         playMenu.SetActive(false);
-        tutorialMenu.SetActive(false);
         optionsMenu.SetActive(true);
         DisplayMiddlePannel();
     }
@@ -77,7 +65,12 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void StartGame()
+    public void StartMainLevel()
+    {
+        gameManager.LoadScene(2);
+    }
+
+    public void StartTutorialLevel()
     {
         gameManager.LoadScene(1);
     }
