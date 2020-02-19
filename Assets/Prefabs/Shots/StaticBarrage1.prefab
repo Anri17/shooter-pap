@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a25a5cc256cc64d94b840e5c5a8e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4019418150373853230, guid: faef8db8410853a4ab908244ab67b543, type: 3}
+  bullet: {fileID: 4019418150373853230, guid: 09d4a5a86c55f07488f061197773331f, type: 3}
   target: {fileID: 2642483125788506123}
   fireLimitedCount: 0
   fireBulletCount: 0
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a25a5cc256cc64d94b840e5c5a8e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4019418150373853230, guid: faef8db8410853a4ab908244ab67b543, type: 3}
+  bullet: {fileID: 4019418150373853230, guid: 09d4a5a86c55f07488f061197773331f, type: 3}
   target: {fileID: 4142703487163521830}
   fireLimitedCount: 0
   fireBulletCount: 0
