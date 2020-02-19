@@ -12,18 +12,18 @@ public class Boss : MonoBehaviour
 
     BossStage currentStage;
     GameObject currentBarrage;
-    public float currentMaxHealth;
-    public float currentHealth;
+    float _currentMaxHealth;
+    float _currentHealth;
+    float _currentDeathTimer;
     Transform currentPath;
     float currentPathSpeed;
 
     bool hittable = false;
 
-    public int StageCount
-    {
-        get;
-        set;
-    }
+    public int StageCount { get; set; }
+    public float CurrentMaxHealth { get => _currentMaxHealth; set => _currentMaxHealth = value; }
+    public float CurrentHealth { get => _currentHealth; set => _currentHealth = value; }
+    public float CurrentDeathTimer { get => _currentDeathTimer; set => _currentDeathTimer = value; }
 
     BezierMove bezierMove;
     Transform pathTransform;
@@ -43,32 +43,37 @@ public class Boss : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((collision.tag.Equals("PlayerBullet") || collision.tag.Equals("PlayerLazer")) && hittable)
+        if ((collision.CompareTag("PlayerBullet") || collision.CompareTag("PlayerLazer")) && hittable)
         {
             GameManager.Instance.Score += 80;
-            currentHealth -= collision.GetComponent<PlayerBullet>().Damage;
+            CurrentHealth -= collision.GetComponent<PlayerBullet>().Damage;
             Destroy(collision.gameObject);
             hitSound.Play();
-            if (currentHealth <= 0)
+            if (CurrentHealth <= 0)
             {
-                PlayDeathParticles(deathParticles);
-                DropItems();
-                hittable = false;
-                StageCount--;
-                stageIndex++;
-                Debug.Log($"Stage index: {stageIndex}");
-                if (stageIndex < stages.Length)
-                {
-                    bezierMove.StopMovement();
-                    DestroyCurrentStage();
-                    StartCoroutine(MoveToPosition(defaultPosition, 1f, 2f));
-                }
-                else
-                {
-                    Debug.Log("Boss Defeated");
-                    Destroy(gameObject);
-                }
+                KillBoss();
             }
+        }
+    }
+
+    void KillBoss()
+    {
+        PlayDeathParticles(deathParticles);
+        DropItems();
+        hittable = false;
+        StageCount--;
+        stageIndex++;
+        Debug.Log($"Stage index: {stageIndex}");
+        if (stageIndex < stages.Length)
+        {
+            bezierMove.StopMovement();
+            DestroyCurrentStage();
+            StartCoroutine(MoveToPosition(defaultPosition, 1f, 2f));
+        }
+        else
+        {
+            Debug.Log("Boss Defeated");
+            Destroy(gameObject);
         }
     }
 
@@ -96,13 +101,15 @@ public class Boss : MonoBehaviour
         currentBarrage = Instantiate(currentStage.barrage, transform);
         bezierMove.StartMovement();
         hittable = true;
+        StartCoroutine(CountDownDeathTimer());
     }
 
     private void UnpackStage(int stageIndex)
     {
         currentStage = stages[stageIndex];
-        currentMaxHealth = currentStage.health;
-        currentHealth = currentStage.health;
+        CurrentDeathTimer = currentStage.deathTimer;
+        CurrentMaxHealth = currentStage.health;
+        CurrentHealth = currentStage.health;
         currentPath = currentStage.path;
         currentPathSpeed = currentStage.pathSpeed;
     }
@@ -132,5 +139,15 @@ public class Boss : MonoBehaviour
         yield return new WaitForSeconds(timeToWait);
         SetStage(stageIndex);
         StopCoroutine("MoveToPosition");
+    }
+
+    public IEnumerator CountDownDeathTimer()
+    {
+        while (CurrentDeathTimer > 0)
+        {
+            CurrentDeathTimer--;
+            yield return new WaitForSeconds(1f);
+        }
+        KillBoss();
     }
 }

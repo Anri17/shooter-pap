@@ -13,12 +13,12 @@ public class WaveManager : MonoBehaviour
     [SerializeField] GameObject bossScreen;
     [SerializeField] GameObject bossHealthBar;
     [SerializeField] GameObject bossStageCount;
+    [SerializeField] GameObject bossDeathTimer;
     [SerializeField] Vector3 bossSpawnPoint;
     [SerializeField] int MidbossWaveNumber;
 
     [HideInInspector] public GameObject[] spawnedWaves;
-    [HideInInspector] public GameObject spawnedMidBoss;
-    [HideInInspector] public GameObject spawnedEndBoss;
+    [HideInInspector] public GameObject spawnedBoss;
 
     void Start()
     {
@@ -33,13 +33,16 @@ public class WaveManager : MonoBehaviour
 
     private void UpdateBossHUD()
     {
-        if (spawnedMidBoss != null)
+        if (spawnedBoss != null)
         {
             // Update HP Bar
-            bossHealthBar.GetComponent<Slider>().value = spawnedMidBoss.GetComponent<Boss>().currentHealth / spawnedMidBoss.GetComponent<Boss>().currentMaxHealth;
+            bossHealthBar.GetComponent<Slider>().value = spawnedBoss.GetComponent<Boss>().CurrentHealth / spawnedBoss.GetComponent<Boss>().CurrentMaxHealth;
 
             // Update Current Stage Number
-            bossStageCount.GetComponent<Text>().text = spawnedMidBoss.GetComponent<Boss>().StageCount.ToString();
+            bossStageCount.GetComponent<Text>().text = spawnedBoss.GetComponent<Boss>().StageCount.ToString();
+
+            // Update Death Timer
+            bossDeathTimer.GetComponent<Text>().text = spawnedBoss.GetComponent<Boss>().CurrentDeathTimer.ToString();
         }
     }
 
@@ -58,9 +61,9 @@ public class WaveManager : MonoBehaviour
                 LevelManager.ClearEnemies();
                 yield return new WaitForSeconds(midBoss.StartDelay);
                 Debug.Log("Launching Boss...");
-                spawnedMidBoss = Instantiate(midBoss.Boss, bossSpawnPoint, Quaternion.identity, transform);
+                spawnedBoss = Instantiate(midBoss.Boss, bossSpawnPoint, Quaternion.identity, transform);
                 bossScreen.SetActive(true);
-                yield return new WaitUntil(() => spawnedMidBoss == null);
+                yield return new WaitUntil(() => spawnedBoss == null);
                 bossScreen.SetActive(false);
                 yield return new WaitForSeconds(midBoss.EndDelay);
             }
@@ -71,9 +74,9 @@ public class WaveManager : MonoBehaviour
         LevelManager.ClearEnemies();
         yield return new WaitForSeconds(endBoss.StartDelay);
         Debug.Log("Launching Boss...");
-        spawnedMidBoss = Instantiate(endBoss.Boss, bossSpawnPoint, Quaternion.identity, transform);
+        spawnedBoss = Instantiate(endBoss.Boss, bossSpawnPoint, Quaternion.identity, transform);
         bossScreen.SetActive(true);
-        yield return new WaitUntil(() => spawnedMidBoss == null);
+        yield return new WaitUntil(() => spawnedBoss == null);
         bossScreen.SetActive(false);
         yield return new WaitForSeconds(endBoss.EndDelay);
 
