@@ -43,12 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a25a5cc256cc64d94b840e5c5a8e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4019418150373853230, guid: faef8db8410853a4ab908244ab67b543, type: 3}
+  bullet: {fileID: 4019418150373853230, guid: 09d4a5a86c55f07488f061197773331f, type: 3}
   target: {fileID: 4037159831597851511, guid: bfe6cc0d5ce856c40ab352a71f92f48d, type: 3}
   fireLimitedCount: 0
   fireBulletCount: 10
   fireRate: 0.3
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &483351361790669389
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +131,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.1
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &1194479771153587821
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,6 +243,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.1
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &1534564925714682542
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,6 +391,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.1
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &2518846669449038394
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +443,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.1
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &2961206304315762495
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 0
-  rotationSpeed: 14
+  rotationSpeed: 8
 --- !u!1 &3960606671098515752
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +691,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.1
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &4689751019521647497
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +743,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.2
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &5111446589467179591
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,6 +795,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.2
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &5691853723952210420
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +877,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.2
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &6189236459613670541
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +929,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.2
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &6236302933530780683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,12 +1034,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a25a5cc256cc64d94b840e5c5a8e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4019418150373853230, guid: faef8db8410853a4ab908244ab67b543, type: 3}
+  bullet: {fileID: 4019418150373853230, guid: 09d4a5a86c55f07488f061197773331f, type: 3}
   target: {fileID: 4037159831597851511, guid: bfe6cc0d5ce856c40ab352a71f92f48d, type: 3}
   fireLimitedCount: 0
   fireBulletCount: 10
   fireRate: 0.3
   aimOffset: 15
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &7040468342931114612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1092,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.2
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &7133756267687226777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,6 +1144,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.2
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &7211004205173194459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,6 +1226,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.2
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &7660806288254605772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,6 +1368,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.1
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &8346919340502965291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,6 +1450,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.1
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &8378694396882275354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1502,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.1
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &8540048528028849566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,12 +1577,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a25a5cc256cc64d94b840e5c5a8e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4019418150373853230, guid: faef8db8410853a4ab908244ab67b543, type: 3}
+  bullet: {fileID: 4019418150373853230, guid: 09d4a5a86c55f07488f061197773331f, type: 3}
   target: {fileID: 4037159831597851511, guid: bfe6cc0d5ce856c40ab352a71f92f48d, type: 3}
   fireLimitedCount: 0
   fireBulletCount: 10
   fireRate: 0.3
   aimOffset: -15
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &9223004987543822436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,3 +1635,5 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.2
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0

@@ -43,12 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a25a5cc256cc64d94b840e5c5a8e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4019418150373853230, guid: faef8db8410853a4ab908244ab67b543, type: 3}
+  bullet: {fileID: 4019418150373853230, guid: 09d4a5a86c55f07488f061197773331f, type: 3}
   target: {fileID: 4037159831597851511, guid: bfe6cc0d5ce856c40ab352a71f92f48d, type: 3}
   fireLimitedCount: 0
   fireBulletCount: 10
   fireRate: 0.8
   aimOffset: 15
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &1764035180921182807
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,12 +148,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a25a5cc256cc64d94b840e5c5a8e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4019418150373853230, guid: faef8db8410853a4ab908244ab67b543, type: 3}
+  bullet: {fileID: 4019418150373853230, guid: 09d4a5a86c55f07488f061197773331f, type: 3}
   target: {fileID: 4037159831597851511, guid: bfe6cc0d5ce856c40ab352a71f92f48d, type: 3}
   fireLimitedCount: 0
   fireBulletCount: 10
   fireRate: 0.8
   aimOffset: -15
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &2961206304315762495
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +266,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.5
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &5111446589467179591
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,6 +318,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.5
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &5693391151860511960
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +403,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.5
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &6189236459613670541
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +455,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.5
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &6236302933530780683
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,12 +560,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a25a5cc256cc64d94b840e5c5a8e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4019418150373853230, guid: faef8db8410853a4ab908244ab67b543, type: 3}
+  bullet: {fileID: 4019418150373853230, guid: 09d4a5a86c55f07488f061197773331f, type: 3}
   target: {fileID: 4037159831597851511, guid: bfe6cc0d5ce856c40ab352a71f92f48d, type: 3}
   fireLimitedCount: 0
   fireBulletCount: 10
   fireRate: 0.8
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &7040468342931114612
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,6 +618,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.5
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &7133756267687226777
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +670,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.5
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &7211004205173194459
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +752,8 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.5
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
 --- !u!1 &7660806288254605772
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,3 +894,5 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.5
   aimOffset: 0
+  shotLoopDelay: 0
+  randomizeShotVelocity: 0
