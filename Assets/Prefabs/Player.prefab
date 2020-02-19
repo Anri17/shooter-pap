@@ -280,9 +280,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrages:
   - {fileID: 7330251143779989804, guid: 27fd3a2edbc8b8847b0eb8ec0e554be8, type: 3}
+  - {fileID: 7330251143779989804, guid: 32eda32a61055cf4e8a1ffa77c816e4f, type: 3}
   - {fileID: 7330251143779989804, guid: 5fc82424f55b41e4a969d1d914ec50a0, type: 3}
   - {fileID: 7330251143779989804, guid: 80d81689c76e85045b21f56ba848ed3a, type: 3}
   - {fileID: 7330251143779989804, guid: 5b11914011c670f43ada91ae72e1e91e, type: 3}
+  bombBarrage: {fileID: 0}
   sprites: {fileID: 3428159488775502123}
   _powerLevel: 0
   _lives: 99

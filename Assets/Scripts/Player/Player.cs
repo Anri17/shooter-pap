@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject[] barrages;
+    public GameObject bombBarrage;
     public GameObject sprites;
 
     [SerializeField] float _powerLevel = 0f;
@@ -26,21 +27,25 @@ public class Player : MonoBehaviour
     void Update()
     {
         // shoot barrage
-        if (PowerLevel >= 0.0f && PowerLevel < 1.0f)      // Level 1 Barrage
+        if (PowerLevel >= 0.0f && PowerLevel < 1.0f)      // Level 0 Barrage
         {
             SetBarrage(barrages[0]);
         }
-        else if (PowerLevel >= 1.0f && PowerLevel < 2.0f) // Level 2 Barrage
+        else if (PowerLevel >= 1.0f && PowerLevel < 2.0f) // Level 1 Barrage
         {
             SetBarrage(barrages[1]);
         }
-        else if (PowerLevel >= 2.0f && PowerLevel < 3.0f) // Level 3 Barrage
+        else if (PowerLevel >= 2.0f && PowerLevel < 3.0f) // Level 2 Barrage
         {
             SetBarrage(barrages[2]);
         }
-        else                                              // Level 4 Barrage
+        else if (PowerLevel >= 3.0f && PowerLevel < 4.0f)                         // Level 3 Barrage
         {
             SetBarrage(barrages[3]);
+        }
+        else if (PowerLevel == 4)
+        {
+            SetBarrage(barrages[4]);
         }
 
         FireBarrage();
