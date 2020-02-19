@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         {
             SetBarrage(barrages[2]);
         }
-        else if (PowerLevel >= 3.0f && PowerLevel < 4.0f)                         // Level 3 Barrage
+        else if (PowerLevel >= 3.0f && PowerLevel < 4.0f) // Level 3 Barrage
         {
             SetBarrage(barrages[3]);
         }

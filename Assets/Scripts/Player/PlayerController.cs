@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float normalSpeed = 12.0f;
     [SerializeField] float focusSpeed = 4.0f;
-    [SerializeField] GameObject hitboxSprite;
+    [SerializeField] Animator hitboxAnimatorController;
 
     public float Speed { get; set; }
 
@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     {
         canMove = true;
         Speed = normalSpeed;
-        hitboxSprite.SetActive(false);
     }
 
     void Update()
@@ -44,12 +43,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Focus"))
         {
             Speed = focusSpeed;
-            hitboxSprite.SetActive(true);
+            hitboxAnimatorController.SetBool("FocusMode", true);
         }
         if (Input.GetButtonUp("Focus"))
         {
             Speed = normalSpeed;
-            hitboxSprite.SetActive(false);
+            hitboxAnimatorController.SetBool("FocusMode", false);
         }
 
         if (Input.GetButton("Horizontal") && Input.GetButton("Vertical"))
