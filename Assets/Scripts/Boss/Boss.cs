@@ -58,6 +58,7 @@ public class Boss : MonoBehaviour
 
     void KillBoss()
     {
+        StopCoroutine(CountDownDeathTimer());
         PlayDeathParticles(deathParticles);
         DropItems();
         hittable = false;
