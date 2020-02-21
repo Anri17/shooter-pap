@@ -155,8 +155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8225583311878669710, guid: 221feb8eb92520b4ab5d921c6fa40ad3, type: 3}
   target: {fileID: 7929011657137323442}
-  fireLimitedCount: 1
-  fireBulletCount: 16
+  fireLimitedCount: 0
+  fireBulletCount: 64
   fireRate: 0.05
   aimOffset: 0
   shotLoopDelay: 0
@@ -207,8 +207,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8225583311878669710, guid: 221feb8eb92520b4ab5d921c6fa40ad3, type: 3}
   target: {fileID: 7651555984404371681}
-  fireLimitedCount: 1
-  fireBulletCount: 16
+  fireLimitedCount: 0
+  fireBulletCount: 64
   fireRate: 0.05
   aimOffset: 0
   shotLoopDelay: 0
@@ -259,8 +259,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8225583311878669710, guid: 221feb8eb92520b4ab5d921c6fa40ad3, type: 3}
   target: {fileID: 1048586204037230739}
-  fireLimitedCount: 1
-  fireBulletCount: 16
+  fireLimitedCount: 0
+  fireBulletCount: 64
   fireRate: 0.05
   aimOffset: 0
   shotLoopDelay: 0
@@ -311,8 +311,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8225583311878669710, guid: 221feb8eb92520b4ab5d921c6fa40ad3, type: 3}
   target: {fileID: 4911661160705781430}
-  fireLimitedCount: 1
-  fireBulletCount: 16
+  fireLimitedCount: 0
+  fireBulletCount: 64
   fireRate: 0.05
   aimOffset: 0
   shotLoopDelay: 0
@@ -357,7 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4034469184984759208}
   m_Layer: 0
-  m_Name: SpiralAcceleratingFast
+  m_Name: SpiralAcceleratingFastSpam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

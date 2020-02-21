@@ -29,8 +29,11 @@ public class Boss : MonoBehaviour
     Transform pathTransform;
     LevelManager levelManager;
 
+    private IEnumerator countDownDeathTimerCoroutine;
+
     void Awake()
     {
+        countDownDeathTimerCoroutine = CountDownDeathTimer();
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         bezierMove = GetComponent<BezierMove>();
     }
@@ -58,7 +61,7 @@ public class Boss : MonoBehaviour
 
     void KillBoss()
     {
-        StopCoroutine(CountDownDeathTimer());
+        StopCoroutine(countDownDeathTimerCoroutine);
         PlayDeathParticles(deathParticles);
         DropItems();
         hittable = false;
@@ -102,7 +105,7 @@ public class Boss : MonoBehaviour
         currentBarrage = Instantiate(currentStage.barrage, transform);
         bezierMove.StartMovement();
         hittable = true;
-        StartCoroutine(CountDownDeathTimer());
+        StartCoroutine(countDownDeathTimerCoroutine);
     }
 
     private void UnpackStage(int stageIndex)
