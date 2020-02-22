@@ -1,0 +1,1020 @@
+[33mcommit c938a70c6250705c3df73784259397b919f68347[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Fri Feb 21 15:21:41 2020 +0000
+
+    Fix death timer not stopping when boss was killed
+
+[33mcommit 94c6c6bda38fa3882c2f3d659186632b7b73d5b9[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Thu Feb 20 22:04:22 2020 +0000
+
+    Add new test player sprite with bright contourn
+
+[33mcommit 7b85d33f2495f9aeeee0c3d01cdcb188ce3d4f6b[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Thu Feb 20 00:45:01 2020 +0000
+
+    New background image
+
+[33mcommit 469379211f7ce3deb78ccc68cea8cdf741c8e070[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Wed Feb 19 23:21:37 2020 +0000
+
+    Update Animation
+
+[33mcommit ce041c565934854a2a0c200536f1c7defcb23cec[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Wed Feb 19 21:36:06 2020 +0000
+
+    Fix Attempts
+
+[33mcommit aaa9bb7525c80203ab5d34f3066386e756fd909e[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Wed Feb 19 21:33:43 2020 +0000
+
+    update sprites and animations
+
+[33mcommit 144745bfc1db67dfed092e05e802fd33d1579831[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Wed Feb 19 21:22:59 2020 +0000
+
+    Update sprites, Delete placeholder folder
+
+[33mcommit 514fc5bccf70b5f8937fde7090793626c4da0f92[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Wed Feb 19 19:50:15 2020 +0000
+
+    Added backgound ring to enemies
+
+[33mcommit 2afb1c66152c7306d0ce386667e2f9a9a26b1e0b[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Wed Feb 19 19:08:59 2020 +0000
+
+    Update player buller sprite
+
+[33mcommit 4ecbab9df1807c2dc6c15bad77759020c0075f58[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Wed Feb 19 18:56:27 2020 +0000
+
+    Hitbox
+
+[33mcommit 28a4f667ada40b2c450decf5a46c3072a9e531a7[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Wed Feb 19 18:02:09 2020 +0000
+
+    Add stone orb textures and fading hitbox sprite
+
+[33mcommit 13e8cc15f3dbd5c9bc9209f176a4b015752b78f4[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Wed Feb 19 17:24:17 2020 +0000
+
+    Add level 0 barrage to player
+
+[33mcommit d0737f2189237c14a03ec01d681ffca9175bdeec[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Wed Feb 19 17:05:13 2020 +0000
+
+    Added boss death timer
+
+[33mcommit a6d2edbbc4e76f0099a1e558e18a2818f773195a[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Feb 18 23:31:15 2020 +0000
+
+    Rearange project for tutorial level
+
+[33mcommit ae40a8e253340c839431378bcce7a129c9e246bf[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Feb 18 21:58:47 2020 +0000
+
+    Cleanup project
+
+[33mcommit ed9e2942218291b36d4d663bf28365ebf79fe4a1[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Mon Feb 17 22:51:24 2020 +0000
+
+    Tweaks
+
+[33mcommit 0023caad319b22ac19cb890bc81c3592010869da[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Mon Feb 17 20:47:39 2020 +0000
+
+    Test tweak
+
+[33mcommit eefc8825d973b38b689c276dfd0c0ea0be8b7ebd[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Mon Feb 17 20:12:57 2020 +0000
+
+    Test dialogue on test scene
+
+[33mcommit d17fa278b8082d8b506bad42cf387b51867e0307[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Feb 17 13:23:09 2020 +0000
+
+    Tweak spawn delay value
+
+[33mcommit a9fa49cc24baeb222dc408c9bfe0f84b3d0238ad[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Feb 17 13:21:52 2020 +0000
+
+    Add end stage test boss
+
+[33mcommit b8b3826915987002f69e9539cfc21e24af565ac5[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Feb 17 12:47:56 2020 +0000
+
+    Add new wave
+
+[33mcommit e5789cf31a7d9162246fc6d020d3ff307f5a7ba5[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Feb 17 12:35:42 2020 +0000
+
+    Add new wave
+
+[33mcommit e1f8b21d37dc54e93c8bfeaaa00c171e3e175a60[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Feb 17 11:45:59 2020 +0000
+
+    Add new waves
+
+[33mcommit c31378470172a1eafcc4600ee84cba646ac7b868[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Feb 16 03:08:25 2020 +0000
+
+    Update Boss Stage Number
+
+[33mcommit 331cb2fa5b010f6d891c4bc9c58b5d098d68a4db[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Feb 16 02:56:32 2020 +0000
+
+    Add new UI
+
+[33mcommit 4002b9dfd5a39ebdfebd596ab1e683854292bd45[m[33m ([m[1;33mtag: pre-alpha-20200215[m[33m)[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sat Feb 15 00:49:44 2020 +0000
+
+    Finish adding new wave functionality
+
+[33mcommit c4a2322586f7f21501b3cc00aef06510ecca662b[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Fri Feb 14 23:32:04 2020 +0000
+
+    Refactor move property
+
+[33mcommit eb03109220cc13b6d9d89cd62effd343def51b90[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Fri Feb 14 23:09:58 2020 +0000
+
+    Refactor enemy waves
+
+[33mcommit 29539cdeafec67b01a77822d00b241eec0af34ad[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Fri Feb 14 22:36:54 2020 +0000
+
+    add new sprites
+
+[33mcommit bb423f9e2daaa0e12b46d9e296a1603ac9f56efe[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Fri Feb 14 20:58:41 2020 +0000
+
+    Add WaveManager
+
+[33mcommit 17cc26c3f871e911e0105b81e7900bc739f2e643[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Feb 11 23:17:43 2020 +0000
+
+    Add General Volume Slider
+
+[33mcommit 5d882a56c2140835f51c80190b4c3007af77b7ff[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Feb 10 13:10:06 2020 +0000
+
+    Respawn player and Add new wave
+
+[33mcommit 835ca858c0950a294f592d51d850c7de301fa147[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Mon Feb 10 00:00:28 2020 +0000
+
+    Update Music
+
+[33mcommit baa3d9841b44cd212d5a26fe2ef15b856ca660e1[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Feb 9 23:57:47 2020 +0000
+
+    Update Sprites
+
+[33mcommit 2979ecae968ed044ee5f29ec4c337a8d239b5cf2[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Feb 9 00:26:46 2020 +0000
+
+    Update sprites
+
+[33mcommit 1ac79f8a0ccb9faee0e449ce88651361a158b1fb[m[33m ([m[1;33mtag: pre-alpha-20200209[m[33m)[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sat Feb 8 03:09:13 2020 +0000
+
+    Smooth item dropping
+
+[33mcommit 124ae5a93f558d4cda5b1165adda089e2b7e505f[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sat Feb 8 02:36:50 2020 +0000
+
+    Updated Sprites
+
+[33mcommit 6d10e138125187e7059bf0751830e4a3b7ac091f[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sat Feb 8 02:07:27 2020 +0000
+
+    Updated Sprites
+
+[33mcommit e5828014611337bbea345998ea3c73704679f0f8[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Wed Feb 5 21:30:07 2020 +0000
+
+    Tweak Enemy hit sound
+
+[33mcommit 9b4a83a8aca3c279002c31c8511858449026e460[m[33m ([m[1;33mtag: pre-alpha-20200204[m[33m)[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Feb 4 21:36:43 2020 +0000
+
+    Added new interface, new music, new background, background loop
+
+[33mcommit ae42d7a02c2cbc5e71d6e961a6aa8fff17b2df1e[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Wed Jan 29 23:09:01 2020 +0000
+
+    Add death sound to boss
+
+[33mcommit c4a94d4d9d10fe74dcd270de47f781f42d06c5b7[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Wed Jan 29 23:04:24 2020 +0000
+
+    Add death sound to enemy
+
+[33mcommit 791eae5bf05ef14068a8a26a5b437c8b23528702[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Wed Jan 29 22:36:18 2020 +0000
+
+    Play particles on enemy death
+
+[33mcommit 8c36bb17a0d2fddcfe786a6f1e4de6933afaeca6[m[33m ([m[1;33mtag: pre-alpha-20200128[m[33m)[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 27 11:20:42 2020 +0000
+
+    Drop items form boss
+
+[33mcommit 0759bd512666c3de80d35c532b84cb764b709840[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 27 11:03:05 2020 +0000
+
+    Update level 1 background
+
+[33mcommit 87cbe8f0f4ba2e642f939508ac9a22f73b832da7[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 27 09:57:14 2020 +0000
+
+    Attract items to player when in ItemCollectionArea
+
+[33mcommit 2eeae0587118a3eec16dfff690e814625313422d[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Jan 21 19:20:43 2020 +0000
+
+    Extract function
+
+[33mcommit b0e0961276d6dde3b062b6145aeb4b1b38427731[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Jan 21 18:50:55 2020 +0000
+
+    Move variable
+
+[33mcommit 223ff353f76ed9bc154ab049bef33809af3d01f7[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Jan 21 18:44:07 2020 +0000
+
+    Move variables to GameManager
+
+[33mcommit 29858f45e8d6f180da6b2012ef5f438beefb053c[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Mon Jan 20 22:50:43 2020 +0000
+
+    Add item collection area code
+
+[33mcommit 4aee60a5c8f2f58f8c7762eec69d9c9e83846f11[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Mon Jan 20 22:44:20 2020 +0000
+
+    Tweak item fall speed
+
+[33mcommit 1abe4f0848877021fffc7e1c22d2576c1b500779[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Mon Jan 20 22:38:05 2020 +0000
+
+    Drop items for enemies
+
+[33mcommit f8b1bda9594c2fc85942901a240387ed680402cf[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Mon Jan 20 20:27:46 2020 +0000
+
+    Swap static function
+
+[33mcommit 5516a09d93343076b28ac5e8e2989aa1c02bf4d5[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 20 13:13:19 2020 +0000
+
+    Drop items on player death
+
+[33mcommit 09994008b9ec490f7fd52fb4c76a7e830ec3cd3b[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 20 12:44:33 2020 +0000
+
+    Rename Varialbe
+
+[33mcommit 7c5cbea50fa7d8d4bca1c7d266e99173772cda63[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 20 12:41:07 2020 +0000
+
+    Change score to Private
+
+[33mcommit da315f8e8f6c765285cf5dd05192f63685bd13e4[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 20 12:36:37 2020 +0000
+
+    Refactoring
+
+[33mcommit 655f182de173724cd1176aad535781c6d2cd4d75[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 20 12:22:38 2020 +0000
+
+    Move code to a new class
+
+[33mcommit 1840b9dff46c1f968778abdfa7ddc69aa3be6172[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 20 12:11:15 2020 +0000
+
+    Nest code into function
+
+[33mcommit deca4185279870f313beae77c84a422470bb47c3[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 20 12:04:51 2020 +0000
+
+    Nest code to create barrage into function
+
+[33mcommit 115e70e11d6d779518f7105f03b314659bb0bdfc[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 20 11:59:25 2020 +0000
+
+    Restructure If statements
+
+[33mcommit cd6f9aaeb79d0c9564a6ddbf0ea3987fbce3cfde[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 20 11:53:52 2020 +0000
+
+    Added Player Barrages
+
+[33mcommit b8dc020632eca451223d4bd8bf18cae0080b8865[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 20 11:25:27 2020 +0000
+
+    Nest code into Function
+
+[33mcommit 9cf1ae6a22e32abb1d0adf9f3419f6ed5a4afd8d[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 20 11:03:37 2020 +0000
+
+    Add Function to add Playr Score and PowerLevel
+
+[33mcommit 4023487c214e729f7c7991070aef9f51deb86741[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 20 10:55:47 2020 +0000
+
+    Remove Debug Console Logs
+
+[33mcommit e5b29d4c0dfc973dcb9388c640ccabf2bf3cd365[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 20 10:32:29 2020 +0000
+
+    Remove Unused code in Player
+
+[33mcommit 8a7e845c7f7d9c9938da783ad9d78c041eef6b51[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 20 10:30:27 2020 +0000
+
+    Refactor Player Movement Input
+
+[33mcommit 61cd5b7889e2b4fdbf78ca5f41a5b7177c9cac75[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 20 09:58:44 2020 +0000
+
+    Ballance Enemies
+
+[33mcommit c922747fb082ca0c72c62e98505d7a3ffda44d80[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Jan 19 18:47:52 2020 +0000
+
+    Add boss health bar
+
+[33mcommit 88f93edf788092d3adf41ba754fb10060e7e3af6[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sat Jan 18 20:23:42 2020 +0000
+
+    Change Main Menu Interface
+
+[33mcommit bae5094576549b26ae36b815de5d1e167f27f006[m[33m ([m[1;33mtag: pre-alpha-20200114[m[33m)[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Jan 14 23:24:46 2020 +0000
+
+    Add new font
+
+[33mcommit 665435760b2e4728af3aa67840c1b9c7bd57fea4[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Jan 14 23:10:53 2020 +0000
+
+    Change boss music
+
+[33mcommit ea4a1e1b96eb192a94137996aee6525aee8ffffa[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Jan 14 22:57:21 2020 +0000
+
+    Addapt enemy class to changes made in BezierMove
+
+[33mcommit cc2a9eeddac077b4f915062668e64b944f0ccd30[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Jan 14 22:42:58 2020 +0000
+
+    Re-enable waves
+
+[33mcommit cff45142ec3a15644fb9365fdef330c4a94e7ae1[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Jan 14 22:41:53 2020 +0000
+
+    Uncomment code in Boss class made during testing
+
+[33mcommit 4d91c076d2776c21446fb04a6d4c6f780a37be58[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Jan 14 22:39:27 2020 +0000
+
+    Remove debug logs in BezierMove
+
+[33mcommit 388a5f970b3bd155e53101ee9560a5a07b383bfd[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Jan 14 22:38:28 2020 +0000
+
+    Stop enemy/boss mid movement
+
+[33mcommit 740249f7771624c21f5aa2f8ccf0d30c2433de31[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Jan 14 22:05:50 2020 +0000
+
+    Refactor code in BezierMove
+
+[33mcommit 17d63cb006ffe9b03a9b8ebb460ced9dd7278bf1[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Jan 14 21:13:44 2020 +0000
+
+    Refactoring Destroying Boss Stage
+
+[33mcommit 85a3a12a1f634fddda431fc19901b46178ba9f59[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Jan 12 22:34:27 2020 +0000
+
+    further boss update
+
+[33mcommit 793458a1b4e3eb3c0e753ffaaac85a24896e5e25[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Fri Jan 10 23:14:50 2020 +0000
+
+    Boss Improvements
+
+[33mcommit 479bb17603c96917b4aa271f940a78d374111ca5[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Jan 6 12:39:51 2020 +0000
+
+    started adding boss
+
+[33mcommit efb9768a60e794c198d634301912da8f233625fc[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Jan 5 23:27:56 2020 +0000
+
+    Refactoring and bezier curve movement. Better Waves
+
+[33mcommit f1cd0d8bf388114d2e8bd2687c4aca550b148ece[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sat Jan 4 17:50:56 2020 +0000
+
+    Added Loading Screen and Code Refactoring
+
+[33mcommit 0fe6511f3c419951fdf750d82c74749fe28c0447[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Fri Jan 3 21:57:28 2020 +0000
+
+    Code Refactoring
+
+[33mcommit 8e8bfcbcbc4538ae19ceaca925487bccf6412754[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Dec 29 19:48:40 2019 +0000
+
+    added new boss texture
+
+[33mcommit 451f78b3c4d738bb098817ad1dc95360b79e4677[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Dec 22 00:07:31 2019 +0000
+
+    added turret and spiral barrage
+
+[33mcommit b6d13d3548f6b60cb4d677594a86d86a65a71bc2[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Fri Dec 20 15:50:15 2019 +0000
+
+    changed game UI interface
+
+[33mcommit d351d49c59fe7ca99cf41f41e30bd403a5f4fda4[m[33m ([m[1;33mtag: pre-alpha-20191220[m[33m, [m[1;31morigin/codeRefactoring[m[33m)[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Fri Dec 20 05:12:10 2019 +0000
+
+    code refactoring, added proper enemy movement, fire only in gameplay area
+
+[33mcommit d001d4dfd78731c39a93c3b3ec4554f595cfb026[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Dec 15 17:53:07 2019 +0000
+
+    Refactoring Code
+
+[33mcommit b2dcf549fb073f700b2330e3020a2ce51bb06509[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Dec 15 13:46:19 2019 +0000
+
+    added Music Player and Options for Changing volume
+
+[33mcommit 43cf1a9279d65037479219224f139a1449587993[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Thu Dec 12 22:57:33 2019 +0000
+
+    code refactoring
+
+[33mcommit 4db5ffe709cfa976a689ed9ddbe36d939e4bf439[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Thu Dec 12 13:17:18 2019 +0000
+
+    Updated Unity Version
+
+[33mcommit 972bdccf9f4d1ef75f8656432fef93a1d72f59b5[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Thu Dec 12 00:39:48 2019 +0000
+
+    Refactoring Code
+
+[33mcommit aca6ada830e029afc72f3c33d66b76c96d1f7af3[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Wed Dec 11 17:29:07 2019 +0000
+
+    added game manager
+
+[33mcommit f04243026a69260ee7a5e7b3e382c846f9e10fdd[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Dec 9 12:55:30 2019 +0000
+
+    added pause menu
+
+[33mcommit 7d5f5d1c944b2b355c04923192841b4187222d7a[m[33m ([m[1;33mtag: pre-alpha-20191209[m[33m)[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Dec 9 11:25:46 2019 +0000
+
+    added debug tools
+
+[33mcommit 8f6f26d0cebdea5be5b0bc9333e57c617345eecb[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Dec 9 10:58:57 2019 +0000
+
+    scalable UI
+
+[33mcommit eedc42c6f5207b25a02af4c525f243c587fd073f[m[33m ([m[1;33mtag: pre-alpha-20191208[m[33m)[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Dec 8 02:37:17 2019 +0000
+
+    added test waves
+
+[33mcommit 46f00192cb5f8369d3659f90a82b1b9b50520dd7[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Dec 8 00:10:42 2019 +0000
+
+    tests
+
+[33mcommit 9f72f6bd0d75669b0be82f9aa6c98c4c06a94fc8[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sat Dec 7 18:37:50 2019 +0000
+
+    added new textures
+
+[33mcommit 69bbaf3882cfa00b317d76153ec3f9492cb5fe7c[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Fri Dec 6 21:55:42 2019 +0000
+
+    added more debug functionality
+
+[33mcommit f0161dfbdf6b63c994a54777ee931bf972c7082f[m[33m ([m[1;31morigin/new_branch_without_crazy_commit[m[33m)[m
+Merge: 98cee11 a2c49da
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Fri Dec 6 19:08:29 2019 +0000
+
+    b
+
+[33mcommit a2c49daf9d27fa48f416a6380541e88dc3316592[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Dec 2 13:31:19 2019 +0000
+
+    started fix on player controler
+
+[33mcommit 98cee11bc3c5650b8abb42e6a48d174e2cf704e9[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Dec 1 22:31:36 2019 +0000
+
+    more stuff
+
+[33mcommit 2e52cc48c03d7e280889cf516a9fa0ee2811be0f[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sat Nov 30 16:48:47 2019 +0000
+
+    addeb boss code
+
+[33mcommit a8054b9788354335f74375f8371679848a26a023[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Fri Nov 29 23:29:17 2019 +0000
+
+    further code polish
+
+[33mcommit e486d670f229315d16dfce5314f23e94f9867232[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Mon Nov 25 23:23:19 2019 +0000
+
+    updated main menu scene
+
+[33mcommit 168b4f1454e9e7d80c798ce26128fbc66453568e[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Mon Nov 25 20:03:17 2019 +0000
+
+    fixed bullet fire bug
+
+[33mcommit 0a947a9497e595b65c477088269571e827772f9c[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Nov 25 13:15:02 2019 +0000
+
+    added UI scalability
+
+[33mcommit ebfe44764b960548685e6e2188230800531de2e9[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Mon Nov 25 00:06:47 2019 +0000
+
+    Fixed Fire Bullet
+
+[33mcommit 5f64e2e2780f5d7a6085cac82ed277138543c4a3[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Nov 24 01:13:17 2019 +0000
+
+    code polish
+
+[33mcommit 700b41a1be6b65fe663a68484f3ef8afd2f9478a[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Tue Nov 19 13:23:14 2019 +0000
+
+    polished files
+
+[33mcommit 7f94997641791bd7f2ad7ec157e6f6eb150e121b[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Nov 11 13:30:48 2019 +0000
+
+    added polish
+
+[33mcommit ab8792c8f4c018b8ea59590ec5a11beb250390cb[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Nov 10 21:51:47 2019 +0000
+
+    added music track
+
+[33mcommit 090bb21af8c7ac0997480866d822b7ec032ca5e1[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Wed Nov 6 23:34:29 2019 +0000
+
+    added bezier object movement
+
+[33mcommit fda9fd16860e1b4f526e5897bc313f9be0f23aad[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Nov 4 13:18:42 2019 +0000
+
+    start code of enemy movement
+
+[33mcommit aa18c5b64617bdfaad2a977ab052c799608f4e5c[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Nov 4 11:49:27 2019 +0000
+
+    moved documents to google drive
+
+[33mcommit 1f149c2b49c6028afcc9203bcc34d51b5488511b[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Nov 3 14:14:41 2019 +0000
+
+    added rotating enemy and shots
+
+[33mcommit 15e3ca90c84b31b7b1f5cb011c8f859f6bcd2907[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Nov 3 00:50:48 2019 +0000
+
+    adjusted UI
+
+[33mcommit 4a1d68a8987629534d62d5df3c0478e57928f7c2[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sat Nov 2 17:58:46 2019 +0000
+
+    added self rotating bullet
+
+[33mcommit 791dff748d0128951a2fb72aecd6c699910181bd[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Tue Oct 29 13:10:41 2019 +0000
+
+    added starting code for homing bullet
+
+[33mcommit 561ea0a452cb8115b4e6c6f91c86e9bbbc7461ad[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Tue Oct 29 12:40:59 2019 +0000
+
+    added accelerating and decelerating bullets
+
+[33mcommit 97d26d2dfe3b1998ebd000436e8ebef9d8f27bd7[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 28 13:21:51 2019 +0000
+
+    updated BulletMovementEditor
+
+[33mcommit f9533e69d55f585cf1232feeae019f40c1af2a9a[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 28 13:10:43 2019 +0000
+
+    start of editor script
+
+[33mcommit e00ceee8ebf3a30e41b2a731b4e274582313f495[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 28 11:30:31 2019 +0000
+
+    updated project report
+
+[33mcommit cb67387f8d6d94128568c780c53caaacbf53f109[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 28 11:24:47 2019 +0000
+
+    added start of the project report
+
+[33mcommit 07962d898be6f0c28f3f87062b33706ce3c2a29b[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 28 10:57:08 2019 +0000
+
+    added spawn point
+
+[33mcommit 3215e898287e9e9723eaea2029408f8105eba96e[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 28 10:35:12 2019 +0000
+
+    player destroyed on respawn if it exists
+
+[33mcommit 205a639255335a056776ba0504a2339d5cece81d[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 28 10:24:35 2019 +0000
+
+    added target detection for targeted bullets
+
+[33mcommit cef39478f8648f47f318f289b002df76d56971ea[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 28 09:57:48 2019 +0000
+
+    clear screen of bullets on player respawn
+
+[33mcommit bcc78224be2cd4cad40b3ada22ecd4cc0a433773[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Oct 27 00:01:15 2019 +0100
+
+    Consolidated fire bullet scripts into one
+
+[33mcommit 16144df9082c4dadb9ee643e90d39a01c6a447e6[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sat Oct 26 03:09:24 2019 +0100
+
+    added moving waving enemy
+
+[33mcommit 6f1a8e55db2a7cfb2a83da50cad0cdc030c31073[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Oct 22 18:44:51 2019 +0100
+
+    added log to update barrage on power level
+
+[33mcommit 96694f3ee4f1aa150ae8a67db1172795ececb3d6[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Oct 22 18:13:18 2019 +0100
+
+    added player level 1 barrage
+
+[33mcommit dc2e0a7b5355b3f02ebf0011c2eb735de629ac0f[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 21 13:25:00 2019 +0100
+
+    added PlayerBarrageLv1
+
+[33mcommit 186411d16ed4130463c56331c0a744ae18a279ab[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 21 09:36:18 2019 +0100
+
+    updated GDD.txt
+
+[33mcommit 89480774758a8cc5aa18669192a67e97c600a1f5[m[33m ([m[1;33mtag: pre-alpha20191016[m[33m, [m[1;33mtag: pre-alpha-20191016[m[33m)[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Wed Oct 16 20:10:49 2019 +0100
+
+    added debug tools
+
+[33mcommit 3c8a505b6dd0d505f0553384654e9313841591e3[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Tue Oct 15 17:29:01 2019 +0100
+
+    added start of the item collection area
+
+[33mcommit 7752c544e567acb1a9445eb5b47fd9cea60d6d89[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Tue Oct 15 17:17:01 2019 +0100
+
+    added player lives
+
+[33mcommit 50f70448e22ea173fcfe8474de597b380c427b7e[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Tue Oct 15 16:48:27 2019 +0100
+
+    fixed bullet rotation
+
+[33mcommit da9944f5b8914cb86addf25a183c52f7bc09a7a3[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Tue Oct 15 15:34:14 2019 +0100
+
+    tweaks
+
+[33mcommit 5d32a35456cd2dc7fb9402f8e01a35c9e32c7c03[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Tue Oct 15 12:32:31 2019 +0100
+
+    tweaks
+
+[33mcommit c50fd8e1b63612777836e3ea21eaa3ed50a67d89[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Tue Oct 15 11:54:11 2019 +0100
+
+    added particles
+
+[33mcommit cbaa4a46eb799cdfab3164dce52bb3be03cbc961[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Tue Oct 15 10:40:09 2019 +0100
+
+    added destructable enemy script and behaviour
+
+[33mcommit 300aec78b47a9ec045e60b9e6bc48e357eea9fbd[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Tue Oct 15 09:51:42 2019 +0100
+
+    updated shit focus input
+
+[33mcommit bcd321b2a0bf48db388567b576d915bfc82ebd72[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Mon Oct 14 23:41:53 2019 +0100
+
+    tweaks
+
+[33mcommit 1e5e427a5305d60658fe18eb47f84fb294619c2f[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 14 13:24:34 2019 +0100
+
+    update bullets
+
+[33mcommit 62f266ff5759e4dcbaf8957974d431fa9a18b7e1[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 14 12:45:00 2019 +0100
+
+    updated score display
+
+[33mcommit 75073d392ffe3749ff6b34d06d92691460ee4f60[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 14 12:43:39 2019 +0100
+
+    added score
+
+[33mcommit a2084779aebc32bc84718271d67451ac0c07a082[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 14 12:34:30 2019 +0100
+
+    added power level
+
+[33mcommit cf5c77c386cbbaead2a194aefd1986bd02c0a898[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 14 11:26:49 2019 +0100
+
+    added power item collectible texture
+
+[33mcommit bbc7c47f289410c3cae0a6291242f3778bba913f[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 14 11:03:28 2019 +0100
+
+    sorted files
+
+[33mcommit dd6b1af0b7ae5c4937a28c0f65946042eb2887bd[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 14 11:01:35 2019 +0100
+
+    updated play area and UI
+
+[33mcommit 45f46c4895996a5a387fd3e9b6444c67a0e8ac9d[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 14 10:12:10 2019 +0100
+
+    updated playerController
+
+[33mcommit ad698baaa7d32b88783584d7093423ef5636d2ed[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 14 09:35:56 2019 +0100
+
+    added ui
+
+[33mcommit cd96ac9d4936b81ab284d9e391ce939baba68622[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Oct 13 16:42:56 2019 +0100
+
+    updated README.md file
+
+[33mcommit 28d76ef7fd46e09f5ec3bf23213976b48ff80143[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sun Oct 13 02:30:24 2019 +0100
+
+    added score text labels
+
+[33mcommit 662ce2621f189df8e5f1b0b2e1281c18d0bbe60d[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Fri Oct 11 22:40:20 2019 +0100
+
+    added new music file
+
+[33mcommit 5aaf6b8843350d2d07dbbc64d96f7497dab959d5[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Tue Oct 8 23:47:13 2019 +0100
+
+    added collision and start of homing bullet
+
+[33mcommit 468b0df071d317a8576a19dcd40b590541f3dbe1[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Tue Oct 8 17:21:26 2019 +0100
+
+    tweaks
+
+[33mcommit 843165fc90321bba88c6b3ff8f6331980b3b4b04[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Mon Oct 7 23:19:26 2019 +0100
+
+    Added Music Files
+
+[33mcommit 92e6b9c73c6e020f64659876a0e4f68de5ae4e04[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 7 13:04:38 2019 +0100
+
+    Reverted unity version to 2018.3.6f1
+
+[33mcommit 2106fe75640072b95ae18c7b6027e34665410707[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 7 11:33:47 2019 +0100
+
+    Updated GDD
+
+[33mcommit 92515184cc5be37ecf0e689824198f9428e3622d[m
+Author: 10162 <10162@formacao.itap-net.org>
+Date:   Mon Oct 7 11:20:37 2019 +0100
+
+    updated GDD
+
+[33mcommit 79dd651ea0c22dc080796b2eac9a74eb7ba00eda[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Mon Sep 30 15:39:40 2019 +0100
+
+    Update GDD.txt
+
+[33mcommit 73fec19ceda26b3f3e3c934e081deecac9c41468[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Sat Aug 31 01:07:00 2019 +0100
+
+    scripts have been polished out
+
+[33mcommit f584660fd91dd93dc2b7bbf97b801206f67470ed[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Fri Aug 30 22:40:57 2019 +0100
+
+    started implementation of homing bullet
+
+[33mcommit e350e087d9077a2d234caa8dd99c62a95821f983[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Fri Aug 30 12:10:05 2019 +0100
+
+    project upload
+
+[33mcommit 81ef6b77c6ec36e239eadfb00497aa362861d945[m
+Author: Anri17 <andralmeida1999@gmail.com>
+Date:   Fri Aug 30 11:46:19 2019 +0100
+
+    Initial commit
