@@ -63,7 +63,7 @@ public class Boss : MonoBehaviour
     {
         StopCoroutine(countDownDeathTimerCoroutine);
         PlayDeathParticles(deathParticles);
-        DropItems();
+        DropItems(currentStage.powerItemsToDrop, currentStage.bigPowerItemsToDrop, currentStage.scoreItemsToDrop);
         hittable = false;
         StageCount--;
         stageIndex++;
@@ -81,9 +81,9 @@ public class Boss : MonoBehaviour
         }
     }
 
-    void DropItems()
+    public void DropItems(int powerItemQuantity, int bigPowerItemQuantity, int scoreItemQuantity)
     {
-        levelManager.SpawnItems(transform.position, 5, 1, 10);
+        levelManager.SpawnItems(transform.position, powerItemQuantity, bigPowerItemQuantity, scoreItemQuantity);
     }
 
     public void DestroyCurrentStage()

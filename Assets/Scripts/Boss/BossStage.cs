@@ -10,4 +10,7 @@ public class BossStage : ScriptableObject
     public GameObject barrage;
     public Transform path;
     public float pathSpeed;
+    public int powerItemsToDrop = 2;
+    public int bigPowerItemsToDrop = 1;
+    public int scoreItemsToDrop = 8;
 }

@@ -154,6 +154,9 @@ MonoBehaviour:
     type: 3}
   hitSound: {fileID: 7162246261493562492}
   randomizeShotDelay: 0
+  powerItemsToDrop: 1
+  bigPowerItemsToDrop: 0
+  scoreItemsToDrop: 2
 --- !u!114 &8694028411301425022
 MonoBehaviour:
   m_ObjectHideFlags: 0

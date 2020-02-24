@@ -13,6 +13,9 @@ public class NormalEnemy : Enemy
     [SerializeField] ParticleSystem deathParticles;
     [SerializeField] AudioSource hitSound;
     [SerializeField] bool randomizeShotDelay = false;
+    [SerializeField] int powerItemsToDrop = 1;
+    [SerializeField] int bigPowerItemsToDrop = 1;
+    [SerializeField] int scoreItemsToDrop = 1;
 
     public override float Health { get; set; }
     public override GameObject Shot { get; set; }
@@ -98,7 +101,7 @@ public class NormalEnemy : Enemy
     {
         if (Health <= 0)
         {
-            DropItems(6, 1, 8);
+            DropItems(powerItemsToDrop, bigPowerItemsToDrop, scoreItemsToDrop);
             Die();
         }
     }
