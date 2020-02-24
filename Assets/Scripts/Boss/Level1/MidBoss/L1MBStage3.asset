@@ -17,3 +17,6 @@ MonoBehaviour:
   barrage: {fileID: 1764035180921182807, guid: 433d4f25a25d09a4bacfa156d432870a, type: 3}
   path: {fileID: 6545029720514851592, guid: 5948b4075f97db44d876b89dce629661, type: 3}
   pathSpeed: 0.5
+  powerItemsToDrop: 8
+  bigPowerItemsToDrop: 0
+  scoreItemsToDrop: 10

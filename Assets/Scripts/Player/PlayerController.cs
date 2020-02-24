@@ -42,19 +42,16 @@ public class PlayerController : MonoBehaviour
 
         if (horizontal > 0)
         {
-            Debug.Log("MoveRight");
             animatorController.SetBool("MoveLeft", false);
             animatorController.SetBool("MoveRight", true);
         }
         if (horizontal < 0)
         {
-            Debug.Log("MoveLeft");
             animatorController.SetBool("MoveLeft", true);
             animatorController.SetBool("MoveRight", false);
         }
         if (horizontal == 0)
         {
-            Debug.Log("MoveStill");
             animatorController.SetBool("MoveLeft", false);
             animatorController.SetBool("MoveRight", false);
         }
