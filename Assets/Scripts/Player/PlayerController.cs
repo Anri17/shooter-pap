@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float normalSpeed = 12.0f;
     [SerializeField] float focusSpeed = 4.0f;
-    [SerializeField] Animator hitboxAnimatorController;
+    [SerializeField] Animator animatorController;
 
     public float Speed { get; set; }
 
@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        animatorController.SetLayerWeight(1, 1f);
         canMove = true;
         Speed = normalSpeed;
     }
@@ -39,16 +40,35 @@ public class PlayerController : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
+        if (horizontal > 0)
+        {
+            Debug.Log("MoveRight");
+            animatorController.SetBool("MoveLeft", false);
+            animatorController.SetBool("MoveRight", true);
+        }
+        if (horizontal < 0)
+        {
+            Debug.Log("MoveLeft");
+            animatorController.SetBool("MoveLeft", true);
+            animatorController.SetBool("MoveRight", false);
+        }
+        if (horizontal == 0)
+        {
+            Debug.Log("MoveStill");
+            animatorController.SetBool("MoveLeft", false);
+            animatorController.SetBool("MoveRight", false);
+        }
+
         // get speed value
         if (Input.GetButtonDown("Focus"))
         {
             Speed = focusSpeed;
-            hitboxAnimatorController.SetBool("FocusMode", true);
+            animatorController.SetBool("FocusMode", true);
         }
         if (Input.GetButtonUp("Focus"))
         {
             Speed = normalSpeed;
-            hitboxAnimatorController.SetBool("FocusMode", false);
+            animatorController.SetBool("FocusMode", false);
         }
 
         if (Input.GetButton("Horizontal") && Input.GetButton("Vertical"))

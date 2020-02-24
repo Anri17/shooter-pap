@@ -354,7 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalSpeed: 12
   focusSpeed: 4
-  hitboxAnimatorController: {fileID: 5822828558313280673}
+  animatorController: {fileID: 5822828558313280673}
   canMove: 1
 --- !u!95 &5822828558313280673
 Animator:
