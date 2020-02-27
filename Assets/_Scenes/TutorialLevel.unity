@@ -462,6 +462,7 @@ MonoBehaviour:
   popUps:
   - {fileID: 236529684}
   - {fileID: 84023255}
+  - {fileID: 2007624600}
   canContinueMessage: {fileID: 283636452}
   testWave: {fileID: 1204287816}
   canContinue: 0
@@ -6338,7 +6339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2007624601
 RectTransform:
   m_ObjectHideFlags: 0
