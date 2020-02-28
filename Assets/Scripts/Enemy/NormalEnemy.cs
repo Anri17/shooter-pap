@@ -48,7 +48,10 @@ public class NormalEnemy : Enemy
         {
             Tragectory.Add(tragectory[i].transform);
         }
-        bezierMoveInstance.StartMovement();
+        if (bezierMoveInstance != null)
+        {
+            bezierMoveInstance.StartMovement();
+        }
     }
 
     private void Update()
