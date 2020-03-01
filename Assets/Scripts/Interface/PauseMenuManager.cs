@@ -22,7 +22,7 @@ public class PauseMenuManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        gameManager.LoadScene(2);
+        gameManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
         GameManager.Instance.ResetData();
     }
