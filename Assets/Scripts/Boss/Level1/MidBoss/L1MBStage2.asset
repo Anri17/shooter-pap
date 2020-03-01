@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0474876b57e247a409830388ca31acce, type: 3}
   m_Name: L1MBStage2
   m_EditorClassIdentifier: 
-  health: 1500
-  deathTimer: 10
+  health: 600
+  deathTimer: 30
   barrage: {fileID: 6571451126526940859, guid: da86d4719aa4f214fa56084cd76dd5e3, type: 3}
   path: {fileID: 6545029720514851592, guid: 35dcfe4eae5f9f74799b0bb2f5e53bc1, type: 3}
   pathSpeed: 0.5

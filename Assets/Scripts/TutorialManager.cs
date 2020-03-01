@@ -30,6 +30,13 @@ public class TutorialManager : MonoBehaviour
             popUpIndex++;
         }
         
+        if (popUpIndex == popUps.Length)
+        {
+            testWave.SetActive(true);
+            canContinue = false;
+            canContinueMessage.SetActive(false);
+        }
+
         Tutorial();
     }
 
