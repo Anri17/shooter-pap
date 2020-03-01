@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0474876b57e247a409830388ca31acce, type: 3}
   m_Name: L1MBStage3
   m_EditorClassIdentifier: 
-  health: 200
+  health: 2000
   deathTimer: 20
   barrage: {fileID: 1764035180921182807, guid: 433d4f25a25d09a4bacfa156d432870a, type: 3}
   path: {fileID: 6545029720514851592, guid: 5948b4075f97db44d876b89dce629661, type: 3}

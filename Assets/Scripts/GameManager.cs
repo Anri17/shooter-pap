@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -81,7 +82,7 @@ public class GameManager : MonoBehaviour
         {
             float progress = Mathf.Clamp((currentLoadingData.progress / 0.9f), 0, 1);
             loadingBarSlider.value = progress;
-            loadingPercentage.text = $"{progress * 100} %";
+            loadingPercentage.text = $"{Math.Round(progress * 100, 2)} %";
             
             yield return null;
         }
