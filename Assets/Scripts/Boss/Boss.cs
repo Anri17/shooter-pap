@@ -33,7 +33,6 @@ public class Boss : MonoBehaviour
 
     void Awake()
     {
-        countDownDeathTimerCoroutine = CountDownDeathTimer();
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         bezierMove = GetComponent<BezierMove>();
     }
@@ -116,6 +115,7 @@ public class Boss : MonoBehaviour
         CurrentHealth = currentStage.health;
         currentPath = currentStage.path;
         currentPathSpeed = currentStage.pathSpeed;
+        countDownDeathTimerCoroutine = CountDownDeathTimer();
     }
 
     private void UnpackPath(Transform path)
