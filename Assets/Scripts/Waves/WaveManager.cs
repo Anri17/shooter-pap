@@ -105,11 +105,11 @@ public class WaveManager : MonoBehaviour
         yield return new WaitForSeconds(endBoss.StartDelay);
         Debug.Log("Launching Boss...");
         spawnedBoss = Instantiate(endBoss.Boss, bossSpawnPoint, Quaternion.identity, transform);
+        GameObject.Find("LevelManager").GetComponent<LevelManager>().PlayBossMusic();
         bossScreen.SetActive(true);
         yield return new WaitUntil(() => spawnedBoss == null);
         bossScreen.SetActive(false);
         yield return new WaitForSeconds(endBoss.EndDelay);
-
         displayFinalInfo();
         reachedEnd = true;
         GameManager.UnlockCursor();

@@ -955,7 +955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e383d5cbe4d53d540891088bef4b6e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDelay: 11.25
+  startDelay: 6
   waves:
   - {fileID: 11400000, guid: bb03421ae02ff724c852f048aeb77c9a, type: 2}
   - {fileID: 11400000, guid: d3da44db84f2b2d459cacf98d0e19a8a, type: 2}
@@ -4495,7 +4495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpawnPoint: {fileID: 1755139699}
   stageMusicTheme: {fileID: 8300000, guid: 472f6abc3f7e0ea429981fe1513fc19c, type: 3}
-  bossMusicTheme: {fileID: 8300000, guid: 9490f44bf1f7ba045af0915669090d49, type: 3}
+  bossMusicTheme: {fileID: 8300000, guid: 3b92e548706bbc84ea77de64cad68c19, type: 3}
 --- !u!1 &1271905096
 GameObject:
   m_ObjectHideFlags: 0

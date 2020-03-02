@@ -138,10 +138,12 @@ MonoBehaviour:
   target: {fileID: 2130176808625864362}
   fireLimitedCount: 0
   fireBulletCount: 0
-  fireRate: 1
+  fireRate: 0.9
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &6571451126526940859
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,10 +225,12 @@ MonoBehaviour:
   target: {fileID: 2642483125788506123}
   fireLimitedCount: 0
   fireBulletCount: 0
-  fireRate: 1
+  fireRate: 0.9
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &7273673910908251859
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +279,9 @@ MonoBehaviour:
   target: {fileID: 4142703487163521830}
   fireLimitedCount: 0
   fireBulletCount: 0
-  fireRate: 1
+  fireRate: 0.9
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0

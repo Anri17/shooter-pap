@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 600
   deathTimer: 30
-  barrage: {fileID: 6571451126526940859, guid: da86d4719aa4f214fa56084cd76dd5e3, type: 3}
-  path: {fileID: 6545029720514851592, guid: 35dcfe4eae5f9f74799b0bb2f5e53bc1, type: 3}
+  barrage: {fileID: 6571451126526940859, guid: b03b9ca87451f3c4486ec4cd225db811, type: 3}
+  path: {fileID: 6545029720514851592, guid: 5948b4075f97db44d876b89dce629661, type: 3}
   pathSpeed: 0.5
   powerItemsToDrop: 2
   bigPowerItemsToDrop: 0
