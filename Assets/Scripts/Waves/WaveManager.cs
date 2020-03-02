@@ -18,6 +18,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] Vector3 bossSpawnPoint;
     [SerializeField] int MidbossWaveNumber;
 
+    [SerializeField] GameObject gameOverScreen;
     [SerializeField] GameObject finalScoreBoard;
     [SerializeField] Text endScreenScore;
     [SerializeField] Text endScreenLivesCalculation;
@@ -34,6 +35,7 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
+        gameOverScreen.SetActive(false);
         finalScoreBoard.SetActive(false);
         reachedEnd = false;
         spawnedWaves = new GameObject[waves.Length];
@@ -58,6 +60,12 @@ public class WaveManager : MonoBehaviour
                     SceneManager.LoadScene(0);
                 }
             }
+        }
+
+        if (GameManager.Instance.spawnedPlayer.GetComponent<Player>().Lives < 0)
+        {
+            GameManager.Instance.spawnedPlayer.GetComponent<Player>().Lives = 0;
+            StartCoroutine(GameOver());
         }
     }
 
@@ -110,10 +118,7 @@ public class WaveManager : MonoBehaviour
         yield return new WaitUntil(() => spawnedBoss == null);
         bossScreen.SetActive(false);
         yield return new WaitForSeconds(endBoss.EndDelay);
-        displayFinalInfo();
-        reachedEnd = true;
-        GameManager.UnlockCursor();
-        Time.timeScale = 1;
+        EndLevel();
         Debug.Log("Level Ended");
 
 
@@ -121,7 +126,15 @@ public class WaveManager : MonoBehaviour
             
     }
 
-    void displayFinalInfo()
+    void EndLevel()
+    {
+        DisplayFinalInfo();
+        reachedEnd = true;
+        GameManager.UnlockCursor();
+        Time.timeScale = 1;
+    }
+
+    void DisplayFinalInfo()
     {
         long score = GameManager.Instance.Score;
         int clearBonus = 1000000;
@@ -136,5 +149,14 @@ public class WaveManager : MonoBehaviour
         endScreenFinalScore.text = finalScore.ToString("000,000,000,000");
 
         GameManager.Instance.Score = finalScore;
+    }
+
+    IEnumerator GameOver()
+    {
+        GameManager.UnlockCursor();
+        Time.timeScale = 1;
+        gameOverScreen.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(0);
     }
 }

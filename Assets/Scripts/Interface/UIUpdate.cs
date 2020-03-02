@@ -26,6 +26,6 @@ public class UIUpdate : MonoBehaviour
     {
         scoreNumber.GetComponent<Text>().text = gameManager.Score.ToString("000,000,000,000");
         powerLevelNumber.GetComponent<Text>().text = player.PowerLevel.ToString("0.##");
-        livesNumber.GetComponent<Text>().text = player.Lives.ToString("#");
+        livesNumber.GetComponent<Text>().text = player.Lives.ToString();
     }
 }
