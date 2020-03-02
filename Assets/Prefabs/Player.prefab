@@ -330,6 +330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81cc8efa3b140149a1de98cf70f1bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticles: {fileID: 6180124026953083947, guid: 545f7a21eda9c484ab3b694f8ce1d41a,
+    type: 3}
   barrages:
   - {fileID: 7330251143779989804, guid: 27fd3a2edbc8b8847b0eb8ec0e554be8, type: 3}
   - {fileID: 7330251143779989804, guid: 27002bf25082b4041b6bc01f1accb5ab, type: 3}

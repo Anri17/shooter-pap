@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public ParticleSystem deathParticles;
     public GameObject[] barrages;
     public GameObject bombBarrage;
     public GameObject sprites;
@@ -93,6 +94,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void PlayDeathParticles(ParticleSystem deathParticles)
+    {
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
+    }
+
     public void FireBarrage()
     {
         // Fire barrage when the button is pressed
@@ -150,6 +156,7 @@ public class Player : MonoBehaviour
     public void Die()
     {
         Debug.Log("Player died");
+        PlayDeathParticles(deathParticles);
         Lives--;
         PowerLevel = 0;
         Destroy(currentBarrage);
