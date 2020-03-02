@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
@@ -17,11 +18,24 @@ public class WaveManager : MonoBehaviour
     [SerializeField] Vector3 bossSpawnPoint;
     [SerializeField] int MidbossWaveNumber;
 
+    [SerializeField] GameObject finalScoreBoard;
+    [SerializeField] Text endScreenScore;
+    [SerializeField] Text endScreenLivesCalculation;
+    [SerializeField] Text endScreenLives;
+    [SerializeField] Text endScreenBonus;
+    [SerializeField] Text endScreenFinalScore;
+
+    [SerializeField] bool isTutorialLevel = false;
+
     [HideInInspector] public GameObject[] spawnedWaves;
     [HideInInspector] public GameObject spawnedBoss;
 
+    bool reachedEnd = false;
+
     void Start()
     {
+        finalScoreBoard.SetActive(false);
+        reachedEnd = false;
         spawnedWaves = new GameObject[waves.Length];
         StartCoroutine(PlayLevel(startDelay, waves, midBoss, endBoss));
     }
@@ -29,6 +43,22 @@ public class WaveManager : MonoBehaviour
     private void Update()
     {
         UpdateBossHUD();
+        if (reachedEnd)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                if (isTutorialLevel)
+                {
+                    Debug.Log("Unloading Tutorial");
+                    SceneManager.LoadScene(0);
+                }
+                else
+                {
+                    Debug.Log("Unloading Level 1");
+                    SceneManager.LoadScene(0);
+                }
+            }
+        }
     }
 
     private void UpdateBossHUD()
@@ -80,7 +110,31 @@ public class WaveManager : MonoBehaviour
         bossScreen.SetActive(false);
         yield return new WaitForSeconds(endBoss.EndDelay);
 
-
+        displayFinalInfo();
+        reachedEnd = true;
+        GameManager.UnlockCursor();
+        Time.timeScale = 1;
         Debug.Log("Level Ended");
+
+
+        Debug.Log("Press Enter to EndLevel");
+            
+    }
+
+    void displayFinalInfo()
+    {
+        long score = GameManager.Instance.Score;
+        int clearBonus = 1000000;
+        int lives = GameManager.Instance.spawnedPlayer.GetComponent<Player>().Lives;
+        long finalScore = (lives * 10000) + score + clearBonus;
+
+        finalScoreBoard.SetActive(true);
+        endScreenScore.text = score.ToString("000,000,000,000");
+        endScreenLivesCalculation.text = $"{lives.ToString()} * 10000";
+        endScreenLives.text = (lives * 10000).ToString("000,000,000,000");
+        endScreenBonus.text = clearBonus.ToString("000,000,000,000");
+        endScreenFinalScore.text = finalScore.ToString("000,000,000,000");
+
+        GameManager.Instance.Score = finalScore;
     }
 }

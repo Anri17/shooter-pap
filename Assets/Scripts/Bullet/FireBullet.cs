@@ -10,8 +10,10 @@ public class FireBullet : MonoBehaviour
     public int fireBulletCount = 0; // how many bullets to fire in total
     public float fireRate = 1; // how long to wait before the next bullet is fired
     public float aimOffset = 0; // the rotation offset of the aim direction
+    public float shotDelay = 0;
     public float shotLoopDelay = 0; // how long to wait between each loop
     public bool randomizeShotVelocity = false;
+    public bool randomDirection = false;
 
     int bulletsFired = 0; // how many bullets fired so far
     Quaternion direction; // the direction to aim at
@@ -34,18 +36,7 @@ public class FireBullet : MonoBehaviour
             aimOffset = Random.Range(-0.4f, 0.4f);
         }
 
-        // fire the bullet
-        if (bullet != null)
-        {
-            if (shotLoopDelay <= 0)
-            {
-                InvokeRepeating("Fire", 0.0f, fireRate);
-            }
-            else
-            {
-                StartCoroutine(ShotLoopDelayCount(shotLoopDelay));
-            }
-        }
+        StartCoroutine(StartShot(shotDelay));
     }
 
     // Stop firing when this gameobjects exits the play area
@@ -60,6 +51,11 @@ public class FireBullet : MonoBehaviour
     // Get the direction of the bullet
     Quaternion GetDirection()
     {
+        if (randomDirection)
+        {
+            aimOffset = Random.Range(-180, 180);
+        }
+
         if (target != null) // run only if target exists
         {
             Vector3 difference = target.transform.position - transform.position;
@@ -107,5 +103,21 @@ public class FireBullet : MonoBehaviour
         yield return new WaitForSeconds(time);
         CancelInvoke("Fire");
         StartCoroutine(ShotLoopDelayCount(shotLoopDelay));
+    }
+
+    IEnumerator StartShot(float time)
+    {
+        yield return new WaitForSeconds(time);
+        if (bullet != null)
+        {
+            if (shotLoopDelay <= 0)
+            {
+                InvokeRepeating("Fire", 0.0f, fireRate);
+            }
+            else
+            {
+                StartCoroutine(ShotLoopDelayCount(shotLoopDelay));
+            }
+        }
     }
 }
