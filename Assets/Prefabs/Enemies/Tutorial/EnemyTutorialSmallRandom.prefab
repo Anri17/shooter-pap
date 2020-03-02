@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 3326163019392916081}
   - component: {fileID: 6498540305183176700}
   m_Layer: 8
-  m_Name: EnemySmallRandom
+  m_Name: EnemyTutorialSmallRandom
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
   tragectory: []
   _health: 2
   _shot: {fileID: 6571451126526940859, guid: a89425098bcde50459c4415fe901ee40, type: 3}
-  _scoreWorth: 200
+  _scoreWorth: 800
   shootDelay: 0
   deathParticles: {fileID: 6180124026953083947, guid: 545f7a21eda9c484ab3b694f8ce1d41a,
     type: 3}

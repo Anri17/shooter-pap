@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
+    public int scoreWorth = 0;
+    public float powerLevelWorth = 0f;
+
     bool canMoveTowardsTarget = false;
     float moveSpeed = 0f;
     Vector3 target;
@@ -23,6 +26,7 @@ public class Collectable : MonoBehaviour
         {
             if (moveToPlayer && GameObject.Find("ItemCollectionArea").GetComponent<ItemCollectionArea>().canSucc)
             {
+                scoreWorth = 10000;
                 Succ(gameManager.spawnedPlayer.transform.position, moveSpeed);
             }
             else

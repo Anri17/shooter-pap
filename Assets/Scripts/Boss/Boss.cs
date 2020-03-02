@@ -53,6 +53,7 @@ public class Boss : MonoBehaviour
             hitSound.Play();
             if (CurrentHealth <= 0)
             {
+                GameManager.Instance.Score += currentStage.scoreWorth;
                 KillBoss();
             }
         }

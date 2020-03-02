@@ -56,19 +56,25 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "PowerCollectable" && canCollectItems)
         {
-            AddValues(0.05f, 150);
+            int scoreToAdd = collision.GetComponent<Collectable>().scoreWorth;
+            float powerToAdd = collision.GetComponent<Collectable>().powerLevelWorth;
+            AddValues(powerToAdd, scoreToAdd);
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "BigPowerCollectable" && canCollectItems)
         {
-            AddValues(1.00f, 200);
+            int scoreToAdd = collision.GetComponent<Collectable>().scoreWorth;
+            float powerToAdd = collision.GetComponent<Collectable>().powerLevelWorth;
+            AddValues(powerToAdd, scoreToAdd);
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "ScoreCollectable" && canCollectItems)
         {
-            AddValues(0f, 500);
+            int scoreToAdd = collision.GetComponent<Collectable>().scoreWorth;
+            float powerToAdd = collision.GetComponent<Collectable>().powerLevelWorth;
+            AddValues(powerToAdd, scoreToAdd);
             Destroy(collision.gameObject);
         }
     }

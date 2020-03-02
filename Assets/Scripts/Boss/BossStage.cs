@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Boss Stage", menuName = "Boss/Stage")]
 public class BossStage : ScriptableObject
 {
+    public int scoreWorth = 100000;
     public float health;
     public float deathTimer;
     public GameObject barrage;

@@ -148,7 +148,7 @@ MonoBehaviour:
   tragectory: []
   _health: 32
   _shot: {fileID: 5322781781211706099, guid: e244d3b31732b744eae9da79b5379c7a, type: 3}
-  _scoreWorth: 200
+  _scoreWorth: 1200
   shootDelay: 0.8
   deathParticles: {fileID: 6180124026953083947, guid: 545f7a21eda9c484ab3b694f8ce1d41a,
     type: 3}
