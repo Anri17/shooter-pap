@@ -340,7 +340,7 @@ MonoBehaviour:
   sprites: {fileID: 3428159488775502123}
   deathSound: {fileID: 4332269920260509780}
   _powerLevel: 0
-  _lives: 99
+  _lives: 2
   canCollectItems: 1
 --- !u!114 &636037215666740693
 MonoBehaviour:
