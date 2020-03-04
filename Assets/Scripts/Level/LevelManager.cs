@@ -54,7 +54,13 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void PlayBossMusic() => musicPlayer.PlayMusic(bossMusicTheme);
+    public void PlayBossMusic()
+    {
+        if (bossMusicTheme != null)
+        {
+            musicPlayer.PlayMusic(bossMusicTheme);
+        }
+    }
 
     public void SpawnItems(Vector3 position, int powerItemCount, int bigPowerItemCount, int scoreItemCount)
     {

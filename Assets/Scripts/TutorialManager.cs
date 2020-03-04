@@ -9,8 +9,18 @@ public class TutorialManager : MonoBehaviour
     private int popUpIndex;
     public GameObject testWave;
     public bool canContinue = false;
+
+    GameManager gameManager;
+
+    private void Awake()
+    {
+        gameManager = GameManager.Instance;
+    }
+
     private void Update()
     {
+        gameManager.spawnedPlayer.GetComponent<Player>().Lives = 10;
+
         for (int i = 0; i < popUps.Length; i++)
         {
             if (i == popUpIndex)

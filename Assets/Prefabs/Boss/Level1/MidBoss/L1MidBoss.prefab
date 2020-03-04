@@ -167,8 +167,8 @@ MonoBehaviour:
   defaultPosition: {x: -3.81, y: 5.97, z: 0}
   stages:
   - {fileID: 11400000, guid: e40fdab0e64e4ef46a7f5e55dca0f606, type: 2}
-  - {fileID: 11400000, guid: dbd23fdaec3c1654aa34542218f97897, type: 2}
   - {fileID: 11400000, guid: e75443d56c6909c4ca199f33ed76e8ad, type: 2}
+  - {fileID: 11400000, guid: dbd23fdaec3c1654aa34542218f97897, type: 2}
   deathParticles: {fileID: 6180124026953083947, guid: 545f7a21eda9c484ab3b694f8ce1d41a,
     type: 3}
   hitSound: {fileID: 4331169707250773477}
