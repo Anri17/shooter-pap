@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7268579660141293793}
   - component: {fileID: 8529843079872955512}
   m_Layer: 0
-  m_Name: ScoreCollectable
+  m_Name: LifeCollectable
   m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: -5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 81a0f1f25e757664dab51709c3f39a53, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd63d40c8ce8d6a46a774dfd04b4f469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreWorth: 500
+  scoreWorth: 10000
   powerLevelWorth: 0
   bombsWorth: 0
-  livesWorth: 0
+  livesWorth: 1

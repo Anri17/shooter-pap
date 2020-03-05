@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         GameManager.LockCursor();
         musicPlayer.PlayMusic(stageMusicTheme);
         SpawnPlayer(playerSpawnPoint.transform);

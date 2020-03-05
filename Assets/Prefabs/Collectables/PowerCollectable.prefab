@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4487229667914025788}
   m_Layer: 0
   m_Name: PowerCollectable
-  m_TagString: PowerCollectable
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,3 +144,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreWorth: 200
   powerLevelWorth: 0.05
+  bombsWorth: 0
+  livesWorth: 0

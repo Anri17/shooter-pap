@@ -12,9 +12,11 @@ public class Player : MonoBehaviour
 
     [SerializeField] float _powerLevel = 0f;
     [SerializeField] int _lives = 2;
+    [SerializeField] int _bombs = 2;
 
     public int Lives { get => _lives; set => _lives = value; }
     public float PowerLevel { get => _powerLevel; set => _powerLevel = value > 4 ? 4f : value < 0 ? 0f : value; }
+    public int Bombs { get => _bombs; set => _bombs = value; }
 
     [HideInInspector] public bool canCollectItems = true;
     bool canFire = true;
@@ -55,27 +57,13 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PowerCollectable" && canCollectItems)
+        if (collision.gameObject.tag == "Collectable" && canCollectItems)
         {
-            int scoreToAdd = collision.GetComponent<Collectable>().scoreWorth;
             float powerToAdd = collision.GetComponent<Collectable>().powerLevelWorth;
-            AddValues(powerToAdd, scoreToAdd);
-            Destroy(collision.gameObject);
-        }
-
-        if (collision.gameObject.tag == "BigPowerCollectable" && canCollectItems)
-        {
             int scoreToAdd = collision.GetComponent<Collectable>().scoreWorth;
-            float powerToAdd = collision.GetComponent<Collectable>().powerLevelWorth;
-            AddValues(powerToAdd, scoreToAdd);
-            Destroy(collision.gameObject);
-        }
-
-        if (collision.gameObject.tag == "ScoreCollectable" && canCollectItems)
-        {
-            int scoreToAdd = collision.GetComponent<Collectable>().scoreWorth;
-            float powerToAdd = collision.GetComponent<Collectable>().powerLevelWorth;
-            AddValues(powerToAdd, scoreToAdd);
+            int livesToAdd = collision.GetComponent<Collectable>().livesWorth;
+            int bombsToAdd = collision.GetComponent<Collectable>().bombsWorth;
+            AddValues(powerToAdd, scoreToAdd, livesToAdd, bombsToAdd);
             Destroy(collision.gameObject);
         }
     }
@@ -132,10 +120,12 @@ public class Player : MonoBehaviour
         mainBarrage = barrage;
     }
 
-    public void AddValues(float powerLevel, int score)
+    public void AddValues(float powerLevel, int score, int lives, int bombs)
     {
         PowerLevel += powerLevel;
         GameManager.Instance.Score += score;
+        Bombs += bombs;
+        Lives += lives;
     }
 
     public void SpawnPlayer(Vector3 position)

@@ -17,6 +17,9 @@ TagManager:
   - Boss
   - GameplayBoundry
   - PlayerLazer
+  - LifeCollectable
+  - BombCollectable
+  - Collectable
   layers:
   - Default
   - TransparentFX

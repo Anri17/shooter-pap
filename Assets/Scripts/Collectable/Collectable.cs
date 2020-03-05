@@ -6,6 +6,8 @@ public class Collectable : MonoBehaviour
 {
     public int scoreWorth = 0;
     public float powerLevelWorth = 0f;
+    public int bombsWorth = 0;
+    public int livesWorth = 0;
 
     bool canMoveTowardsTarget = false;
     float moveSpeed = 0f;
