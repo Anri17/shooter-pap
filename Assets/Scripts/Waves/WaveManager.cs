@@ -25,11 +25,14 @@ public class WaveManager : MonoBehaviour
     [SerializeField] Text endScreenLives;
     [SerializeField] Text endScreenBonus;
     [SerializeField] Text endScreenFinalScore;
+    [SerializeField] DialogueConversation dialogue;
 
     [SerializeField] bool isTutorialLevel = false;
 
     [HideInInspector] public GameObject[] spawnedWaves;
     [HideInInspector] public GameObject spawnedBoss;
+
+    public DialogueManager dialogueManager;
 
     bool reachedEnd = false;
 
@@ -107,10 +110,13 @@ public class WaveManager : MonoBehaviour
             }
         }
 
-        Debug.Log("Preparing to launch Mid Boss...");
+        Debug.Log("Preparing for Boss...");
         LevelManager.ClearBullets();
         LevelManager.ClearEnemies();
         yield return new WaitForSeconds(endBoss.StartDelay);
+        Debug.Log("Launching Dialogue...");
+        dialogueManager.StartDialogue(dialogue);
+        yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
         Debug.Log("Launching Boss...");
         spawnedBoss = Instantiate(endBoss.Boss, bossSpawnPoint, Quaternion.identity, transform);
         GameObject.Find("LevelManager").GetComponent<LevelManager>().PlayBossMusic();
@@ -123,7 +129,6 @@ public class WaveManager : MonoBehaviour
 
 
         Debug.Log("Press Enter to EndLevel");
-            
     }
 
     void EndLevel()

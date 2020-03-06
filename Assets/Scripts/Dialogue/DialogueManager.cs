@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,16 +7,18 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    public GameObject dialogueScreen;
     public Text nameText;
     public Text dialogueText;
 
-    public Animator animator;
+    public Queue<DialogueMessage> dialogue;
 
-    public Queue<string> sentences;
+    public bool dialogueEnded = true;
 
     private void Awake()
     {
-        sentences = new Queue<string>();
+        dialogueScreen.SetActive(false);
+        dialogue = new Queue<DialogueMessage>();
     }
 
     private void Start()
@@ -24,36 +27,38 @@ public class DialogueManager : MonoBehaviour
         nameText.text = "";
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    private void Update()
     {
-        animator.SetBool("IsOpen", true);
-
-        nameText.text = dialogue.name;
-
-        sentences.Clear();
-
-        foreach(string sentence in dialogue.sentences)
+        if (Input.GetKeyDown(KeyCode.Return) && !dialogueEnded)
         {
-            sentences.Enqueue(sentence);
+            RunThroughDialogue();
         }
-
-        DisplayNextSentences();
     }
 
-    public void DisplayNextSentences()
+    public void StartDialogue(DialogueConversation dialogueConversation)
     {
-        if (sentences.Count == 0)
-        {
-            EndDialogue();
-            return;
-        }
-
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        dialogueEnded = false;
+        dialogueScreen.SetActive(true);
+        dialogue.Clear();
+        UnpackDialogue(dialogueConversation);
+        StartCoroutine(WaitSeconds(RunThroughDialogue, 1));
     }
 
-    IEnumerator TypeSentence (string sentence)
+    public void UnpackDialogue(DialogueConversation dialogueConversation)
+    {
+        foreach (DialogueMessage message in dialogueConversation.DialogueMessages)
+        {
+            dialogue.Enqueue(message);
+        }
+    }
+
+    public void DisplayMessage(string name, string message)
+    {
+        nameText.text = name;
+        StartCoroutine(TypeMessage(message));
+    }
+
+    IEnumerator TypeMessage(string sentence)
     {
         dialogueText.text = "";
 
@@ -66,11 +71,31 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        Debug.Log("End of Conversation.");
-
+        dialogueScreen.SetActive(false);
         nameText.text = "";
         dialogueText.text = "";
-        animator.SetBool("IsOpen", false);
+        dialogueEnded = true;
+    }
+
+    void RunThroughDialogue()
+    {
+        if (dialogue.Count != 0)
+        {
+            DialogueMessage currentMessage = dialogue.Dequeue();
+            string name = currentMessage.personSpeaking;
+            string message = currentMessage.sentence;
+            DisplayMessage(name, message);
+        }
+        else
+        {
+            EndDialogue();
+        }
+    }
+
+    IEnumerator WaitSeconds(Action funcToExecute, float secondsToWait)
+    {
+        yield return new WaitForSeconds(secondsToWait);
+        funcToExecute();
     }
 
 }
