@@ -55,4 +55,9 @@ public class AudioPlayer : MonoBehaviour
         musicAudioSource.clip = musicFile;
         musicAudioSource.Play();
     }
+
+    public void StopMusic()
+    {
+        musicAudioSource.Stop();
+    }
 }
