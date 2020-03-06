@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0474876b57e247a409830388ca31acce, type: 3}
   m_Name: L1MBStage4
   m_EditorClassIdentifier: 
+  scoreWorth: 100000
   health: 200
   deathTimer: 30
   barrage: {fileID: 1764035180921182807, guid: ce193aa6f3082704eaae18f15a52f738, type: 3}
@@ -20,3 +21,5 @@ MonoBehaviour:
   powerItemsToDrop: 8
   bigPowerItemsToDrop: 1
   scoreItemsToDrop: 16
+  lifeItemsToDrop: 1
+  bombItemsToDrop: 0

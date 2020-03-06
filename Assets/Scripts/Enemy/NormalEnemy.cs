@@ -16,6 +16,8 @@ public class NormalEnemy : Enemy
     [SerializeField] int powerItemsToDrop = 1;
     [SerializeField] int bigPowerItemsToDrop = 1;
     [SerializeField] int scoreItemsToDrop = 1;
+    [SerializeField] int lifeItemsToDrop = 0;
+    [SerializeField] int bombItemsToDrop = 0;
 
     public override float Health { get; set; }
     public override GameObject Shot { get; set; }
@@ -104,14 +106,14 @@ public class NormalEnemy : Enemy
     {
         if (Health <= 0)
         {
-            DropItems(powerItemsToDrop, bigPowerItemsToDrop, scoreItemsToDrop);
+            DropItems(powerItemsToDrop, bigPowerItemsToDrop, scoreItemsToDrop, lifeItemsToDrop, bombItemsToDrop);
             Die();
         }
     }
 
-    public void DropItems(int powerItemQuantity, int bigPowerItemQuantity, int scoreItemQuantity)
+    public void DropItems(int powerItemQuantity, int bigPowerItemQuantity, int scoreItemQuantity, int lifeItemQuantity, int bombItemQuantity)
     {
-        levelManager.SpawnItems(transform.position, powerItemQuantity, bigPowerItemQuantity, scoreItemQuantity);
+        levelManager.SpawnItems(transform.position, powerItemQuantity, bigPowerItemQuantity, scoreItemQuantity, lifeItemQuantity, bombItemQuantity);
     }
 
     public override IEnumerator ShootCoroutine(float shootDelay)

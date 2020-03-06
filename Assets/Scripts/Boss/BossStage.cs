@@ -14,4 +14,6 @@ public class BossStage : ScriptableObject
     public int powerItemsToDrop = 2;
     public int bigPowerItemsToDrop = 1;
     public int scoreItemsToDrop = 8;
+    public int lifeItemsToDrop = 0;
+    public int bombItemsToDrop = 0;
 }

@@ -63,7 +63,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void SpawnItems(Vector3 position, int powerItemCount, int bigPowerItemCount, int scoreItemCount)
+    public void SpawnItems(Vector3 position, int powerItemCount, int bigPowerItemCount, int scoreItemCount, int lifeItemCount, int bombItemCount)
     {
         for (int i = 0; i < powerItemCount; i++)
         {
@@ -83,6 +83,20 @@ public class LevelManager : MonoBehaviour
         {
             Vector3 pos = position + new Vector3(Random.Range(-2f, 2), Random.Range(-0.6f, 2), 0);
             GameObject collectable = Instantiate(gameManager.scoreItem, position, Quaternion.identity);
+            Collectable collectableScript = collectable.GetComponent<Collectable>();
+            collectableScript.Move(pos, 8, 0.6f);
+        }
+        for (int i = 0; i < lifeItemCount; i++)
+        {
+            Vector3 pos = position + new Vector3(Random.Range(-2f, 2), Random.Range(-0.6f, 2), 0);
+            GameObject collectable = Instantiate(gameManager.lifeItem, position, Quaternion.identity);
+            Collectable collectableScript = collectable.GetComponent<Collectable>();
+            collectableScript.Move(pos, 8, 0.6f);
+        }
+        for (int i = 0; i < bombItemCount; i++)
+        {
+            Vector3 pos = position + new Vector3(Random.Range(-2f, 2), Random.Range(-0.6f, 2), 0);
+            GameObject collectable = Instantiate(gameManager.bombItem, position, Quaternion.identity);
             Collectable collectableScript = collectable.GetComponent<Collectable>();
             collectableScript.Move(pos, 8, 0.6f);
         }

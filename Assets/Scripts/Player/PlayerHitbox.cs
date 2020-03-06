@@ -34,7 +34,7 @@ public class PlayerHitbox : MonoBehaviour
 
     void Respawn()
     {
-        levelManager.SpawnItems(transform.position, 5, 1, 0);
+        levelManager.SpawnItems(transform.position, 5, 1, 0, 0, 0);
         player.RespawnPlayer(levelManager.playerSpawnPoint.transform.position, playerRespawnDelay);
     }
 }

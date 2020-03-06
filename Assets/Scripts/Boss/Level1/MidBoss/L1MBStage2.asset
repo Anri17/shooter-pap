@@ -18,6 +18,8 @@ MonoBehaviour:
   barrage: {fileID: 6571451126526940859, guid: b03b9ca87451f3c4486ec4cd225db811, type: 3}
   path: {fileID: 6545029720514851592, guid: 5948b4075f97db44d876b89dce629661, type: 3}
   pathSpeed: 0.5
-  powerItemsToDrop: 2
-  bigPowerItemsToDrop: 0
-  scoreItemsToDrop: 4
+  powerItemsToDrop: 16
+  bigPowerItemsToDrop: 1
+  scoreItemsToDrop: 32
+  lifeItemsToDrop: 1
+  bombItemsToDrop: 0

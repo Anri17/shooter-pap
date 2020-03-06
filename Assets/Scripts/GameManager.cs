@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public GameObject powerItem;
     public GameObject bigPowerItem;
     public GameObject scoreItem;
+    public GameObject lifeItem;
+    public GameObject bombItem;
 
     public GameObject spawnedPlayer;
     public GameObject spawnedBoss;

@@ -278,6 +278,8 @@ MonoBehaviour:
   powerItemsToDrop: 2
   bigPowerItemsToDrop: 1
   scoreItemsToDrop: 4
+  lifeItemsToDrop: 1
+  bombItemsToDrop: 0
 --- !u!114 &3730391855161913003
 MonoBehaviour:
   m_ObjectHideFlags: 0

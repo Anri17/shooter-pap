@@ -20,4 +20,6 @@ MonoBehaviour:
   pathSpeed: 0.5
   powerItemsToDrop: 8
   bigPowerItemsToDrop: 0
-  scoreItemsToDrop: 10
+  scoreItemsToDrop: 8
+  lifeItemsToDrop: 0
+  bombItemsToDrop: 0
