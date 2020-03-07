@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -61,7 +62,7 @@ public class Boss : MonoBehaviour
 
     void KillBoss()
     {
-        StopCoroutine(countDownDeathTimerCoroutine);
+        StopAllCoroutines();
         PlayDeathParticles(deathParticles);
         DropItems(currentStage.powerItemsToDrop, currentStage.bigPowerItemsToDrop, currentStage.scoreItemsToDrop, currentStage.lifeItemsToDrop, currentStage.bombItemsToDrop);
         hittable = false;
@@ -94,16 +95,24 @@ public class Boss : MonoBehaviour
 
     public void DestroyCurrentPath()
     {
-        Destroy(pathTransform.gameObject);
+        if (pathTransform != null)
+            Destroy(pathTransform.gameObject);
     }
 
     public void SetStage(int stageIndex)
     {
         Debug.Log($"Stages length: {stages.Length}");
         UnpackStage(stageIndex);
-        UnpackPath(currentPath);
+        if (!currentStage.randomMovement && currentPath != null)
+        {
+            UnpackPath(currentPath);
+            bezierMove.StartMovement();
+        }
+        else
+        {
+            StartCoroutine(WaitForSeconds(() => StartCoroutine(LerpMoveBoss(GetRandomPoint(), 1)), 3));
+        }
         currentBarrage = Instantiate(currentStage.barrage, transform);
-        bezierMove.StartMovement();
         hittable = true;
         StartCoroutine(countDownDeathTimerCoroutine);
     }
@@ -154,5 +163,36 @@ public class Boss : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
         KillBoss();
+    }
+
+    public Vector3 GetRandomPoint()
+    {
+        Debug.Log("Boss Is Getting Random point");
+        float spriteWidthSize = gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.x / 2;
+        float spriteHeightSize = gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2;
+        float randX = UnityEngine.Random.Range((GameManager.GAME_FIELD_TOP_LEFT.x + spriteWidthSize) + GameManager.GAME_FIELD_CENTER.x, (GameManager.GAME_FIELD_TOP_RIGHT.x - spriteWidthSize) + GameManager.GAME_FIELD_CENTER.x);
+        float randY = UnityEngine.Random.Range(1 + spriteHeightSize, (GameManager.GAME_FIELD_TOP_LEFT.y - spriteHeightSize));
+        Debug.Log(GameManager.GAME_FIELD_TOP_LEFT.x + spriteWidthSize);
+        Debug.Log(GameManager.GAME_FIELD_TOP_RIGHT.x - spriteWidthSize);
+        Debug.Log(randX);
+        return new Vector3(randX, randY, 0);
+    }
+
+    IEnumerator LerpMoveBoss(Vector3 endPos, float timeToTake)
+    {
+        while (transform.position != endPos)
+        {
+            Debug.Log("Boss Is Lerping");
+            transform.position = Vector3.Lerp(transform.position, endPos, timeToTake * Time.deltaTime * 4f);
+            yield return null;
+        }
+        StartCoroutine(WaitForSeconds(() => StartCoroutine(LerpMoveBoss(GetRandomPoint(), 1)), 3));
+    }
+
+    IEnumerator WaitForSeconds(Action methodToRun, float secondsToWait)
+    {
+        Debug.Log("Boss Is Waiting For Function");
+        yield return new WaitForSeconds(secondsToWait);
+        methodToRun();
     }
 }

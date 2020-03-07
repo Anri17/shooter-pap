@@ -9,6 +9,7 @@ public class BossStage : ScriptableObject
     public float health;
     public float deathTimer;
     public GameObject barrage;
+    public bool randomMovement = false;
     public Transform path;
     public float pathSpeed;
     public int powerItemsToDrop = 2;
