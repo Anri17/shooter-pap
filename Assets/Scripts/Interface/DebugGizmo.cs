@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class DebugGizmo : MonoBehaviour
 {
-    [SerializeField] Vector3[] playfieldPoints;
-
     void OnDrawGizmos()
     {
-        DrawPlayfieldGuideline(playfieldPoints);
+        DrawPlayfieldGuideline();
     }
 
-    void DrawPlayfieldGuideline(Vector3[] points)
+    void DrawPlayfieldGuideline()
     {
-        Gizmos.DrawLine(transform.position + points[0], transform.position + points[1]);
-        Gizmos.DrawLine(transform.position + points[1], transform.position + points[2]);
-        Gizmos.DrawLine(transform.position + points[2], transform.position + points[3]);
-        Gizmos.DrawLine(transform.position + points[3], transform.position + points[0]);
+        Gizmos.DrawLine(GameManager.GAME_FIELD_TOP_LEFT, GameManager.GAME_FIELD_TOP_RIGHT);
+        Gizmos.DrawLine(GameManager.GAME_FIELD_TOP_RIGHT, GameManager.GAME_FIELD_BOTTOM_RIGHT);
+        Gizmos.DrawLine(GameManager.GAME_FIELD_BOTTOM_RIGHT, GameManager.GAME_FIELD_BOTTOM_LEFT);
+        Gizmos.DrawLine(GameManager.GAME_FIELD_BOTTOM_LEFT, GameManager.GAME_FIELD_TOP_LEFT);
     }
 }

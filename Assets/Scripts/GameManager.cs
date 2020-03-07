@@ -7,6 +7,12 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    readonly public static Vector3 GAME_FIELD_TOP_LEFT = new Vector3(-8.123814f, 9.333347f, 0);
+    readonly public static Vector3 GAME_FIELD_TOP_RIGHT = new Vector3(8.123814f, 9.333347f, 0);
+    readonly public static Vector3 GAME_FIELD_BOTTOM_LEFT = new Vector3(-8.123814f, -9.333339f, 0);
+    readonly public static Vector3 GAME_FIELD_BOTTOM_RIGHT = new Vector3(8.123814f, -9.333339f, 0);
+    readonly public static Vector3 GAME_FIELD_CENTER = new Vector3(-4.061896f, 0, 0);
+
     public static GameManager Instance { get; private set; }
 
     [Header("Loading Screen")]
