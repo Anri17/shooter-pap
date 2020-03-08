@@ -110,7 +110,7 @@ public class Boss : MonoBehaviour
         }
         else
         {
-            StartCoroutine(WaitForSeconds(() => StartCoroutine(LerpMoveBoss(GetRandomPoint(), 1)), 3));
+            StartCoroutine(WaitForSeconds(() => StartCoroutine(LerpMoveBoss(GetRandomPoint(), 1)), 2));
         }
         currentBarrage = Instantiate(currentStage.barrage, transform);
         hittable = true;
@@ -186,7 +186,7 @@ public class Boss : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, endPos, timeToTake * Time.deltaTime * 4f);
             yield return null;
         }
-        StartCoroutine(WaitForSeconds(() => StartCoroutine(LerpMoveBoss(GetRandomPoint(), 1)), 3));
+        StartCoroutine(WaitForSeconds(() => StartCoroutine(LerpMoveBoss(GetRandomPoint(), 1)), 2));
     }
 
     IEnumerator WaitForSeconds(Action methodToRun, float secondsToWait)

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: L1MBStage1
   m_EditorClassIdentifier: 
   scoreWorth: 100000
-  health: 400
+  health: 500
   deathTimer: 30
-  barrage: {fileID: 6571451126526940859, guid: 11eaf6d4b5c9f69418160e66b71a92e5, type: 3}
+  barrage: {fileID: 6571451126526940859, guid: fca190992856cb342afa47f1fe4d0f2e, type: 3}
   randomMovement: 1
   path: {fileID: 6545029720514851592, guid: 35dcfe4eae5f9f74799b0bb2f5e53bc1, type: 3}
   pathSpeed: 0.5
