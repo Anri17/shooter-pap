@@ -12,7 +12,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] BossWave midBoss;
     [SerializeField] BossWave endBoss;
     [SerializeField] GameObject bossScreen;
-    [SerializeField] GameObject bossHealthBar;
+    [SerializeField] public GameObject bossHealthBar;
     [SerializeField] GameObject bossStageCount;
     [SerializeField] GameObject bossDeathTimer;
     [SerializeField] Vector3 bossSpawnPoint;

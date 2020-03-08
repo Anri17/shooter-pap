@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
@@ -151,6 +152,7 @@ public class Boss : MonoBehaviour
             transform.position = Vector3.Lerp(currentPos, destination, t);
             yield return null;
         }
+        StartCoroutine(FillHealthBar(timeToWait));
         yield return new WaitForSeconds(timeToWait);
         SetStage(stageIndex);
         StopCoroutine("MoveToPosition");
@@ -195,5 +197,18 @@ public class Boss : MonoBehaviour
         Debug.Log("Boss Is Waiting For Function");
         yield return new WaitForSeconds(secondsToWait);
         methodToRun();
+    }
+
+    IEnumerator FillHealthBar(float timeToTakeToFill)
+    {
+        CurrentMaxHealth = 100f;
+        WaveManager waveManager = GameObject.Find("WaveManager").GetComponent<WaveManager>();
+        float t = 0f;
+        while (t < 1)
+        {
+            t += Time.deltaTime / timeToTakeToFill;
+            CurrentHealth += 1;
+            yield return null;
+        }
     }
 }
