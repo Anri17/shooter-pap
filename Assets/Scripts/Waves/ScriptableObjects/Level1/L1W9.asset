@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: L1W9
   m_EditorClassIdentifier: 
   wave: {fileID: 3756092980057968975, guid: 11d44c34c69f7214c9de474ced3e6288, type: 3}
-  delayTime: 6
+  delayTime: 4

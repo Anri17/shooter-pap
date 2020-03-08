@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: L1MidBoss
   m_EditorClassIdentifier: 
   _startDelay: 1.6
-  _endDelay: 7
+  _endDelay: 4
   _boss: {fileID: 7945089824047321945, guid: 13c3bbef8edaced4bac3d444e7c00c5e, type: 3}
