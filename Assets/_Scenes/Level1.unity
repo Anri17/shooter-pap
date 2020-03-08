@@ -3827,6 +3827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1361118817}
+  canOpenMenu: 0
 --- !u!4 &976927016
 Transform:
   m_ObjectHideFlags: 0
@@ -4622,7 +4623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpawnPoint: {fileID: 1755139699}
   stageMusicTheme: {fileID: 8300000, guid: 472f6abc3f7e0ea429981fe1513fc19c, type: 3}
-  bossMusicTheme: {fileID: 8300000, guid: 3b92e548706bbc84ea77de64cad68c19, type: 3}
+  bossMusicTheme: {fileID: 8300000, guid: 5519b17b4c916fa419bc94c23f467ff1, type: 3}
 --- !u!1 &1271905096
 GameObject:
   m_ObjectHideFlags: 0
@@ -5662,7 +5663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -97.53703, y: 14.800018}
+  m_AnchoredPosition: {x: -97.53703, y: 14.799988}
   m_SizeDelta: {x: 390.39, y: 143.04}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!95 &1659691160
