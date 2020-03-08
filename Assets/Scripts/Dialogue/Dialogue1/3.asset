@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1ded0f8b3dff324d979a1832aad90ee, type: 3}
-  m_Name: 1
+  m_Name: 3
   m_EditorClassIdentifier: 
-  personSpeaking: Marisa
-  sentence: Why am I in this game?
+  personSpeaking: Zuru
+  sentence: What's up with all this noise? Ships usually don't show up on these parts.
+  changeMusic: 0

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ded0f8b3dff324d979a1832aad90ee, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
-  personSpeaking: Reimu
-  sentence: Why am I also in this game?
+  personSpeaking: Mero
+  sentence: As usualy, not holding back, do you? Look at my ship!
+  changeMusic: 0

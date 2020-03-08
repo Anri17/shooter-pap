@@ -8,4 +8,5 @@ public class DialogueMessage : ScriptableObject
     public string personSpeaking;
     [TextArea(3, 10)]
     public string sentence;
+    public bool changeMusic = false;
 }

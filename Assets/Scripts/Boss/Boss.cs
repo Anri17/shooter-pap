@@ -202,7 +202,6 @@ public class Boss : MonoBehaviour
     IEnumerator FillHealthBar(float timeToTakeToFill)
     {
         CurrentMaxHealth = 100f;
-        WaveManager waveManager = GameObject.Find("WaveManager").GetComponent<WaveManager>();
         float t = 0f;
         while (t < 1)
         {

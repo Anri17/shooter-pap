@@ -1036,6 +1036,7 @@ MonoBehaviour:
   endScreenBonus: {fileID: 1407619778}
   endScreenFinalScore: {fileID: 1223908633}
   dialogue: {fileID: 11400000, guid: 6ebd124ce98fd9646aeb830c89dfbce6, type: 2}
+  dialogue2: {fileID: 11400000, guid: ed1c76f7732a5864a9bfae31014248bb, type: 2}
   isTutorialLevel: 0
   spawnedWaves: []
   spawnedBoss: {fileID: 0}

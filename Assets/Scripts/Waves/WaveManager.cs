@@ -26,6 +26,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] Text endScreenBonus;
     [SerializeField] Text endScreenFinalScore;
     [SerializeField] DialogueConversation dialogue;
+    [SerializeField] DialogueConversation dialogue2;
 
     [SerializeField] bool isTutorialLevel = false;
 
@@ -119,11 +120,17 @@ public class WaveManager : MonoBehaviour
         yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
         Debug.Log("Launching Boss...");
         spawnedBoss = Instantiate(endBoss.Boss, bossSpawnPoint, Quaternion.identity, transform);
-        GameObject.Find("LevelManager").GetComponent<LevelManager>().PlayBossMusic(1);
         bossScreen.SetActive(true);
         yield return new WaitUntil(() => spawnedBoss == null);
         bossScreen.SetActive(false);
-        yield return new WaitForSeconds(endBoss.EndDelay);
+        dialogueManager.StartDialogue(dialogue2);
+        yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
+
+
+        // yield return new WaitForSeconds(endBoss.EndDelay);
+
+
+
         EndLevel();
         Debug.Log("Level Ended");
 

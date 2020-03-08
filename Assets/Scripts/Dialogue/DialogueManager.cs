@@ -54,6 +54,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayMessage(string name, string message)
     {
+        StopAllCoroutines();
         nameText.text = name;
         StartCoroutine(TypeMessage(message));
     }
@@ -85,6 +86,10 @@ public class DialogueManager : MonoBehaviour
             string name = currentMessage.personSpeaking;
             string message = currentMessage.sentence;
             DisplayMessage(name, message);
+            if (currentMessage.changeMusic)
+            {
+                GameObject.Find("LevelManager").GetComponent<LevelManager>().PlayBossMusic(1);
+            }
         }
         else
         {
