@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tragectory: []
-  _health: 80
+  _health: 60
   _shot: {fileID: 7819838638613296147, guid: 095f66ab46492ef42bc0d2955ad401a5, type: 3}
   _scoreWorth: 1200
   shootDelay: 1

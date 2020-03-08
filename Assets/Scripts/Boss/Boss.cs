@@ -62,6 +62,7 @@ public class Boss : MonoBehaviour
 
     void KillBoss()
     {
+        LevelManager.ClearBullets();
         StopAllCoroutines();
         PlayDeathParticles(deathParticles);
         DropItems(currentStage.powerItemsToDrop, currentStage.bigPowerItemsToDrop, currentStage.scoreItemsToDrop, currentStage.lifeItemsToDrop, currentStage.bombItemsToDrop);

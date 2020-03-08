@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0474876b57e247a409830388ca31acce, type: 3}
-  m_Name: L1EBStage2
+  m_Name: L1EBStage8
   m_EditorClassIdentifier: 
-  scoreWorth: 200000
+  scoreWorth: 1000000
   health: 800
-  deathTimer: 30
-  barrage: {fileID: 8532108549334091280, guid: 6783dff05e69090499b100a469e8d64d, type: 3}
+  deathTimer: 20
+  barrage: {fileID: 8532108549334091280, guid: feaa67a1ea3ac5d43b7e63cfec1fc869, type: 3}
   randomMovement: 0
-  path: {fileID: 6545029720514851592, guid: 5f05972a7a5c64842bdf5b5089f50020, type: 3}
+  path: {fileID: 6545029720514851592, guid: 35dcfe4eae5f9f74799b0bb2f5e53bc1, type: 3}
   pathSpeed: 0.2
   powerItemsToDrop: 2
   bigPowerItemsToDrop: 1
