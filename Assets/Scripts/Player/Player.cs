@@ -23,9 +23,15 @@ public class Player : MonoBehaviour
     GameObject currentBarrage;
     GameObject mainBarrage;
 
+    PlayerController playerController;
+
+    public bool hittable;
+
     void Awake()
     {
+        hittable = false;
         canCollectItems = true;
+        playerController = GetComponent<PlayerController>();
     }
 
     void Update()
@@ -136,11 +142,24 @@ public class Player : MonoBehaviour
         GetComponent<PlayerController>().canMove = true;
         canFire = true;
         canCollectItems = true;
+        PlayerCanMove();
         GameObject.Find("ItemCollectionArea").GetComponent<ItemCollectionArea>().canSucc = true;
         if (Input.GetButton("Fire1"))
         {
             SpawnBarrage(mainBarrage);
         }
+    }
+
+    public void PlayerCanMove()
+    {
+        StartCoroutine(BecomeVulnerable(5f));
+        playerController.canMove = true;
+    }
+
+    public void PlayerCantMove()
+    {
+        playerController.canMove = false;
+        hittable = false;
     }
 
     public void Die()
@@ -150,7 +169,7 @@ public class Player : MonoBehaviour
         Lives--;
         PowerLevel = 0;
         Destroy(currentBarrage);
-        GetComponent<PlayerController>().canMove = false;
+        PlayerCantMove();
         canFire = false;
         canCollectItems = false;
         GameObject.Find("ItemCollectionArea").GetComponent<ItemCollectionArea>().canSucc = false;
@@ -174,5 +193,11 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         SpawnPlayer(position);
+    }
+
+    public IEnumerator BecomeVulnerable(float timeToWait)
+    {
+        yield return new WaitForSeconds(timeToWait);
+        hittable = true;
     }
 }

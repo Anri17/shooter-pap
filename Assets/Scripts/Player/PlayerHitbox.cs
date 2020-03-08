@@ -17,18 +17,21 @@ public class PlayerHitbox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("EnemyBullet"))
+        if (player.hittable)
         {
-            Destroy(collision.gameObject);
-            Respawn();
-        }
-        if (collision.gameObject.tag.Equals("Enemy"))
-        {
-            Respawn();
-        }
-        if (collision.gameObject.tag.Equals("Boss"))
-        {
-            Respawn();
+            if (collision.gameObject.tag.Equals("EnemyBullet"))
+            {
+                Destroy(collision.gameObject);
+                Respawn();
+            }
+            if (collision.gameObject.tag.Equals("Enemy"))
+            {
+                Respawn();
+            }
+            if (collision.gameObject.tag.Equals("Boss"))
+            {
+                Respawn();
+            }
         }
     }
 

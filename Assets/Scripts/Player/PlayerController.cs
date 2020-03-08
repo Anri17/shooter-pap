@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public float Speed { get; set; }
 
-    public bool canMove = true;
+    public bool canMove = false;
 
     float horizontal;
     float vertical;
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         animatorController.SetLayerWeight(1, 1f);
-        canMove = true;
+        canMove = false;
         Speed = normalSpeed;
     }
 
