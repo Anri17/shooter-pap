@@ -6,14 +6,17 @@ public class LevelController : MonoBehaviour
 {
     public GameObject pauseMenu;
 
+    public bool canOpenMenu;
+
     void Awake()
     {
+        canOpenMenu = true;
         pauseMenu.SetActive(false);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && canOpenMenu)
         {
             TogglePauseGame();
         }

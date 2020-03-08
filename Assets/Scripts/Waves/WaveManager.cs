@@ -161,6 +161,7 @@ public class WaveManager : MonoBehaviour
         GameManager.UnlockCursor();
         Time.timeScale = 1;
         gameOverScreen.SetActive(true);
+        GameObject.Find("LevelController").GetComponent<LevelController>().canOpenMenu = false;
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(0);
     }
