@@ -5,38 +5,37 @@ using UnityEngine.UI;
 
 public class OptionsManager : MonoBehaviour
 {
-    private AudioPlayer AudioPlayer;
+    private AudioPlayer audioPlayer;
 
-    private Slider generalVolumeSlider;
-    private Slider musicVolumeSlider;
+    public Slider masterVolumeSlider;
+    public Slider musicVolumeSlider;
+    public Slider effectsVolumeSlider;
 
-    public GameObject generalVolumeSliderGameObject;
-    public GameObject musicVolumeSliderGameObject;
-
-    void Awake()
+    void Start()
     {
-        AudioPlayer = AudioPlayer.Instance;
-        InitMusicVolumeLevel();
-        InitGeneralVolumeLevel();
+        audioPlayer = AudioPlayer.Instance;
+        InitSliderValues();
     }
 
-    void InitMusicVolumeLevel()
+    void InitSliderValues()
     {
-        musicVolumeSlider = musicVolumeSliderGameObject.GetComponent<Slider>();
-        musicVolumeSlider.value = AudioPlayer.MusicVolumeLevel;
-        musicVolumeSlider.onValueChanged.AddListener(delegate { OnVolumeChange(); });
+        masterVolumeSlider.value = audioPlayer.MasterVolumeLevel;
+        musicVolumeSlider.value = audioPlayer.MusicVolumeLevel;
+        effectsVolumeSlider.value = audioPlayer.EffectsVolumeLevel;
     }
 
-    void InitGeneralVolumeLevel()
+    public void SetMasterVolumeLevel(float sliderValue)
     {
-        generalVolumeSlider = generalVolumeSliderGameObject.GetComponent<Slider>();
-        generalVolumeSlider.value = AudioPlayer.GeneralVolumeLevel;
-        generalVolumeSlider.onValueChanged.AddListener(delegate { OnVolumeChange(); });
+        audioPlayer.MasterVolumeLevel = sliderValue;
     }
 
-    public void OnVolumeChange()
+    public void SetMusicVolumeLevel(float sliderValue)
     {
-        AudioPlayer.MusicVolumeLevel = musicVolumeSlider.value;
-        AudioPlayer.GeneralVolumeLevel = generalVolumeSlider.value;
+        audioPlayer.MusicVolumeLevel = sliderValue;
+    }
+
+    public void SetEffectsVolumeLevel(float sliderValue)
+    {
+        audioPlayer.EffectsVolumeLevel = sliderValue;
     }
 }

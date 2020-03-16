@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
     public GameObject[] barrages;
     public GameObject bombBarrage;
     public GameObject sprites;
-    public AudioSource deathSound;
 
     [SerializeField] float _powerLevel = 0f;
     [SerializeField] int _lives = 2;
@@ -173,7 +172,7 @@ public class Player : MonoBehaviour
         canFire = false;
         canCollectItems = false;
         GameObject.Find("ItemCollectionArea").GetComponent<ItemCollectionArea>().canSucc = false;
-        deathSound.Play();
+        AudioPlayer.Instance.PlayDeathSound();
         sprites.SetActive(false);
     }
 

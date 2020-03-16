@@ -10,7 +10,6 @@ public class Boss : MonoBehaviour
     public BossStage[] stages;
     int stageIndex = 0;
     [SerializeField] ParticleSystem deathParticles;
-    [SerializeField] AudioSource hitSound;
 
     BossStage currentStage;
     GameObject currentBarrage;
@@ -52,7 +51,7 @@ public class Boss : MonoBehaviour
             GameManager.Instance.Score += 80;
             CurrentHealth -= collision.GetComponent<PlayerBullet>().Damage;
             Destroy(collision.gameObject);
-            hitSound.Play();
+            AudioPlayer.Instance.PlayHitSound();
             if (CurrentHealth <= 0)
             {
                 GameManager.Instance.Score += currentStage.scoreWorth;
@@ -63,6 +62,7 @@ public class Boss : MonoBehaviour
 
     void KillBoss()
     {
+        AudioPlayer.Instance.PlayKillSound();
         LevelManager.ClearBullets();
         StopAllCoroutines();
         PlayDeathParticles(deathParticles);

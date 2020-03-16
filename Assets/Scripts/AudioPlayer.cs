@@ -1,40 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioPlayer : MonoBehaviour
 {
     public static AudioPlayer Instance { get; private set; }
 
     [SerializeField] AudioSource musicAudioSource;
+    [SerializeField] AudioSource hitAudioSource;
+    [SerializeField] AudioSource killAudioSource;
+    [SerializeField] AudioSource deathAudioSource;
+    [SerializeField] AudioMixer mixer;
 
+    public const string MASTER_VOLUME_LEVEL = "MasterVolumeLevel";
     public const string MUSIC_VOLUME_LEVEL = "MusicVolumeLevel";
-    public const string GENERAL_VOLUME_LEVEL = "GeneralVolumeLevel";
+    public const string EFFECTS_VOLUME_LEVEL = "EffectsVolumeLevel";
 
+    public float MasterVolumeLevel
+    {
+        get => PlayerPrefs.GetFloat(MASTER_VOLUME_LEVEL);
+        set
+        {
+            PlayerPrefs.SetFloat(MASTER_VOLUME_LEVEL, value);
+            mixer.SetFloat("MasterVolume", Mathf.Log10(value) * 20);
+        }
+    }
     public float MusicVolumeLevel
     {
-        get { return PlayerPrefs.GetFloat(MUSIC_VOLUME_LEVEL); }
+        get => PlayerPrefs.GetFloat(MUSIC_VOLUME_LEVEL);
         set
         {
             PlayerPrefs.SetFloat(MUSIC_VOLUME_LEVEL, value);
-            musicAudioSource.volume = value;
+            mixer.SetFloat("MusicVolume", Mathf.Log10(value) * 20);
         }
     }
-    public float GeneralVolumeLevel
+    public float EffectsVolumeLevel
     {
-        get { return PlayerPrefs.GetFloat(GENERAL_VOLUME_LEVEL); }
+        get => PlayerPrefs.GetFloat(EFFECTS_VOLUME_LEVEL);
         set
         {
-            PlayerPrefs.SetFloat(GENERAL_VOLUME_LEVEL, value);
-            AudioListener.volume = value;
+            PlayerPrefs.SetFloat(EFFECTS_VOLUME_LEVEL, value);
+            mixer.SetFloat("EffectsVolume", Mathf.Log10(value) * 20);
         }
     }
 
     void Awake()
     {
         MakeSingleton();
-        MusicVolumeLevel = PlayerPrefs.GetFloat(MUSIC_VOLUME_LEVEL);
-        GeneralVolumeLevel = PlayerPrefs.GetFloat(GENERAL_VOLUME_LEVEL);
+    }
+
+    void Start()
+    {
+        InitMusicVolumeLevel();
     }
 
     private void MakeSingleton()
@@ -48,6 +66,28 @@ public class AudioPlayer : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void InitMusicVolumeLevel()
+    {
+        mixer.SetFloat("MasterVolume", Mathf.Log10(MasterVolumeLevel) * 20);
+        mixer.SetFloat("MusicVolume", Mathf.Log10(MusicVolumeLevel) * 20);
+        mixer.SetFloat("EffectsVolume", Mathf.Log10(EffectsVolumeLevel) * 20);
+    }
+
+    public void PlayHitSound()
+    {
+        hitAudioSource.Play();
+    }
+
+    public void PlayKillSound()
+    {
+        killAudioSource.Play();
+    }
+
+    public void PlayDeathSound()
+    {
+        deathAudioSource.Play();
     }
 
     public void PlayMusic(AudioClip musicFile)

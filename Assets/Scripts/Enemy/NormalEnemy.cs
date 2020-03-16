@@ -11,7 +11,6 @@ public class NormalEnemy : Enemy
     [SerializeField] int _scoreWorth;
     [SerializeField] float shootDelay;
     [SerializeField] ParticleSystem deathParticles;
-    [SerializeField] AudioSource hitSound;
     [SerializeField] bool randomizeShotDelay = false;
     [SerializeField] int powerItemsToDrop = 1;
     [SerializeField] int bigPowerItemsToDrop = 1;
@@ -68,7 +67,7 @@ public class NormalEnemy : Enemy
             Health -= collision.GetComponent<PlayerBullet>().Damage;
             gameManager.Score += 40;
             Destroy(collision.gameObject);
-            hitSound.Play();
+            AudioPlayer.Instance.PlayHitSound();
         }
 
         if (collision.tag.Equals("PlayArea") && shotInstance == null)
@@ -87,6 +86,7 @@ public class NormalEnemy : Enemy
 
     public override void Die()
     {
+        AudioPlayer.Instance.PlayKillSound();
         PlayDeathParticles(deathParticles);
         Destroy(gameObject);
         GiveScoreWorth(ScoreWorth);
