@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2514a9b06d1b5d48962ab0709d74723, type: 3}
+  m_Name: Engineering Madness
+  m_EditorClassIdentifier: 
+  musicTitle: Engineering Madness
+  musicClip: {fileID: 8300000, guid: 5519b17b4c916fa419bc94c23f467ff1, type: 3}
+  composerComment: 'When I composed this track, I didn''t really know what to think
+    of it. At first it sounds like a playfull track, but it quickly picks up a more
+    serious tune, followed by an epic melody.
+
+
+    I gave this track to Mero because I think it fits with her personality quite nicely,
+    where you can''t really predict what she''s thinking, so you can''t take her lightly
+    either.'

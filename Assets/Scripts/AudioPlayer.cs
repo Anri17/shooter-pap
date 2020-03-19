@@ -7,7 +7,7 @@ public class AudioPlayer : MonoBehaviour
 {
     public static AudioPlayer Instance { get; private set; }
 
-    [SerializeField] AudioSource musicAudioSource;
+    public AudioSource musicAudioSource;
     [SerializeField] AudioSource hitAudioSource;
     [SerializeField] AudioSource killAudioSource;
     [SerializeField] AudioSource deathAudioSource;

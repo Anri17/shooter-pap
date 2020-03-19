@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2514a9b06d1b5d48962ab0709d74723, type: 3}
+  m_Name: Strange Tunes
+  m_EditorClassIdentifier: 
+  musicTitle: Strange Tunes
+  musicClip: {fileID: 8300000, guid: 472f6abc3f7e0ea429981fe1513fc19c, type: 3}
+  composerComment: The stage 1 theme. I wanted a track that exited the player to play
+    and shoot some enemies, so i tried composing an energetic melody that did just
+    that.

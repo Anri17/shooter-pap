@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2514a9b06d1b5d48962ab0709d74723, type: 3}
+  m_Name: Spirts From Sky High
+  m_EditorClassIdentifier: 
+  musicTitle: Spirts From Sky High
+  musicClip: {fileID: 8300000, guid: 88ff698757cd80243b86d44fcb46e6ef, type: 3}
+  composerComment: It feels like the journey just started and it's taking a while,
+    yet you quickly realise that you're not dealing with any ordinary foe, and you
+    must keep your senses sharp, for you don't know what's comming.

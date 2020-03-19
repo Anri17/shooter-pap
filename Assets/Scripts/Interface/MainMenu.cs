@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject optionsMenu;
     [SerializeField] GameObject bottomRightPannel;
     [SerializeField] GameObject middlePannel;
+    [SerializeField] GameObject musicRoom;
     [SerializeField] AudioClip menuMusicTheme;
 
     private void Start()
@@ -24,28 +25,41 @@ public class MainMenu : MonoBehaviour
         DisplayMainMenu();
     }
 
-    public void DisplayMainMenu()
+    public void HideAll()
     {
-        mainMenu.SetActive(true);
+        mainMenu.SetActive(false);
         playMenu.SetActive(false);
         optionsMenu.SetActive(false);
+        bottomRightPannel.SetActive(false);
+        middlePannel.SetActive(false);
+        musicRoom.SetActive(false);
+    }
+
+    public void DisplayMainMenu()
+    {
+        HideAll();
+        mainMenu.SetActive(true);
         DisplayBottomRightPannel();
     }
 
     public void DisplayPlayMenu()
     {
-        mainMenu.SetActive(false);
+        HideAll();
         playMenu.SetActive(true);
-        optionsMenu.SetActive(false);
         DisplayMiddlePannel();
     }
 
     public void DisplayOptionsMenu()
     {
-        mainMenu.SetActive(false);
-        playMenu.SetActive(false);
+        HideAll();
         optionsMenu.SetActive(true);
         DisplayMiddlePannel();
+    }
+
+    public void DisplayMusicRoom()
+    {
+        HideAll();
+        musicRoom.SetActive(true);
     }
 
     void DisplayBottomRightPannel()
