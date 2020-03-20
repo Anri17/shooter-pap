@@ -35,7 +35,10 @@ public class MusicRoom : MonoBehaviour
             int x = i;
             // Set size of container to fit the new music track
             contentTotalSize = contentTotalSize + 40;
-            musicListContent.GetComponent<RectTransform>().sizeDelta += new Vector2(0, contentTotalSize);
+
+            RectTransform parentObject = musicListContent.GetComponentInParent<RectTransform>();
+
+            musicListContent.GetComponent<RectTransform>().sizeDelta = new Vector2(parentObject.sizeDelta.x, contentTotalSize);
 
 
             GameObject tempButton = Instantiate(buttonTemplate, musicListContent.transform);
@@ -45,9 +48,6 @@ public class MusicRoom : MonoBehaviour
             tempButton.GetComponent<Button>().onClick.AddListener(delegate { RunMusic(musicClips[x]); });
             buttonClips.Add(tempButton);
             ypos = ypos - 40;
-
-            print(ypos);
-            print(contentTotalSize);
         }
 
         return buttonClips;
