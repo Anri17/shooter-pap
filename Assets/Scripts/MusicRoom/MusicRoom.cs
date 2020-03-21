@@ -13,6 +13,8 @@ public class MusicRoom : MonoBehaviour
 
     public GameObject buttonTemplate;
 
+    public Slider musicProgressBar;
+
     AudioPlayer audioPlayer;
 
     List<GameObject> buttonClips;
@@ -24,6 +26,14 @@ public class MusicRoom : MonoBehaviour
         composerComment.text = "";
         audioPlayer = AudioPlayer.Instance;
         buttonClips = CreateMusicList(musicClips);
+
+        // Initialize MusicProgressBar
+        musicProgressBar.maxValue = audioPlayer.musicAudioSource.clip.length;
+    }
+
+    private void Update()
+    {
+        musicProgressBar.value = audioPlayer.musicAudioSource.time;
     }
 
     List<GameObject> CreateMusicList(MusicClip[] clips)
@@ -62,6 +72,42 @@ public class MusicRoom : MonoBehaviour
     public void PlayMusic(AudioClip clip)
     {
         if (audioPlayer.musicAudioSource.clip != clip)
+        {
             audioPlayer.PlayMusic(clip);
+            musicProgressBar.maxValue = audioPlayer.musicAudioSource.clip.length; // Set progress bar max value to clip length
+            musicProgressBar.value = 0;
+        }
+    }
+
+    public void StopMusic()
+    {
+        if (audioPlayer.musicAudioSource.clip != null)
+        {
+            audioPlayer.musicAudioSource.Stop();
+        }
+    }
+
+    public void PlayTrack()
+    {
+        if (audioPlayer.musicAudioSource.clip != null)
+        {
+            audioPlayer.musicAudioSource.Play();
+        }
+    }
+
+    public void PauseMusic()
+    {
+        if (audioPlayer.musicAudioSource.clip != null)
+        {
+            audioPlayer.musicAudioSource.Pause();
+        }
+    }
+
+    public void SetTrackTime(float sliderValue)
+    {
+        if (sliderValue < musicProgressBar.maxValue && sliderValue > musicProgressBar.minValue)
+        {
+            audioPlayer.musicAudioSource.time = sliderValue;
+        }
     }
 }
