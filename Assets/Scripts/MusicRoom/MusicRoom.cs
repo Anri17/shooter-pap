@@ -27,13 +27,7 @@ public class MusicRoom : MonoBehaviour
         audioPlayer = AudioPlayer.Instance;
         buttonClips = CreateMusicList(musicClips);
 
-        /*
-        foreach (GameObject button in buttonClips)
-        {
-            MusicClip
-            if ()
-        }
-        */
+        SetActiveMusicButton();
 
         // Initialize MusicProgressBar
         musicProgressBar.maxValue = audioPlayer.musicAudioSource.clip.length;
@@ -75,6 +69,7 @@ public class MusicRoom : MonoBehaviour
     {
         PlayMusic(clip.musicClip);
         composerComment.text = clip.composerComment;
+        SetActiveMusicButton();
     }
 
     public void PlayMusic(AudioClip clip)
@@ -120,5 +115,46 @@ public class MusicRoom : MonoBehaviour
         {
             audioPlayer.musicAudioSource.time = sliderValue;
         }
+    }
+
+    public void SetActiveMusicButton()
+    {
+        Button[] buttons = ConvertToButtonArray(buttonClips);
+
+        for (int i = 0; i < musicClips.Length; i++)
+        {
+            if (musicClips[i].musicClip == audioPlayer.musicAudioSource.clip)
+            {
+                var thisColors = buttons[i].colors;
+                thisColors.normalColor = new Color(0.5f, 0.5f, 0.2f, 0.5f);
+                thisColors.highlightedColor = new Color(0.5f, 0.5f, 0.2f, 0.5f);
+                thisColors.pressedColor = new Color(0.5f, 0.5f, 0.2f, 0.5f);
+                thisColors.selectedColor = new Color(0.5f, 0.5f, 0.2f, 0.5f);
+                thisColors.disabledColor = new Color(0.5f, 0.5f, 0.2f, 0.5f);
+                buttons[i].colors = thisColors;
+            }
+            else
+            {
+                print(buttons[i].gameObject.name);
+                var thisColors = buttons[i].colors;
+                thisColors.normalColor = new Color(0, 0, 0, 0); ;
+                thisColors.highlightedColor = new Color(0, 0, 0, 0); ;
+                thisColors.pressedColor = new Color(0, 0, 0, 0); ;
+                thisColors.selectedColor = new Color(0, 0, 0, 0); ;
+                thisColors.disabledColor = new Color(0, 0, 0, 0); ;
+                buttons[i].colors = thisColors;
+            }
+        }
+    }
+
+    public Button[] ConvertToButtonArray(List<GameObject> buttonObjects)
+    {
+        List<Button> resultList = new List<Button>();
+
+        foreach (GameObject buttonObject in buttonObjects)
+        {
+            resultList.Add(buttonObject.GetComponent<Button>());
+        }
+        return resultList.ToArray();
     }
 }
