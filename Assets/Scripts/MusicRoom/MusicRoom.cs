@@ -84,6 +84,8 @@ public class MusicRoom : MonoBehaviour
         if (audioPlayer.musicAudioSource.clip != null)
         {
             audioPlayer.musicAudioSource.Stop();
+            SetTrackTime(0);
+            audioPlayer.musicAudioSource.time = 0;
         }
     }
 
@@ -91,7 +93,8 @@ public class MusicRoom : MonoBehaviour
     {
         if (audioPlayer.musicAudioSource.clip != null)
         {
-            audioPlayer.musicAudioSource.Play();
+            if (!audioPlayer.musicAudioSource.isPlaying)
+                audioPlayer.musicAudioSource.Play();
         }
     }
 
