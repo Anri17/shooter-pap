@@ -27,6 +27,14 @@ public class MusicRoom : MonoBehaviour
         audioPlayer = AudioPlayer.Instance;
         buttonClips = CreateMusicList(musicClips);
 
+        /*
+        foreach (GameObject button in buttonClips)
+        {
+            MusicClip
+            if ()
+        }
+        */
+
         // Initialize MusicProgressBar
         musicProgressBar.maxValue = audioPlayer.musicAudioSource.clip.length;
     }
@@ -74,8 +82,8 @@ public class MusicRoom : MonoBehaviour
         if (audioPlayer.musicAudioSource.clip != clip)
         {
             audioPlayer.PlayMusic(clip);
-            musicProgressBar.maxValue = audioPlayer.musicAudioSource.clip.length; // Set progress bar max value to clip length
-            musicProgressBar.value = 0;
+            StopMusic();
+            PlayTrack();
         }
     }
 
