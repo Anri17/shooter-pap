@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicTitle: Engineering Madness
   musicClip: {fileID: 8300000, guid: 5519b17b4c916fa419bc94c23f467ff1, type: 3}
-  composerComment: 'When I composed this track, I didn''t really know what to think
-    of it. At first it sounds like a playfull track, but it quickly picks up a more
-    serious tune, followed by an epic melody.
+  composerComment: 'Stage 1''s Boss Theme.
+
+
+    When I composed this track, I didn''t really know what to think of it. At first
+    it sounds like a playfull track, but it quickly picks up a more serious tune,
+    followed by an epic melody.
 
 
     I gave this track to Mero because I think it fits with her personality quite nicely,

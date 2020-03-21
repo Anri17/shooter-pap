@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2514a9b06d1b5d48962ab0709d74723, type: 3}
-  m_Name: Strange Tunes
+  m_Name: Strange Tunes Remix
   m_EditorClassIdentifier: 
-  musicTitle: Strange Tunes
+  musicTitle: Strange Tunes Remix
   musicClip: {fileID: 8300000, guid: 472f6abc3f7e0ea429981fe1513fc19c, type: 3}
-  composerComment: The stage 1 theme. I wanted a track that exited the player to play
-    and shoot some enemies, so i tried composing an energetic melody that did just
-    that.
+  composerComment: 'The Stage 1 theme.
+
+
+    I wanted a track that exited the player to play and shoot some enemies, so i tried
+    composing an energetic melody that did just that.'

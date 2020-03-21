@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2514a9b06d1b5d48962ab0709d74723, type: 3}
   m_Name: (Original) Strange Tunes
   m_EditorClassIdentifier: 
-  musicTitle: (Original) Strange Tunes
+  musicTitle: Strange Tunes
   musicClip: {fileID: 8300000, guid: 32660fd46e2b44544983dea2cbbbf218, type: 3}
-  composerComment: 'The stage 1 theme. This is actually the very first composition
-    I ever finished.
+  composerComment: 'The Main Menu theme.
 
 
-    It'' can''t be played anywhere else in the game, so enjoy it.'
+    This is actually the very first composition I ever finished. Not the first one
+    i ever started, but the first one I was satisfied with.'
