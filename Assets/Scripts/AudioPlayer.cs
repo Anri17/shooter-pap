@@ -94,6 +94,7 @@ public class AudioPlayer : MonoBehaviour
     {
         musicAudioSource.clip = musicFile;
         musicAudioSource.Play();
+        musicAudioSource.time = 0;
     }
 
     public void StopMusic()
