@@ -23,7 +23,6 @@ public class MusicRoom : MonoBehaviour
 
     private void Start()
     {
-        composerComment.text = "";
         audioPlayer = AudioPlayer.Instance;
         buttonClips = CreateMusicList(musicClips);
 
@@ -69,6 +68,7 @@ public class MusicRoom : MonoBehaviour
     {
         PlayMusic(clip.musicClip);
         composerComment.text = clip.composerComment;
+        
         SetActiveMusicButton();
     }
 
@@ -77,6 +77,7 @@ public class MusicRoom : MonoBehaviour
         if (audioPlayer.musicAudioSource.clip != clip)
         {
             audioPlayer.PlayMusic(clip);
+            musicProgressBar.maxValue = audioPlayer.musicAudioSource.clip.length;
             StopMusic();
             PlayTrack();
         }
