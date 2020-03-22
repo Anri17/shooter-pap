@@ -70,6 +70,16 @@ public class AudioPlayer : MonoBehaviour
 
     public void InitMusicVolumeLevel()
     {
+        // Start player prefs for first time
+        if (!PlayerPrefs.HasKey(MASTER_VOLUME_LEVEL))
+            MasterVolumeLevel = 0.25f;
+
+        if (!PlayerPrefs.HasKey(MUSIC_VOLUME_LEVEL))
+            MusicVolumeLevel = 0.5f;
+
+        if (!PlayerPrefs.HasKey(EFFECTS_VOLUME_LEVEL))
+            EffectsVolumeLevel = 0.25f;
+
         mixer.SetFloat("MasterVolume", Mathf.Log10(MasterVolumeLevel) * 20);
         mixer.SetFloat("MusicVolume", Mathf.Log10(MusicVolumeLevel) * 20);
         mixer.SetFloat("EffectsVolume", Mathf.Log10(EffectsVolumeLevel) * 20);
