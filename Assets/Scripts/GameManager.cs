@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour
     public GameObject spawnedPlayer;
     public GameObject spawnedBoss;
 
+    [HideInInspector] public int storedPlayerLives;
+    [HideInInspector] public float storedPlayerPowerLevel;
+    [HideInInspector] public int storedPlayerBombs;
+
     public long Score { get; set; }
 
     public AudioClip[] musicClips;

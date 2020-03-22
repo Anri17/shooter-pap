@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    public GameObject _startFlag;
     public GameObject playerSpawnPoint;
     public AudioClip stageMusicTheme;
     public AudioClip bossMusicTheme;
@@ -11,6 +13,7 @@ public class LevelManager : MonoBehaviour
     Player player;
     GameManager gameManager;
     AudioPlayer musicPlayer;
+    GameObject startFlag;
 
     void Awake()
     {
@@ -25,6 +28,11 @@ public class LevelManager : MonoBehaviour
         musicPlayer.PlayMusic(stageMusicTheme);
         SpawnPlayer(playerSpawnPoint.transform);
         player = gameManager.spawnedPlayer.GetComponent<Player>();
+
+        if (SceneManager.GetActiveScene().name != "Level1")
+            GetBackupPlayerData();
+
+        startFlag = Instantiate(_startFlag);
     }
 
     public void SpawnPlayer(Transform position)
@@ -37,6 +45,13 @@ public class LevelManager : MonoBehaviour
         {
             player.SpawnPlayer(playerSpawnPoint.transform.position);
         }
+    }
+
+    public void GetBackupPlayerData()
+    {
+        player.Lives = gameManager.storedPlayerLives;
+        player.PowerLevel = gameManager.storedPlayerPowerLevel;
+        player.Bombs = gameManager.storedPlayerBombs;
     }
 
     public static void ClearBullets()

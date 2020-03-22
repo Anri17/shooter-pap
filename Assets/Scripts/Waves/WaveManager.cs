@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
+    [SerializeField] bool debugMode = false;
+
     [SerializeField] float startDelay = 2f;
     [SerializeField] EnemyWave[] waves;
     [SerializeField] BossWave midBoss;
@@ -58,9 +60,14 @@ public class WaveManager : MonoBehaviour
                     Debug.Log("Unloading Tutorial");
                     SceneManager.LoadScene(0);
                 }
+                else if (Application.CanStreamedLevelBeLoaded(SceneManager.GetActiveScene().buildIndex + 1))
+                {
+                    Debug.Log("Unloading " + SceneManager.GetActiveScene().name);
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
                 else
                 {
-                    Debug.Log("Unloading Level 1");
+                    Debug.Log("Unloading " + SceneManager.GetActiveScene().name);
                     SceneManager.LoadScene(0);
                 }
             }
@@ -109,6 +116,11 @@ public class WaveManager : MonoBehaviour
                 bossScreen.SetActive(false);
                 yield return new WaitForSeconds(midBoss.EndDelay);
             }
+            if (debugMode)
+            {
+                StopCoroutine("PlayLevel");
+                EndLevel();
+            }
         }
 
         Debug.Log("Preparing for Boss...");
@@ -126,8 +138,6 @@ public class WaveManager : MonoBehaviour
         dialogueManager.StartDialogue(dialogue2);
         yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
 
-
-        // yield return new WaitForSeconds(endBoss.EndDelay);
 
 
 
@@ -161,6 +171,15 @@ public class WaveManager : MonoBehaviour
         endScreenFinalScore.text = finalScore.ToString("000,000,000,000");
 
         GameManager.Instance.Score = finalScore;
+
+        SetBackupPlayerData();
+    }
+
+    void SetBackupPlayerData()
+    {
+        GameManager.Instance.storedPlayerLives = GameManager.Instance.spawnedPlayer.GetComponent<Player>().Lives;
+        GameManager.Instance.storedPlayerPowerLevel = GameManager.Instance.spawnedPlayer.GetComponent<Player>().PowerLevel;
+        GameManager.Instance.storedPlayerBombs = GameManager.Instance.spawnedPlayer.GetComponent<Player>().Bombs;
     }
 
     IEnumerator GameOver()
