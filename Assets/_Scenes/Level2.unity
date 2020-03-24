@@ -646,7 +646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -400.99997, y: -0.00048828}
+  m_AnchoredPosition: {x: -401, y: -0.00048828}
   m_SizeDelta: {x: 401, y: 600}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &195689384
@@ -1028,6 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e383d5cbe4d53d540891088bef4b6e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   startDelay: 6
   waves:
   - {fileID: 11400000, guid: bb03421ae02ff724c852f048aeb77c9a, type: 2}
@@ -4905,7 +4906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a9218babcb9344b81bee99357ea01b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startFlag: {fileID: 4895533912131687181, guid: 39820d08525259a409a9bd3115ddf2b9,
+  _startFlag: {fileID: 4895533912131687181, guid: 5fe2d243a1392d74f8c119a57821ded4,
     type: 3}
   playerSpawnPoint: {fileID: 1755139699}
   stageMusicTheme: {fileID: 8300000, guid: 472f6abc3f7e0ea429981fe1513fc19c, type: 3}
@@ -6426,7 +6427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 400.99997, y: 0}
+  m_AnchoredPosition: {x: 401, y: 0}
   m_SizeDelta: {x: 401, y: 600}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1736439204
