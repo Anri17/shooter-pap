@@ -3308,7 +3308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659842445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -24}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1758245926}
@@ -9606,7 +9606,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 1
-  m_Color: {r: 0.1745283, g: 0.7382484, b: 1, a: 1}
+  m_Color: {r: 0.41037738, g: 0.76514536, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -10125,8 +10125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aea543afbd196b4dbae30fec8ba4242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 2
-  endPosTransform: {x: 0, y: 0, z: -200}
+  scrollSpeed: 10
+  endPosTransform: {x: 0, y: 0, z: -180}
 --- !u!1 &1824370401
 GameObject:
   m_ObjectHideFlags: 0
