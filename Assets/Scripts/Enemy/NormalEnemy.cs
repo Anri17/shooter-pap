@@ -18,7 +18,12 @@ public class NormalEnemy : Enemy
     [SerializeField] int lifeItemsToDrop = 0;
     [SerializeField] int bombItemsToDrop = 0;
 
-    public override float Health { get; set; }
+    public override float Health
+    {
+        get;
+        set;
+    }
+
     public override GameObject Shot { get; set; }
     public override List<Transform> Tragectory { get; set; }
     public override int ScoreWorth { get; set; }

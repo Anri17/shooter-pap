@@ -24,6 +24,14 @@ public class MainMenu : MonoBehaviour
         DisplayMainMenu();
     }
 
+    private void Update()
+    {
+        // Load test scene
+        if (Input.GetKeyDown(KeyCode.Minus))
+        {
+            SceneManager.LoadScene("_Tests");
+        }
+    }
     public void HideAll()
     {
         mainMenu.SetActive(false);

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0474876b57e247a409830388ca31acce, type: 3}
   m_Name: L1EBStage7
   m_EditorClassIdentifier: 
-  scoreWorth: 100000
-  health: 400
-  deathTimer: 60
+  scoreWorth: 1000000
+  health: 800
+  deathTimer: 30
   barrage: {fileID: 8532108549334091280, guid: 5170578d6dcde114d8fd5fa91794af7b, type: 3}
-  randomMovement: 1
-  path: {fileID: 6545029720514851592, guid: e67f772bf0d736e4d9c0523ed5a7003b, type: 3}
-  pathSpeed: 0
+  randomMovement: 0
+  path: {fileID: 6545029720514851592, guid: 35dcfe4eae5f9f74799b0bb2f5e53bc1, type: 3}
+  pathSpeed: 0.2
   powerItemsToDrop: 2
   bigPowerItemsToDrop: 1
   scoreItemsToDrop: 8

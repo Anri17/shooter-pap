@@ -32,7 +32,10 @@ public class LevelManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "Level1")
             GetBackupPlayerData();
 
-        startFlag = Instantiate(_startFlag);
+        if (_startFlag != null)
+        {
+            startFlag = Instantiate(_startFlag);
+        }
     }
 
     public void SpawnPlayer(Transform position)
