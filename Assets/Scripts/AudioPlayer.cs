@@ -103,8 +103,8 @@ public class AudioPlayer : MonoBehaviour
     public void PlayMusic(AudioClip musicFile)
     {
         musicAudioSource.clip = musicFile;
-        musicAudioSource.Play();
         musicAudioSource.time = 0;
+        musicAudioSource.Play();
     }
 
     public void StopMusic()

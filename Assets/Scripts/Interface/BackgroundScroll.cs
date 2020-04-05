@@ -16,7 +16,6 @@ public class BackgroundScroll : MonoBehaviour
         startPos = transform.localPosition; // the position where the object starts
         endPos = endPosTransform; // the position where the object should end
         max = Mathf.Abs(endPos.z - startPos.z); // the maximum it can move
-        print(max);
     }
 
     void Update()

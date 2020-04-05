@@ -13,7 +13,10 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject optionsMenu;
     [SerializeField] GameObject creditsMenu;
     [SerializeField] GameObject musicRoom;
+    [SerializeField] GameObject manualMenu;
     [SerializeField] AudioClip menuMusicTheme;
+
+    [SerializeField] GameObject[] menus;
 
     private void Start()
     {
@@ -21,7 +24,10 @@ public class MainMenu : MonoBehaviour
         musicPlayer = AudioPlayer.Instance;
         gameManager.ResetData();
         musicPlayer.PlayMusic(menuMusicTheme);
-        DisplayMainMenu();
+        HideAllMenus();
+        foreach (GameObject menu in menus)
+            if (menu.name.Equals("MainMenu"))
+                menu.SetActive(true);
     }
 
     private void Update()
@@ -32,55 +38,34 @@ public class MainMenu : MonoBehaviour
             SceneManager.LoadScene("_Tests");
         }
     }
-    public void HideAll()
+    public void HideAllMenus()
     {
-        mainMenu.SetActive(false);
-        playMenu.SetActive(false);
-        optionsMenu.SetActive(false);
-        creditsMenu.SetActive(false);
-        musicRoom.SetActive(false);
+        foreach (GameObject menu in menus)
+        {
+            menu.SetActive(false);
+        }
     }
 
-    public void DisplayMainMenu()
+    // display the chosen menu
+    public void DisplayMenu(GameObject menu)
     {
-        HideAll();
-        mainMenu.SetActive(true);
+        HideAllMenus();
+        menu.SetActive(true);
     }
 
-    public void DisplayPlayMenu()
-    {
-        HideAll();
-        playMenu.SetActive(true);
-    }
-
-    public void DisplayOptionsMenu()
-    {
-        HideAll();
-        optionsMenu.SetActive(true);
-    }
-
-    public void DisplayMusicRoom()
-    {
-        HideAll();
-        musicRoom.SetActive(true);
-    }
-
-    public void DisplayCreditsMenu()
-    {
-        HideAll();
-        creditsMenu.SetActive(true);
-    }
-
+    // ends the program
     public void ExitApplication()
     {
         Application.Quit();
     }
 
+    // starts game
     public void StartMainLevel()
     {
         gameManager.LoadScene(2);
     }
 
+    // starts tutorial
     public void StartTutorialLevel()
     {
         gameManager.LoadScene(1);
