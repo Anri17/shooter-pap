@@ -1,0 +1,475 @@
+fileFormatVersion: 2
+guid: 991fda267fdb3d841bf35d40527ab604
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6080769866795931818
+    second: PlayStopPause_0
+  - first:
+      213: 8921121655728717969
+    second: PlayStopPause_1
+  - first:
+      213: -7594492877530578606
+    second: PlayStopPause_2
+  - first:
+      213: -3256137497083351951
+    second: PlayStopPause_3
+  - first:
+      213: 7259672313170440352
+    second: PlayStopPause_4
+  - first:
+      213: 4940926438606614690
+    second: PlayStopPause_5
+  - first:
+      213: -2472015055872080682
+    second: PlayStopPause_6
+  - first:
+      213: 67276052864883428
+    second: PlayStopPause_7
+  - first:
+      213: -9211631470242412647
+    second: PlayStopPause_8
+  - first:
+      213: 1324217496996231892
+    second: PlayStopPause_9
+  - first:
+      213: -7551875472454835468
+    second: PlayStopPause_10
+  - first:
+      213: 8681986910144546827
+    second: PlayStopPause_11
+  - first:
+      213: -6728616986933086678
+    second: PlayStopPause_12
+  - first:
+      213: 1431803691093646276
+    second: PlayStopPause_13
+  - first:
+      213: -10196036810029996
+    second: PlayStopPause_14
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 2500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlayStopPause_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2041.3333
+        width: 1059.8
+        height: 1020.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40e6699188b3db94abee35b10e0036e5
+      internalID: -6080769866795931818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStopPause_1
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 2041.3333
+        width: 1059.8
+        height: 1020.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15071ba8f6751bc40a59b804e2c7dcf7
+      internalID: 8921121655728717969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStopPause_2
+      rect:
+        serializedVersion: 2
+        x: 2118
+        y: 2041.3333
+        width: 1059.8
+        height: 1020.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ae7d6bd8ccebf4b8883afc7de33145
+      internalID: -7594492877530578606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStopPause_3
+      rect:
+        serializedVersion: 2
+        x: 3177
+        y: 2041.3333
+        width: 1059.8
+        height: 1020.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3584fb9830faf428d02d646fb47331
+      internalID: -3256137497083351951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStopPause_4
+      rect:
+        serializedVersion: 2
+        x: 4236
+        y: 2041.3333
+        width: 1059.8
+        height: 1020.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a98db008c717ff348b66213bc031fc7d
+      internalID: 7259672313170440352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStopPause_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1021.3333
+        width: 1059.8
+        height: 1020.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a04e7cd0224324691bd8178d1752f9
+      internalID: 4940926438606614690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStopPause_6
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 1021.3333
+        width: 1059.8
+        height: 1020.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45b82449e1d9fb94c9cc730ca3616d54
+      internalID: -2472015055872080682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStopPause_7
+      rect:
+        serializedVersion: 2
+        x: 2118
+        y: 1021.3333
+        width: 1059.8
+        height: 1020.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59eb47afd49b8a34c8f012bb0c132169
+      internalID: 67276052864883428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStopPause_8
+      rect:
+        serializedVersion: 2
+        x: 3177
+        y: 1021.3333
+        width: 1059.8
+        height: 1020.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49579f55a946dba40abcd00a4dc4eb31
+      internalID: -9211631470242412647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStopPause_9
+      rect:
+        serializedVersion: 2
+        x: 4236
+        y: 1021.3333
+        width: 1059.8
+        height: 1020.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bfec17b3c0486f4f933bc8d12055e3e
+      internalID: 1324217496996231892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStopPause_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.333313
+        width: 1059.8
+        height: 1020.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6887c81103759c4bb418cdc6b79cb2c
+      internalID: -7551875472454835468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStopPause_11
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 1.333313
+        width: 1059.8
+        height: 1020.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a6e5036b75ed3d4f949700014111ec8
+      internalID: 8681986910144546827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStopPause_12
+      rect:
+        serializedVersion: 2
+        x: 2118
+        y: 1.333313
+        width: 1059.8
+        height: 1020.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fbbf83c110cba2469bbd49bd1addec9
+      internalID: -6728616986933086678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStopPause_13
+      rect:
+        serializedVersion: 2
+        x: 3177
+        y: 1.333313
+        width: 1059.8
+        height: 1020.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60b8a84b5314bb049a7c7a09f56094e5
+      internalID: 1431803691093646276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStopPause_14
+      rect:
+        serializedVersion: 2
+        x: 4236
+        y: 1.333313
+        width: 1059.8
+        height: 1020.6667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 247db5cf6a7e54544be715092c1bdc7b
+      internalID: -10196036810029996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0474876b57e247a409830388ca31acce, type: 3}
   m_Name: TutorialBossStage1
   m_EditorClassIdentifier: 
+  scoreWorth: 100000
   health: 200
   deathTimer: 30
   barrage: {fileID: 4100146615351248587, guid: 1ce11a341cd441140ab416071b7b91ca, type: 3}
+  randomMovement: 0
   path: {fileID: 6545029720514851592, guid: 5f05972a7a5c64842bdf5b5089f50020, type: 3}
-  pathSpeed: 0.6
+  pathSpeed: 0.25
   powerItemsToDrop: 2
   bigPowerItemsToDrop: 1
   scoreItemsToDrop: 8
+  lifeItemsToDrop: 0
+  bombItemsToDrop: 0
