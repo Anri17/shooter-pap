@@ -72,9 +72,9 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        dialogueScreen.SetActive(false);
         nameText.text = "";
         dialogueText.text = "";
+        dialogueScreen.SetActive(false);
         dialogueEnded = true;
     }
 
@@ -102,5 +102,4 @@ public class DialogueManager : MonoBehaviour
         yield return new WaitForSeconds(secondsToWait);
         funcToExecute();
     }
-
 }

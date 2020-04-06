@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc6072d3528b10941ac8501f591156d2, type: 3}
+  m_Name: TutorialDialogue
+  m_EditorClassIdentifier: 
+  DialogueMessages:
+  - {fileID: 11400000, guid: 5e1151b7078e1d0468ec527a772fd5a5, type: 2}
+  - {fileID: 11400000, guid: faa6bb95a7e75cd4bb8487a0c4a7ce23, type: 2}
+  - {fileID: 11400000, guid: 06a4979227544c14fa1264c90193a6ec, type: 2}
+  - {fileID: 11400000, guid: 92c8be88fb68f594eb165cb11aee3568, type: 2}
+  - {fileID: 11400000, guid: 5bd0457edeed8f447b5eaab6b2ff6840, type: 2}
+  - {fileID: 11400000, guid: 80e47b5d96bd71e44a99fa49528e2625, type: 2}
+  - {fileID: 11400000, guid: 126bb1d82b56a9744b0257d992fda574, type: 2}
+  - {fileID: 11400000, guid: 0ee6de77086b63d498b87807d3551355, type: 2}
