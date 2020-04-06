@@ -35,7 +35,8 @@ public class MainMenu : MonoBehaviour
         // Load test scene
         if (Input.GetKeyDown(KeyCode.Minus))
         {
-            SceneManager.LoadScene("_Tests");
+            if ((Application.CanStreamedLevelBeLoaded("_Tests")))
+                SceneManager.LoadScene("_Tests");
         }
     }
     public void HideAllMenus()
