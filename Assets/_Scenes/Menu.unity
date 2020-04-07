@@ -10767,7 +10767,7 @@ MonoBehaviour:
 
 
 
-    Life Item: Increaves number of Lives'
+    Life Item: Increases number of Lives'
 --- !u!222 &1917875499
 CanvasRenderer:
   m_ObjectHideFlags: 0
