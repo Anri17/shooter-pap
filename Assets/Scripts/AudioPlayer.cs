@@ -11,6 +11,7 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioSource hitAudioSource;
     [SerializeField] AudioSource killAudioSource;
     [SerializeField] AudioSource deathAudioSource;
+    [SerializeField] AudioSource shootAudioSource;
     [SerializeField] AudioMixer mixer;
 
     public const string MASTER_VOLUME_LEVEL = "MasterVolumeLevel";
@@ -98,6 +99,11 @@ public class AudioPlayer : MonoBehaviour
     public void PlayDeathSound()
     {
         deathAudioSource.Play();
+    }
+
+    public void PlayShootSound()
+    {
+        shootAudioSource.Play();
     }
 
     public void PlayMusic(AudioClip musicFile)
