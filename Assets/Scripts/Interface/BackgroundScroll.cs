@@ -21,7 +21,7 @@ public class BackgroundScroll : MonoBehaviour
     void Update()
     {
         float newPos = Mathf.Repeat(Time.time * scrollSpeed, max);
-        transform.localPosition = startPos + Vector3.forward * -newPos;
+        transform.localPosition = startPos + Vector3.forward * newPos;
 
 
     }
