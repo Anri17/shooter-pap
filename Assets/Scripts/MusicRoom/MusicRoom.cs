@@ -76,7 +76,7 @@ public class MusicRoom : MonoBehaviour
     {
         if (audioPlayer.musicAudioSource.clip != clip)
         {
-            audioPlayer.PlayMusic(clip);
+            audioPlayer.PlayMusic(clip, 0);
             musicProgressBar.maxValue = audioPlayer.musicAudioSource.clip.length;
             StopMusic();
             PlayTrack();

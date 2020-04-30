@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
-  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientEquatorColor: {r: 0.12904947, g: 0.16482732, b: 0.18867922, a: 1}
+  m_AmbientGroundColor: {r: 0.0754717, g: 0.07108105, b: 0.06229975, a: 1}
   m_AmbientIntensity: 8
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -4782,7 +4782,9 @@ MonoBehaviour:
     type: 3}
   playerSpawnPoint: {fileID: 1755139699}
   stageMusicTheme: {fileID: 8300000, guid: 472f6abc3f7e0ea429981fe1513fc19c, type: 3}
+  stageMusicThemeLoopTime: 0
   bossMusicTheme: {fileID: 8300000, guid: 5519b17b4c916fa419bc94c23f467ff1, type: 3}
+  bossMusicThemeLoopTime: 16008
 --- !u!1 &1281425555
 GameObject:
   m_ObjectHideFlags: 0
@@ -6425,7 +6427,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 1
-  m_Color: {r: 0.41037738, g: 0.76514536, b: 1, a: 1}
+  m_Color: {r: 0.30464578, g: 0.3962264, b: 0.38605076, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30

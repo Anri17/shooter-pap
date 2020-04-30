@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
         gameManager = GameManager.Instance;
         musicPlayer = AudioPlayer.Instance;
         gameManager.ResetData();
-        musicPlayer.PlayMusic(menuMusicTheme);
+        musicPlayer.PlayMusic(menuMusicTheme, 0);
         HideAllMenus();
         foreach (GameObject menu in menus)
             if (menu.name.Equals("MainMenu"))
@@ -61,9 +61,9 @@ public class MainMenu : MonoBehaviour
     }
 
     // starts game
-    public void StartMainLevel()
+    public void StartLevel(int level)
     {
-        gameManager.LoadScene(2);
+        gameManager.LoadScene(level);
     }
 
     // starts tutorial

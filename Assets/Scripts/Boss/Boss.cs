@@ -185,8 +185,14 @@ public class Boss : MonoBehaviour
     {
         while (transform.position != endPos)
         {
-            Debug.Log("Boss Is Lerping");
-            transform.position = Vector3.Lerp(transform.position, endPos, timeToTake * Time.deltaTime * 4f);
+            Vector3 currentPos = transform.position;
+            float t = 0f;
+            while (t < 1)
+            {
+                t += Time.deltaTime / timeToTake;
+                transform.position = Vector3.Lerp(currentPos, endPos, t);
+                yield return null;
+            }
             yield return null;
         }
         StartCoroutine(WaitForSeconds(() => StartCoroutine(LerpMoveBoss(GetRandomPoint(), 1)), 2));

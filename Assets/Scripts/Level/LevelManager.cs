@@ -8,7 +8,9 @@ public class LevelManager : MonoBehaviour
     public GameObject _startFlag;
     public GameObject playerSpawnPoint;
     public AudioClip stageMusicTheme;
+    public int stageMusicThemeLoopTime = 0;
     public AudioClip bossMusicTheme;
+    public int bossMusicThemeLoopTime = 0;
 
     Player player;
     GameManager gameManager;
@@ -25,7 +27,7 @@ public class LevelManager : MonoBehaviour
     {
         Time.timeScale = 1;
         GameManager.LockCursor();
-        musicPlayer.PlayMusic(stageMusicTheme);
+        musicPlayer.PlayMusic(stageMusicTheme, stageMusicThemeLoopTime);
         SpawnPlayer(playerSpawnPoint.transform);
         player = gameManager.spawnedPlayer.GetComponent<Player>();
 
@@ -78,7 +80,7 @@ public class LevelManager : MonoBehaviour
         if (bossMusicTheme != null)
         {
             musicPlayer.StopMusic();
-            StartCoroutine(WaitSeconds(() => musicPlayer.PlayMusic(bossMusicTheme),  waitTime));
+            StartCoroutine(WaitSeconds(() => musicPlayer.PlayMusic(bossMusicTheme, bossMusicThemeLoopTime),  waitTime));
         }
     }
 
