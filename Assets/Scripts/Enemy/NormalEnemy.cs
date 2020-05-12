@@ -67,7 +67,7 @@ public class NormalEnemy : Enemy
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag.Equals("PlayerBullet") || collision.tag.Equals("PlayerLazer"))
+        if (collision.CompareTag("PlayerBullet") || collision.CompareTag("PlayerLazer"))
         {
             Health -= collision.GetComponent<PlayerBullet>().Damage;
             gameManager.Score += 40;
@@ -75,17 +75,23 @@ public class NormalEnemy : Enemy
             AudioPlayer.Instance.PlayHitSound();
         }
 
-        if (collision.tag.Equals("PlayArea") && shotInstance == null)
+        if (collision.CompareTag("PlayArea") && shotInstance == null)
         {
             StartCoroutine(ShootCoroutine(shootDelay));
+            Debug.Log("Hello!?");
+        }
+        else
+        {
+            Debug.Log("something wrong is not right");
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag.Equals("PlayArea") && shotInstance != null)
+        if (collision.CompareTag("PlayArea") && shotInstance != null)
         {
             Destroy(shotInstance);
+            Debug.Log("Destroy?");
         }
     }
 
@@ -124,6 +130,6 @@ public class NormalEnemy : Enemy
     public override IEnumerator ShootCoroutine(float shootDelay)
     {
         yield return new WaitForSeconds(shootDelay);
-        shotInstance = Instantiate(Shot, gameObject.transform);
+        shotInstance = Instantiate(_shot, gameObject.transform);
     }
 }

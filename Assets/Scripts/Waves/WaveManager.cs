@@ -27,8 +27,12 @@ public class WaveManager : MonoBehaviour
     [SerializeField] Text endScreenLives;
     [SerializeField] Text endScreenBonus;
     [SerializeField] Text endScreenFinalScore;
-    [SerializeField] DialogueConversation dialogue;
-    [SerializeField] DialogueConversation dialogue2;
+
+    [SerializeField] DialogueConversation midBossDialogue1;
+    [SerializeField] DialogueConversation midBossDialogue2;
+
+    [SerializeField] DialogueConversation mainBossDialogue1;
+    [SerializeField] DialogueConversation mainBossDialogue2;
 
     [SerializeField] bool isTutorialLevel = false;
 
@@ -105,6 +109,11 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(waves[waveIndex].DelayStartTime);
             if (MidbossWaveNumber == (waveIndex + 1))
             {
+                if (midBossDialogue1 != null)
+                {
+                    dialogueManager.StartDialogue(midBossDialogue1);
+                    yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
+                }
                 Debug.Log("Preparing to launch Mid Boss...");
                 LevelManager.ClearBullets();
                 LevelManager.ClearEnemies();
@@ -115,6 +124,11 @@ public class WaveManager : MonoBehaviour
                 yield return new WaitUntil(() => spawnedBoss == null);
                 bossScreen.SetActive(false);
                 yield return new WaitForSeconds(midBoss.EndDelay);
+                if (midBossDialogue2 != null)
+                {
+                    dialogueManager.StartDialogue(midBossDialogue2);
+                    yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
+                }
             }
             if (debugMode)
             {
@@ -128,15 +142,21 @@ public class WaveManager : MonoBehaviour
         LevelManager.ClearEnemies();
         yield return new WaitForSeconds(endBoss.StartDelay);
         Debug.Log("Launching Dialogue...");
-        dialogueManager.StartDialogue(dialogue);
-        yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
+        if (mainBossDialogue1 != null)
+        {
+            dialogueManager.StartDialogue(mainBossDialogue1);
+            yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
+        }
         Debug.Log("Launching Boss...");
         spawnedBoss = Instantiate(endBoss.Boss, bossSpawnPoint, Quaternion.identity, transform);
         bossScreen.SetActive(true);
         yield return new WaitUntil(() => spawnedBoss == null);
         bossScreen.SetActive(false);
-        dialogueManager.StartDialogue(dialogue2);
-        yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
+        if (mainBossDialogue2 != null)
+        {
+            dialogueManager.StartDialogue(mainBossDialogue2);
+            yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
+        }
 
 
 

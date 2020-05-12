@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: (Original) Strange Tunes
   m_EditorClassIdentifier: 
   musicTitle: Strange Tunes
-  musicClip: {fileID: 8300000, guid: 32660fd46e2b44544983dea2cbbbf218, type: 3}
+  musicClip: {fileID: 8300000, guid: 787b508032fa0e946a2b84cd7991260e, type: 3}
   composerComment: 'The Main Menu theme.
 
 

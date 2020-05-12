@@ -7350,7 +7350,7 @@ MonoBehaviour:
   creditsMenu: {fileID: 2085285926}
   musicRoom: {fileID: 1351651489}
   manualMenu: {fileID: 991000589}
-  menuMusicTheme: {fileID: 8300000, guid: 32660fd46e2b44544983dea2cbbbf218, type: 3}
+  menuMusicTheme: {fileID: 8300000, guid: 787b508032fa0e946a2b84cd7991260e, type: 3}
   menus:
   - {fileID: 215191701}
   - {fileID: 1213909214}
@@ -7844,7 +7844,7 @@ MonoBehaviour:
   storedPlayerBombs: 0
   musicClips:
   - {fileID: 8300000, guid: da2115c4fbf9adb44994422ae9861546, type: 3}
-  - {fileID: 8300000, guid: 0bcf999e6c0d53d408b56c8c2f93be86, type: 3}
+  - {fileID: 8300000, guid: 787b508032fa0e946a2b84cd7991260e, type: 3}
   - {fileID: 8300000, guid: 9490f44bf1f7ba045af0915669090d49, type: 3}
 --- !u!4 &1237864228
 Transform:

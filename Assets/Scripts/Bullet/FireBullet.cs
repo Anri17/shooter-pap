@@ -21,7 +21,7 @@ public class FireBullet : MonoBehaviour
 
     void Awake()
     {
-        if (target.tag.Equals("Player"))
+        if (target.CompareTag("Player"))
         {
             targetTag = "Player";
             target = GameObject.FindGameObjectWithTag(targetTag);
