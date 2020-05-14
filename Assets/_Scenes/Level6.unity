@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 22851678}
   m_Layer: 0
   m_Name: DialogueManager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -854,7 +854,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -400.99997, y: -0.00048828}
+  m_AnchoredPosition: {x: -401, y: -0.00048828}
   m_SizeDelta: {x: 401, y: 600}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &195689384
@@ -1379,7 +1379,7 @@ GameObject:
   - component: {fileID: 309498521}
   m_Layer: 0
   m_Name: WaveManager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5280,7 +5280,7 @@ GameObject:
   - component: {fileID: 976927015}
   m_Layer: 0
   m_Name: LevelController
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6512,7 +6512,7 @@ GameObject:
   - component: {fileID: 1261219703}
   m_Layer: 0
   m_Name: LevelManager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9082,7 +9082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 400.99997, y: 0}
+  m_AnchoredPosition: {x: 401, y: 0}
   m_SizeDelta: {x: 401, y: 600}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1736439204

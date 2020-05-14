@@ -1,3 +1,0 @@
-- move the enemy
-- fix the play boundries
-- fix the game UI (make UI responsive)

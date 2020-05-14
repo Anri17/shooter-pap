@@ -20,30 +20,38 @@ public class AudioPlayer : MonoBehaviour
 
     double musicLoopTime;
 
+    SettingsData settings;
+
     public float MasterVolumeLevel
     {
-        get => PlayerPrefs.GetFloat(MASTER_VOLUME_LEVEL);
+        get => SettingsManager.Instance.Settings.masterVolumeLevel;
         set
         {
-            PlayerPrefs.SetFloat(MASTER_VOLUME_LEVEL, value);
+            SettingsData settingsData = settings;
+            settingsData.masterVolumeLevel = value;
+            settings = settingsData;
             mixer.SetFloat("MasterVolume", Mathf.Log10(value) * 20);
         }
     }
     public float MusicVolumeLevel
     {
-        get => PlayerPrefs.GetFloat(MUSIC_VOLUME_LEVEL);
+        get => SettingsManager.Instance.Settings.musicVolumeLevel;
         set
         {
-            PlayerPrefs.SetFloat(MUSIC_VOLUME_LEVEL, value);
+            SettingsData settingsData = settings;
+            settingsData.musicVolumeLevel = value;
+            settings = settingsData;
             mixer.SetFloat("MusicVolume", Mathf.Log10(value) * 20);
         }
     }
     public float EffectsVolumeLevel
     {
-        get => PlayerPrefs.GetFloat(EFFECTS_VOLUME_LEVEL);
+        get => SettingsManager.Instance.Settings.effectsVolumeLevel;
         set
         {
-            PlayerPrefs.SetFloat(EFFECTS_VOLUME_LEVEL, value);
+            SettingsData settingsData = settings;
+            settingsData.effectsVolumeLevel = value;
+            settings = settingsData;
             mixer.SetFloat("EffectsVolume", Mathf.Log10(value) * 20);
         }
     }
@@ -51,27 +59,31 @@ public class AudioPlayer : MonoBehaviour
     void Awake()
     {
         MakeSingleton();
+        settings = SettingsManager.Instance.Settings;
     }
 
     void Start()
     {
-        InitMusicVolumeLevel();
+        InitAudio();
     }
 
     void Update()
     {
-        // print(musicAudioSource.time);
-        // print(musicLoopTime);
         if (musicAudioSource.time >= musicAudioSource.clip.length)
         {
             print("hey");
             print(musicLoopTime);
             musicAudioSource.Stop();
             musicAudioSource.time = (float) musicLoopTime;
-//            musicAudioSource.loop = true;
-//            musicAudioSource.loop = false;
             musicAudioSource.Play();
         }
+    }
+
+    void InitAudio()
+    {
+        MasterVolumeLevel = MasterVolumeLevel;
+        MusicVolumeLevel = MusicVolumeLevel;
+        EffectsVolumeLevel = EffectsVolumeLevel;
     }
 
     private void MakeSingleton()
@@ -85,23 +97,6 @@ public class AudioPlayer : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    public void InitMusicVolumeLevel()
-    {
-        // Start player prefs for first time
-        if (!PlayerPrefs.HasKey(MASTER_VOLUME_LEVEL))
-            MasterVolumeLevel = 0.25f;
-
-        if (!PlayerPrefs.HasKey(MUSIC_VOLUME_LEVEL))
-            MusicVolumeLevel = 0.5f;
-
-        if (!PlayerPrefs.HasKey(EFFECTS_VOLUME_LEVEL))
-            EffectsVolumeLevel = 0.25f;
-
-        mixer.SetFloat("MasterVolume", Mathf.Log10(MasterVolumeLevel) * 20);
-        mixer.SetFloat("MusicVolume", Mathf.Log10(MusicVolumeLevel) * 20);
-        mixer.SetFloat("EffectsVolume", Mathf.Log10(EffectsVolumeLevel) * 20);
     }
 
     public void PlayHitSound()

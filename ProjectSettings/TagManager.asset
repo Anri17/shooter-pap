@@ -20,6 +20,7 @@ TagManager:
   - LifeCollectable
   - BombCollectable
   - Collectable
+  - Manager
   layers:
   - Default
   - TransparentFX
