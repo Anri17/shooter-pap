@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
+    [SerializeField] bool newWaveManager = false;
+
     [SerializeField] bool debugMode = false;
 
     [SerializeField] float startDelay = 2f;
@@ -102,89 +104,125 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator PlayLevel(float waitBeforeStart, L_EnemyWave[] waves, L_BossWave midBoss, L_BossWave endBoss)
     {
-        yield return new WaitForSeconds(waitBeforeStart);
-        for (int waveIndex = 0; waveIndex < waves.Length; waveIndex++)
+        if (!newWaveManager)
         {
-            Debug.Log($"Launching Wave {waveIndex + 1}");
-            spawnedWaves[waveIndex] = Instantiate(waves[waveIndex].Wave, transform);
-            yield return new WaitForSeconds(waves[waveIndex].DelayStartTime);
-            if (MidbossWaveNumber == (waveIndex + 1))
+            yield return new WaitForSeconds(waitBeforeStart);
+            for (int waveIndex = 0; waveIndex < waves.Length; waveIndex++)
             {
-                if (midBossDialogue1 != null)
-                {
-                    dialogueManager.StartDialogue(midBossDialogue1);
-                    yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
-                }
-                Debug.Log("Preparing to launch Mid Boss...");
-                LevelManager.ClearBullets();
-                LevelManager.ClearEnemies();
-                yield return new WaitForSeconds(midBoss.StartDelay);
-                Debug.Log("Launching Boss...");
-                spawnedBoss = Instantiate(midBoss.Boss, bossSpawnPoint, Quaternion.identity, transform);
-                bossScreen.SetActive(true);
-                yield return new WaitUntil(() => spawnedBoss == null);
-                bossScreen.SetActive(false);
-                yield return new WaitForSeconds(midBoss.EndDelay);
-                if (midBossDialogue2 != null)
-                {
-                    dialogueManager.StartDialogue(midBossDialogue2);
-                    yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
-                }
-            }
-            if (debugMode)
-            {
-                StopCoroutine("PlayLevel");
-                EndLevel();
-            }
-        }
 
-        Debug.Log("Preparing for Boss...");
-        LevelManager.ClearBullets();
-        LevelManager.ClearEnemies();
-        yield return new WaitForSeconds(endBoss.StartDelay);
-        Debug.Log("Launching Dialogue...");
-        if (mainBossDialogue1 != null)
-        {
-            dialogueManager.StartDialogue(mainBossDialogue1);
-            yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
-        }
-        Debug.Log("Launching Boss...");
-        spawnedBoss = Instantiate(endBoss.Boss, bossSpawnPoint, Quaternion.identity, transform);
-        bossScreen.SetActive(true);
-        yield return new WaitUntil(() => spawnedBoss == null);
-        bossScreen.SetActive(false);
-        if (mainBossDialogue2 != null)
-        {
-            dialogueManager.StartDialogue(mainBossDialogue2);
-            yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
-        }
-
-
-
-
-        EndLevel();
-        Debug.Log("Press Enter to EndLevel");
-
-        /*
-        for (int waveIndex = 0; waveIndex < newWaves.Length; waveIndex++)
-        {
-            if (newWaves[waveIndex] is EnemyWave)
-            {
                 Debug.Log($"Launching Wave {waveIndex + 1}");
                 spawnedWaves[waveIndex] = Instantiate(waves[waveIndex].Wave, transform);
                 yield return new WaitForSeconds(waves[waveIndex].DelayStartTime);
-                continue;
+                if (MidbossWaveNumber == (waveIndex + 1))
+                {
+                    if (midBossDialogue1 != null)
+                    {
+                        dialogueManager.StartDialogue(midBossDialogue1);
+                        yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
+                    }
+                    Debug.Log("Preparing to launch Mid Boss...");
+                    LevelManager.ClearBullets();
+                    LevelManager.ClearEnemies();
+                    yield return new WaitForSeconds(midBoss.StartDelay);
+                    Debug.Log("Launching Boss...");
+                    spawnedBoss = Instantiate(midBoss.Boss, bossSpawnPoint, Quaternion.identity, transform);
+                    bossScreen.SetActive(true);
+                    yield return new WaitUntil(() => spawnedBoss == null);
+                    bossScreen.SetActive(false);
+                    yield return new WaitForSeconds(midBoss.EndDelay);
+                    if (midBossDialogue2 != null)
+                    {
+                        dialogueManager.StartDialogue(midBossDialogue2);
+                        yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
+                    }
+                }
+                if (debugMode)
+                {
+                    StopCoroutine("PlayLevel");
+                    EndLevel();
+                }
             }
 
-            if (newWaves[waveIndex] is L_BossWave)
+            Debug.Log("Preparing for Boss...");
+            LevelManager.ClearBullets();
+            LevelManager.ClearEnemies();
+            yield return new WaitForSeconds(endBoss.StartDelay);
+            Debug.Log("Launching Dialogue...");
+            if (mainBossDialogue1 != null)
             {
-
-                continue;
+                dialogueManager.StartDialogue(mainBossDialogue1);
+                yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
             }
+            Debug.Log("Launching Boss...");
+            spawnedBoss = Instantiate(endBoss.Boss, bossSpawnPoint, Quaternion.identity, transform);
+            bossScreen.SetActive(true);
+            yield return new WaitUntil(() => spawnedBoss == null);
+            bossScreen.SetActive(false);
+            if (mainBossDialogue2 != null)
+            {
+                dialogueManager.StartDialogue(mainBossDialogue2);
+                yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
+            }
+
+            Debug.Log("Press Enter to EndLevel");
+
+            EndLevel();
         }
-        */
+        else
+        {
+            yield return new WaitForSeconds(startDelay);
 
+            for (int waveIndex = 0; waveIndex < newWaves.Length; waveIndex++)
+            {
+                if (newWaves[waveIndex] is EnemyWave)
+                {
+                    Debug.Log($"Launching enemies at wave {waveIndex + 1}");
 
+                    EnemyWave enemyWave = (EnemyWave)newWaves[waveIndex];
+
+                    spawnedWaves[waveIndex] = Instantiate(enemyWave.Wave, transform);
+                    yield return new WaitForSeconds(enemyWave.DelayStartTime);
+                    continue;
+                }
+
+                if (newWaves[waveIndex] is BossWave)
+                {
+                    Debug.Log($"Launching boss at wave {waveIndex + 1}");
+                    LevelManager.ClearBullets();
+                    LevelManager.ClearEnemies();
+
+                    BossWave bossWave = (BossWave)newWaves[waveIndex];
+
+                    spawnedBoss = Instantiate(bossWave.Boss, transform);
+
+                    if (bossWave.Dialogue1 != null)
+                    {
+                        dialogueManager.StartDialogue(bossWave.Dialogue1);
+                        yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
+                    }
+
+                    spawnedBoss.GetComponent<Boss>().StartBoss();
+
+                    yield return new WaitUntil(() => spawnedBoss == null);
+
+                    LevelManager.ClearBullets();
+                    LevelManager.ClearEnemies();
+
+                    if (bossWave.Dialogue2 != null)
+                    {
+                        dialogueManager.StartDialogue(bossWave.Dialogue2);
+                        yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
+                    }
+
+                    continue;
+                }
+            }
+
+            Debug.Log($"Stage Ended");
+            LevelManager.ClearBullets();
+            LevelManager.ClearEnemies();
+            EndLevel();
+        }
     }
 
 

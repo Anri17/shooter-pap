@@ -6,12 +6,11 @@ using UnityEngine.UI;
 
 public class L_Boss : MonoBehaviour
 {
-    public Vector3 defaultPosition = new Vector3(-3.81f, 5.97f, 0);
-    public BossStage[] stages;
+    public L_BossStage[] stages;
     int stageIndex = 0;
     [SerializeField] ParticleSystem deathParticles;
 
-    BossStage currentStage;
+    L_BossStage currentStage;
     GameObject currentBarrage;
     float _currentMaxHealth;
     float _currentHealth;
@@ -41,7 +40,7 @@ public class L_Boss : MonoBehaviour
     void Start()
     {
         StageCount = stages.Length - 1;
-        StartCoroutine(MoveToPosition(defaultPosition, 1f, 2f));
+        StartCoroutine(MoveToPosition(GameManager.DEFAULT_BOSS_POSITION, 1f, 2f));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -75,7 +74,7 @@ public class L_Boss : MonoBehaviour
         {
             bezierMove.StopMovement();
             DestroyCurrentStage();
-            StartCoroutine(MoveToPosition(defaultPosition, 1f, 2f));
+            StartCoroutine(MoveToPosition(GameManager.DEFAULT_BOSS_POSITION, 1f, 2f));
         }
         else
         {
@@ -132,7 +131,7 @@ public class L_Boss : MonoBehaviour
 
     private void UnpackPath(Transform path)
     {
-        pathTransform = Instantiate(path, defaultPosition, Quaternion.identity);
+        pathTransform = Instantiate(path, GameManager.DEFAULT_BOSS_POSITION, Quaternion.identity);
         bezierMove.ResetValues(currentPathSpeed);
         bezierMove.UnpackPath(pathTransform);
     }
@@ -181,6 +180,7 @@ public class L_Boss : MonoBehaviour
         return new Vector3(randX, randY, 0);
     }
 
+    
     IEnumerator LerpMoveBoss(Vector3 endPos, float timeToTake)
     {
         while (transform.position != endPos)

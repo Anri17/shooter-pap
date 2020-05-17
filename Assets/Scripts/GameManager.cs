@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     readonly public static Vector3 GAME_FIELD_BOTTOM_LEFT = new Vector3(-8.123814f, -9.333339f, 0);
     readonly public static Vector3 GAME_FIELD_BOTTOM_RIGHT = new Vector3(8.123814f, -9.333339f, 0);
     readonly public static Vector3 GAME_FIELD_CENTER = new Vector3(-4.061896f, 0, 0);
+    readonly public static Vector3 DEFAULT_BOSS_POSITION = new Vector3(-4.061896f, 5.5f, 0);
 
     public static GameManager Instance { get; private set; }
 

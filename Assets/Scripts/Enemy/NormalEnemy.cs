@@ -78,11 +78,6 @@ public class NormalEnemy : Enemy
         if (collision.CompareTag("PlayArea") && shotInstance == null)
         {
             StartCoroutine(ShootCoroutine(shootDelay));
-            Debug.Log("Hello!?");
-        }
-        else
-        {
-            Debug.Log("something wrong is not right");
         }
     }
 
@@ -91,7 +86,6 @@ public class NormalEnemy : Enemy
         if (collision.CompareTag("PlayArea") && shotInstance != null)
         {
             Destroy(shotInstance);
-            Debug.Log("Destroy?");
         }
     }
 

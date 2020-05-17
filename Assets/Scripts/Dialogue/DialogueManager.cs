@@ -92,6 +92,11 @@ public class DialogueManager : MonoBehaviour
             {
                 GameObject.Find("LevelManager").GetComponent<LevelManager>().PlayBossMusic(1);
             }
+
+            if (currentMessage.presentBoss)
+            {
+                // GameObject.Find("WaveManager").GetComponent<WaveManager>().spawnedBoss.GetComponent<Boss>().MoveToDefaultPosition();
+            }
         }
         else
         {

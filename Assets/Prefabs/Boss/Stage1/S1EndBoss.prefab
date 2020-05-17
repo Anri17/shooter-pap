@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 350828380049276735}
   - component: {fileID: 4331169707250773477}
   m_Layer: 8
-  m_Name: L1MidBoss
+  m_Name: L1EndBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,9 +75,10 @@ SpriteRenderer:
   m_SortingLayerID: -322871379
   m_SortingLayer: -4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0de57e6167b5e90438fa96c9dcd794a2, type: 3}
+  m_Sprite: {fileID: -6248741079362886434, guid: 4707b8bd3d321834bab1e55712f0eca2,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 4.24, y: 4.88}
@@ -96,7 +97,7 @@ Animator:
   m_GameObject: {fileID: 7945089824047321945}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bd72f859b7ce65d4189531b02b49f252, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7879b1fa581b5fd4fa3ee862b0dd5be5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -122,14 +123,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.88, y: 2.72}
+    oldSize: {x: 4.24, y: 4.88}
     newSize: {x: 4.24, y: 4.88}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.19, y: 2.94}
+  m_Size: {x: 4.641163, y: 5.0524783}
   m_EdgeRadius: 0
 --- !u!50 &7945089824047321926
 Rigidbody2D:
@@ -164,10 +165,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72b1768858a457749916c403fc2c3eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultPosition: {x: -3.81, y: 5.97, z: 0}
   stages:
-  - {fileID: 11400000, guid: e40fdab0e64e4ef46a7f5e55dca0f606, type: 2}
-  - {fileID: 11400000, guid: e75443d56c6909c4ca199f33ed76e8ad, type: 2}
-  - {fileID: 11400000, guid: dbd23fdaec3c1654aa34542218f97897, type: 2}
+  - {fileID: 11400000, guid: b4e2671e06bc72d40a9a6ec616cfbe01, type: 2}
+  - {fileID: 11400000, guid: 6a4ab4fcbec77d646ad2c4e5c73684e6, type: 2}
+  - {fileID: 11400000, guid: 492edb2044e137e48964b8771f5796ad, type: 2}
+  - {fileID: 11400000, guid: 87353296821bf7e499ce6a62ab5d1e36, type: 2}
+  - {fileID: 11400000, guid: ac6e02556fb66e94eb5079cc8482318e, type: 2}
+  - {fileID: 11400000, guid: 9bbb8c631614e7b4b8b46cfd3e2def84, type: 2}
+  - {fileID: 11400000, guid: eac5f0aa6c610204b8d997c81599cf95, type: 2}
   deathParticles: {fileID: 6180124026953083947, guid: 545f7a21eda9c484ab3b694f8ce1d41a,
     type: 3}
 --- !u!114 &350828380049276735

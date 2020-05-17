@@ -64,7 +64,12 @@ public class Boss : MonoBehaviour
         levelManager.SpawnItems(transform.position, powerItemQuantity, bigPowerItemQuantity, scoreItemQuantity, lifeItemQuantity, bombItemQuantity);
     }
 
-    public IEnumerator MoveToPosition(Vector3 destination, float timeToMove, float timeToWait)
+    public void MoveToDefaultPosition()
+    {
+        StartCoroutine(MoveToPositionCoroutine(GameManager.DEFAULT_BOSS_POSITION, 1, 2));
+    }
+
+    public IEnumerator MoveToPositionCoroutine(Vector3 destination, float timeToMove, float timeToWait)
     {
         Vector3 currentPos = transform.position;
         float t = 0f;

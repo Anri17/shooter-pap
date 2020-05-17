@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad2a3a074f7d4c4995ade34abb5c1ab, type: 3}
+  m_Name: New Boss Spell Attack
+  m_EditorClassIdentifier: 
+  scoreWorth: 100000
+  health: 0
+  deathTimer: 0
+  spellAttack: {fileID: 0}
+  powerItemsToDrop: 2
+  bigPowerItemsToDrop: 1
+  scoreItemsToDrop: 8
+  lifeItemsToDrop: 0
+  bombItemsToDrop: 0
