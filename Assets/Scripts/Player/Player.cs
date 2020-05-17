@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -8,6 +9,8 @@ public class Player : MonoBehaviour
     public GameObject[] barrages;
     public GameObject bombBarrage;
     public GameObject sprites;
+
+    [SerializeField] GameObject[] powerOrbsLevels;
 
     [SerializeField] float _powerLevel = 0f;
     [SerializeField] int _lives = 2;
@@ -21,6 +24,8 @@ public class Player : MonoBehaviour
     bool canFire = true;
     GameObject currentBarrage;
     GameObject mainBarrage;
+    GameObject currentPowerLevelOrbs;
+    int currentPowerLevel;
 
     PlayerController playerController;
 
@@ -33,28 +38,47 @@ public class Player : MonoBehaviour
         playerController = GetComponent<PlayerController>();
     }
 
+    void Start()
+    {
+        currentPowerLevel = -1;
+    }
+
     void Update()
     {
-        // shoot barrage
-        if (PowerLevel >= 0.0f && PowerLevel < 1.0f)      // Level 0 Barrage
+        if ((PowerLevel >= 0.0f && PowerLevel < 1.0f) && currentPowerLevel != 0)      // Level 0 Barrage
         {
+            Destroy(currentPowerLevelOrbs);
+            currentPowerLevelOrbs = Instantiate(powerOrbsLevels[0], sprites.transform);
             SetBarrage(barrages[0]);
+            currentPowerLevel = 0;
         }
-        else if (PowerLevel >= 1.0f && PowerLevel < 2.0f) // Level 1 Barrage
+        else if ((PowerLevel >= 1.0f && PowerLevel < 2.0f) && currentPowerLevel != 1) // Level 1 Barrage
         {
+            Destroy(currentPowerLevelOrbs);
+            currentPowerLevelOrbs = Instantiate(powerOrbsLevels[1], sprites.transform);
             SetBarrage(barrages[1]);
+            currentPowerLevel = 1;
         }
-        else if (PowerLevel >= 2.0f && PowerLevel < 3.0f) // Level 2 Barrage
+        else if ((PowerLevel >= 2.0f && PowerLevel < 3.0f) && currentPowerLevel != 2) // Level 2 Barrage
         {
+            Destroy(currentPowerLevelOrbs);
+            currentPowerLevelOrbs = Instantiate(powerOrbsLevels[2], sprites.transform);
             SetBarrage(barrages[2]);
+            currentPowerLevel = 2;
         }
-        else if (PowerLevel >= 3.0f && PowerLevel < 4.0f) // Level 3 Barrage
+        else if ((PowerLevel >= 3.0f && PowerLevel < 4.0f) && currentPowerLevel != 3) // Level 3 Barrage
         {
+            Destroy(currentPowerLevelOrbs);
+            currentPowerLevelOrbs = Instantiate(powerOrbsLevels[3], sprites.transform);
             SetBarrage(barrages[3]);
+            currentPowerLevel = 3;
         }
-        else if (PowerLevel == 4)
+        else if (PowerLevel == 4 && currentPowerLevel != 4)
         {
+            Destroy(currentPowerLevelOrbs);
+            currentPowerLevelOrbs = Instantiate(powerOrbsLevels[4], sprites.transform);
             SetBarrage(barrages[4]);
+            currentPowerLevel = 4;
         }
 
         FireBarrage();
