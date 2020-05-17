@@ -37,6 +37,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueConversation dialogueConversation)
     {
+        dialogueText.text = "";
+        nameText.text = "";
         dialogueEnded = false;
         dialogueScreen.SetActive(true);
         dialogue.Clear();
@@ -97,9 +99,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    IEnumerator WaitSeconds(Action funcToExecute, float secondsToWait)
+    IEnumerator WaitSeconds(Action methodToRun, float secondsToWait)
     {
         yield return new WaitForSeconds(secondsToWait);
-        funcToExecute();
+        methodToRun();
     }
 }

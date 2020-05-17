@@ -28,15 +28,12 @@ public class GameManager : MonoBehaviour
     public GameObject bombItem;
 
     public GameObject spawnedPlayer;
-    public GameObject spawnedBoss;
 
     [HideInInspector] public int storedPlayerLives;
     [HideInInspector] public float storedPlayerPowerLevel;
     [HideInInspector] public int storedPlayerBombs;
 
     public long Score { get; set; }
-
-    public AudioClip[] musicClips;
 
     void Awake()
     {
@@ -84,9 +81,9 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
     }
 
-    private IEnumerator LoadSceneCoroutine(int index)
+    private IEnumerator LoadSceneCoroutine(int sceneIndex)
     {
-        AsyncOperation currentLoadingData = SceneManager.LoadSceneAsync(index);
+        AsyncOperation currentLoadingData = SceneManager.LoadSceneAsync(sceneIndex);
 
         loadingScreen.SetActive(true);
 

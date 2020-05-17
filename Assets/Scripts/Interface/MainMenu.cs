@@ -39,6 +39,7 @@ public class MainMenu : MonoBehaviour
                 SceneManager.LoadScene("_Tests");
         }
     }
+
     public void HideAllMenus()
     {
         foreach (GameObject menu in menus)

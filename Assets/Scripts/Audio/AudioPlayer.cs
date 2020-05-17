@@ -29,7 +29,7 @@ public class AudioPlayer : MonoBehaviour
         {
             SettingsData settingsData = settings;
             settingsData.masterVolumeLevel = value;
-            settings = settingsData;
+            SettingsManager.Instance.SaveSettings(settingsData);
             mixer.SetFloat("MasterVolume", Mathf.Log10(value) * 20);
         }
     }
@@ -40,7 +40,7 @@ public class AudioPlayer : MonoBehaviour
         {
             SettingsData settingsData = settings;
             settingsData.musicVolumeLevel = value;
-            settings = settingsData;
+            SettingsManager.Instance.SaveSettings(settingsData);
             mixer.SetFloat("MusicVolume", Mathf.Log10(value) * 20);
         }
     }
@@ -51,7 +51,7 @@ public class AudioPlayer : MonoBehaviour
         {
             SettingsData settingsData = settings;
             settingsData.effectsVolumeLevel = value;
-            settings = settingsData;
+            SettingsManager.Instance.SaveSettings(settingsData);
             mixer.SetFloat("EffectsVolume", Mathf.Log10(value) * 20);
         }
     }
@@ -59,11 +59,11 @@ public class AudioPlayer : MonoBehaviour
     void Awake()
     {
         MakeSingleton();
-        settings = SettingsManager.Instance.Settings;
     }
 
     void Start()
     {
+        settings = SettingsManager.Instance.Settings;
         InitAudio();
     }
 

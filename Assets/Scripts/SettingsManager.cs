@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -7,7 +8,12 @@ public class SettingsManager : MonoBehaviour
 {
     public static SettingsManager Instance { get; private set; }
 
-    public SettingsData Settings { get => LoadSettings(); set => SaveSettings(value); }
+    public SettingsData Settings { get => LoadSettings();
+        set
+        {
+            SaveSettings(value);
+        }
+    }
 
     void Awake()
     {
@@ -39,6 +45,7 @@ public class SettingsManager : MonoBehaviour
     public void SaveSettings(SettingsData data)
     {
         string json = JsonUtility.ToJson(data);
+        print("Saving...");
         File.WriteAllText($"{Application.persistentDataPath}/settings.json", json);
     }
 

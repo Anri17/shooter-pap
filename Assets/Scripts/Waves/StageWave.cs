@@ -3,9 +3,20 @@ using System.Collections.Generic;
 using System.Xml.Schema;
 using UnityEngine;
 
+public enum WaveType
+{
+    Normal,
+    Boss,
+    Dialogue
+}
+
+[CreateAssetMenu(fileName = "New Wave", menuName = "Stage/Wave")]
 public class StageWave : ScriptableObject
 {
-    private bool _canContinue = false;
+    public bool canContinue = false;
+    public WaveType waveType = WaveType.Normal;
 
-    public bool CanContinue { get => _canContinue; set => _canContinue = value; }
+    public GameObject waveGameObject;
+
+    public float waveTime;
 }

@@ -123,9 +123,9 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    IEnumerator WaitSeconds(Action funcToExecute, float secondsToWait)
+    IEnumerator WaitSeconds(Action methodToRun, float secondsToWait)
     {
         yield return new WaitForSeconds(secondsToWait);
-        funcToExecute();
+        methodToRun();
     }
 }
