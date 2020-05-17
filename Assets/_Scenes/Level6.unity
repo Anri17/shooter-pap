@@ -1401,7 +1401,7 @@ MonoBehaviour:
   waves:
   - {fileID: 11400000, guid: 73f0a6d281b7eea409dd813c433d7fd4, type: 2}
   - {fileID: 11400000, guid: c4f05bf674a872d498ae705f8f0a2b59, type: 2}
-  midBoss: {fileID: 11400000, guid: 63c808d63f6389241b3f9ef164babb51, type: 2}
+  midBoss: {fileID: 11400000, guid: 64f6b77d35791a64487fe168e318dd27, type: 2}
   endBoss: {fileID: 11400000, guid: bef00764b1fd57b4ba2647eca091026e, type: 2}
   bossScreen: {fileID: 1915190981}
   bossHealthBar: {fileID: 2022069768}
@@ -6543,7 +6543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a9218babcb9344b81bee99357ea01b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startFlag: {fileID: 4895533912131687181, guid: 5fe2d243a1392d74f8c119a57821ded4,
+  _startFlag: {fileID: 4895533912131687181, guid: 5f32bb54820900740b2183da26104926,
     type: 3}
   playerSpawnPoint: {fileID: 1755139699}
   stageMusicTheme: {fileID: 8300000, guid: ca2fbdfa92ccb524696f57f61e2b1f67, type: 3}

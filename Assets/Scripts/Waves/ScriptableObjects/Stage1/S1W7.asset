@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 951bf2bfd38122b49ab120f47f7eed3a, type: 3}
-  m_Name: L1W7
+  m_Name: S1W7
   m_EditorClassIdentifier: 
-  wave: {fileID: 6878738742006059136, guid: 3ade6bac4917eb240a1be03600cf7b96, type: 3}
-  delayTime: 3
+  wave: {fileID: 4388611618415114066, guid: daca33e4320101a46b66dbce067da2e3, type: 3}
+  delayTime: 8
