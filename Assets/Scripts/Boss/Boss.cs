@@ -2,22 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
-    public Vector3 defaultPosition = new Vector3(-3.81f, 5.97f, 0);
-    public BossStage[] stages;
     int stageIndex = 0;
-    [SerializeField] ParticleSystem deathParticles;
 
     BossStage currentStage;
-    GameObject currentBarrage;
     float _currentMaxHealth;
     float _currentHealth;
     float _currentDeathTimer;
-    Transform currentPath;
-    float currentPathSpeed;
 
     bool hittable = false;
 
@@ -26,22 +19,16 @@ public class Boss : MonoBehaviour
     public float CurrentHealth { get => _currentHealth; set => _currentHealth = value; }
     public float CurrentDeathTimer { get => _currentDeathTimer; set => _currentDeathTimer = value; }
 
-    BezierMove bezierMove;
-    Transform pathTransform;
     LevelManager levelManager;
-
-    private IEnumerator countDownDeathTimerCoroutine;
 
     void Awake()
     {
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
-        bezierMove = GetComponent<BezierMove>();
     }
 
-    void Start()
+    public void StartBoss()
     {
-        StageCount = stages.Length - 1;
-        StartCoroutine(MoveToPosition(defaultPosition, 1f, 2f));
+        UnpackSpellAttacks();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -65,81 +52,16 @@ public class Boss : MonoBehaviour
         AudioPlayer.Instance.PlayKillSound();
         LevelManager.ClearBullets();
         StopAllCoroutines();
-        PlayDeathParticles(deathParticles);
         DropItems(currentStage.powerItemsToDrop, currentStage.bigPowerItemsToDrop, currentStage.scoreItemsToDrop, currentStage.lifeItemsToDrop, currentStage.bombItemsToDrop);
         hittable = false;
         StageCount--;
         stageIndex++;
         Debug.Log($"Stage index: {stageIndex}");
-        if (stageIndex < stages.Length)
-        {
-            bezierMove.StopMovement();
-            DestroyCurrentStage();
-            StartCoroutine(MoveToPosition(defaultPosition, 1f, 2f));
-        }
-        else
-        {
-            Debug.Log("Boss Defeated");
-            Destroy(gameObject);
-        }
     }
 
     public void DropItems(int powerItemQuantity, int bigPowerItemQuantity, int scoreItemQuantity, int lifeItemQuantity, int bombItemQuantity)
     {
         levelManager.SpawnItems(transform.position, powerItemQuantity, bigPowerItemQuantity, scoreItemQuantity, lifeItemQuantity, bombItemQuantity);
-    }
-
-    public void DestroyCurrentStage()
-    {
-        Destroy(currentBarrage);
-        DestroyCurrentPath();
-    }
-
-    public void DestroyCurrentPath()
-    {
-        if (pathTransform != null)
-            Destroy(pathTransform.gameObject);
-    }
-
-    public void SetStage(int stageIndex)
-    {
-        Debug.Log($"Stages length: {stages.Length}");
-        UnpackStage(stageIndex);
-        if (!currentStage.randomMovement && currentPath != null)
-        {
-            UnpackPath(currentPath);
-            bezierMove.StartMovement();
-        }
-        else
-        {
-            StartCoroutine(WaitForSeconds(() => StartCoroutine(LerpMoveBoss(GetRandomPoint(), 1)), 2));
-        }
-        currentBarrage = Instantiate(currentStage.barrage, transform);
-        hittable = true;
-        StartCoroutine(countDownDeathTimerCoroutine);
-    }
-
-    private void UnpackStage(int stageIndex)
-    {
-        currentStage = stages[stageIndex];
-        CurrentDeathTimer = currentStage.deathTimer;
-        CurrentMaxHealth = currentStage.health;
-        CurrentHealth = currentStage.health;
-        currentPath = currentStage.path;
-        currentPathSpeed = currentStage.pathSpeed;
-        countDownDeathTimerCoroutine = CountDownDeathTimer();
-    }
-
-    private void UnpackPath(Transform path)
-    {
-        pathTransform = Instantiate(path, defaultPosition, Quaternion.identity);
-        bezierMove.ResetValues(currentPathSpeed);
-        bezierMove.UnpackPath(pathTransform);
-    }
-
-    private void PlayDeathParticles(ParticleSystem deathParticles)
-    {
-        Instantiate(deathParticles, transform.position, Quaternion.identity);
     }
 
     public IEnumerator MoveToPosition(Vector3 destination, float timeToMove, float timeToWait)
@@ -154,7 +76,6 @@ public class Boss : MonoBehaviour
         }
         StartCoroutine(FillHealthBar(timeToWait));
         yield return new WaitForSeconds(timeToWait);
-        SetStage(stageIndex);
         StopCoroutine("MoveToPosition");
     }
 
@@ -181,30 +102,6 @@ public class Boss : MonoBehaviour
         return new Vector3(randX, randY, 0);
     }
 
-    IEnumerator LerpMoveBoss(Vector3 endPos, float timeToTake)
-    {
-        while (transform.position != endPos)
-        {
-            Vector3 currentPos = transform.position;
-            float t = 0f;
-            while (t < 1)
-            {
-                t += Time.deltaTime / timeToTake;
-                transform.position = Vector3.Lerp(currentPos, endPos, t);
-                yield return null;
-            }
-            yield return null;
-        }
-        StartCoroutine(WaitForSeconds(() => StartCoroutine(LerpMoveBoss(GetRandomPoint(), 1)), 2));
-    }
-
-    IEnumerator WaitForSeconds(Action methodToRun, float secondsToWait)
-    {
-        Debug.Log("Boss Is Waiting For Function");
-        yield return new WaitForSeconds(secondsToWait);
-        methodToRun();
-    }
-
     IEnumerator FillHealthBar(float timeToTakeToFill)
     {
         CurrentMaxHealth = 100f;
@@ -215,5 +112,10 @@ public class Boss : MonoBehaviour
             CurrentHealth += 1;
             yield return null;
         }
+    }
+
+    private void UnpackSpellAttacks()
+    {
+        throw new NotImplementedException();
     }
 }

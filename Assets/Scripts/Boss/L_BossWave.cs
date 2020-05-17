@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Boss Wave", menuName = "Boss/Wave")]
-public class BossWave : ScriptableObject
+[CreateAssetMenu(fileName = "New Boss Wave", menuName = "Boss/Legacy Wave")]
+public class L_BossWave : ScriptableObject
 {
     [SerializeField] float _startDelay;
     [SerializeField] float _endDelay;

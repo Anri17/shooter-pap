@@ -1401,6 +1401,9 @@ MonoBehaviour:
   waves:
   - {fileID: 11400000, guid: 73f0a6d281b7eea409dd813c433d7fd4, type: 2}
   - {fileID: 11400000, guid: c4f05bf674a872d498ae705f8f0a2b59, type: 2}
+  newWaves:
+  - {fileID: 0}
+  - {fileID: 0}
   midBoss: {fileID: 11400000, guid: 64f6b77d35791a64487fe168e318dd27, type: 2}
   endBoss: {fileID: 11400000, guid: bef00764b1fd57b4ba2647eca091026e, type: 2}
   bossScreen: {fileID: 1915190981}

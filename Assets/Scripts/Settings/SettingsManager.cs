@@ -45,7 +45,6 @@ public class SettingsManager : MonoBehaviour
     public void SaveSettings(SettingsData data)
     {
         string json = JsonUtility.ToJson(data);
-        print("Saving...");
         File.WriteAllText($"{Application.persistentDataPath}/settings.json", json);
     }
 

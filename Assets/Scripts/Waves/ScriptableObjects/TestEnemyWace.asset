@@ -9,6 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df6ece0b5bd41b34b832f77127dd00e8, type: 3}
-  m_Name: card1
+  m_Script: {fileID: 11500000, guid: 619f3d63c0c965049ad58a33185d310a, type: 3}
+  m_Name: TestEnemyWace
   m_EditorClassIdentifier: 
+  canContinue: 0
+  wave: {fileID: 0}
+  delayTime: 0

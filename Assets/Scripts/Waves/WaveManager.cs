@@ -10,9 +10,10 @@ public class WaveManager : MonoBehaviour
     [SerializeField] bool debugMode = false;
 
     [SerializeField] float startDelay = 2f;
-    [SerializeField] EnemyWave[] waves;
-    [SerializeField] BossWave midBoss;
-    [SerializeField] BossWave endBoss;
+    [SerializeField] L_EnemyWave[] waves;
+    [SerializeField] Wave[] newWaves;
+    [SerializeField] L_BossWave midBoss;
+    [SerializeField] L_BossWave endBoss;
     [SerializeField] GameObject bossScreen;
     [SerializeField] public GameObject bossHealthBar;
     [SerializeField] GameObject bossStageCount;
@@ -89,17 +90,17 @@ public class WaveManager : MonoBehaviour
         if (spawnedBoss != null)
         {
             // Update HP Bar
-            bossHealthBar.GetComponent<Slider>().value = spawnedBoss.GetComponent<Boss>().CurrentHealth / spawnedBoss.GetComponent<Boss>().CurrentMaxHealth;
+            bossHealthBar.GetComponent<Slider>().value = spawnedBoss.GetComponent<L_Boss>().CurrentHealth / spawnedBoss.GetComponent<L_Boss>().CurrentMaxHealth;
 
             // Update Current Stage Number
-            bossStageCount.GetComponent<Text>().text = spawnedBoss.GetComponent<Boss>().StageCount.ToString();
+            bossStageCount.GetComponent<Text>().text = spawnedBoss.GetComponent<L_Boss>().StageCount.ToString();
 
             // Update Death Timer
-            bossDeathTimer.GetComponent<Text>().text = spawnedBoss.GetComponent<Boss>().CurrentDeathTimer.ToString();
+            bossDeathTimer.GetComponent<Text>().text = spawnedBoss.GetComponent<L_Boss>().CurrentDeathTimer.ToString();
         }
     }
 
-    IEnumerator PlayLevel(float waitBeforeStart, EnemyWave[] waves, BossWave midBoss, BossWave endBoss)
+    IEnumerator PlayLevel(float waitBeforeStart, L_EnemyWave[] waves, L_BossWave midBoss, L_BossWave endBoss)
     {
         yield return new WaitForSeconds(waitBeforeStart);
         for (int waveIndex = 0; waveIndex < waves.Length; waveIndex++)
@@ -162,11 +163,31 @@ public class WaveManager : MonoBehaviour
 
 
         EndLevel();
-        Debug.Log("Level Ended");
-
-
         Debug.Log("Press Enter to EndLevel");
+
+        /*
+        for (int waveIndex = 0; waveIndex < newWaves.Length; waveIndex++)
+        {
+            if (newWaves[waveIndex] is EnemyWave)
+            {
+                Debug.Log($"Launching Wave {waveIndex + 1}");
+                spawnedWaves[waveIndex] = Instantiate(waves[waveIndex].Wave, transform);
+                yield return new WaitForSeconds(waves[waveIndex].DelayStartTime);
+                continue;
+            }
+
+            if (newWaves[waveIndex] is L_BossWave)
+            {
+
+                continue;
+            }
+        }
+        */
+
+
     }
+
+
 
     void EndLevel()
     {

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Enemy Wave", menuName = "Stage/Enemy Wave")]
-public class EnemyWave : Wave
+[CreateAssetMenu(fileName = "New Enemy Wave", menuName = "Level/Legacy Enemy Wave")]
+public class L_EnemyWave : ScriptableObject
 {
     [SerializeField] GameObject wave;
     [SerializeField] float delayTime;
