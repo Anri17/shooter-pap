@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 7945089824047321946}
   - component: {fileID: 7945089824047321927}
   - component: {fileID: 7945089824047321926}
-  - component: {fileID: 2264121464022660906}
+  - component: {fileID: 4663210795820011032}
   - component: {fileID: 350828380049276735}
   - component: {fileID: 4331169707250773477}
   m_Layer: 8
-  m_Name: L1EndBoss
+  m_Name: S1EndBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2264121464022660906
+--- !u!114 &4663210795820011032
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,20 +162,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7945089824047321945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72b1768858a457749916c403fc2c3eda, type: 3}
+  m_Script: {fileID: 11500000, guid: fa037a5d00c1f474c83134964bd4e661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultPosition: {x: -3.81, y: 5.97, z: 0}
-  stages:
-  - {fileID: 11400000, guid: b4e2671e06bc72d40a9a6ec616cfbe01, type: 2}
-  - {fileID: 11400000, guid: 6a4ab4fcbec77d646ad2c4e5c73684e6, type: 2}
-  - {fileID: 11400000, guid: 492edb2044e137e48964b8771f5796ad, type: 2}
-  - {fileID: 11400000, guid: 87353296821bf7e499ce6a62ab5d1e36, type: 2}
-  - {fileID: 11400000, guid: ac6e02556fb66e94eb5079cc8482318e, type: 2}
-  - {fileID: 11400000, guid: 9bbb8c631614e7b4b8b46cfd3e2def84, type: 2}
-  - {fileID: 11400000, guid: eac5f0aa6c610204b8d997c81599cf95, type: 2}
-  deathParticles: {fileID: 6180124026953083947, guid: 545f7a21eda9c484ab3b694f8ce1d41a,
-    type: 3}
+  spellAttacks:
+  - {fileID: 11400000, guid: 646c10efe0b94bf4b88c4531ee99c15a, type: 2}
+  - {fileID: 11400000, guid: eb0403b978a761b489497f571f4bc195, type: 2}
 --- !u!114 &350828380049276735
 MonoBehaviour:
   m_ObjectHideFlags: 0

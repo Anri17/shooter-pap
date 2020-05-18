@@ -15,6 +15,7 @@ public class L_Boss : MonoBehaviour
     float _currentMaxHealth;
     float _currentHealth;
     float _currentDeathTimer;
+
     Transform currentPath;
     float currentPathSpeed;
 

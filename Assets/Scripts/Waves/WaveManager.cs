@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
+    [SerializeField] BossManager bossManager;
+
     [SerializeField] bool newWaveManager = false;
 
     [SerializeField] bool debugMode = false;
@@ -16,10 +18,6 @@ public class WaveManager : MonoBehaviour
     [SerializeField] Wave[] newWaves;
     [SerializeField] L_BossWave midBoss;
     [SerializeField] L_BossWave endBoss;
-    [SerializeField] GameObject bossScreen;
-    [SerializeField] public GameObject bossHealthBar;
-    [SerializeField] GameObject bossStageCount;
-    [SerializeField] GameObject bossDeathTimer;
     [SerializeField] Vector3 bossSpawnPoint;
     [SerializeField] int MidbossWaveNumber;
 
@@ -57,7 +55,6 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-        UpdateBossHUD();
         if (reachedEnd)
         {
             if (Input.GetKeyDown(KeyCode.Return))
@@ -87,21 +84,6 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    private void UpdateBossHUD()
-    {
-        if (spawnedBoss != null)
-        {
-            // Update HP Bar
-            bossHealthBar.GetComponent<Slider>().value = spawnedBoss.GetComponent<L_Boss>().CurrentHealth / spawnedBoss.GetComponent<L_Boss>().CurrentMaxHealth;
-
-            // Update Current Stage Number
-            bossStageCount.GetComponent<Text>().text = spawnedBoss.GetComponent<L_Boss>().StageCount.ToString();
-
-            // Update Death Timer
-            bossDeathTimer.GetComponent<Text>().text = spawnedBoss.GetComponent<L_Boss>().CurrentDeathTimer.ToString();
-        }
-    }
-
     IEnumerator PlayLevel(float waitBeforeStart, L_EnemyWave[] waves, L_BossWave midBoss, L_BossWave endBoss)
     {
         if (!newWaveManager)
@@ -126,9 +108,9 @@ public class WaveManager : MonoBehaviour
                     yield return new WaitForSeconds(midBoss.StartDelay);
                     Debug.Log("Launching Boss...");
                     spawnedBoss = Instantiate(midBoss.Boss, bossSpawnPoint, Quaternion.identity, transform);
-                    bossScreen.SetActive(true);
+                    bossManager.ActivateBossInterface();
                     yield return new WaitUntil(() => spawnedBoss == null);
-                    bossScreen.SetActive(false);
+                    bossManager.DeactivateBossInterface();
                     yield return new WaitForSeconds(midBoss.EndDelay);
                     if (midBossDialogue2 != null)
                     {
@@ -155,9 +137,9 @@ public class WaveManager : MonoBehaviour
             }
             Debug.Log("Launching Boss...");
             spawnedBoss = Instantiate(endBoss.Boss, bossSpawnPoint, Quaternion.identity, transform);
-            bossScreen.SetActive(true);
+            bossManager.ActivateBossInterface();
             yield return new WaitUntil(() => spawnedBoss == null);
-            bossScreen.SetActive(false);
+            bossManager.DeactivateBossInterface();
             if (mainBossDialogue2 != null)
             {
                 dialogueManager.StartDialogue(mainBossDialogue2);
@@ -170,6 +152,7 @@ public class WaveManager : MonoBehaviour
         }
         else
         {
+            // New Wave Manager
             yield return new WaitForSeconds(startDelay);
 
             for (int waveIndex = 0; waveIndex < newWaves.Length; waveIndex++)
@@ -193,7 +176,7 @@ public class WaveManager : MonoBehaviour
 
                     BossWave bossWave = (BossWave)newWaves[waveIndex];
 
-                    spawnedBoss = Instantiate(bossWave.Boss, transform);
+                    bossManager.spawnedBoss = Instantiate(bossWave.Boss, transform);
 
                     if (bossWave.Dialogue1 != null)
                     {
@@ -201,10 +184,12 @@ public class WaveManager : MonoBehaviour
                         yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
                     }
 
-                    spawnedBoss.GetComponent<Boss>().StartBoss();
+                    bossManager.ActivateBossInterface();
+                    bossManager.spawnedBoss.GetComponent<Boss>().StartBoss();
 
-                    yield return new WaitUntil(() => spawnedBoss == null);
+                    yield return new WaitUntil(() => bossManager.spawnedBoss == null);
 
+                    bossManager.DeactivateBossInterface();
                     LevelManager.ClearBullets();
                     LevelManager.ClearEnemies();
 

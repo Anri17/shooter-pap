@@ -9,6 +9,7 @@ public class SpellAttack : ScriptableObject
     public int scoreWorth = 100000;
     public float health;
     public float deathTimer;
+    [Header("Spell")]
     public GameObject spellAttack;
     [Header("Drop Count")]
     public int powerItems = 2;

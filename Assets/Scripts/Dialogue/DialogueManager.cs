@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour
 
     public bool dialogueEnded = true;
 
+    [SerializeField] BossManager bossManager;
+
     private void Awake()
     {
         dialogueScreen.SetActive(false);
@@ -95,7 +97,7 @@ public class DialogueManager : MonoBehaviour
 
             if (currentMessage.presentBoss)
             {
-                // GameObject.Find("WaveManager").GetComponent<WaveManager>().spawnedBoss.GetComponent<Boss>().MoveToDefaultPosition();
+                bossManager.spawnedBoss.GetComponent<Boss>().MoveToDefaultPosition();
             }
         }
         else

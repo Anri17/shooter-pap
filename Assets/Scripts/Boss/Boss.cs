@@ -5,19 +5,18 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    int stageIndex = 0;
+    int stageAttackIndex = 0;
 
-    BossStage currentStage;
-    float _currentMaxHealth;
-    float _currentHealth;
-    float _currentDeathTimer;
+    public SpellAttack[] spellAttacks;
+    GameObject currentAttack;
+    SpellAttack currentSpellAttack;
 
     bool hittable = false;
 
     public int StageCount { get; set; }
-    public float CurrentMaxHealth { get => _currentMaxHealth; set => _currentMaxHealth = value; }
-    public float CurrentHealth { get => _currentHealth; set => _currentHealth = value; }
-    public float CurrentDeathTimer { get => _currentDeathTimer; set => _currentDeathTimer = value; }
+    public float CurrentMaxHealth { get; set; }
+    public float CurrentHealth { get; set; }
+    public float CurrentDeathTimer { get; set; }
 
     LevelManager levelManager;
 
@@ -26,9 +25,14 @@ public class Boss : MonoBehaviour
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     }
 
+    void Start()
+    {
+        StageCount = spellAttacks.Length - 1;
+    }
+
     public void StartBoss()
     {
-        UnpackSpellAttacks();
+        Next(2);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,7 +45,7 @@ public class Boss : MonoBehaviour
             AudioPlayer.Instance.PlayHitSound();
             if (CurrentHealth <= 0)
             {
-                GameManager.Instance.Score += currentStage.scoreWorth;
+                GameManager.Instance.Score += currentSpellAttack.scoreWorth;
                 KillBoss();
             }
         }
@@ -52,11 +56,22 @@ public class Boss : MonoBehaviour
         AudioPlayer.Instance.PlayKillSound();
         LevelManager.ClearBullets();
         StopAllCoroutines();
-        DropItems(currentStage.powerItemsToDrop, currentStage.bigPowerItemsToDrop, currentStage.scoreItemsToDrop, currentStage.lifeItemsToDrop, currentStage.bombItemsToDrop);
+        DropItems(currentSpellAttack.powerItems, currentSpellAttack.bigPowerItems, currentSpellAttack.scoreItems, currentSpellAttack.lifeItems, currentSpellAttack.bombItems);
         hittable = false;
         StageCount--;
-        stageIndex++;
-        Debug.Log($"Stage index: {stageIndex}");
+        stageAttackIndex++;
+        Debug.Log($"Stage index: {stageAttackIndex}");
+        if (stageAttackIndex < spellAttacks.Length)
+        {
+            MoveToDefaultPosition();
+            DestroyCurrentStage();
+            Next(2);
+        }
+        else
+        {
+            Debug.Log("Boss Defeated");
+            Destroy(gameObject);
+        }
     }
 
     public void DropItems(int powerItemQuantity, int bigPowerItemQuantity, int scoreItemQuantity, int lifeItemQuantity, int bombItemQuantity)
@@ -66,10 +81,10 @@ public class Boss : MonoBehaviour
 
     public void MoveToDefaultPosition()
     {
-        StartCoroutine(MoveToPositionCoroutine(GameManager.DEFAULT_BOSS_POSITION, 1, 2));
+        StartCoroutine(MoveToPositionCoroutine(GameManager.DEFAULT_BOSS_POSITION, 1));
     }
 
-    public IEnumerator MoveToPositionCoroutine(Vector3 destination, float timeToMove, float timeToWait)
+    public IEnumerator MoveToPositionCoroutine(Vector3 destination, float timeToMove)
     {
         Vector3 currentPos = transform.position;
         float t = 0f;
@@ -79,9 +94,6 @@ public class Boss : MonoBehaviour
             transform.position = Vector3.Lerp(currentPos, destination, t);
             yield return null;
         }
-        StartCoroutine(FillHealthBar(timeToWait));
-        yield return new WaitForSeconds(timeToWait);
-        StopCoroutine("MoveToPosition");
     }
 
     public IEnumerator CountDownDeathTimer()
@@ -94,33 +106,52 @@ public class Boss : MonoBehaviour
         KillBoss();
     }
 
-    public Vector3 GetRandomPoint()
-    {
-        Debug.Log("Boss Is Getting Random point");
-        float spriteWidthSize = gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.x / 2;
-        float spriteHeightSize = gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2;
-        float randX = UnityEngine.Random.Range((GameManager.GAME_FIELD_TOP_LEFT.x + spriteWidthSize) + GameManager.GAME_FIELD_CENTER.x, (GameManager.GAME_FIELD_TOP_RIGHT.x - spriteWidthSize) + GameManager.GAME_FIELD_CENTER.x);
-        float randY = UnityEngine.Random.Range(1 + spriteHeightSize, (GameManager.GAME_FIELD_TOP_LEFT.y - spriteHeightSize));
-        Debug.Log(GameManager.GAME_FIELD_TOP_LEFT.x + spriteWidthSize);
-        Debug.Log(GameManager.GAME_FIELD_TOP_RIGHT.x - spriteWidthSize);
-        Debug.Log(randX);
-        return new Vector3(randX, randY, 0);
-    }
-
-    IEnumerator FillHealthBar(float timeToTakeToFill)
+    IEnumerator FillHealthBar(float timeToFill)
     {
         CurrentMaxHealth = 100f;
         float t = 0f;
         while (t < 1)
         {
-            t += Time.deltaTime / timeToTakeToFill;
+            t += Time.deltaTime / timeToFill;
             CurrentHealth += 1;
             yield return null;
         }
     }
 
-    private void UnpackSpellAttacks()
+    private void Next(float timeToWait)
     {
-        throw new NotImplementedException();
+        StartCoroutine(NextCoroutine(timeToWait));
+    }
+
+    private IEnumerator NextCoroutine(float timeToWait)
+    {
+        StartCoroutine(FillHealthBar(timeToWait));
+        yield return new WaitForSeconds(timeToWait);
+        SetStage(stageAttackIndex);
+    }
+
+    private void SetStage(int stageIndex)
+    {
+        Debug.Log("Launching Wave " + stageIndex + 1);
+        currentSpellAttack = spellAttacks[stageIndex];
+        CurrentMaxHealth = currentSpellAttack.health;
+        CurrentHealth = currentSpellAttack.health;
+        CurrentDeathTimer = currentSpellAttack.deathTimer;
+        currentAttack = Instantiate(currentSpellAttack.spellAttack, transform);
+        
+        
+        // TODO: set movement scripts
+       
+        
+        
+        hittable = true;
+
+
+        StartCoroutine(CountDownDeathTimer());
+    }
+
+    private void DestroyCurrentStage()
+    {
+        Destroy(currentAttack);
     }
 }

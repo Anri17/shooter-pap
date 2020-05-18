@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Boss Stage", menuName = "Boss/Stage")]
+[CreateAssetMenu(fileName = "New Boss Stage", menuName = "Boss/ Legacy Stage")]
 public class L_BossStage : ScriptableObject
 {
     public int scoreWorth = 100000;
