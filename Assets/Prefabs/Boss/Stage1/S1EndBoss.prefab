@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7945089824047321927}
   - component: {fileID: 7945089824047321926}
   - component: {fileID: 4663210795820011032}
+  - component: {fileID: 4513812674553795781}
   - component: {fileID: 350828380049276735}
   - component: {fileID: 4331169707250773477}
   m_Layer: 8
@@ -168,6 +169,18 @@ MonoBehaviour:
   spellAttacks:
   - {fileID: 11400000, guid: 646c10efe0b94bf4b88c4531ee99c15a, type: 2}
   - {fileID: 11400000, guid: eb0403b978a761b489497f571f4bc195, type: 2}
+--- !u!114 &4513812674553795781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945089824047321945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac7f57b1378e6734fbfedb503277830b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &350828380049276735
 MonoBehaviour:
   m_ObjectHideFlags: 0

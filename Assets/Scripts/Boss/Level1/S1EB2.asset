@@ -15,7 +15,7 @@ MonoBehaviour:
   scoreWorth: 100000
   health: 1000
   deathTimer: 30
-  spellAttack: {fileID: 8532108549334091280, guid: 6783dff05e69090499b100a469e8d64d,
+  spellAttack: {fileID: 8532108549334091280, guid: 1153e7aa2ccb6de4c965f004f43ef338,
     type: 3}
   powerItems: 2
   bigPowerItems: 1
