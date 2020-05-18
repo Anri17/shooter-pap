@@ -71,8 +71,6 @@ public class AudioPlayer : MonoBehaviour
     {
         if (musicAudioSource.time >= musicAudioSource.clip.length)
         {
-            print("hey");
-            print(musicLoopTime);
             musicAudioSource.Stop();
             musicAudioSource.time = (float) musicLoopTime;
             musicAudioSource.Play();

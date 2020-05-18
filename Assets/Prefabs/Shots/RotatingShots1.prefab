@@ -49,8 +49,10 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.8
   aimOffset: 15
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &1764035180921182807
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,8 +156,10 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.8
   aimOffset: -15
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &2961206304315762495
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,8 +270,10 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.5
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &5111446589467179591
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,8 +324,10 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.5
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &5693391151860511960
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,8 +411,10 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.5
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &6189236459613670541
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,8 +465,10 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.5
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &6236302933530780683
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,8 +578,10 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.8
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &7040468342931114612
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,8 +632,10 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.5
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &7133756267687226777
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,8 +686,10 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.5
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &7211004205173194459
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,8 +770,10 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.5
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &7660806288254605772
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,5 +914,7 @@ MonoBehaviour:
   fireBulletCount: 10
   fireRate: 0.5
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0

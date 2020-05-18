@@ -8,54 +8,28 @@ using UnityEngine.SceneManagement;
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] BossManager bossManager;
-
-    [SerializeField] bool newWaveManager = false;
-
-    [SerializeField] bool debugMode = false;
+    [SerializeField] DialogueManager dialogueManager;
+    [SerializeField] LevelController levelController;
 
     [SerializeField] float startDelay = 2f;
-    [SerializeField] L_EnemyWave[] waves;
-    [SerializeField] Wave[] newWaves;
-    [SerializeField] L_BossWave midBoss;
-    [SerializeField] L_BossWave endBoss;
-    [SerializeField] Vector3 bossSpawnPoint;
-    [SerializeField] int MidbossWaveNumber;
-
-    [SerializeField] GameObject gameOverScreen;
-    [SerializeField] GameObject finalScoreBoard;
-    [SerializeField] Text endScreenScore;
-    [SerializeField] Text endScreenLivesCalculation;
-    [SerializeField] Text endScreenLives;
-    [SerializeField] Text endScreenBonus;
-    [SerializeField] Text endScreenFinalScore;
-
-    [SerializeField] DialogueConversation midBossDialogue1;
-    [SerializeField] DialogueConversation midBossDialogue2;
-
-    [SerializeField] DialogueConversation mainBossDialogue1;
-    [SerializeField] DialogueConversation mainBossDialogue2;
+    [SerializeField] Wave[] waves;
 
     [SerializeField] bool isTutorialLevel = false;
 
     [HideInInspector] public GameObject[] spawnedWaves;
     [HideInInspector] public GameObject spawnedBoss;
 
-    public DialogueManager dialogueManager;
-
-    bool reachedEnd = false;
+    Coroutine level;
 
     void Start()
     {
-        gameOverScreen.SetActive(false);
-        finalScoreBoard.SetActive(false);
-        reachedEnd = false;
         spawnedWaves = new GameObject[waves.Length];
-        StartCoroutine(PlayLevel(startDelay, waves, midBoss, endBoss));
+        level = StartCoroutine(PlayLevel());
     }
 
     private void Update()
     {
-        if (reachedEnd)
+        if (levelController.reachedEnd)
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
@@ -80,179 +54,68 @@ public class WaveManager : MonoBehaviour
         if (GameManager.Instance.spawnedPlayer.GetComponent<Player>().Lives < 0)
         {
             GameManager.Instance.spawnedPlayer.GetComponent<Player>().Lives = 0;
-            StartCoroutine(GameOver());
+            levelController.GameOver();
+            StopCoroutine(level);
         }
     }
 
-    IEnumerator PlayLevel(float waitBeforeStart, L_EnemyWave[] waves, L_BossWave midBoss, L_BossWave endBoss)
+    IEnumerator PlayLevel()
     {
-        if (!newWaveManager)
+        yield return new WaitForSeconds(startDelay);
+
+        for (int waveIndex = 0; waveIndex < waves.Length; waveIndex++)
         {
-            yield return new WaitForSeconds(waitBeforeStart);
-            for (int waveIndex = 0; waveIndex < waves.Length; waveIndex++)
+            if (waves[waveIndex] is EnemyWave)
             {
+                Debug.Log($"Launching enemies at wave {waveIndex + 1}");
 
-                Debug.Log($"Launching Wave {waveIndex + 1}");
-                spawnedWaves[waveIndex] = Instantiate(waves[waveIndex].Wave, transform);
-                yield return new WaitForSeconds(waves[waveIndex].DelayStartTime);
-                if (MidbossWaveNumber == (waveIndex + 1))
+                EnemyWave enemyWave = (EnemyWave)waves[waveIndex];
+
+                spawnedWaves[waveIndex] = Instantiate(enemyWave.Wave, transform);
+                yield return new WaitForSeconds(enemyWave.DelayStartTime);
+                continue;
+            }
+
+            if (waves[waveIndex] is BossWave)
+            {
+                Debug.Log($"Launching boss at wave {waveIndex + 1}");
+                LevelManager.ClearBullets();
+                LevelManager.ClearEnemies();
+
+                BossWave bossWave = (BossWave)waves[waveIndex];
+
+                bossManager.spawnedBoss = Instantiate(bossWave.Boss, transform);
+
+                if (bossWave.Dialogue1 != null)
                 {
-                    if (midBossDialogue1 != null)
-                    {
-                        dialogueManager.StartDialogue(midBossDialogue1);
-                        yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
-                    }
-                    Debug.Log("Preparing to launch Mid Boss...");
-                    LevelManager.ClearBullets();
-                    LevelManager.ClearEnemies();
-                    yield return new WaitForSeconds(midBoss.StartDelay);
-                    Debug.Log("Launching Boss...");
-                    spawnedBoss = Instantiate(midBoss.Boss, bossSpawnPoint, Quaternion.identity, transform);
-                    bossManager.ActivateBossInterface();
-                    yield return new WaitUntil(() => spawnedBoss == null);
-                    bossManager.DeactivateBossInterface();
-                    yield return new WaitForSeconds(midBoss.EndDelay);
-                    if (midBossDialogue2 != null)
-                    {
-                        dialogueManager.StartDialogue(midBossDialogue2);
-                        yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
-                    }
+                    dialogueManager.StartDialogue(bossWave.Dialogue1);
+                    yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
                 }
-                if (debugMode)
+
+                bossManager.ActivateBossInterface();
+                bossManager.spawnedBoss.GetComponent<Boss>().StartBoss();
+
+                yield return new WaitUntil(() => bossManager.spawnedBoss == null);
+
+                bossManager.DeactivateBossInterface();
+                LevelManager.ClearBullets();
+                LevelManager.ClearEnemies();
+
+                if (bossWave.Dialogue2 != null)
                 {
-                    StopCoroutine("PlayLevel");
-                    EndLevel();
+                    dialogueManager.StartDialogue(bossWave.Dialogue2);
+                    yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
                 }
-            }
 
-            Debug.Log("Preparing for Boss...");
-            LevelManager.ClearBullets();
-            LevelManager.ClearEnemies();
-            yield return new WaitForSeconds(endBoss.StartDelay);
-            Debug.Log("Launching Dialogue...");
-            if (mainBossDialogue1 != null)
-            {
-                dialogueManager.StartDialogue(mainBossDialogue1);
-                yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
-            }
-            Debug.Log("Launching Boss...");
-            spawnedBoss = Instantiate(endBoss.Boss, bossSpawnPoint, Quaternion.identity, transform);
-            bossManager.ActivateBossInterface();
-            yield return new WaitUntil(() => spawnedBoss == null);
-            bossManager.DeactivateBossInterface();
-            if (mainBossDialogue2 != null)
-            {
-                dialogueManager.StartDialogue(mainBossDialogue2);
-                yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
-            }
+                yield return new WaitForSeconds(bossWave.EndDelay);
 
-            Debug.Log("Press Enter to EndLevel");
-
-            EndLevel();
+                continue;
+            }
         }
-        else
-        {
-            // New Wave Manager
-            yield return new WaitForSeconds(startDelay);
 
-            for (int waveIndex = 0; waveIndex < newWaves.Length; waveIndex++)
-            {
-                if (newWaves[waveIndex] is EnemyWave)
-                {
-                    Debug.Log($"Launching enemies at wave {waveIndex + 1}");
-
-                    EnemyWave enemyWave = (EnemyWave)newWaves[waveIndex];
-
-                    spawnedWaves[waveIndex] = Instantiate(enemyWave.Wave, transform);
-                    yield return new WaitForSeconds(enemyWave.DelayStartTime);
-                    continue;
-                }
-
-                if (newWaves[waveIndex] is BossWave)
-                {
-                    Debug.Log($"Launching boss at wave {waveIndex + 1}");
-                    LevelManager.ClearBullets();
-                    LevelManager.ClearEnemies();
-
-                    BossWave bossWave = (BossWave)newWaves[waveIndex];
-
-                    bossManager.spawnedBoss = Instantiate(bossWave.Boss, transform);
-
-                    if (bossWave.Dialogue1 != null)
-                    {
-                        dialogueManager.StartDialogue(bossWave.Dialogue1);
-                        yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
-                    }
-
-                    bossManager.ActivateBossInterface();
-                    bossManager.spawnedBoss.GetComponent<Boss>().StartBoss();
-
-                    yield return new WaitUntil(() => bossManager.spawnedBoss == null);
-
-                    bossManager.DeactivateBossInterface();
-                    LevelManager.ClearBullets();
-                    LevelManager.ClearEnemies();
-
-                    if (bossWave.Dialogue2 != null)
-                    {
-                        dialogueManager.StartDialogue(bossWave.Dialogue2);
-                        yield return new WaitUntil(() => dialogueManager.dialogueEnded == true);
-                    }
-
-                    continue;
-                }
-            }
-
-            Debug.Log($"Stage Ended");
-            LevelManager.ClearBullets();
-            LevelManager.ClearEnemies();
-            EndLevel();
-        }
-    }
-
-
-
-    void EndLevel()
-    {
-        DisplayFinalInfo();
-        reachedEnd = true;
-        GameManager.UnlockCursor();
-        Time.timeScale = 1;
-    }
-
-    void DisplayFinalInfo()
-    {
-        long score = GameManager.Instance.Score;
-        int clearBonus = 1000000;
-        int lives = GameManager.Instance.spawnedPlayer.GetComponent<Player>().Lives;
-        long finalScore = (lives * 10000) + score + clearBonus;
-
-        finalScoreBoard.SetActive(true);
-        endScreenScore.text = score.ToString("000,000,000,000");
-        endScreenLivesCalculation.text = $"{lives.ToString()} * 10000";
-        endScreenLives.text = (lives * 10000).ToString("000,000,000,000");
-        endScreenBonus.text = clearBonus.ToString("000,000,000,000");
-        endScreenFinalScore.text = finalScore.ToString("000,000,000,000");
-
-        GameManager.Instance.Score = finalScore;
-
-        SetBackupPlayerData();
-    }
-
-    void SetBackupPlayerData()
-    {
-        GameManager.Instance.storedPlayerLives = GameManager.Instance.spawnedPlayer.GetComponent<Player>().Lives;
-        GameManager.Instance.storedPlayerPowerLevel = GameManager.Instance.spawnedPlayer.GetComponent<Player>().PowerLevel;
-        GameManager.Instance.storedPlayerBombs = GameManager.Instance.spawnedPlayer.GetComponent<Player>().Bombs;
-    }
-
-    IEnumerator GameOver()
-    {
-        GameManager.UnlockCursor();
-        Time.timeScale = 1;
-        gameOverScreen.SetActive(true);
-        GameObject.Find("LevelController").GetComponent<LevelController>().canOpenMenu = false;
-        yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene(0);
+        Debug.Log($"Stage Ended");
+        LevelManager.ClearBullets();
+        LevelManager.ClearEnemies();
+        levelController.EndLevel();
     }
 }

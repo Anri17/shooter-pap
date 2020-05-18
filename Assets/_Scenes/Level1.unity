@@ -999,47 +999,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossManager: {fileID: 1743731236}
-  newWaveManager: 1
-  debugMode: 0
+  dialogueManager: {fileID: 22851678}
+  levelController: {fileID: 976927015}
   startDelay: 6
   waves:
-  - {fileID: 11400000, guid: bb03421ae02ff724c852f048aeb77c9a, type: 2}
-  - {fileID: 11400000, guid: d3da44db84f2b2d459cacf98d0e19a8a, type: 2}
-  - {fileID: 11400000, guid: 72c2c7a1ab8be194dab3bed146a4f421, type: 2}
-  - {fileID: 11400000, guid: a42d3d22bccf2cf4e954e0968516b667, type: 2}
-  - {fileID: 11400000, guid: 7fb2705d276b3fe4593b3135161534c2, type: 2}
-  - {fileID: 11400000, guid: b8df99145c552a14fbe3056c45d1004a, type: 2}
-  - {fileID: 11400000, guid: d9a80ced889e56d4c940fdea0ea10d3f, type: 2}
-  - {fileID: 11400000, guid: f196a96221c11f548873611f9a2e187d, type: 2}
-  - {fileID: 11400000, guid: 2b5a593dee02e5e41b83b99c8ba33060, type: 2}
-  - {fileID: 11400000, guid: 98d99ca718486a946b7d4c27dbb04ce3, type: 2}
-  - {fileID: 11400000, guid: 61416bfcd04af4f4fa463d04244cec4e, type: 2}
-  - {fileID: 11400000, guid: ed2d7fa20c2472f429d55d92a4064c45, type: 2}
-  - {fileID: 11400000, guid: 2bba1b94df416d1479e15602b3ec99e7, type: 2}
-  - {fileID: 11400000, guid: 31fad2e15ebe9934f99892d11e803fd3, type: 2}
-  - {fileID: 11400000, guid: 2a77794fb7f3d2c4b86f0b783568d29c, type: 2}
-  - {fileID: 11400000, guid: 0913081db54f2e64fa523a0e3b3fdab5, type: 2}
-  newWaves:
+  - {fileID: 11400000, guid: 8c01fd00ee0d4d843bbfb4d1dcdc5f73, type: 2}
+  - {fileID: 11400000, guid: 62871a500472d4540aeeff7d82bd1e8f, type: 2}
+  - {fileID: 11400000, guid: 96f88fc5683ac934f82c5833331c0eb2, type: 2}
+  - {fileID: 11400000, guid: 97ef2296b592e0f4ab399a512f5c4f52, type: 2}
+  - {fileID: 11400000, guid: 123a4461f3b53ef4984e1c458ce56341, type: 2}
+  - {fileID: 11400000, guid: e45131317adee884294ccec04fe21cd7, type: 2}
+  - {fileID: 11400000, guid: aa6fd07604496cc4a867612b0f9ae980, type: 2}
+  - {fileID: 11400000, guid: 6db8eab51c5ffc246a6459bef5bf6167, type: 2}
+  - {fileID: 11400000, guid: e78fdded9aa4fad4a96328a81deb7c56, type: 2}
+  - {fileID: 11400000, guid: 028ae20b67f2d994d82258ecf04fa2c3, type: 2}
+  - {fileID: 11400000, guid: a4d46077b83a84642ae267a12de48723, type: 2}
+  - {fileID: 11400000, guid: 593d4ae4049574e48bf396931d1111ff, type: 2}
+  - {fileID: 11400000, guid: c14069b9a66522942885265c2c94c7c4, type: 2}
+  - {fileID: 11400000, guid: e2b7147c2790b5d4e835cf7b5945c3de, type: 2}
+  - {fileID: 11400000, guid: 02db96ac8d0513a48ac5645b35610049, type: 2}
+  - {fileID: 11400000, guid: 6790f379ffdc144418668002ca3cb310, type: 2}
+  - {fileID: 11400000, guid: 6f275745699ba644cbc2ec31380d5569, type: 2}
   - {fileID: 11400000, guid: 8b3bd729cff634046b3c92dc8c39546f, type: 2}
-  midBoss: {fileID: 11400000, guid: 63c808d63f6389241b3f9ef164babb51, type: 2}
-  endBoss: {fileID: 11400000, guid: bef00764b1fd57b4ba2647eca091026e, type: 2}
-  bossSpawnPoint: {x: 1, y: 13, z: 0}
-  MidbossWaveNumber: 7
-  gameOverScreen: {fileID: 1692927522}
-  finalScoreBoard: {fileID: 2004376003}
-  endScreenScore: {fileID: 731635255}
-  endScreenLivesCalculation: {fileID: 1756473992}
-  endScreenLives: {fileID: 1714884939}
-  endScreenBonus: {fileID: 1407619778}
-  endScreenFinalScore: {fileID: 1223908633}
-  midBossDialogue1: {fileID: 0}
-  midBossDialogue2: {fileID: 0}
-  mainBossDialogue1: {fileID: 11400000, guid: 7cd80d6f59900ff4c8897522dac5f20f, type: 2}
-  mainBossDialogue2: {fileID: 11400000, guid: ed1c76f7732a5864a9bfae31014248bb, type: 2}
   isTutorialLevel: 0
   spawnedWaves: []
   spawnedBoss: {fileID: 0}
-  dialogueManager: {fileID: 22851678}
 --- !u!4 &309498522
 Transform:
   m_ObjectHideFlags: 0
@@ -3812,6 +3796,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1361118817}
   canOpenMenu: 0
+  gameOverScreen: {fileID: 1692927522}
+  finalScoreBoard: {fileID: 2004376003}
+  endScreenScore: {fileID: 731635255}
+  endScreenLivesCalculation: {fileID: 1756473992}
+  endScreenLives: {fileID: 1714884939}
+  endScreenBonus: {fileID: 1407619778}
+  endScreenFinalScore: {fileID: 1223908633}
+  reachedEnd: 0
 --- !u!4 &976927016
 Transform:
   m_ObjectHideFlags: 0

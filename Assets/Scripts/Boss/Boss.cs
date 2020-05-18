@@ -120,6 +120,7 @@ public class Boss : MonoBehaviour
 
     private void Next(float timeToWait)
     {
+        MoveToDefaultPosition();
         StartCoroutine(NextCoroutine(timeToWait));
     }
 

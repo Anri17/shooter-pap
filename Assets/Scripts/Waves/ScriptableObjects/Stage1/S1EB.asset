@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abaf7d5e05320e947afba5151ad4a1f3, type: 3}
+  m_Name: S1EB
+  m_EditorClassIdentifier: 
+  canContinue: 0
+  _boss: {fileID: 7945089824047321945, guid: b7d86c275325ee8488f18ecbaaee6121, type: 3}
+  dialogue1: {fileID: 11400000, guid: 7cd80d6f59900ff4c8897522dac5f20f, type: 2}
+  dialogue2: {fileID: 11400000, guid: ed1c76f7732a5864a9bfae31014248bb, type: 2}
+  endDelay: 0
