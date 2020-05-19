@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangingBurst : _FireBullet
+public class ChangingBurst : FireBullet
 {
     [Header("Changing Burst")]
     [Tooltip("The speed of the first bullet")]

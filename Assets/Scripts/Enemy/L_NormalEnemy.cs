@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NormalEnemy : Enemy
+public class L_NormalEnemy : L_Enemy
 {
     [HideInInspector] public GameObject[] tragectory;
     
@@ -124,6 +124,9 @@ public class NormalEnemy : Enemy
     public override IEnumerator ShootCoroutine(float shootDelay)
     {
         yield return new WaitForSeconds(shootDelay);
-        shotInstance = Instantiate(_shot, gameObject.transform);
+        if (_shot != null)
+        {
+            shotInstance = Instantiate(_shot, gameObject.transform);
+        }
     }
 }

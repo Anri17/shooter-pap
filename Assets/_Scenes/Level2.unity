@@ -2202,10 +2202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a9218babcb9344b81bee99357ea01b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startFlag: {fileID: 4895533912131687181, guid: 39820d08525259a409a9bd3115ddf2b9,
+  _startFlag: {fileID: 4895533912131687181, guid: 5fe2d243a1392d74f8c119a57821ded4,
     type: 3}
   playerSpawnPoint: {fileID: 386705373}
-  stageMusicTheme: {fileID: 8300000, guid: 472f6abc3f7e0ea429981fe1513fc19c, type: 3}
+  stageMusicTheme: {fileID: 8300000, guid: d0e54b3f819d21840a534524af90e4e0, type: 3}
   stageMusicThemeLoopTime: 0
   bossMusicTheme: {fileID: 8300000, guid: 5519b17b4c916fa419bc94c23f467ff1, type: 3}
   bossMusicThemeLoopTime: 16008
@@ -6340,7 +6340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aea543afbd196b4dbae30fec8ba4242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 12
+  scrollSpeed: 8
   endPosTransform: {x: 0, y: 0, z: 150}
 --- !u!1 &1690633273
 GameObject:
@@ -7970,24 +7970,7 @@ MonoBehaviour:
   levelController: {fileID: 319017001}
   startDelay: 6
   waves:
-  - {fileID: 11400000, guid: 8c01fd00ee0d4d843bbfb4d1dcdc5f73, type: 2}
-  - {fileID: 11400000, guid: 62871a500472d4540aeeff7d82bd1e8f, type: 2}
-  - {fileID: 11400000, guid: 96f88fc5683ac934f82c5833331c0eb2, type: 2}
-  - {fileID: 11400000, guid: 97ef2296b592e0f4ab399a512f5c4f52, type: 2}
-  - {fileID: 11400000, guid: 123a4461f3b53ef4984e1c458ce56341, type: 2}
-  - {fileID: 11400000, guid: e45131317adee884294ccec04fe21cd7, type: 2}
-  - {fileID: 11400000, guid: aa6fd07604496cc4a867612b0f9ae980, type: 2}
-  - {fileID: 11400000, guid: 6db8eab51c5ffc246a6459bef5bf6167, type: 2}
-  - {fileID: 11400000, guid: e78fdded9aa4fad4a96328a81deb7c56, type: 2}
-  - {fileID: 11400000, guid: 028ae20b67f2d994d82258ecf04fa2c3, type: 2}
-  - {fileID: 11400000, guid: a4d46077b83a84642ae267a12de48723, type: 2}
-  - {fileID: 11400000, guid: 593d4ae4049574e48bf396931d1111ff, type: 2}
-  - {fileID: 11400000, guid: c14069b9a66522942885265c2c94c7c4, type: 2}
-  - {fileID: 11400000, guid: e2b7147c2790b5d4e835cf7b5945c3de, type: 2}
-  - {fileID: 11400000, guid: 02db96ac8d0513a48ac5645b35610049, type: 2}
-  - {fileID: 11400000, guid: 6790f379ffdc144418668002ca3cb310, type: 2}
-  - {fileID: 11400000, guid: 6f275745699ba644cbc2ec31380d5569, type: 2}
-  - {fileID: 11400000, guid: 8b3bd729cff634046b3c92dc8c39546f, type: 2}
+  - {fileID: 11400000, guid: 6a38e89bbb7ab4c41a5a269c468b900b, type: 2}
   isTutorialLevel: 0
   spawnedWaves: []
   spawnedBoss: {fileID: 0}

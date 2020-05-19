@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AcceleratingBullet : Bullet
+public class L_AcceleratingBullet : L_Bullet
 {
     [SerializeField] float _minSpeed = 10.0f;
     [SerializeField] float _maxSpeed = 80.0f;

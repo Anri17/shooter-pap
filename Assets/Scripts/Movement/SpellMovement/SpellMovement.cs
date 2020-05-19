@@ -30,4 +30,16 @@ public abstract class SpellMovement : MonoBehaviour
     }
 
     public abstract IEnumerator MoveCoroutine();
+
+    public IEnumerator LerpMoveBoss(Vector3 destination, float timeToMove)
+    {
+        Vector3 currentPos = mainTransform.position;
+        float t = 0f;
+        while (t < 1)
+        {
+            t += Time.deltaTime / timeToMove;
+            mainTransform.position = Vector3.Lerp(currentPos, destination, t);
+            yield return null;
+        }
+    }
 }

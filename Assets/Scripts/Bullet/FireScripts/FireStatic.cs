@@ -1,25 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
-public class StaticFire : _FireBullet
+public class FireStatic : FireBullet
 {
-    [Header("Static Fire")]
-    [SerializeField] float startDelay;
+    [Header("Fire Static")]
+    [SerializeField] float startDelay = 1f;
     [SerializeField] float fireDelay;
     [SerializeField] int fireCount;
 
     Coroutine fireCoroutine;
-
-    private void Start()
-    {
-        fireCoroutine = StartCoroutine(RepeatFire(startDelay, fireDelay, fireCount));
-    }
-
-    void Update()
-    {
-        Fire();
-    }
 
     IEnumerator RepeatFire(float startDelay, float fireDelay, int fireCount)
     {
@@ -41,5 +32,21 @@ public class StaticFire : _FireBullet
             Fire();
             yield return new WaitForSeconds(fireDelay);
         }
-    } 
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlayArea"))
+        {
+            fireCoroutine = StartCoroutine(RepeatFire(startDelay, fireDelay, fireCount));
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlayArea"))
+        {
+            StopCoroutine(fireCoroutine);
+        }
+    }
 }

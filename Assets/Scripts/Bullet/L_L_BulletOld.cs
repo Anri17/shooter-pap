@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletOld : MonoBehaviour
+public class L_L_BulletOld : MonoBehaviour
 {
     [Header("Type of bullet")]
     public bool isStatic = true;

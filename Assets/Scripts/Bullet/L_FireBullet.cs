@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBullet : MonoBehaviour
+public class L_FireBullet : MonoBehaviour
 {
     public GameObject bullet; // what bullet to fire
     public GameObject target; // the target direction

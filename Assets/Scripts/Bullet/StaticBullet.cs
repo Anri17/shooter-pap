@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StaticBullet : Bullet
+public class StaticBullet : L_Bullet
 {
     [SerializeField] float _speed;
 

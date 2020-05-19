@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OldEnemy : MonoBehaviour
+public class L_OldEnemy : MonoBehaviour
 {
     [SerializeField] float health = 10.0f;
     [SerializeField] int scoreToAdd = 200;

@@ -34,13 +34,6 @@ public class WiggleRotation : MonoBehaviour
                 negative = true;
             }
         }
-
-        
-        
-        
-
-        
-        Debug.Log(transform.rotation.z);
     }
 
 }
