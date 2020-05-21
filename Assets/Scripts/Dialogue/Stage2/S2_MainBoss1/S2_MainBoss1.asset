@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc6072d3528b10941ac8501f591156d2, type: 3}
+  m_Name: S2_MainBoss1
+  m_EditorClassIdentifier: 
+  DialogueMessages:
+  - {fileID: 11400000, guid: 52a17b4ada7d2e740bf064a2f2ffb733, type: 2}
+  - {fileID: 11400000, guid: 0ae9df99c490dd14b9354f4b55f28c8f, type: 2}
+  - {fileID: 11400000, guid: 67076299668e44549af6bbcf2c5cb4d1, type: 2}
+  - {fileID: 11400000, guid: 1b5660e81521a3f4985a5e75ff9dd239, type: 2}
+  - {fileID: 11400000, guid: 77ef23be5d6bc2647a41c374c2ace79b, type: 2}
+  - {fileID: 11400000, guid: b4201d583dcb5d44ba64b092a75de899, type: 2}
+  - {fileID: 11400000, guid: f756c13be7ba76f45b5eb31120ce712b, type: 2}
+  - {fileID: 11400000, guid: 5b3b2004bb8fb2147841d739f9eb2ace, type: 2}
+  - {fileID: 11400000, guid: 02b5a4ab4673a52469f7f0bdf5a76878, type: 2}

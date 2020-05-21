@@ -29,16 +29,22 @@ public class FireStatic : FireBullet
         }
         else
         {
-            Fire();
-            yield return new WaitForSeconds(fireDelay);
+            while (true)
+            {
+                Fire();
+                yield return new WaitForSeconds(fireDelay);
+            }
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    bool stay = false;
+    void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayArea"))
+        if (collision.CompareTag("PlayArea") && stay == false)
         {
             fireCoroutine = StartCoroutine(RepeatFire(startDelay, fireDelay, fireCount));
+            stay = true;
+            Debug.Log("I'm in the play field");
         }
     }
 

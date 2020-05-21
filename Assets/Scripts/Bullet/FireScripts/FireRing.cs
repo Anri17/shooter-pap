@@ -37,8 +37,19 @@ public class FireRing : FireBullet
         }
         else
         {
-            Fire();
-            yield return new WaitForSeconds(fireDelay);
+            while (true)
+            {
+                float currentAngle = 0;
+                while (currentAngle < 360)
+                {
+                    Fire();
+
+                    bulletScript.Angle = _aimOffset + GetAngle(_target) + currentAngle;
+                    currentAngle += GetRingAngle();
+                }
+
+                yield return new WaitForSeconds(fireDelay);
+            }
         }
     }
 
@@ -52,11 +63,14 @@ public class FireRing : FireBullet
         return 360 / directions;
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    bool stay = false;
+    void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayArea"))
+        if (collision.CompareTag("PlayArea") && stay == false)
         {
             fireCoroutine = StartCoroutine(RepeatFire(startDelay, fireDelay, fireCount));
+            stay = true;
+            Debug.Log("I'm in the play field");
         }
     }
 

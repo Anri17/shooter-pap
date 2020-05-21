@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc6072d3528b10941ac8501f591156d2, type: 3}
-  m_Name: BeforeBOss
+  m_Script: {fileID: 11500000, guid: f1ded0f8b3dff324d979a1832aad90ee, type: 3}
+  m_Name: 9
   m_EditorClassIdentifier: 
-  DialogueMessages: []
+  personSpeaking: Zuru
+  sentence: Bring it on, small fry!
+  changeMusic: 0
+  presentBoss: 0

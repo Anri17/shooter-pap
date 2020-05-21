@@ -7971,6 +7971,7 @@ MonoBehaviour:
   startDelay: 6
   waves:
   - {fileID: 11400000, guid: 6a38e89bbb7ab4c41a5a269c468b900b, type: 2}
+  - {fileID: 11400000, guid: 8f148f27ec705f542a81832e26aecc28, type: 2}
   isTutorialLevel: 0
   spawnedWaves: []
   spawnedBoss: {fileID: 0}
