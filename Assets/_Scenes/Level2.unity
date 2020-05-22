@@ -7970,6 +7970,8 @@ MonoBehaviour:
   levelController: {fileID: 319017001}
   startDelay: 6
   waves:
+  - {fileID: 11400000, guid: 9af268a8e08b6ad4b93377216d3f298b, type: 2}
+  - {fileID: 11400000, guid: 791ecd7223e6882488ca2fafb2b4a8c6, type: 2}
   - {fileID: 11400000, guid: 6a38e89bbb7ab4c41a5a269c468b900b, type: 2}
   - {fileID: 11400000, guid: 8f148f27ec705f542a81832e26aecc28, type: 2}
   isTutorialLevel: 0

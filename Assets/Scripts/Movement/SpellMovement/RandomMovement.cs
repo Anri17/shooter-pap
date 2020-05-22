@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class RandomMovement : SpellMovement
 {
+    [SerializeField] float delay = 1f;
+
     public override IEnumerator MoveCoroutine()
     {
         while (true)
         {
+            yield return new WaitForSeconds(delay);
             Vector3 point = GetRandomPoint();
             StartCoroutine(LerpMoveBoss(point, 1f));
             yield return new WaitForSeconds(2f);

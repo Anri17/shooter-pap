@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawnPoint : MonoBehaviour
 {
     public GameObject enemy;
+    public float startDelay = 0f;
     public float spawnDelay = 1f;
     public int spawnEnemyCount = 1;
 
@@ -22,6 +23,7 @@ public class EnemySpawnPoint : MonoBehaviour
 
     IEnumerator SpawnCoroutine()
     {
+        yield return new WaitForSeconds(startDelay);
         while (spawnCounter < spawnEnemyCount)
         {
             Instantiate(enemy, gameObject.transform.position, Quaternion.identity);
