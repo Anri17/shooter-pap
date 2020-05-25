@@ -2013,7 +2013,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -400.99997, y: -0.00048828}
+  m_AnchoredPosition: {x: -401, y: -0.00048828}
   m_SizeDelta: {x: 401, y: 600}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &527149676
@@ -3454,7 +3454,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 400.99997, y: 0}
+  m_AnchoredPosition: {x: 401, y: 0}
   m_SizeDelta: {x: 401, y: 600}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &821269222
@@ -7972,8 +7972,20 @@ MonoBehaviour:
   waves:
   - {fileID: 11400000, guid: 9af268a8e08b6ad4b93377216d3f298b, type: 2}
   - {fileID: 11400000, guid: 791ecd7223e6882488ca2fafb2b4a8c6, type: 2}
+  - {fileID: 11400000, guid: 1eb9d11c9041596428fe86b48f5ea150, type: 2}
   - {fileID: 11400000, guid: 6a38e89bbb7ab4c41a5a269c468b900b, type: 2}
+  - {fileID: 11400000, guid: 8308c47b3a42cc74ea73b4c30d6923fc, type: 2}
+  - {fileID: 11400000, guid: 8308c47b3a42cc74ea73b4c30d6923fc, type: 2}
   - {fileID: 11400000, guid: 8f148f27ec705f542a81832e26aecc28, type: 2}
+  - {fileID: 11400000, guid: f9ed708eecdc4d643ab5b2b626f8c2fa, type: 2}
+  - {fileID: 11400000, guid: d25b432cff6f2d54bb74c22bf3f68a40, type: 2}
+  - {fileID: 11400000, guid: 86eae0de9d5c71d4392ef4fb52357393, type: 2}
+  - {fileID: 11400000, guid: c07ad7e478931b44ca95744eaeace8f5, type: 2}
+  - {fileID: 11400000, guid: 6d43b170d5ab5ec4b818939121f54cfc, type: 2}
+  - {fileID: 11400000, guid: c07ad7e478931b44ca95744eaeace8f5, type: 2}
+  - {fileID: 11400000, guid: 6d43b170d5ab5ec4b818939121f54cfc, type: 2}
+  - {fileID: 11400000, guid: c3b506a69d696334489f4d53b70b428e, type: 2}
+  - {fileID: 11400000, guid: 4e4ad3a01a746e844a6566f4b6384e41, type: 2}
   isTutorialLevel: 0
   spawnedWaves: []
   spawnedBoss: {fileID: 0}

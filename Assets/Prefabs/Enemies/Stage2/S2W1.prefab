@@ -252,8 +252,8 @@ MonoBehaviour:
   deathParticles: {fileID: 6180124026953083947, guid: 545f7a21eda9c484ab3b694f8ce1d41a,
     type: 3}
   randomizeShotDelay: 0
-  powerItemsToDrop: 1
-  bigPowerItemsToDrop: 0
+  powerItemsToDrop: 0
+  bigPowerItemsToDrop: 1
   scoreItemsToDrop: 2
   lifeItemsToDrop: 0
   bombItemsToDrop: 0
@@ -328,6 +328,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _speed
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669905575832643781, guid: 5ceb45a47c5023a48ab724fcff4ad232,
+        type: 3}
+      propertyPath: startDelay
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ceb45a47c5023a48ab724fcff4ad232, type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: S2EB
   m_EditorClassIdentifier: 
   canContinue: 0
-  _boss: {fileID: 7945089824047321945, guid: c44470f15075bf34e8d19f3322793e13, type: 3}
-  dialogue1: {fileID: 11400000, guid: afb57f0c64121c949989cab3071ca086, type: 2}
-  dialogue2: {fileID: 0}
+  _boss: {fileID: 7945089824047321945, guid: b50dc0a8045cb814a8ab1af72a08bd44, type: 3}
+  dialogue1: {fileID: 11400000, guid: fff3aed8b82aa9b48a2a2277c66f5755, type: 2}
+  dialogue2: {fileID: 11400000, guid: 24bf2449d235083408bc29054b1b770d, type: 2}
   endDelay: 0

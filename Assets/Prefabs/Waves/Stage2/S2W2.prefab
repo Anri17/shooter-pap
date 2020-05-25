@@ -45,7 +45,7 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 799149103, guid: 0ceb1f866b358324ab0fc880d55ea7ed, type: 3}
       propertyPath: movementSpeed
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 799149103, guid: 0ceb1f866b358324ab0fc880d55ea7ed, type: 3}
       propertyPath: spawnRate

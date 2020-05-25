@@ -760,7 +760,7 @@ MonoBehaviour:
   _speed: 42
   directions: 16
   startDelay: 1
-  fireDelay: 3
+  fireDelay: 2
   fireCount: 0
 --- !u!1 &6118953336702217146
 GameObject:
@@ -860,7 +860,7 @@ MonoBehaviour:
   _speed: 42
   directions: 16
   startDelay: 2
-  fireDelay: 3
+  fireDelay: 2
   fireCount: 0
 --- !u!1 &7880054244313017762
 GameObject:
