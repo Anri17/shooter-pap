@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 7945089824047321926}
   - component: {fileID: 4663210795820011032}
   m_Layer: 8
-  m_Name: S2EB
+  m_Name: S2MB
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,4 +196,3 @@ MonoBehaviour:
   spellAttacks:
   - {fileID: 11400000, guid: ad83a88caec9f0846aa2134ba93c0860, type: 2}
   - {fileID: 11400000, guid: 4810ea41d45c7784eadd9206b693bede, type: 2}
-  - {fileID: 11400000, guid: d7816045ef69db6478c67b0ff7431a62, type: 2}

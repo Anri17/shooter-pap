@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aad2a3a074f7d4c4995ade34abb5c1ab, type: 3}
-  m_Name: S2MB3
+  m_Name: S2EB1
   m_EditorClassIdentifier: 
   scoreWorth: 100000
   health: 600
-  deathTimer: 30
-  spellAttack: {fileID: 8532108549334091280, guid: e0b927bc77893494cb2e97477b224e60,
+  deathTimer: 60
+  spellAttack: {fileID: 481896334362741489, guid: 7ef2099821fcb624aaa4011737051450,
     type: 3}
   powerItems: 2
   bigPowerItems: 1

@@ -1749,7 +1749,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &272341347
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3095,7 +3095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &411077703
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3122,7 +3122,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -30}
-  m_SizeDelta: {x: 260, y: 500}
+  m_SizeDelta: {x: 260, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &411077704
 MonoBehaviour:
@@ -7020,7 +7020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1135523466
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7881,14 +7881,9 @@ MonoBehaviour:
   bombItem: {fileID: 6719004770698810563, guid: 6e292b177b686d54c85b4c91dd334b97,
     type: 3}
   spawnedPlayer: {fileID: 0}
-  spawnedBoss: {fileID: 0}
   storedPlayerLives: 0
   storedPlayerPowerLevel: 0
   storedPlayerBombs: 0
-  musicClips:
-  - {fileID: 8300000, guid: da2115c4fbf9adb44994422ae9861546, type: 3}
-  - {fileID: 8300000, guid: 787b508032fa0e946a2b84cd7991260e, type: 3}
-  - {fileID: 8300000, guid: 9490f44bf1f7ba045af0915669090d49, type: 3}
 --- !u!4 &1237864228
 Transform:
   m_ObjectHideFlags: 0
@@ -8127,7 +8122,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1326309141
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10221,7 +10216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1589293386
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12602,7 +12597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1999146660
 RectTransform:
   m_ObjectHideFlags: 0

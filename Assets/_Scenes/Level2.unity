@@ -1089,7 +1089,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1783945549}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &319017001
 MonoBehaviour:
@@ -2207,8 +2207,8 @@ MonoBehaviour:
   playerSpawnPoint: {fileID: 386705373}
   stageMusicTheme: {fileID: 8300000, guid: d0e54b3f819d21840a534524af90e4e0, type: 3}
   stageMusicThemeLoopTime: 0
-  bossMusicTheme: {fileID: 8300000, guid: 5519b17b4c916fa419bc94c23f467ff1, type: 3}
-  bossMusicThemeLoopTime: 16008
+  bossMusicTheme: {fileID: 8300000, guid: cbad4d5f3496b044eba85e25c6e58e2e, type: 3}
+  bossMusicThemeLoopTime: 0
 --- !u!4 &616495802
 Transform:
   m_ObjectHideFlags: 0
@@ -6780,8 +6780,8 @@ Transform:
   - {fileID: 508021153}
   - {fileID: 595226245}
   - {fileID: 616495802}
-  - {fileID: 2043005241}
   - {fileID: 319017000}
+  - {fileID: 2015718343}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7830,6 +7830,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004375305}
   m_CullTransparentMesh: 0
+--- !u!1 &2015718342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2015718343}
+  - component: {fileID: 2015718344}
+  m_Layer: 0
+  m_Name: WaveManager
+  m_TagString: Manager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &2015718343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015718342}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.0618963, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1783945549}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2015718344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015718342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e383d5cbe4d53d540891088bef4b6e7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossManager: {fileID: 508021152}
+  dialogueManager: {fileID: 595226244}
+  levelController: {fileID: 319017001}
+  startDelay: 6
+  waves:
+  - {fileID: 11400000, guid: 9af268a8e08b6ad4b93377216d3f298b, type: 2}
+  - {fileID: 11400000, guid: 791ecd7223e6882488ca2fafb2b4a8c6, type: 2}
+  - {fileID: 11400000, guid: 1eb9d11c9041596428fe86b48f5ea150, type: 2}
+  - {fileID: 11400000, guid: 6a38e89bbb7ab4c41a5a269c468b900b, type: 2}
+  - {fileID: 11400000, guid: 8308c47b3a42cc74ea73b4c30d6923fc, type: 2}
+  - {fileID: 11400000, guid: 8308c47b3a42cc74ea73b4c30d6923fc, type: 2}
+  - {fileID: 11400000, guid: 8f148f27ec705f542a81832e26aecc28, type: 2}
+  - {fileID: 11400000, guid: f9ed708eecdc4d643ab5b2b626f8c2fa, type: 2}
+  - {fileID: 11400000, guid: d25b432cff6f2d54bb74c22bf3f68a40, type: 2}
+  - {fileID: 11400000, guid: 86eae0de9d5c71d4392ef4fb52357393, type: 2}
+  - {fileID: 11400000, guid: c07ad7e478931b44ca95744eaeace8f5, type: 2}
+  - {fileID: 11400000, guid: 6d43b170d5ab5ec4b818939121f54cfc, type: 2}
+  - {fileID: 11400000, guid: c07ad7e478931b44ca95744eaeace8f5, type: 2}
+  - {fileID: 11400000, guid: 6d43b170d5ab5ec4b818939121f54cfc, type: 2}
+  - {fileID: 11400000, guid: c3b506a69d696334489f4d53b70b428e, type: 2}
+  - {fileID: 11400000, guid: 4e4ad3a01a746e844a6566f4b6384e41, type: 2}
+  isTutorialLevel: 0
+  spawnedWaves: []
+  spawnedBoss: {fileID: 0}
 --- !u!1 &2036721739
 GameObject:
   m_ObjectHideFlags: 0
@@ -7922,73 +7989,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036721739}
   m_CullTransparentMesh: 0
---- !u!1 &2043005240
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2043005241}
-  - component: {fileID: 2043005242}
-  m_Layer: 0
-  m_Name: WaveManager
-  m_TagString: Manager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &2043005241
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043005240}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.0618963, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1783945549}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2043005242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043005240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e383d5cbe4d53d540891088bef4b6e7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bossManager: {fileID: 508021152}
-  dialogueManager: {fileID: 595226244}
-  levelController: {fileID: 319017001}
-  startDelay: 6
-  waves:
-  - {fileID: 11400000, guid: 9af268a8e08b6ad4b93377216d3f298b, type: 2}
-  - {fileID: 11400000, guid: 791ecd7223e6882488ca2fafb2b4a8c6, type: 2}
-  - {fileID: 11400000, guid: 1eb9d11c9041596428fe86b48f5ea150, type: 2}
-  - {fileID: 11400000, guid: 6a38e89bbb7ab4c41a5a269c468b900b, type: 2}
-  - {fileID: 11400000, guid: 8308c47b3a42cc74ea73b4c30d6923fc, type: 2}
-  - {fileID: 11400000, guid: 8308c47b3a42cc74ea73b4c30d6923fc, type: 2}
-  - {fileID: 11400000, guid: 8f148f27ec705f542a81832e26aecc28, type: 2}
-  - {fileID: 11400000, guid: f9ed708eecdc4d643ab5b2b626f8c2fa, type: 2}
-  - {fileID: 11400000, guid: d25b432cff6f2d54bb74c22bf3f68a40, type: 2}
-  - {fileID: 11400000, guid: 86eae0de9d5c71d4392ef4fb52357393, type: 2}
-  - {fileID: 11400000, guid: c07ad7e478931b44ca95744eaeace8f5, type: 2}
-  - {fileID: 11400000, guid: 6d43b170d5ab5ec4b818939121f54cfc, type: 2}
-  - {fileID: 11400000, guid: c07ad7e478931b44ca95744eaeace8f5, type: 2}
-  - {fileID: 11400000, guid: 6d43b170d5ab5ec4b818939121f54cfc, type: 2}
-  - {fileID: 11400000, guid: c3b506a69d696334489f4d53b70b428e, type: 2}
-  - {fileID: 11400000, guid: 4e4ad3a01a746e844a6566f4b6384e41, type: 2}
-  isTutorialLevel: 0
-  spawnedWaves: []
-  spawnedBoss: {fileID: 0}
 --- !u!1 &2062867615
 GameObject:
   m_ObjectHideFlags: 0

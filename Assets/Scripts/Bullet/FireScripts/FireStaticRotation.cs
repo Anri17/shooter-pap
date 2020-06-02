@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Analytics;
+using UnityEngine.Experimental.PlayerLoop;
 
-public class FireStatic : FireBullet
+public class FireStaticRotation : FireBullet
 {
-    [Header("Fire Static")]
+    [Header("Fire Static Rotation")]
     [SerializeField] float startDelay = 1f;
     [SerializeField] float fireDelay;
     [SerializeField] int fireCount;
+    [SerializeField] float rotationSpeed = 8f;
 
     Coroutine fireCoroutine;
+
+    float rotationAngle = 0;
 
     IEnumerator RepeatFire(float startDelay, float fireDelay, int fireCount)
     {
@@ -21,7 +25,7 @@ public class FireStatic : FireBullet
             int initialBullet = 0;
             while (initialBullet < fireCount)
             {
-                Fire();
+                FireRotate();
                 yield return new WaitForSeconds(fireDelay);
                 initialBullet++;
             }
@@ -31,10 +35,20 @@ public class FireStatic : FireBullet
         {
             while (true)
             {
-                Fire();
+                FireRotate();
                 yield return new WaitForSeconds(fireDelay);
             }
         }
+    }
+
+    protected void FireRotate()
+    {
+        bulletGameObject = Instantiate(_bullet, transform.position, Quaternion.identity);
+        bulletScript = bulletGameObject.GetComponent<Bullet>();
+
+        bulletScript.Speed = _speed;
+        bulletScript.Angle = _aimOffset + rotationAngle;
+        rotationAngle += rotationSpeed;
     }
 
     bool stay = false;

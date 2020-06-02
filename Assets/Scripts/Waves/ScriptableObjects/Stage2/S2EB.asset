@@ -15,5 +15,5 @@ MonoBehaviour:
   canContinue: 0
   _boss: {fileID: 7945089824047321945, guid: b50dc0a8045cb814a8ab1af72a08bd44, type: 3}
   dialogue1: {fileID: 11400000, guid: fff3aed8b82aa9b48a2a2277c66f5755, type: 2}
-  dialogue2: {fileID: 11400000, guid: 24bf2449d235083408bc29054b1b770d, type: 2}
+  dialogue2: {fileID: 11400000, guid: 3c1dd5e830ca3dd4ea4dfff732ab523c, type: 2}
   endDelay: 0

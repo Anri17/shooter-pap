@@ -194,6 +194,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellAttacks:
+  - {fileID: 11400000, guid: 696a6db4c4371b74f84f4a412a8c3731, type: 2}
   - {fileID: 11400000, guid: e468116268894c24fb24ce16fb063b6d, type: 2}
-  - {fileID: 11400000, guid: 4810ea41d45c7784eadd9206b693bede, type: 2}
-  - {fileID: 11400000, guid: d7816045ef69db6478c67b0ff7431a62, type: 2}
+  - {fileID: 11400000, guid: 34e1af79a6879854abfbf38feb972521, type: 2}
+  - {fileID: 11400000, guid: 1ba425b6f96cbec44b08301b724e8cc9, type: 2}
+  - {fileID: 11400000, guid: 682ba6207cc53f441bb39fa2d283de73, type: 2}
+  - {fileID: 11400000, guid: 3f2804a80f2174743b5ce15053ae328b, type: 2}

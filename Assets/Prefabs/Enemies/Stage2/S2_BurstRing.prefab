@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tragectory: []
-  _health: 160
+  _health: 120
   _shot: {fileID: 0}
   _scoreWorth: 1200
   shootDelay: 0.8

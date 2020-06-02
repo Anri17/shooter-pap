@@ -355,7 +355,7 @@ MonoBehaviour:
   _aimOffset: 0
   _speed: 100
   startDelay: 0
-  fireDelay: 0.2
+  fireDelay: 0.3
   fireCount: 0
 --- !u!61 &3292487823445456267
 BoxCollider2D:
