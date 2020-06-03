@@ -8809,6 +8809,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7a6f40ab998620e4ea9c0c5352627882, type: 2}
   - {fileID: 11400000, guid: e8a1bec95a5e4ea4abee262c971b523b, type: 2}
   - {fileID: 11400000, guid: 4ce9eba52a9855e42a7926f071b182fb, type: 2}
+  - {fileID: 11400000, guid: 817867637969317468d98feda4f258fa, type: 2}
+  - {fileID: 11400000, guid: 2b1f0d97d12a4ca40aa5568beb3be4ef, type: 2}
   musicListContent: {fileID: 395140372}
   composerComment: {fileID: 944076801}
   buttonTemplate: {fileID: 4887976350078092050, guid: 4b88f74f5f1ec9049b5f8266fdfb1cf7,
