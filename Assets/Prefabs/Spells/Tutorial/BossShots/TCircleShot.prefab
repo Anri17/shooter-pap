@@ -50,8 +50,10 @@ MonoBehaviour:
   fireBulletCount: 30
   fireRate: 1.6
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &4100146615351248587
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +63,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7178262859353540976}
+  - component: {fileID: 5548523204282306896}
   m_Layer: 0
   m_Name: TCircleShot
   m_TagString: Untagged
@@ -92,6 +95,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5548523204282306896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100146615351248587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 832f3f784a131e5439559a19c78f31a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopMovement: 1
+  speedModifier: 0.25
+  pathPrefab: {fileID: 6545029720514851592, guid: 5f05972a7a5c64842bdf5b5089f50020,
+    type: 3}
 --- !u!1 &4943078947896258470
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,8 +251,10 @@ MonoBehaviour:
   fireBulletCount: 30
   fireRate: 1.6
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &4943078948229206202
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,8 +335,10 @@ MonoBehaviour:
   fireBulletCount: 30
   fireRate: 1.6
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &4943078948368910272
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,8 +449,10 @@ MonoBehaviour:
   fireBulletCount: 30
   fireRate: 1.6
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &4943078948603890132
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,8 +503,10 @@ MonoBehaviour:
   fireBulletCount: 30
   fireRate: 1.6
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &4943078948628979563
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,8 +557,10 @@ MonoBehaviour:
   fireBulletCount: 30
   fireRate: 1.6
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &4943078948707579569
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,8 +611,10 @@ MonoBehaviour:
   fireBulletCount: 30
   fireRate: 1.6
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &4943078948921726767
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,8 +725,10 @@ MonoBehaviour:
   fireBulletCount: 30
   fireRate: 1.6
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &4943078949194067316
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,8 +809,10 @@ MonoBehaviour:
   fireBulletCount: 30
   fireRate: 1.6
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &4943078949463120997
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,8 +863,10 @@ MonoBehaviour:
   fireBulletCount: 30
   fireRate: 1.6
   aimOffset: 0
+  shotDelay: 0
   shotLoopDelay: 0
   randomizeShotVelocity: 0
+  randomDirection: 0
 --- !u!1 &6552266627006644811
 GameObject:
   m_ObjectHideFlags: 0

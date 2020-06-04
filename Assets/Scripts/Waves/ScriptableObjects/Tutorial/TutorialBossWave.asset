@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abaf7d5e05320e947afba5151ad4a1f3, type: 3}
+  m_Name: TutorialBossWave
+  m_EditorClassIdentifier: 
+  canContinue: 0
+  _boss: {fileID: 7945089824047321945, guid: eface2e46d7e9d64994bffb72e92e44c, type: 3}
+  dialogue1: {fileID: 11400000, guid: 5aafef24c07e95b49a116eda006eba75, type: 2}
+  dialogue2: {fileID: 11400000, guid: 942899897a6d90143a9968ee47eb794a, type: 2}
+  endDelay: 0

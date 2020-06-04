@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 951bf2bfd38122b49ab120f47f7eed3a, type: 3}
-  m_Name: L1W14
+  m_Script: {fileID: 11500000, guid: 619f3d63c0c965049ad58a33185d310a, type: 3}
+  m_Name: TutorialWave1
   m_EditorClassIdentifier: 
-  wave: {fileID: 1044152698570196022, guid: a7c1a1e9ebb4b25428ca8a69a0ec680e, type: 3}
-  delayTime: 4
+  canContinue: 0
+  wave: {fileID: 7563404147253600326, guid: ea282e762affa0947ad37dbba4871144, type: 3}
+  delayTime: 6

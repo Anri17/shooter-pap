@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 7945089824047321947}
   - component: {fileID: 7945089824047321927}
   - component: {fileID: 7945089824047321926}
-  - component: {fileID: 2264121464022660906}
-  - component: {fileID: 350828380049276735}
+  - component: {fileID: 2174292709279112372}
   m_Layer: 8
   m_Name: TutorialBoss
   m_TagString: Enemy
@@ -131,7 +130,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2264121464022660906
+--- !u!114 &2174292709279112372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,31 +139,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7945089824047321945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72b1768858a457749916c403fc2c3eda, type: 3}
+  m_Script: {fileID: 11500000, guid: fa037a5d00c1f474c83134964bd4e661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultPosition: {x: -3.81, y: 5.97, z: 0}
-  stages:
-  - {fileID: 11400000, guid: a12acc8ef727e5b47a63d8a80c5a731d, type: 2}
-  - {fileID: 11400000, guid: 8e60fa13256c0ad4baa506f9d94b1fa8, type: 2}
-  - {fileID: 11400000, guid: f1464b14ad35ebe49a33a175ddc6ec6c, type: 2}
-  deathParticles: {fileID: 6180124026953083947, guid: 545f7a21eda9c484ab3b694f8ce1d41a,
-    type: 3}
-  hitSound: {fileID: 0}
---- !u!114 &350828380049276735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7945089824047321945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c79d697828c779941b64a218d110bf5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loopMovement: 1
-  speedModifier: 0.5
-  path: {fileID: 0}
-  routes: []
-  stopMovement: 0
+  spellAttacks:
+  - {fileID: 11400000, guid: e5da21d004f250f4d8c38ed29b142230, type: 2}
+  - {fileID: 11400000, guid: 517d3ceb1fbc933469bc6134974f1112, type: 2}
+  - {fileID: 11400000, guid: f543a5cf46f27c641af0f3de99345612, type: 2}
