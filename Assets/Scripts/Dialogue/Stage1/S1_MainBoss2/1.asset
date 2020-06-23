@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   personSpeaking: Zuru
-  sentence: Now now, could you stop attacking me by surprise like that Mero?
+  sentence: There, that's that dealth with. Now, could you now stop attacking me by
+    surprise like that, Mero?
   changeMusic: 0
+  presentBoss: 0

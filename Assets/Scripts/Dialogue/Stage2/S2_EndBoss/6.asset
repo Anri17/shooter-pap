@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 6
   m_EditorClassIdentifier: 
   personSpeaking: Sunshine
-  sentence: I'm sunshine. I was just taking a walking on the beach.
+  sentence: My name is Sunshine. I was lying on the beach, relaxing under the sun,
+    feeling the wind...
   changeMusic: 0
   presentBoss: 0

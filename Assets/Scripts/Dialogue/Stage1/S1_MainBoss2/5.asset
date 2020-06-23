@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 5
   m_EditorClassIdentifier: 
   personSpeaking: Zuru
-  sentence: I thought you would know. Guess i'll have to go to where those came from.
+  sentence: You're ignoring me, huh?...
   changeMusic: 0
+  presentBoss: 0

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 2
   m_EditorClassIdentifier: 
   personSpeaking: Sunshine
-  sentence: '... You just got lucky.'
+  sentence: You just got lucky! I'm gonna tell Big Sister Riko about you!
   changeMusic: 0
   presentBoss: 0

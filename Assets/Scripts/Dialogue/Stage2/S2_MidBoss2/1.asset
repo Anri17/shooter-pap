@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   personSpeaking: Zuru
-  sentence: Care to explain to me what you think you're doing?
+  sentence: Could you please explain to me what you think you're doing?
   changeMusic: 0
   presentBoss: 0

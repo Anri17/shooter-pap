@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 4
   m_EditorClassIdentifier: 
   personSpeaking: Zuru
-  sentence: '*sigh* How annoying...'
+  sentence: Hmm, maybe she can give directions towards where these things are comming
+    from...
   changeMusic: 0
   presentBoss: 0

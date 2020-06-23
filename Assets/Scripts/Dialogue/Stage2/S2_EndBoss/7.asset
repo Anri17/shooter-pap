@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 7
   m_EditorClassIdentifier: 
   personSpeaking: Sunshine
-  sentence: Suddenly these things showed up and started annoying me!
+  sentence: When suddenly these things showed up and started attacking me!
   changeMusic: 0
   presentBoss: 0

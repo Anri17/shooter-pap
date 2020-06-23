@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 7
   m_EditorClassIdentifier: 
   personSpeaking: Zuru
-  sentence: Hey, don't blame me! You're the one that likes to troll me building these
-    weird ships and throwing them at me!
+  sentence: You have a very unorthodox way to greet someone, I must say...
   changeMusic: 0
+  presentBoss: 0

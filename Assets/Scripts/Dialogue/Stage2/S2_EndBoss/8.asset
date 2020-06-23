@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 8
   m_EditorClassIdentifier: 
   personSpeaking: Sunshine
-  sentence: You'll pay for anoying me!
+  sentence: Only you could have done this. You'll pay for this!
   changeMusic: 0
   presentBoss: 0

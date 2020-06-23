@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: 6
   m_EditorClassIdentifier: 
   personSpeaking: ???
-  sentence: 'Prepare to die!
-
-'
+  sentence: Prepare yourself!
   changeMusic: 0
   presentBoss: 0

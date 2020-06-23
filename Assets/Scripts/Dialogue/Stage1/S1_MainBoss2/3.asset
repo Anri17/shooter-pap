@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 3
   m_EditorClassIdentifier: 
   personSpeaking: Zuru
-  sentence: Why don't you stop building ships like these? You can fly and shoot like
-    me you know. And probably give me a better challenge that way.
+  sentence: Your seriously calling it you're treasure? How about you quit building
+    those contraptions?
   changeMusic: 0
+  presentBoss: 0

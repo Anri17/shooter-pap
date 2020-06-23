@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: 2
   m_EditorClassIdentifier: 
   personSpeaking: Mero
-  sentence: As usualy, not holding back, do you? Look at my ship!
+  sentence: Haaaa, sorry. You could have at least hold back though! Look at my little
+    treasure!
   changeMusic: 0
+  presentBoss: 0

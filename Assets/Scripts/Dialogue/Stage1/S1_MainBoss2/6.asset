@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 6
   m_EditorClassIdentifier: 
   personSpeaking: Mero
-  sentence: Have fun with that. I have so clean up a certain ship that a certain someone
-    brutally destroyed.
+  sentence: Anyway, i'll clean this up, just wanted to say hi.
   changeMusic: 0
+  presentBoss: 0

@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: S1_MainBoss1
   m_EditorClassIdentifier: 
   DialogueMessages:
-  - {fileID: 11400000, guid: 8fca68f47c13a694b926dbca7889bc06, type: 2}
   - {fileID: 11400000, guid: 001fbbd13458a68489dbbbd4a9e03c25, type: 2}
   - {fileID: 11400000, guid: bc0885baafbece241ba1e3f797320770, type: 2}
   - {fileID: 11400000, guid: c13132bb776d49d43a4f0c1896ce3f22, type: 2}

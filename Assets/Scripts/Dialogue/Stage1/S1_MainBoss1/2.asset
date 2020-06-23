@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 2
   m_EditorClassIdentifier: 
   personSpeaking: Zuru
-  sentence: (uwaaaaaa *sleepy*) How rude, waking me up like this.
+  sentence: What's up with all this noise? What are these things flying arround?
   changeMusic: 0
+  presentBoss: 0

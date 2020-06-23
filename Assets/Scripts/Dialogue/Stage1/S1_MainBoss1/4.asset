@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ded0f8b3dff324d979a1832aad90ee, type: 3}
   m_Name: 4
   m_EditorClassIdentifier: 
-  personSpeaking: ???
-  sentence: I wouldn't be so distracted if I where you!
-  changeMusic: 1
-  presentBoss: 1
+  personSpeaking: Zuru
+  sentence: Oh, where we go again...
+  changeMusic: 0
+  presentBoss: 0

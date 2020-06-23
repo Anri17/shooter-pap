@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 4
   m_EditorClassIdentifier: 
   personSpeaking: Mero
-  sentence: Oh, then it wouldn't be fun would it? Anyway, what's up with those ships
-    flying off to the distance?
+  sentence: Hey, what are those things flying arround?
   changeMusic: 0
+  presentBoss: 0

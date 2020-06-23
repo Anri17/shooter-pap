@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 2
   m_EditorClassIdentifier: 
   personSpeaking: ???
-  sentence: Just you wait... You'll pay for this!
+  sentence: Just you wait, you'll pay for this!
   changeMusic: 0
   presentBoss: 0

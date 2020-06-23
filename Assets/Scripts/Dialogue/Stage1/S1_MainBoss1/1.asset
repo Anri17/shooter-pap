@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ded0f8b3dff324d979a1832aad90ee, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  personSpeaking: 
-  sentence: Zuru was spleeping when a wave of ships flew past her house, waking her
-    up. Anoyed, she set out to persue them, to see what could justify the rukus that
-    was going on.
+  personSpeaking: Zuru
+  sentence: How rude, waking me up like this!
   changeMusic: 0
+  presentBoss: 0
