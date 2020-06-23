@@ -186,7 +186,6 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("Player died");
         PlayDeathParticles(deathParticles);
         Lives--;
         PowerLevel = 0;

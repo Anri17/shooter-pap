@@ -35,17 +35,14 @@ public class WaveManager : MonoBehaviour
             {
                 if (isTutorialLevel)
                 {
-                    Debug.Log("Unloading Tutorial");
                     SceneManager.LoadScene(0);
                 }
                 else if (Application.CanStreamedLevelBeLoaded(SceneManager.GetActiveScene().buildIndex + 1))
                 {
-                    Debug.Log("Unloading " + SceneManager.GetActiveScene().name);
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 }
                 else
                 {
-                    Debug.Log("Unloading " + SceneManager.GetActiveScene().name);
                     SceneManager.LoadScene(0);
                 }
             }
@@ -67,8 +64,6 @@ public class WaveManager : MonoBehaviour
         {
             if (waves[waveIndex] is EnemyWave)
             {
-                Debug.Log($"Launching enemies at wave {waveIndex + 1}");
-
                 EnemyWave enemyWave = (EnemyWave)waves[waveIndex];
 
                 spawnedWaves[waveIndex] = Instantiate(enemyWave.Wave, transform);
@@ -78,7 +73,6 @@ public class WaveManager : MonoBehaviour
 
             if (waves[waveIndex] is BossWave)
             {
-                Debug.Log($"Launching boss at wave {waveIndex + 1}");
                 LevelManager.ClearBullets();
                 LevelManager.ClearEnemies();
 
@@ -112,8 +106,6 @@ public class WaveManager : MonoBehaviour
                 continue;
             }
         }
-
-        Debug.Log($"Stage Ended");
         LevelManager.ClearBullets();
         LevelManager.ClearEnemies();
         levelController.EndLevel();

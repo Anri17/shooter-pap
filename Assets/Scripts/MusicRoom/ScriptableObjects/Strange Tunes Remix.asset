@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicTitle: Strange Tunes Remix
   musicClip: {fileID: 8300000, guid: 472f6abc3f7e0ea429981fe1513fc19c, type: 3}
-  composerComment: 'The Stage 1 theme.
+  composerComment: 'The Stage 1 Theme.
 
 
-    I wanted a track that exited the player to play and shoot some enemies, so i tried
-    composing an energetic melody that did just that.'
+    I wanted a melody that exited the player for the journey, so I tried composing
+    an energetic fast passed track that that did just that.'

@@ -60,7 +60,6 @@ public class Boss : MonoBehaviour
         hittable = false;
         StageCount--;
         stageAttackIndex++;
-        Debug.Log($"Stage index: {stageAttackIndex}");
         if (stageAttackIndex < spellAttacks.Length)
         {
             MoveToDefaultPosition();
@@ -69,7 +68,6 @@ public class Boss : MonoBehaviour
         }
         else
         {
-            Debug.Log("Boss Defeated");
             Destroy(gameObject);
         }
     }
@@ -133,7 +131,6 @@ public class Boss : MonoBehaviour
 
     private void SetStage(int stageIndex)
     {
-        Debug.Log("Launching Wave " + stageIndex + 1);
         currentSpellAttack = spellAttacks[stageIndex];
         CurrentMaxHealth = currentSpellAttack.health;
         CurrentHealth = currentSpellAttack.health;

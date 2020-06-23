@@ -36,9 +36,6 @@ public class FireBullet : MonoBehaviour
             dir = target.InverseTransformDirection(dir);
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + 90;
 
-            Debug.Log("bullet angle " + angle);
-            Debug.Log($"Player Position: {target.position}");
-            Debug.Log($"Up Position: {transform.position + Vector3.up}");
             return angle;
         }
         return 0f;

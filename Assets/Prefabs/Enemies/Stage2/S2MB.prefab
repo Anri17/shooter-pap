@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7552953734734452970}
   - component: {fileID: 3069285331345099041}
   m_Layer: 0
-  m_Name: Sunshine_Game_Sprite
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,8 +69,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -322871379
   m_SortingLayer: -4
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b3a68f77706a4aa4b8ab8b71560db458, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: f0bd182089d9c744a970be0cde399942, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

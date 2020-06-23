@@ -13,8 +13,6 @@ public class BossManager : MonoBehaviour
 
     [HideInInspector] public GameObject spawnedBoss;
 
-
-
     private void Update()
     {
         if (bossInterface.activeSelf)

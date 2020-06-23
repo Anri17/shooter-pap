@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicTitle: Spirts From Sky High
   musicClip: {fileID: 8300000, guid: 88ff698757cd80243b86d44fcb46e6ef, type: 3}
-  composerComment: It feels like the journey just started and it's taking a while,
-    yet you quickly realise that you're not dealing with any ordinary foe, and you
-    must keep your senses sharp, for you don't know what's comming.
+  composerComment: 'The Stage 4 Theme. (not none yet)
+
+
+    It feels like the journey just started, yet we''re halfway done and we have yet
+    to confront more powerfull foes up ahead.'

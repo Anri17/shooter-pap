@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicTitle: A Silent Pond
   musicClip: {fileID: 8300000, guid: cbad4d5f3496b044eba85e25c6e58e2e, type: 3}
-  composerComment: 'The Stage 2 Boss Theme
+  composerComment: 'The Stage 2 Boss Theme.
 
 
-    This sounds way to serious for a fairy pranking you... But then again, maybe it
-    sounded this way because Zuru was getting fed up with being pranked.
-
-    You decide. (I''m still learning music, bear with me)'
+    This starts serious, but it gets you pumped up by the end. It used to be more
+    sad and serious though, before I changed it. (I''m still learning music, bear
+    with me)'

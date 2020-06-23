@@ -70,7 +70,6 @@ public class FireRing : FireBullet
         {
             fireCoroutine = StartCoroutine(RepeatFire(startDelay, fireDelay, fireCount));
             stay = true;
-            Debug.Log("I'm in the play field");
         }
     }
 

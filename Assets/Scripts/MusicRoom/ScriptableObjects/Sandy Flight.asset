@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicTitle: Sandy Flight
   musicClip: {fileID: 8300000, guid: d0e54b3f819d21840a534524af90e4e0, type: 3}
-  composerComment: 'The Stage2 Theme.
+  composerComment: 'The Stage 2 Theme.
 
 
-    While I keep reminding myself os space when I hear this (actually, due to the
-    instruments I used at first, all my first tracks remind me of space) it''s the
-    best that I have that best fits with a beach walk.'
+    I keep reminding myself of space when I hear this (actually, all my first tracks
+    remind me of space), yet it''s the best track that sounds best on a beach walk.'

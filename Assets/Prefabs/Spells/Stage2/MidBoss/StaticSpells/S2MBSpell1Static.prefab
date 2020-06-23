@@ -127,7 +127,7 @@ MonoBehaviour:
   _bullet: {fileID: 644997966107421087, guid: d5a122549b353ac49b99b9dbd8420874, type: 3}
   _target: {fileID: 4037159831597851514, guid: bfe6cc0d5ce856c40ab352a71f92f48d, type: 3}
   _aimOffset: 0
-  _speed: 40
+  _speed: 80
   startDelay: 2
   fireDelay: 2
   fireCount: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   _bullet: {fileID: 644997966107421087, guid: d5a122549b353ac49b99b9dbd8420874, type: 3}
   _target: {fileID: 4037159831597851514, guid: bfe6cc0d5ce856c40ab352a71f92f48d, type: 3}
   _aimOffset: 0
-  _speed: 40
+  _speed: 80
   startDelay: 1
   fireDelay: 2
   fireCount: 0
